@@ -1,0 +1,45 @@
+.mobile-one-main-column{
+    margin-bottom: 9.5em;
+}
+.product-image{
+    margin-top: 5em;
+}
+
+.product-image-little{
+    margin-top: 1.5em;
+}
+
+.product-image-little:hover{
+    border-style: solid;
+    border-color:$primary-color ;
+}
+
+.product-title{
+    font-family: $font-stack;
+    margin-top: 4.5em;
+}
+
+.product-price{
+    font-family: $font-stack;
+    margin-top: 1.5em;  
+    margin-left: 1.5em;          
+}
+
+.product-description{
+    font-family: $font-stack;
+    margin-top: 4em;
+    margin-left: 1.5em;
+}
+
+.column-quantity{
+    display:flex;
+    margin-top: 3.5em;
+}
+
+
+
+
+
+
+
+

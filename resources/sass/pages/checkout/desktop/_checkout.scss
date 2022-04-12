@@ -1,0 +1,104 @@
+.desktop-four-columns-checkout{
+    margin-left: 0em;
+}
+.data-invoice-title{
+    text-align: left;
+    margin-bottom: 3em;
+}
+
+.desktop-two-columns-checkout{
+    margin-top: 3em;
+}
+
+.desktop-one-column-checkout{
+    margin-left: 5%;
+    width: 90%;
+}
+
+.input-form input{
+    width: 100%;
+}
+
+.input-form-onecolumn input{
+    width: 100%;
+}
+
+.total-products{
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
+.quantity{
+    margin-top: 2em;
+}
+
+.payment-method{
+    margin-top: 2em;
+}
+
+.payment-style{
+    display: flex;
+}    
+
+.input-form{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.input-form-onecolumn{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.pay-button-checkout button{
+    font-family: $font-stack;
+    width: 30em;
+    margin-top: 3.5em;
+}
+
+.payment-section{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.table-price{
+    width: 100%;
+    text-align: left;
+}
+
+.table-price tr {
+    font-family: $font-stack;
+    text-align: center;
+}
+
+.price-row{
+    height: 4em;
+}
+
+.table-method-payment {
+    width: 100%;
+    text-align: left;
+    font-family: $font-stack;
+}
+
+.table-cart-checkout table{
+    margin-left:0;        
+}
+
+.table-cart-checkout .product-column{
+    text-align: left;
+}
+
+.product-row .product-column{
+    font-family: $font-stack;
+}
+.product-row .quantity-column{
+    font-family: $font-stack;
+}
+
+.product-row .unit-price-column{
+    font-family: $font-stack;
+}
+
+.product-row .total-price-column{
+    font-family: $font-stack;
+}

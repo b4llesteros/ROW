@@ -1,0 +1,79 @@
+ /* column aside gallery */
+
+ .categories-title{
+    font-family: $font-stack;
+    margin-left: 0em;
+    margin-bottom: 1em;
+}
+
+.category{
+    font-family: $font-stack;
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+}
+
+.category:hover{
+    color: white;
+}
+
+.column-categories{
+    margin-top: 0.5em;
+}
+
+
+/* column main gallery  */
+
+.header-column-main{
+    font-family: $font-stack;
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;    
+    border-left: 0em;
+    border-right: 0em;
+    border-width: 0.05em;
+    
+}
+
+.total-products{
+    margin-top: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+.filter-products{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.product-card{
+    margin-top: 2.5em;
+    align-items: center;
+}
+
+.product-card:hover{
+    border-color: $primary-color;
+    border-style:solid
+}
+
+.product-title h2{
+    text-align: center;
+    font-family: $font-stack;
+    margin-bottom: 0.5em;
+    color: $primary-color;
+}
+
+.product-price h3{
+    text-align: center;
+    font-family: $font-stack;
+}
+
+.product-button button{
+    font-family: $font-stack;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left: 45%;
+}
+
+.product-button button:hover{
+    color: $primary-color;
+}

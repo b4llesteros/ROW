@@ -1,0 +1,87 @@
+.table-cart table{
+    width: 80%;
+    margin:auto;
+    margin-top: 5em;
+    font-family: $font-stack;     
+    border-style:solid;  
+    margin-bottom: 1.5em;
+}
+
+.product-row{
+    height: 8em;
+}
+.product-column{
+    width: 40%;
+}
+
+.quantity-column{
+    width: 20%;
+}
+
+.unit-price-column{
+    width: 20%;
+}
+
+.total-price-column{
+    width: 20%;
+}
+
+.cart-title{
+    text-align: center;
+    margin:auto;
+    margin-top: 3em;
+    font-family:$font-stack;
+    margin-bottom: 5em;    
+}
+
+.product-row .quantity-counter .quantity-form-input input{
+    caret-color: transparent;
+    width: 20%;   
+    margin-left: 0em;
+}
+
+.quantity-form-input{
+    width: 8em;
+}
+
+.pay-button button{
+    float: right;
+    font-family: $font-stack;
+    border-radius:10px;
+}
+
+.back-shop button{
+    font-family: $font-stack;
+    border-radius:10px;
+}
+
+
+.back-shop button:hover{
+    background-color: $primary-color;
+    border-radius:10px;
+    color: hsl(0, 0%, 100%);
+}
+.pay-button button:hover{
+    background-color: $primary-color;
+    border-radius:10px;
+    color: hsl(0, 0%, 100%);
+}
+
+.buttons{
+    border: 1px solid black;
+    padding:0px;
+    border-radius:10px;    
+    }
+
+
+    #plus,#minus,#counter{
+    padding:10px;
+    font-size:25px;
+    font-weight:bold;
+    display: inline;
+    }
+
+    #plus,#minus{
+        cursor: pointer;
+    }
+    
