@@ -1,0 +1,43 @@
+.slider img{
+    width: 100%;
+    margin: -0.1em 0em 0em 0em ;
+}
+
+.slider-button button{
+    font-family: $font-stack;
+    position: absolute; 
+    top: 12em; 
+    left: 24em;
+    z-index: 1; 
+    padding: 0.5em; 
+    background: hsla(0, 0%, 0%, 0.486);
+    font-size: 1.5em;
+    color: hsl(0, 0%, 100%);
+    border-radius: 10%;
+}
+
+    .slider-button button:hover{
+        background-color: $primary-color ;
+        color: hsl(0, 0%, 0%);
+        cursor: pointer;
+    }
+
+
+
+
+
+
+
+.slider-text {
+    font-family: $font-stack;
+    position: absolute; 
+    top: 8em; 
+    left: 27.5em;
+    z-index: 2; 
+    padding: 0.5em; 
+    background: hsla(0, 0%, 0%, 0.486);
+    font-size: 1em;
+    color: hsl(0, 0%, 100%);
+    border-radius: 10%;
+}
+

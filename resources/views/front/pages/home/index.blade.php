@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
@@ -12,12 +12,13 @@
         <!-- NORMALIZE CSS -->
         <link href="style/normalize.css" rel="stylesheet">
         <!-- MAIN CSS -->
-        <script src="mix.sass('resources/sass/app.scss', 'public/css')"></script>;
+        <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet">
+       
         
-    </head>
+    </head> --}}
 
-    <body>
-        <header>
+    {{-- <body> --}}
+        {{-- <header>
             <!-- <div class="navbar">
                 <div class="navbar-left"></div>
                     <div class="navbar-left-logo"> 
@@ -75,10 +76,13 @@
                         </div>            
                     </div>
                  </div>                                                   
-        </header>
+        </header> --}}
 
 
-        <main>                
+ @extends('front.layout.master')   
+ 
+    @section('content')
+                        
             <div class="desktop-one-column mobile-one-column">
                 <div class="slider">
                     <img src="images/slider1.png">
@@ -192,10 +196,10 @@
                     </div>
                 </div>
             </div>           
-        </main>
+        
+    @endsection
 
-
-        <footer>           
+        {{-- <footer>           
             <div class="desktop-three-columns mobile-three-columns">
                 <div class="column">
                     <div class="footer-column-left">
@@ -251,9 +255,9 @@
                     <h2>Copyright 2022</h2>
                 </div>
             </div>             
-        </footer>
+        </footer> --}}
 
-
+{{-- 
             <script src="js/hamburguer.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
             <script>
@@ -263,9 +267,9 @@
                     }
                 });        
             </script>
+ --}}
 
 
-
-
+{{-- 
     </body>
-</html>
+</html> --}}
