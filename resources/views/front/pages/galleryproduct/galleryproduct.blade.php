@@ -62,11 +62,11 @@
             </div>              
         </header> --}}
 
-        <main>
+        {{-- <main> --}}
 
-            @extends('front.layout.master')  
+        @extends('front.layout.master')  
         
-            @section('content')
+        @section('content')
             <div class="desktop-two-columns-aside mobile-one-column">
 
                 <div class="column-aside">
@@ -92,7 +92,6 @@
                              </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="column-main">
@@ -268,9 +267,9 @@
                         </div>
                     </div> 
                 </div>
-            </div>
-        </main>
-        @endsection        
+            </div>       
+        @endsection  
+         {{-- </main> --}}      
         {{-- <footer>           
             <div class="desktop-three-columns mobile-three-columns">
                 <div class="column">

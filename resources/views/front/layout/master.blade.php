@@ -10,17 +10,19 @@
         <meta name="keywords" 	 content="Inglés, aprende inglés, videos para aprender inglés, how to learn english, learn english,english school">
 
         @include("front.layout.partials.styles")   
-                   
+
     </head>
 
     <body>            
-            @include("front.layout.partials.navbar")      
+        @include("front.layout.partials.navbar")      
+        
         <main>
             <div class="container">
-        @yield("content")
+                @yield("content")
             </div>
-        </main>        
-            @include("front.layout.partials.footer")     
+        </main>  
+
+        @include("front.layout.partials.footer")     
     </body>
 
 </html>
