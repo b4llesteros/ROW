@@ -85,7 +85,7 @@
                         
             <div class="desktop-one-column mobile-one-column">
                 <div class="slider">
-                    <img src="images/slider1.png">
+                    <img src= alt="">
                 </div>
                 <div class="slider-button">
                     <button>Let's Go</button>
