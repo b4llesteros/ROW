@@ -9,11 +9,12 @@
 		<meta name="description" content="Aprende inglés fácilmente">
         <meta name="keywords" 	 content="Inglés, aprende inglés, videos para aprender inglés, how to learn english, learn english,english school">
 
-        @include("front.layout.partials.styles")      
+        @include("admin.layout.partials.styles")   
+
     </head>
 
     <body>            
-        @include("front.layout.partials.navbar")      
+        @include("admin.layout.partials.panel")      
         
         <main>
             <div class="container">
@@ -21,7 +22,7 @@
             </div>
         </main>  
 
-        @include("front.layout.partials.footer")     
+        {{-- @include("front.layout.partials.footer")      --}}
     </body>
 
 </html>

@@ -1,0 +1,25 @@
+.hamburger {
+    margin-top: 0em;
+    margin-left: 0.5em;  
+    padding: 5px;
+    cursor: pointer; }
+    
+    .bar1, .bar2, .bar3 {
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #101010;
+    transition: 0.4s; }
+    
+    .change .bar1 {  
+    transform: rotate(45deg) translate(8px,3px);  
+    }  
+    
+    .change .bar2 {  
+    opacity: 0;  
+    }  
+    
+    .change .bar3 {  
+    transform: rotate(-45deg) translate(8px,-3px);  
+    }    

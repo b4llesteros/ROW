@@ -111,7 +111,7 @@
                     </div>
                     <div class="featured-level">
                         <div class="featured-level-image">
-                        <img src="images/A1.png">
+                            <img src="{{ asset('A1.png') }}" alt="description of myimage">
                         </div>
                         <div class="featured-level-title">
                             <h2>Beginner</h2>

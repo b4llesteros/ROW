@@ -10,7 +10,6 @@
         <meta name="keywords" 	 content="Inglés, aprende inglés, videos para aprender inglés, how to learn english, learn english,english school">
 
         <!-- NORMALIZE CSS -->
-        <link href="style/normalize.css" rel="stylesheet">
         <!-- MAIN CSS -->
         <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet">
         

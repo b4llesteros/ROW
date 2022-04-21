@@ -10,8 +10,7 @@
 .desktop-four-columns{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin-left: 10%;
+    width: 100%;
 }
 
 .desktop-four-columns .column{
@@ -31,8 +30,7 @@
 .desktop-two-columns{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin-left: 5%;
+    width: 90%;        
 }
 
 .desktop-two-columns .column{
@@ -55,6 +53,7 @@
     border-top: 0em;
     border-bottom: 0em;
     border-style: solid;
+    
     
 }
 
@@ -82,5 +81,6 @@
 }
 
 .desktop-one-column .column{
-    width: 100%;
+    width: 100%;   
 }
+

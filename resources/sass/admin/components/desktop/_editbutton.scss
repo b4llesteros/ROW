@@ -1,0 +1,20 @@
+
+.editbuttons{
+    display: none;
+    margin-top: 2.5em;
+}
+
+.editbuttons-change{
+    display: flex;
+    gap: 3.7em;
+}
+
+.edit-button button{
+    background-color: hsl(216, 100%, 71%);
+}
+
+.edit-button button:hover{
+    cursor: pointer;
+    background-color: hsl(217, 100%, 40%);
+    color: #ffffff;
+}

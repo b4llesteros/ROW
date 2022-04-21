@@ -37,3 +37,4 @@ Route::get('/galleryproduct', function () {
     return view('front/pages/galleryproduct/galleryproduct');
 });
 
+
