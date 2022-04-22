@@ -6,8 +6,7 @@ let form = document.querySelector(".form");
 
 editButtons.forEach(editButton => {
 
-  editButton.addEventListener('click', () => {
-    alert('Hola');
+  editButton.addEventListener('click', () => {    
     table.classList.add("minimized");
     form.classList.add("active");
   });
