@@ -37,4 +37,8 @@ Route::get('/galleryproduct', function () {
     return view('front/pages/galleryproduct/galleryproduct');
 });
 
+Route::get('/admin/users', function () {
+    return view('admin/pages/panel/panel');
+});
+
 

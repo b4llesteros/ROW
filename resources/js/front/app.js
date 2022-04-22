@@ -1,4 +1,4 @@
-import { renderMenuButton } from "./menu-button";
+import { renderMenuButton } from "./menu-button.js";
 
 renderMenuButton();
 

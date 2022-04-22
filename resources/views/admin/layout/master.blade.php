@@ -1,20 +1,20 @@
-<!doctype html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="-">
 
-		<title>Room Of Words</title>
-		<meta name="description" content="Aprende inglés fácilmente">
-        <meta name="keywords" 	 content="Inglés, aprende inglés, videos para aprender inglés, how to learn english, learn english,english school">
+		<title></title>
+		<meta name="description" content="-">
+        <meta name="keywords" 	 content="-">
 
+    
         @include("admin.layout.partials.styles")   
 
     </head>
 
     <body>            
-        @include("admin.layout.partials.panel")      
+        @include("admin.layout.partials.navbar")      
         
         <main>
             <div class="container">
@@ -22,7 +22,10 @@
             </div>
         </main>  
 
-        {{-- @include("front.layout.partials.footer")      --}}
+        @include("admin.layout.partials.scripts")
+        
     </body>
+
+        
 
 </html>

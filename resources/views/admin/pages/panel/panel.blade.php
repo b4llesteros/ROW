@@ -33,8 +33,8 @@
             </div>
         </header> --}}
 
-        <main> 
-@extends('front.layout.master')   
+
+@extends('admin.layout.master')   
 
 @section('content')            
             <div class="table">
@@ -259,6 +259,6 @@
 
     </body>
 
-    <script src="/panel-de-administracion/main.js"></script>
+    
 
 </html>

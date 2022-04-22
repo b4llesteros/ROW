@@ -80,7 +80,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -458,7 +459,7 @@ main {
 
 header {
   background-color: hsl(212deg, 96%, 54%);
-  height: 5em;
+  height: auto;
   margin: -1em 0em 0em 0em;
   width: 100%;
 }
@@ -749,5 +750,3 @@ tr:hover .table-buttons svg {
 .table.minimized td:last-child {
   width: 20%;
 }
-
-/*# sourceMappingURL=app.css.map */
