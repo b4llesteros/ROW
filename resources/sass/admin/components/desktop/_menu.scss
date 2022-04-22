@@ -1,19 +1,26 @@
 
 
 .menu{
-    background-color: hsl(212, 96%, 54%);
+    background-color: hsl(212, 95%, 60%);
     position: absolute;
-    top: -4vh;
+    top: -1vh;
     transition: all 0.5s;
-    width: 90%;
+    width: 100%;  
+    left: 0em; 
+    height: auto;
+    
 }
  .menu.active{
     transition: all 0.5s;
-    top: 14%;   
+    top: 5vh; 
+    width: 100%;
+       
+   
 }
 
 .menu ul li{
     display: inline;
+    text-align: center;
     margin-left: 3.5em;
     font-weight: 700;
     font-family: 'Noto Sans';

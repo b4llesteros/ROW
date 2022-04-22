@@ -179,9 +179,43 @@
                     <li>Contact</li>                    
                 </ul>                    
             </div>      
-                              
+              
 
-            <div class="form">
+            
+                
+                
+                
+           
+                <div class="edit-section"> 
+                    <div class="desktop-one-column">
+                        <div class="column">
+                            <div class="edit-tabs">
+                                <div class="tab">
+                                    <span>Contenido</span>
+                                </div>
+                                <div class="tab">
+                                    <span>Imágenes</span>
+                                </div>
+                                <div class="tab">
+                                    <span>SEO</span>
+                                </div>
+                            </div>
+                        </div>               
+                    </div>
+                </div>
+                {{-- <div class="desktop-one-column">
+                    <div class="column">
+                        <div class="tab">
+                            dasd
+                        </div>
+                        <div class="tab">
+                            adsa
+                        </div> 
+                        <div class="tab">
+                            asd
+                        </div>    
+                    </div>
+                  </div> 
                 <form>
                     <div class="form-label">
                         <div class="name-label">
@@ -231,8 +265,8 @@
                             <input type="text" class="form-control" id="">
                         </div>
                     </div>
-                </form>
-            </div>   
+                </form> --}}
+              
 @endsection            
 
 

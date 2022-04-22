@@ -1,1 +1,1231 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}a,h1,h2,h3,h4,h5,h6,p{margin:0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}form{margin:0}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}ol,ul{list-style:none;padding-left:0}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}img{max-height:100%}img,video{max-width:100%}a,h1,h2,h3,h4,h5,h6,p{color:#000}h1,h2,h3,h4,h5,h6{font-family:Noto Sans}a,button,input,label,li,p,select,span,td,textarea,th{font-family:Noto Sans;font-size:.95em}h1,h2{font-size:1.5rem}a,h1,h2,h4{font-weight:600;text-decoration:none}a{-webkit-transition:.3s;-moz-transition:.3s;-o-transition:.3s;transition:.3s}a:focus,a:hover{outline:none;outline-offset:0;text-decoration:none}.bold{font-weight:700}body{background-color:#fff}footer{background-color:#1982fa;bottom:0;height:auto;margin-top:2em;width:100%}.desktop-only{display:block}.mobile-only{display:none}header{background-color:#1982fa;height:5em;margin:-1em 0 0;width:100%}.footer-columns{bottom:0;display:flex;flex-wrap:wrap;font-size:1em;justify-content:space-around;margin:0}.footer-column-left{font-family:Noto Sans;margin:.5em 0 0;text-align:center}.footer-column-middle{font-family:Noto Sans;margin:.5em -4em 0 0;text-align:center}.footer-column-right{margin:.5em 0 0}.copyright,.footer-column-right{font-family:Noto Sans;text-align:center}.copyright{font-size:.8em}.desktop-five-columns{display:flex;width:100%}.desktop-five-columns .column{width:15%}.desktop-four-columns{display:flex;justify-content:space-between;margin-left:10%;width:90%}.desktop-four-columns .column{width:22%}.desktop-three-columns{display:flex;justify-content:space-between;width:100%}.desktop-three-columns .column{width:30%}.desktop-two-columns{display:flex;justify-content:space-between;margin-left:5%;width:90%}.desktop-two-columns .column{width:48%}.desktop-two-columns-aside{display:flex;gap:5%;margin-left:5%;margin-top:2%;width:100%}.desktop-two-columns-aside .column-aside{border-width:.05em;border-bottom:0;border-left:0;border-top:0;border-style:solid;width:15%}.desktop-two-columns-aside .column-main{width:65%}.desktop-two-columns-inline{display:flex;justify-content:space-between;width:100%}.desktop-two-columns-inline .column{width:48%}.desktop-two-columns-inline .column div{display:flex;margin-right:1em}.desktop-one-column,.desktop-one-column .column{width:100%}.buy-button button{font-family:Noto Sans;font-weight:700;margin-top:1.5em;width:100%}.buy-button button button:hover{color:#1982fa}.quantity-counter{display:flex}.quantity-title{font-family:Noto Sans;margin-left:1.5em}.quantity-counter-input input{font-family:Noto Sans;font-weight:700;width:2em}.quantity-counter-button-less{margin-left:1em}.add-button button{font-family:Noto Sans;font-weight:700;margin-top:1.5em;width:100%}.add-button button button:hover{color:#1982fa}.featured-levels{display:flex;flex-wrap:wrap;gap:.5em;justify-content:space-between;margin:.5em .5em 4.5em}.featured-level{border-radius:5%;border-style:solid;margin:.5em .5em 0;overflow:hidden;width:45%}.featured-level-title{font-family:Noto Sans;text-align:center}.product-level:hover{border-color:#1982fa;border-style:solid}.featured-title h1{font-family:Noto Sans;margin:1em 0;text-align:center}.level-description{display:flex;margin-top:2em;text-align:center;width:45%}.level-column{display:flex}.hamburger{cursor:pointer;margin-left:.5em;margin-top:-.3em;padding:5px}.bar1,.bar2,.bar3{background-color:#101010;display:block;height:3px;margin:5px auto;transition:.4s;width:35px}.change .bar1{transform:rotate(45deg) translate(8px,3px)}.change .bar2{opacity:0}.change .bar3{transform:rotate(-45deg) translate(8px,-3px)}.list-item{cursor:pointer;font-weight:700;list-style:none;padding:10px}.nav-sub{background-color:#1982fa;border-radius:0 0 0 10px;position:absolute;top:-15vh;width:10%}.nav-change,.nav-sub{right:0;transition:all .5s}.nav-change{top:5vh}.navbar-left-title{font-family:Noto Sans;margin:2em 95em 0 0}.navbar-right{display:flex;justify-content:space-between}.navbar-right ul{display:flex;justify-content:space-around;list-style:none;margin:2em 0 0}.navbar-right li a{color:#000;font-family:Noto Sans;font-size:1.5em;margin:1.2em;text-decoration:none}.navbar-right li a:hover{color:#fff}.navbar-right .home-icon{height:2em;margin:-.5em -2.5em 0 -1.5em;width:3em}.navbar-right .youtube-icon{height:3em;margin:-.5em .5em 0 1em;width:2.5em}.navbar-right .youtube-icon:hover{color:red}.navbar-right .instagram-icon{height:3em;margin:-.5em .5em 0 1em;width:2.5em}.navbar-right .instagram-icon:hover{color:#8a1e36}.navbar-right .facebook-icon{height:3em;margin:-.5em .5em 0 1em;width:2.5em}.navbar-right .facebook-icon:hover{color:#2e2eea}.navbar-right .twitter-icon{height:3em;margin:-.5em -.5em 0 1em;width:2.5em}.navbar-right .twitter-icon:hover{color:#02a0de}.slider img{margin:-.1em 0 0;width:100%}.slider-button button{background:rgba(0,0,0,.486);border-radius:10%;color:#fff;font-family:Noto Sans;font-size:1.5em;left:24em;padding:.5em;position:absolute;top:12em;z-index:1}.slider-button button:hover{background-color:#1982fa;color:#000;cursor:pointer}.slider-text{background:rgba(0,0,0,.486);border-radius:10%;color:#fff;font-family:Noto Sans;font-size:1em;left:27.5em;padding:.5em;position:absolute;top:8em;z-index:2}.table-cart table{border-style:solid;font-family:Noto Sans;margin:5em auto 1.5em;width:80%}.product-row{height:8em}.product-column{width:40%}.quantity-column,.total-price-column,.unit-price-column{width:20%}.cart-title{font-family:Noto Sans;margin:3em auto 5em;text-align:center}.product-row .quantity-counter .quantity-form-input input{caret-color:transparent;margin-left:0;width:20%}.quantity-form-input{width:8em}.pay-button button{float:right}.back-shop button,.pay-button button{border-radius:10px;font-family:Noto Sans}.back-shop button:hover,.pay-button button:hover{background-color:#1982fa;border-radius:10px;color:#fff}.buttons{border:1px solid #000;border-radius:10px;padding:0}#counter,#minus,#plus{display:inline;font-size:25px;font-weight:700;padding:10px}#minus,#plus{cursor:pointer}.desktop-four-columns-checkout{margin-left:0}.data-invoice-title{margin-bottom:3em;text-align:left}.desktop-two-columns-checkout{margin-top:3em}.desktop-one-column-checkout{margin-left:5%;width:90%}.input-form input,.input-form-onecolumn input{width:100%}.total-products{margin-bottom:2em;margin-top:0}.payment-method,.quantity{margin-top:2em}.payment-style{display:flex}.input-form,.input-form-onecolumn{margin-bottom:.5em;margin-top:.5em}.pay-button-checkout button{font-family:Noto Sans;margin-top:3.5em;width:30em}.payment-section{margin-bottom:2em;margin-top:2em}.table-price{text-align:left;width:100%}.table-price tr{font-family:Noto Sans;text-align:center}.price-row{height:4em}.table-method-payment{font-family:Noto Sans;text-align:left;width:100%}.table-cart-checkout table{margin-left:0}.table-cart-checkout .product-column{text-align:left}.product-row .product-column,.product-row .quantity-column,.product-row .total-price-column,.product-row .unit-price-column{font-family:Noto Sans}.column-title{margin-bottom:3em;margin-top:5%}.column-title h1{text-decoration:underline}.column-information-title h2,.column-title h1{text-align:center}.column-information-title{margin-bottom:3em}.contact-column{display:flex;margin-left:25%;margin-top:2%}.contact-column svg{fill:#1982fa;height:3em}.contact-title{margin:3% 2%}.contact-form-element{display:inline-block;margin-top:.5em}.contact-form-label{margin-top:.5em;text-align:left}.contact-form-element textarea{height:6em;width:25em}.contact-form-element-button{margin:1% 70%}.contact-store{border-radius:10%;font-family:Ubuntu}.contact-store:hover{background-color:#1982fa;color:#fff}.mobile-one-main-column{margin-bottom:9.5em}.product-image{margin-top:5em}.product-image-little{margin-top:1.5em}.product-image-little:hover{border-color:#1982fa;border-style:solid}.product-title{font-family:Noto Sans;margin-top:4.5em}.product-price{margin-top:1.5em}.product-description,.product-price{font-family:Noto Sans;margin-left:1.5em}.product-description{margin-top:4em}.column-quantity{display:flex;margin-top:3.5em}.categories-title{font-family:Noto Sans;margin-bottom:1em;margin-left:0}.category{font-family:Noto Sans;margin-left:1.5em;margin-top:.5em}.category:hover{color:#fff}.column-categories{margin-top:.5em}.header-column-main{border-style:solid;border-left:0;border-right:0;border-width:.05em;display:flex;font-family:Noto Sans;justify-content:space-between}.total-products{margin-bottom:.5em;margin-top:.9em}.filter-products{margin-bottom:.5em;margin-top:.5em}.product-card{align-items:center;margin-top:2.5em}.product-card:hover{border-color:#1982fa;border-style:solid}.product-title h2{color:#1982fa;margin-bottom:.5em}.product-price h3,.product-title h2{font-family:Noto Sans;text-align:center}.product-button button{font-family:Noto Sans;font-weight:700;margin-bottom:.5em;margin-left:45%;margin-top:1.5em}.product-button button:hover{color:#1982fa}
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+form {
+  margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* List
+==============================================================================*/
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+video {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  color: hsl(0deg, 0%, 0%);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Noto Sans";
+}
+
+h5, h6 {
+  font-family: "Noto Sans";
+}
+
+a, td, th, p, button, span, label, select, input, textarea, li {
+  font-family: "Noto Sans";
+  font-size: 0.95em;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+h4 {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a {
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 300ms;
+}
+a:hover, a:focus {
+  outline: none;
+  text-decoration: none;
+  outline-offset: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+body {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+footer {
+  background-color: hsl(212deg, 96%, 54%);
+  height: auto;
+  width: 100%;
+  margin-top: 2em;
+  bottom: 0;
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+header {
+  background-color: hsl(212deg, 96%, 54%);
+  height: 5em;
+  margin: -1em 0em 0em 0em;
+  width: 100%;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0em 0em 0em 0em;
+  font-size: 1em;
+  bottom: 0;
+}
+
+.footer-column-left {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 0.5em 0em 0em 0em;
+}
+
+.footer-column-middle {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 0.5em -4em 0em 0em;
+}
+
+.footer-column-right {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 0.5em 0em 0em 0em;
+}
+
+.copyright {
+  font-family: "Noto Sans";
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.desktop-five-columns {
+  width: 100%;
+  display: flex;
+}
+
+.desktop-five-columns .column {
+  width: 15%;
+}
+
+.desktop-four-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 10%;
+}
+
+.desktop-four-columns .column {
+  width: 22%;
+}
+
+.desktop-three-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.desktop-three-columns .column {
+  width: 30%;
+}
+
+.desktop-two-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.desktop-two-columns .column {
+  width: 48%;
+}
+
+.desktop-two-columns-aside {
+  display: flex;
+  gap: 5%;
+  width: 100%;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.desktop-two-columns-aside .column-aside {
+  width: 15%;
+  border-width: 0.05em;
+  border-left: 0em;
+  border-top: 0em;
+  border-bottom: 0em;
+  border-style: solid;
+}
+
+.desktop-two-columns-aside .column-main {
+  width: 65%;
+}
+
+.desktop-two-columns-inline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.desktop-two-columns-inline .column {
+  width: 48%;
+}
+
+.desktop-two-columns-inline .column div {
+  display: flex;
+  margin-right: 1em;
+}
+
+.desktop-one-column {
+  width: 100%;
+}
+
+.desktop-one-column .column {
+  width: 100%;
+}
+
+.buy-button button {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  margin-top: 1.5em;
+  width: 100%;
+}
+.buy-button button button:hover {
+  color: hsl(212deg, 96%, 54%);
+}
+
+.quantity-counter {
+  display: flex;
+}
+
+.quantity-title {
+  font-family: "Noto Sans";
+  margin-left: 1.5em;
+}
+
+.quantity-counter-input input {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  width: 2em;
+}
+
+.quantity-counter-button-less {
+  margin-left: 1em;
+}
+
+.add-button button {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  width: 100%;
+  margin-top: 1.5em;
+}
+.add-button button button:hover {
+  color: hsl(212deg, 96%, 54%);
+}
+
+.featured-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: space-between;
+  margin: 0.5em 0.5em 4.5em 0.5em;
+}
+
+.featured-level {
+  border-style: solid;
+  border-radius: 5%;
+  margin: 0.5em 0.5em 0em 0.5em;
+  overflow: hidden;
+  width: 45%;
+}
+
+.featured-level-title {
+  text-align: center;
+  font-family: "Noto Sans";
+}
+
+.product-level:hover {
+  border-color: hsl(212deg, 96%, 54%);
+  border-style: solid;
+}
+
+.featured-title h1 {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 1em 0em 1em 0em;
+}
+
+.level-description {
+  text-align: center;
+  margin-top: 2em;
+  display: flex;
+  width: 45%;
+}
+
+.level-column {
+  display: flex;
+}
+
+.slider img {
+  width: 100%;
+  margin: -0.1em 0em 0em 0em;
+}
+
+.slider-button button {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 12em;
+  left: 24em;
+  z-index: 1;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1.5em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+}
+
+.slider-button button:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  color: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+
+.slider-text {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 8em;
+  left: 27.5em;
+  z-index: 2;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+}
+
+.hamburger {
+  margin-top: -0.3em;
+  margin-left: 0.5em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  display: block;
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #101010;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: rotate(45deg) translate(8px, 3px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(-45deg) translate(8px, -3px);
+}
+
+/* hamburger */
+.list-item {
+  padding: 10px;
+  list-style: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-sub {
+  background-color: hsl(212deg, 96%, 54%);
+  position: absolute;
+  top: -15vh;
+  right: 0vh;
+  transition: all 0.5s;
+  width: 10%;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.nav-change {
+  right: 0vh;
+  top: 5vh;
+  transition: all 0.5s;
+}
+
+.navbar-left-title {
+  font-family: "Noto Sans";
+  margin: 2em 95em 0em 0em;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-right ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 2em 0em 0em 0em;
+}
+.navbar-right li a {
+  color: #000000;
+  font-size: 1.5em;
+  font-family: "Noto Sans";
+  margin: 1.2em;
+  text-decoration: none;
+}
+.navbar-right li a:hover {
+  color: hsl(0deg, 0%, 100%);
+}
+.navbar-right .home-icon {
+  margin: -0.5em -2.5em 0em -1.5em;
+  height: 2em;
+  width: 3em;
+}
+.navbar-right .youtube-icon {
+  margin: -0.5em 0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .youtube-icon:hover {
+  color: hsl(0deg, 100%, 50%);
+}
+.navbar-right .instagram-icon {
+  margin: -0.5em 0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .instagram-icon:hover {
+  color: hsl(347deg, 64%, 33%);
+}
+.navbar-right .facebook-icon {
+  margin: -0.5em 0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .facebook-icon:hover {
+  color: hsl(240deg, 82%, 55%);
+}
+.navbar-right .twitter-icon {
+  margin: -0.5em -0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .twitter-icon:hover {
+  color: hsl(197deg, 98%, 44%);
+}
+
+.slider img {
+  width: 100%;
+  margin: -0.1em 0em 0em 0em;
+}
+
+.slider-button button {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 12em;
+  left: 24em;
+  z-index: 1;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1.5em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+}
+
+.slider-button button:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  color: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+
+.slider-text {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 8em;
+  left: 27.5em;
+  z-index: 2;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+}
+
+.table-cart table {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+  font-family: "Noto Sans";
+  border-style: solid;
+  margin-bottom: 1.5em;
+}
+
+.product-row {
+  height: 8em;
+}
+
+.product-column {
+  width: 40%;
+}
+
+.quantity-column {
+  width: 20%;
+}
+
+.unit-price-column {
+  width: 20%;
+}
+
+.total-price-column {
+  width: 20%;
+}
+
+.cart-title {
+  text-align: center;
+  margin: auto;
+  margin-top: 3em;
+  font-family: "Noto Sans";
+  margin-bottom: 5em;
+}
+
+.product-row .quantity-counter .quantity-form-input input {
+  caret-color: transparent;
+  width: 20%;
+  margin-left: 0em;
+}
+
+.quantity-form-input {
+  width: 8em;
+}
+
+.pay-button button {
+  float: right;
+  font-family: "Noto Sans";
+  border-radius: 10px;
+}
+
+.back-shop button {
+  font-family: "Noto Sans";
+  border-radius: 10px;
+}
+
+.back-shop button:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  border-radius: 10px;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.pay-button button:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  border-radius: 10px;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.buttons {
+  border: 1px solid black;
+  padding: 0px;
+  border-radius: 10px;
+}
+
+#plus, #minus, #counter {
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline;
+}
+
+#plus, #minus {
+  cursor: pointer;
+}
+
+.desktop-four-columns-checkout {
+  margin-left: 0em;
+}
+
+.data-invoice-title {
+  text-align: left;
+  margin-bottom: 3em;
+}
+
+.desktop-two-columns-checkout {
+  margin-top: 3em;
+}
+
+.desktop-one-column-checkout {
+  margin-left: 5%;
+  width: 90%;
+}
+
+.input-form input {
+  width: 100%;
+}
+
+.input-form-onecolumn input {
+  width: 100%;
+}
+
+.total-products {
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+.quantity {
+  margin-top: 2em;
+}
+
+.payment-method {
+  margin-top: 2em;
+}
+
+.payment-style {
+  display: flex;
+}
+
+.input-form {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.input-form-onecolumn {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.pay-button-checkout button {
+  font-family: "Noto Sans";
+  width: 30em;
+  margin-top: 3.5em;
+}
+
+.payment-section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table-price {
+  width: 100%;
+  text-align: left;
+}
+
+.table-price tr {
+  font-family: "Noto Sans";
+  text-align: center;
+}
+
+.price-row {
+  height: 4em;
+}
+
+.table-method-payment {
+  width: 100%;
+  text-align: left;
+  font-family: "Noto Sans";
+}
+
+.table-cart-checkout table {
+  margin-left: 0;
+}
+
+.table-cart-checkout .product-column {
+  text-align: left;
+}
+
+.product-row .product-column {
+  font-family: "Noto Sans";
+}
+
+.product-row .quantity-column {
+  font-family: "Noto Sans";
+}
+
+.product-row .unit-price-column {
+  font-family: "Noto Sans";
+}
+
+.product-row .total-price-column {
+  font-family: "Noto Sans";
+}
+
+.column-title {
+  margin-bottom: 3em;
+  margin-top: 5%;
+}
+
+.column-title h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.contact-column {
+  display: flex;
+  margin-left: 25%;
+  margin-top: 2%;
+}
+
+.column-information-title h2 {
+  text-align: center;
+}
+
+.column-information-title {
+  margin-bottom: 3em;
+}
+
+.contact-column {
+  display: flex;
+  margin-left: 25%;
+  margin-top: 2%;
+}
+
+.contact-column svg {
+  height: 3em;
+  fill: hsl(212deg, 96%, 54%);
+}
+
+.contact-title {
+  margin: 3% 2%;
+}
+
+.contact-form-element {
+  display: inline-block;
+  margin-top: 0.5em;
+}
+
+.contact-form-label {
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+.contact-form-element textarea {
+  height: 6em;
+  width: 25em;
+}
+
+.contact-form-element-button {
+  margin: 1% 70%;
+}
+
+.contact-store {
+  font-family: "Ubuntu";
+  border-radius: 10%;
+}
+
+.contact-store:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+.mobile-one-main-column {
+  margin-bottom: 9.5em;
+}
+
+.product-image {
+  margin-top: 5em;
+}
+
+.product-image-little {
+  margin-top: 1.5em;
+}
+
+.product-image-little:hover {
+  border-style: solid;
+  border-color: hsl(212deg, 96%, 54%);
+}
+
+.product-title {
+  font-family: "Noto Sans";
+  margin-top: 4.5em;
+}
+
+.product-price {
+  font-family: "Noto Sans";
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+}
+
+.product-description {
+  font-family: "Noto Sans";
+  margin-top: 4em;
+  margin-left: 1.5em;
+}
+
+.column-quantity {
+  display: flex;
+  margin-top: 3.5em;
+}
+
+/* column aside gallery */
+.categories-title {
+  font-family: "Noto Sans";
+  margin-left: 0em;
+  margin-bottom: 1em;
+}
+
+.category {
+  font-family: "Noto Sans";
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+}
+
+.category:hover {
+  color: white;
+}
+
+.column-categories {
+  margin-top: 0.5em;
+}
+
+/* column main gallery  */
+.header-column-main {
+  font-family: "Noto Sans";
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+  border-left: 0em;
+  border-right: 0em;
+  border-width: 0.05em;
+}
+
+.total-products {
+  margin-top: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+.filter-products {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.product-card {
+  margin-top: 2.5em;
+  align-items: center;
+}
+
+.product-card:hover {
+  border-color: hsl(212deg, 96%, 54%);
+  border-style: solid;
+}
+
+.product-title h2 {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin-bottom: 0.5em;
+  color: hsl(212deg, 96%, 54%);
+}
+
+.product-price h3 {
+  text-align: center;
+  font-family: "Noto Sans";
+}
+
+.product-button button {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  margin-left: 45%;
+}
+
+.product-button button:hover {
+  color: hsl(212deg, 96%, 54%);
+}
