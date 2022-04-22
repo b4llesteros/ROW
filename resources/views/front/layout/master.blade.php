@@ -24,4 +24,5 @@
         @include("front.layout.partials.footer")     
     </body>
 
+    @include("front.layout.partials.scripts")      
 </html>

@@ -85,7 +85,7 @@
                         
             <div class="desktop-one-column mobile-one-column">
                 <div class="slider">
-                    <img src= alt="">
+                    <img src="{{Storage::url('slider1.png')}}" alt="">
                 </div>
                 <div class="slider-button">
                     <button>Let's Go</button>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="featured-level">
                         <div class="featured-level-image">
-                            <img src="{{ asset('A1.png') }}" alt="description of myimage">
+                            <img src="{{Storage::url('A1.png')}}" alt="">
                         </div>
                         <div class="featured-level-title">
                             <h2>Beginner</h2>
@@ -123,7 +123,7 @@
                     
                     <div class="featured-level">                
                         <div class="featured-level-image">
-                            <img src="images/A2.png">
+                            <img src="{{Storage::url('A2.png')}}" alt="">
                         </div>
                         <div class="featured-level-title">
                             <h2>Elementary</h2>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="featured-level">                
                         <div class="featured-level-image">
-                            <img src="images/B1.png">
+                            <img src="{{Storage::url('B1.png')}}" alt="">
                         </div> 
                         <div class="featured-level-title">
                             <h2>Lower Intermediate</h2>
@@ -155,7 +155,7 @@
                 <div class="column level-column">                   
                     <div class="featured-level">                
                         <div class="featured-level-image">
-                            <img src="images/B2.png">
+                            <img src="{{Storage::url('B2.png')}}" alt="">
                         </div> 
                         <div class="featured-level-title">
                             <h2>Intermediate</h2>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="featured-level">                
                         <div class="featured-level-image">
-                            <img src="images/C1.png">
+                            <img src="{{Storage::url('C1.png')}}" alt="">
                         </div>
                         <div class="featured-level-title">
                             <h2>Upper intermediate</h2>
@@ -185,7 +185,7 @@
                 <div class="column level-column">
                     <div class="featured-level">                
                         <div class="featured-level-image">
-                            <img src="images/C2.png">
+                            <img src="{{Storage::url('C2.png')}}" alt="">
                         </div>
                         <div class="featured-level-title">
                             <h2>Advanced</h2>
