@@ -12,7 +12,7 @@
         <!-- NORMALIZE CSS -->
         <link href="style/normalize.css" rel="stylesheet">
         <!-- MAIN CSS -->
-        <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet">
+        <!-- <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet"> -->
         
     </head> --}}
 

@@ -1,5 +1,5 @@
 .navbar-left-title {    
-    font-family: 'Noto Sans';
+    font-family: $font-stack;
     margin: 2em 95em 0em 0em;        
 }
 
@@ -18,7 +18,7 @@
         li a{
             color: #000000;        
             font-size: 1.5em;
-            font-family: 'Noto Sans';
+            font-family: $font-stack;
             margin: 1.2em;  
             text-decoration: none;    
         }

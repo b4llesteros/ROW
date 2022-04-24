@@ -389,15 +389,15 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
 }
 
 h5, h6 {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
 }
 
 a, td, th, p, button, span, label, select, input, textarea, li {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   font-size: 0.95em;
 }
 
@@ -616,7 +616,7 @@ header {
 }
 
 .edit-section {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
 }
 
 .name-label {
@@ -693,7 +693,7 @@ header {
   text-align: center;
   margin-left: 3.5em;
   font-weight: 700;
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
 }
 
 .table {
@@ -709,7 +709,7 @@ header {
 }
 
 .table table {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", sans-serif;
   text-align: center;
   width: 100%;
 }
