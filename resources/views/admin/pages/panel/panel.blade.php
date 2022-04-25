@@ -45,14 +45,14 @@
                         <th>Nombre</th>
                         <th>Teléfono</th>
                         <th>Email</th>
-                        <th class="last-modification">Dirección</th>
+                        <th class="adress">Dirección</th>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>usuario 1</td>
                         <td>Teléfono 1</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button ">
@@ -73,7 +73,7 @@
                         <td>usuario 2</td>
                         <td>Teléfono 2</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -94,7 +94,7 @@
                         <td>usuario 3</td>
                         <td>Teléfono 3</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -115,7 +115,7 @@
                         <td>usuario 4</td>
                         <td>Teléfono 4</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -136,7 +136,7 @@
                         <td>usuario 5</td>
                         <td>Teléfono 5</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -157,7 +157,7 @@
                         <td>usuario 6</td>
                         <td>Teléfono 6</td>
                         <td>email@email.com</td>
-                        <td class="last-modification">Calle Random nº infinito</td>
+                        <td class="adress">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -197,9 +197,20 @@
                                 <li class="tab tabs--active">Contenido</li>
                                 <li class="tab">Imágenes</li>
                                 <li class="tab">SEO</li>
-                                <li><svg viewBox="0 0 24 24">
-                                         <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                                    </svg>
+                                    <li>
+                                        <div class="save-button">
+                                            <svg viewBox="0 0 24 24">
+                                                <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                            </svg>
+                                        </div>
+                                        <div class="save-button-menu">
+                                            <div class="save-button-confirm">
+                                                <span>Save</span>
+                                            </div>
+                                            <div class="cancel-button">
+                                                <span>Cancel</span>
+                                            </div>                                          
+                                        </div>   
                                 </li>
                                 <li>
                                     <svg  viewBox="0 0 24 24">

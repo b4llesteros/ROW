@@ -2187,6 +2187,27 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/cancelbutton.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/desktop/cancelbutton.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderCancelButton": () => (/* binding */ renderCancelButton)
+/* harmony export */ });
+var renderCancelButton = function renderCancelButton() {
+  var saveButtonMenu = document.querySelector(".save-button-menu");
+  var cancelButton = document.querySelector(".cancel-button");
+  cancelButton.addEventListener('click', function () {
+    saveButtonMenu.classList.add("save-button-menu-cancel");
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/edit-button.js":
 /*!***************************************************!*\
   !*** ./resources/js/admin/desktop/edit-button.js ***!
@@ -2266,6 +2287,28 @@ var renderMenuButton = function renderMenuButton() {
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     menu.classList.toggle("active");
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/savebutton.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/desktop/savebutton.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderSaveButton": () => (/* binding */ renderSaveButton)
+/* harmony export */ });
+var renderSaveButton = function renderSaveButton() {
+  var saveButton = document.querySelector(".save-button");
+  var saveButtonMenu = document.querySelector(".save-button-menu");
+  var cancelButton = document.querySelector(".cancel-button");
+  saveButton.addEventListener('click', function () {
+    saveButtonMenu.classList.add("save-button-menu-active");
   });
 };
 
@@ -19768,16 +19811,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit-button.js */ "./resources/js/admin/desktop/edit-button.js");
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/admin/desktop/menu-button.js");
 /* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
+/* harmony import */ var _savebutton_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./savebutton.js */ "./resources/js/admin/desktop/savebutton.js");
+/* harmony import */ var _cancelbutton_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cancelbutton.js */ "./resources/js/admin/desktop/cancelbutton.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
- // import { renderFilterButton } from './filter-button.js';
+
+
 
 
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
-(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)(); // renderFilterButton ();
-
+(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
+(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)();
+(0,_cancelbutton_js__WEBPACK_IMPORTED_MODULE_4__.renderCancelButton)(); // import { renderFilterButton } from './filter-button.js';
+// renderFilterButton ();
 })();
 
 /******/ })()
