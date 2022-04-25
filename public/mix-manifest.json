@@ -3,7 +3,13 @@
     "/front/mobile/js/app-mobile.js": "/front/mobile/js/app-mobile.js?id=9cb2b2332bcbbde2444ae54c7c06a179",
     "/admin/desktop/js/app.js": "/admin/desktop/js/app.js?id=a973c38968ca8fd8bb8ed3a1b1418259",
     "/front/mobile/css/app-mobile.css": "/front/mobile/css/app-mobile.css?id=2122d1ca2ee8c9079584b5805ebe0bbd",
+<<<<<<< HEAD
     "/front/desktop/css/app.css": "/front/desktop/css/app.css?id=ddf3473243b2e9a71af8800819d3a3ec",
     "/admin/mobile/css/app-mobile.css": "/admin/mobile/css/app-mobile.css?id=2122d1ca2ee8c9079584b5805ebe0bbd",
     "/admin/desktop/css/app.css": "/admin/desktop/css/app.css?id=5df4b6f85927eabeab36f951e742f15e"
+=======
+    "/front/desktop/css/app.css": "/front/desktop/css/app.css?id=45c7b8179b5e232a7eae87d3c48fe76c",
+    "/admin/mobile/css/app-mobile.css": "/admin/mobile/css/app-mobile.css?id=dac3015e1e29d1861bb6850ddedd530e",
+    "/admin/desktop/css/app.css": "/admin/desktop/css/app.css?id=969808397c94f38d3bfa1cee29dc347b"
+>>>>>>> 584c8407c3b6543cf7840301a87ff91aa1bec307
 }

@@ -3,6 +3,7 @@
 @section('content')
     <div class="desktop-two-columns-aside mobile-one-column">
 
+<<<<<<< HEAD
         <div class="column-aside">
             <div class="desktop-one-colum mobile-one-column">
                 <div class="column-categories">
@@ -27,6 +28,14 @@
                 </div>
             </div>
         </div>
+=======
+        <!-- NORMALIZE CSS -->
+        <link href="style/normalize.css" rel="stylesheet">
+        <!-- MAIN CSS -->
+        <!-- <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet"> -->
+        
+    </head> --}}
+>>>>>>> 584c8407c3b6543cf7840301a87ff91aa1bec307
 
         <div class="column-main">
             <div class="desktop-one-column mobile-one-column">
