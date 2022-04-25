@@ -38,18 +38,21 @@
 
 @section('content')            
             <div class="table">
-                <table>
+                <table>             
+                                         
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Teléfono</th>
-                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th class="last-modification">Dirección</th>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>usuario 1</td>
                         <td>Teléfono 1</td>
-                        <td>Dirección 1</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button ">
@@ -69,7 +72,8 @@
                         <td>2</td>
                         <td>usuario 2</td>
                         <td>Teléfono 2</td>
-                        <td>Dirección 2</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -89,7 +93,8 @@
                         <td>3</td>
                         <td>usuario 3</td>
                         <td>Teléfono 3</td>
-                        <td>Dirección 3</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -109,7 +114,8 @@
                         <td>4</td>
                         <td>usuario 4</td>
                         <td>Teléfono 4</td>
-                        <td>Dirección 4</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -129,7 +135,8 @@
                         <td>5</td>
                         <td>usuario 5</td>
                         <td>Teléfono 5</td>
-                        <td>Dirección 5</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -149,7 +156,8 @@
                         <td>6</td>
                         <td>usuario 6</td>
                         <td>Teléfono 6</td>
-                        <td>Dirección 6</td>
+                        <td>email@email.com</td>
+                        <td class="last-modification">Calle Random nº infinito</td>
                         <td>
                             <div class="table-buttons">
                                 <div class="table-button delete-button">
@@ -179,31 +187,181 @@
                     <li>Contact</li>                    
                 </ul>                    
             </div>      
-              
-
-            
-                
-                
-                
+                                     
+                               
            
-                <div class="edit-section"> 
-                    <div class="desktop-one-column">
-                        <div class="column">
-                            <div class="edit-tabs">
-                                <div class="tab">
-                                    <span>Contenido</span>
+                <div class="desktp-one-column">                    
+                    <div class="edit-section"> 
+                        <div class="container-tabs">
+                            <ul class="container--tabs">
+                                <li class="tab tabs--active">Contenido</li>
+                                <li class="tab">Imágenes</li>
+                                <li class="tab">SEO</li>
+                                <li><svg viewBox="0 0 24 24">
+                                         <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                    </svg>
+                                </li>
+                                <li>
+                                    <svg  viewBox="0 0 24 24">
+                                        <path  d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
+                                    </svg>
+                                </li>
+                                <li>
+                                    <label class="btn-onoff">
+                                        <input type="checkbox" name="name" data-onoff="toggle"><span></span>	
+                                    </label>
+                                </li>
+                            </ul>                        
+                            <div class="container--content">
+                                <div class="content content--active">
+                                    <div class="desktop-two-columns">
+                                        <div class="column">
+                                            <div class="category-section">
+                                                <div class="category-title">
+                                                    <span>Categoría</span>
+                                                </div>
+                                                <div class="category-selector">
+                                                    <select>
+                                                        <option>Selecciona una categoría</option>
+                                                        <option>Categoría 1</option>
+                                                        <option>Categoría 2</option>
+                                                        <option>Categoría 3</option>
+                                                        <option>Categoría 4</option>
+                                                        <option>Categoría 5</option>
+                                                    </select>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                        <div class="column">
+                                            <div class="name-title">
+                                                <span>Nombre</span>
+                                            </div>
+                                            <div class="name-input">
+                                                <input type="text" name="name" placeholder="Escribe el nombre">  
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    <div class="desktop-one-column">
+                                        <div class="column">
+                                            <div class="column column-language">
+                                                <div class="language-tabs">
+                                                    <div class="tab">
+                                                        <span>Spanish</span>
+                                                    </div>
+                                                    <div class="tab">
+                                                        <span>English</span>
+                                                    </div>
+                                               </div>
+                                            </div>          
+                                        </div>
+                                        <div class="edit-title">
+                                            <span>Título</span>
+                                        </div>
+                                        <div class="title-input">
+                                            <input type="text" name="title" placeholder="Escribe el título">
+                                        </div>
+                                        <div class="content-title">
+                                            <span>Título</span>
+                                        </div>
+                                        <div class="content-input">
+                                            <textarea name="content" placeholder="Escribe el contenido"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab">
-                                    <span>Imágenes</span>
+                                <div class="content">
+                                   <span> Subir Imágenes</span>
                                 </div>
-                                <div class="tab">
-                                    <span>SEO</span>
+                                <div class="content">
+                                    <span>Configuración SEO</span>
                                 </div>
                             </div>
-                        </div>               
+                        </div>
+                        
+                        {{-- <div class="desktop-one-column">
+                            <div class="column column-edit">
+                                <div class="edit-tabs">
+                                    <div class="tab">
+                                        <span>Contenido</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span>Imágenes</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span>SEO</span>
+                                    </div>
+                                    <div class="tab-saveicon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="tab-clearicon">
+                                        <svg  viewBox="0 0 24 24">
+                                            <path  d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="container-onoff">
+                                        <label class="btn-onoff">
+                                            <input type="checkbox" name="name" data-onoff="toggle"><span></span>	
+                                        </label>                                     
+                                    </div>
+                                </div>
+                            </div>               
+                        </div>
+                        <div class="desktop-two-columns">
+                            <div class="column">
+                                <div class="category-section">
+                                    <div class="category-title">
+                                        <span>Categoría</span>
+                                    </div>
+                                    <div class="category-selector">
+                                        <select>
+                                            <option>Selecciona una categoría</option>
+                                            <option>Categoría 1</option>
+                                            <option>Categoría 2</option>
+                                            <option>Categoría 3</option>
+                                            <option>Categoría 4</option>
+                                            <option>Categoría 5</option>
+                                        </select>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="column">
+                                <div class="name-title">
+                                    <span>Nombre</span>
+                                </div>
+                                <div class="name-input">
+                                    <input type="text" name="name" placeholder="Escribe el nombre">  
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="desktop-one-column">
+                            <div class="column">
+                                <div class="column column-language">
+                                    <div class="language-tabs">
+                                        <div class="tab">
+                                            <span>Spanish</span>
+                                        </div>
+                                        <div class="tab">
+                                            <span>English</span>
+                                        </div>
+                                   </div>
+                                </div>          
+                            </div>
+                            <div class="edit-title">
+                                <span>Título</span>
+                            </div>
+                            <div class="title-input">
+                                <input type="text" name="title" placeholder="Escribe el título">
+                            </div>
+                            <div class="content-title">
+                                <span>Título</span>
+                            </div>
+                            <div class="content-input">
+                                <textarea name="content" placeholder="Escribe el contenido"></textarea>
+                            </div>
+                        </div> --}}
                     </div>
-                </div>
-                {{-- <div class="desktop-one-column">
+                    {{-- <div class="desktop-one-column">
                     <div class="column">
                         <div class="tab">
                             dasd

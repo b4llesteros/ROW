@@ -1,5 +1,5 @@
 .edit-section{
-    background-color: hsl(216, 100%, 71%);
+    background-color: $primary-color-light;
     opacity: 0;
     
     position: absolute;
@@ -49,7 +49,7 @@
         .tab{
             padding: 1em;
             margin-left:0em;
-            background-color: hsl(216, 100%, 71%);         
+            background-color:$secondary-color; ;         
     }
 }
 
@@ -57,4 +57,131 @@
     background-color: $primary-color;
 }
 
+
+.column-edit{
+    background-color: $secondary-color ;
+}
+
+
+.category-title{
+    margin-top: 1em;
+}
+
+.name-title{
+    margin-top: 1em;
+}
+
+.name-input input{
+    margin-top: 1em;
+    border-top: 0em;
+    border-left: 0em;
+    border-right: 0em; 
+    width: 28vh;   
+}
+
+.name-input input:hover{
+    outline: none;
+}
+
+.category-selector{
+    margin-top: 1em;
+}
+
+.category-section{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.column-language{
+    background-color:$secondary-color ;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  
+}
+
+.language-tabs{
+    display: flex;
+    
+
+        .tab{
+            padding: 1em;
+            margin-left:0em;
+            background-color: $secondary-color;  ;         
+    }
+}
+
+.tab:hover{
+    background-color: $primary-color;
+}
+
+.edit-title {
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+}
+
+.title-input input{
+    margin-left: 1.5em;
+    margin-top: 1em;
+    border-top: 0em;
+    border-left: 0em;
+    border-right: 0em; 
+    width: 50vh;   
+}
+
+.title-input input:hover{
+    outline: none;
+}
+
+.content-title{
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+}
+
+.content-input textarea{
+    margin-left: 1.5em;
+    margin-top: 1em;
+    border-top: 0em;
+    border-left: 0em;
+    border-right: 0em; 
+    width: 50vh;   
+    height: 15vh;
+    margin-bottom: 1.5em;
+    resize: none;
+}
+
+.content-input textarea:hover{
+    outline: none;
+
+    
+}
+
+
+.tab-saveicon{
+    padding: 0.5em;
+    margin-left:3em;
+    background-color: $secondary-color;  ;         
+    
+            svg{
+                height: 2em;
+
+                    &:hover{
+                       fill : #ffff;
+        }
+    }
+}
+
+
+.tab-clearicon{
+    padding: 0.5em;
+    margin-left:0em;
+    background-color: $secondary-color;  ;         
+    
+        svg{
+            height: 2em;
+            &:hover{
+                fill: #ffff;
+            }
+    }
+}
 

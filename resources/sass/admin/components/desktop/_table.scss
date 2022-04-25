@@ -8,6 +8,10 @@
 .table.minimized{
     transition: width 0.5s;
     width: 45%;
+    .last-modification{
+        display: none;
+    }
+
 }
 
 .table table{
@@ -47,6 +51,10 @@ tr:hover{
     display: flex;
     justify-content: space-evenly;
     width: 100%;  
+}
+
+.tr{
+    display: flex;
 }
 
 .table-button svg{

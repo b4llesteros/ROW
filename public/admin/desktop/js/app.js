@@ -2212,24 +2212,39 @@ var renderEditButton = function renderEditButton() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/filter-button.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/admin/desktop/filter-button.js ***!
-  \*****************************************************/
+/***/ "./resources/js/admin/desktop/edittabs.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/desktop/edittabs.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderFilterButton": () => (/* binding */ renderFilterButton)
+/* harmony export */   "renderEditTabs": () => (/* binding */ renderEditTabs)
 /* harmony export */ });
-var renderFilterButton = function renderFilterButton() {
-  var filterButton = document.querySelector(".filter-icon");
-  var filterMenu = document.querySelector(".filter-section");
-  filterButton.addEventListener('click', function () {
-    filterButton.classList.toggle("change");
-    filterMenu.classList.toggle("active");
-  });
+var renderEditTabs = function renderEditTabs() {
+  var tabs = document.querySelectorAll(".tab");
+  var contents = document.querySelectorAll(".content");
+
+  var _loop = function _loop(i) {
+    tabs[i].addEventListener("click", function () {
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].classList.remove("content--active");
+      }
+
+      for (var jj = 0; jj < tabs.length; jj++) {
+        tabs[jj].classList.remove("tabs--active");
+      }
+
+      contents[i].classList.add("content--active");
+      tabs[i].classList.add("tabs--active");
+    });
+  };
+
+  for (var i = 0; i < tabs.length; i++) {
+    _loop(i);
+  }
 };
 
 /***/ }),
@@ -19752,15 +19767,17 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit-button.js */ "./resources/js/admin/desktop/edit-button.js");
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/admin/desktop/menu-button.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
+ // import { renderFilterButton } from './filter-button.js';
 
 
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
-(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_2__.renderFilterButton)();
+(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)(); // renderFilterButton ();
+
+(0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
 })();
 
 /******/ })()

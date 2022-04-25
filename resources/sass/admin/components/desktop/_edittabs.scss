@@ -1,0 +1,68 @@
+
+.container-tabs {
+	
+}
+
+.container--tabs {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+    margin-top: 0em;
+    padding-top: 0em;
+
+	.tab {
+		min-height: 2em;
+		padding: 1em;
+		box-sizing: border-box;
+		width: 100%;
+		text-align: center;
+		cursor: pointer;
+		background-color: $primary-color-light;
+		color: rgb(0, 0, 0);
+        font-weight: 700;
+		transition: background-color 0.25s;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.25);
+			transition: background-color 0.25s;
+			color: white;
+		}
+	}
+
+	.tabs--active {
+		background-color: $primary-color;
+		color: black;
+		pointer-events: none;
+	}
+}
+
+.content {
+	display: none;
+
+}
+
+.content--active {
+	display: block;
+}
+
+h1 {
+	margin-bottom: 0.5em;
+	font-weight: 700;
+}
+
+p {
+	font-weight: 300;
+}
+
+
+li svg{
+    height: 2em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+li svg:hover{
+    fill: $primary-color;
+}
