@@ -26,7 +26,7 @@
 
         <div class="column level-column">
             <div class="level-description">
-                <h3>Level A1 corresponds to basic users of the language, i.e. those able to communciate in everyday situations with commonly-used expressions and elementary vocabulary.</h3>
+                <h5>Level A1 corresponds to basic users of the language, i.e. those able to communciate in everyday situations with commonly-used expressions.</h5>
             </div>
             <div class="featured-level">
                 <div class="featured-level-image">
@@ -49,7 +49,7 @@
                 </div>       
             </div>
             <div class="level-description">
-                <h3>Level A2 corresponds to basic users of the language, i.e. those able to communciate in everyday situations with commonly-used expressions and elementary vocabulary.</h3>
+                <h5>Level A2 corresponds to basic users of the language, i.e. those able to communciate in everyday situations.</h5>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
 
         <div class="column level-column">
             <div class="level-description">
-                <h3>Level B1 corresponds to independent users of the language, i.e. those who have the necessary fluency to communicate without effort with native speakers</h3>
+                <h5>Level B1 corresponds to independent users of the language, i.e. those who have the necessary fluency to communicate without effort with native speakers</h5>
             </div>
             <div class="featured-level">                
                 <div class="featured-level-image">
@@ -81,7 +81,7 @@
                 </div>               
             </div>
             <div class="level-description">
-                <h3>Level B2 corresponds to independent users of the language, i.e. those who have the necessary fluency to communicate without effort with native speakers</h3>
+                <h5>Level B2 corresponds to independent users of the language, i.e. those who have the necessary fluency to communicate without effort with native speakers</h5>
             </div>
         </div>
     </div>
@@ -89,7 +89,7 @@
     <div class="desktop-two-columns mobile-one-column">
         <div class="column level-column">
             <div class="level-description">
-                <h3>Level C1 corresponds to proficient users of the language, i.e. those able to perform complex tasks related to work and study.</h3>
+                <h5>Level C1 corresponds to proficient users of the language, i.e. those able to perform complex tasks related to work and study.</h5>
             </div>
             <div class="featured-level">                
                 <div class="featured-level-image">
@@ -111,7 +111,7 @@
                 </div>               
             </div>
             <div class="level-description">
-                <h3>Level C2 corresponds to proficient users of the language, i.e. those able to perform complex tasks related to work and study</h3>
+                <h5>Level C2 corresponds to proficient users of the language, i.e. those able to perform complex tasks related to work and study</h5>
             </div>
         </div>
     </div>           

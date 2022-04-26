@@ -2187,27 +2187,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/cancelbutton.js":
-/*!****************************************************!*\
-  !*** ./resources/js/admin/desktop/cancelbutton.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderCancelButton": () => (/* binding */ renderCancelButton)
-/* harmony export */ });
-var renderCancelButton = function renderCancelButton() {
-  var saveButtonMenu = document.querySelector(".save-button-menu");
-  var cancelButton = document.querySelector(".cancel-button");
-  cancelButton.addEventListener('click', function () {
-    saveButtonMenu.classList.add("save-button-menu-cancel");
-  });
-};
-
-/***/ }),
-
 /***/ "./resources/js/admin/desktop/edit-button.js":
 /*!***************************************************!*\
   !*** ./resources/js/admin/desktop/edit-button.js ***!
@@ -2229,6 +2208,43 @@ var renderEditButton = function renderEditButton() {
       edit.classList.toggle("active");
     });
   });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/edittabs-local.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/desktop/edittabs-local.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderEditTabsLocal": () => (/* binding */ renderEditTabsLocal)
+/* harmony export */ });
+var renderEditTabsLocal = function renderEditTabsLocal() {
+  var tabs = document.querySelectorAll(".tab-local");
+  var contents = document.querySelectorAll(".content-local");
+
+  var _loop = function _loop(i) {
+    tabs[i].addEventListener("click", function () {
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].classList.remove("content--active-local");
+      }
+
+      for (var jj = 0; jj < tabs.length; jj++) {
+        tabs[jj].classList.remove("tabs--active-local");
+      }
+
+      contents[i].classList.add("content--active-local");
+      tabs[i].classList.add("tabs--active-local");
+    });
+  };
+
+  for (var i = 0; i < tabs.length; i++) {
+    _loop(i);
+  }
 };
 
 /***/ }),
@@ -2309,6 +2325,9 @@ var renderSaveButton = function renderSaveButton() {
   var cancelButton = document.querySelector(".cancel-button");
   saveButton.addEventListener('click', function () {
     saveButtonMenu.classList.add("save-button-menu-active");
+  });
+  cancelButton.addEventListener('click', function () {
+    saveButtonMenu.classList.remove("save-button-menu-active");
   });
 };
 
@@ -19812,19 +19831,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/admin/desktop/menu-button.js");
 /* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
 /* harmony import */ var _savebutton_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./savebutton.js */ "./resources/js/admin/desktop/savebutton.js");
-/* harmony import */ var _cancelbutton_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cancelbutton.js */ "./resources/js/admin/desktop/cancelbutton.js");
+/* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
 
 
+ // import { renderCancelButton } from './cancelbutton.js';
 
 
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
-(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)();
-(0,_cancelbutton_js__WEBPACK_IMPORTED_MODULE_4__.renderCancelButton)(); // import { renderFilterButton } from './filter-button.js';
+(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)(); // renderCancelButton ();
+
+(0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__.renderEditTabsLocal)(); // import { renderFilterButton } from './filter-button.js';
 // renderFilterButton ();
 })();
 

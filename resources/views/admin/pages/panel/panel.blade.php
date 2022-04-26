@@ -1,38 +1,3 @@
-{{-- <!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="-">
-
-		<title></title>
-		<meta name="description" content="-">
-        <meta name="keywords" 	 content="-">
-
-        <!-- NORMALIZE CSS -->
-        <link href="style/normalize.css" rel="stylesheet">
-        <!-- MAIN CSS -->
-        <link href="{{mix('admin/desktop/css/app.css')}}" rel="stylesheet">
-        
-    </head> --}}
-
-    <body>
-        
-        {{-- <header>
-            <div class="desktop-one-column mobile-one-column">
-                <div class="column">
-                    <div class="panel-title">
-                        <h1>Usuarios</h1>
-                    </div>
-                </div>
-                <div class="hamburger">  
-                    <span class="bar1"></span>  
-                    <span class="bar2"></span>  
-                    <span class="bar3"></span>  
-                </div>
-            </div>
-        </header> --}}
-
 
 @extends('admin.layout.master')   
 
@@ -197,20 +162,20 @@
                                 <li class="tab tabs--active">Contenido</li>
                                 <li class="tab">Imágenes</li>
                                 <li class="tab">SEO</li>
-                                    <li>
-                                        <div class="save-button">
-                                            <svg viewBox="0 0 24 24">
-                                                <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                                            </svg>
+                                <li>
+                                    <div class="save-button">
+                                        <svg viewBox="0 0 24 24">
+                                            <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="save-button-menu">
+                                        <div class="save-button-confirm">
+                                            <span>Save</span>
                                         </div>
-                                        <div class="save-button-menu">
-                                            <div class="save-button-confirm">
-                                                <span>Save</span>
-                                            </div>
-                                            <div class="cancel-button">
-                                                <span>Cancel</span>
-                                            </div>                                          
-                                        </div>   
+                                        <div class="cancel-button">
+                                            <span>Cancel</span>
+                                        </div>                                          
+                                    </div>   
                                 </li>
                                 <li>
                                     <svg  viewBox="0 0 24 24">
@@ -255,28 +220,46 @@
                                     <div class="desktop-one-column">
                                         <div class="column">
                                             <div class="column column-language">
-                                                <div class="language-tabs">
-                                                    <div class="tab">
-                                                        <span>Spanish</span>
+                                                <div class="container-local">
+                                                    <ul class="container--tabs-local">
+                                                        <li class="tab-local tabs--active-local">Spanish</li>
+                                                        <li class="tab-local">English</li>
+                                                        
+                                                    </ul>
+                                                
+                                                    <div class="container--content-local">
+                                                        <div class="content-local content--active-local">
+                                                            <div class="edit-title">
+                                                                <span>Title</span>
+                                                            </div>
+                                                            <div class="title-input">
+                                                                <input type="text" name="title" placeholder="Escribe el título">
+                                                            </div>
+                                                            <div class="content-title">
+                                                                <span>Content</span>
+                                                            </div>
+                                                            <div class="content-input">
+                                                                <textarea name="content" placeholder="Escribe el contenido"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-local">
+                                                            <div class="edit-title">
+                                                                <span>Title</span>
+                                                            </div>
+                                                            <div class="title-input">
+                                                                <input type="text" name="title" placeholder="Escribe el título">
+                                                            </div>
+                                                            <div class="content-title">
+                                                                <span>Content</span>
+                                                            </div>
+                                                            <div class="content-input">
+                                                                <textarea name="content" placeholder="Escribe el contenido"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="tab">
-                                                        <span>English</span>
-                                                    </div>
-                                               </div>
+                                                </div>
                                             </div>          
-                                        </div>
-                                        <div class="edit-title">
-                                            <span>Título</span>
-                                        </div>
-                                        <div class="title-input">
-                                            <input type="text" name="title" placeholder="Escribe el título">
-                                        </div>
-                                        <div class="content-title">
-                                            <span>Título</span>
-                                        </div>
-                                        <div class="content-input">
-                                            <textarea name="content" placeholder="Escribe el contenido"></textarea>
-                                        </div>
+                                        </div>                                       
                                     </div>
                                 </div>
                                 <div class="content">
@@ -286,182 +269,11 @@
                                     <span>Configuración SEO</span>
                                 </div>
                             </div>
-                        </div>
-                        
-                        {{-- <div class="desktop-one-column">
-                            <div class="column column-edit">
-                                <div class="edit-tabs">
-                                    <div class="tab">
-                                        <span>Contenido</span>
-                                    </div>
-                                    <div class="tab">
-                                        <span>Imágenes</span>
-                                    </div>
-                                    <div class="tab">
-                                        <span>SEO</span>
-                                    </div>
-                                    <div class="tab-saveicon">
-                                        <svg viewBox="0 0 24 24">
-                                            <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                                        </svg>
-                                    </div>
-                                    <div class="tab-clearicon">
-                                        <svg  viewBox="0 0 24 24">
-                                            <path  d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
-                                        </svg>
-                                    </div>
-                                    <div class="container-onoff">
-                                        <label class="btn-onoff">
-                                            <input type="checkbox" name="name" data-onoff="toggle"><span></span>	
-                                        </label>                                     
-                                    </div>
-                                </div>
-                            </div>               
-                        </div>
-                        <div class="desktop-two-columns">
-                            <div class="column">
-                                <div class="category-section">
-                                    <div class="category-title">
-                                        <span>Categoría</span>
-                                    </div>
-                                    <div class="category-selector">
-                                        <select>
-                                            <option>Selecciona una categoría</option>
-                                            <option>Categoría 1</option>
-                                            <option>Categoría 2</option>
-                                            <option>Categoría 3</option>
-                                            <option>Categoría 4</option>
-                                            <option>Categoría 5</option>
-                                        </select>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="column">
-                                <div class="name-title">
-                                    <span>Nombre</span>
-                                </div>
-                                <div class="name-input">
-                                    <input type="text" name="name" placeholder="Escribe el nombre">  
-                                </div>   
-                            </div>
-                        </div>
-                        <div class="desktop-one-column">
-                            <div class="column">
-                                <div class="column column-language">
-                                    <div class="language-tabs">
-                                        <div class="tab">
-                                            <span>Spanish</span>
-                                        </div>
-                                        <div class="tab">
-                                            <span>English</span>
-                                        </div>
-                                   </div>
-                                </div>          
-                            </div>
-                            <div class="edit-title">
-                                <span>Título</span>
-                            </div>
-                            <div class="title-input">
-                                <input type="text" name="title" placeholder="Escribe el título">
-                            </div>
-                            <div class="content-title">
-                                <span>Título</span>
-                            </div>
-                            <div class="content-input">
-                                <textarea name="content" placeholder="Escribe el contenido"></textarea>
-                            </div>
-                        </div> --}}
+                        </div>                       
                     </div>
-                    {{-- <div class="desktop-one-column">
-                    <div class="column">
-                        <div class="tab">
-                            dasd
-                        </div>
-                        <div class="tab">
-                            adsa
-                        </div> 
-                        <div class="tab">
-                            asd
-                        </div>    
-                    </div>
-                  </div> 
-                <form>
-                    <div class="form-label">
-                        <div class="name-label">
-                            <label for="">Nombre</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="form-telephone">
-                        <div class="name-label">
-                            <label for="">Teléfono</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="form-email">
-                        <div class="name-label">
-                            <label for="">Email</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>                           
-                    <div class="form-adress">
-                        <div class="name-label">
-                            <label for="">Dirección</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="form-zipcode">
-                        <div class="name-label">
-                            <label for="">Código Postal</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                    <div class="form-idcard">
-                        <div class="name-label">
-                            <label for="">DNI</label>
-                        </div>
-                        <div class="form-input">
-                            <input type="text" class="form-control" id="">
-                        </div>
-                    </div>
-                </form> --}}
-              
+                </div>
+                    
 @endsection            
 
 
-            <!-- <div class="desktop-one-column mobile-one-column">
-                <div class="editbuttons">
-                    <div class="edit-button">
-                        <button type="button">Guardar</button>
-                    </div>
-                    <div class="edit-button">
-                        <button type="button">Cancelar</button>
-                    </div>
-                    <div class="edit-button">
-                        <button type="button">Crear Usuario</button>
-                    </div>
-                </div>  
-            </div> -->
-        </main>
-
-        <footer>
-
-        </footer>
-
-
-
-    </body>
-
-    
-
-</html>
+      

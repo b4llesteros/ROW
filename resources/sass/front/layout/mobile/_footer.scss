@@ -1,0 +1,37 @@
+.footer-columns{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0em 0em 0em 0em;
+    font-size: 1em;
+    bottom: 0;
+}
+
+.footer-column-left{
+    text-align: center;
+    font-family: 'Noto Sans, sans-serif';
+    margin-top: 0.5em;
+}
+
+.footer-column-middle{
+    text-align: center;
+    font-family: 'Noto Sans , sans-serif';
+    margin-left: 5em;
+    margin-top: 0.5em;
+    
+}
+
+.footer-column-right{
+    text-align: center;
+    font-family: 'Noto Sans , sans-serif';
+    margin: 0.5em 0em 0em 0em; 
+    margin-top: 0.5em;
+    display: none;       
+}
+
+.copyright{
+    font-family: 'Noto Sans';
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}

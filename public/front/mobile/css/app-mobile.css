@@ -435,3 +435,350 @@ a:hover, a:focus {
 .bold {
   font-weight: 700;
 }
+
+body {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+footer {
+  background-color: hsl(212deg, 96%, 54%);
+  width: 100%;
+  margin-top: 2em;
+  bottom: 0;
+  padding-bottom: 0.5em;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+header {
+  background-color: hsl(212deg, 96%, 54%);
+  height: 5em;
+  margin: -1em 0em 0em 0em;
+  width: 100%;
+  z-index: 10000;
+  position: fixed;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0em 0em 0em 0em;
+  font-size: 1em;
+  bottom: 0;
+}
+
+.footer-column-left {
+  text-align: center;
+  font-family: "Noto Sans, sans-serif";
+  margin-top: 0.5em;
+}
+
+.footer-column-middle {
+  text-align: center;
+  font-family: "Noto Sans , sans-serif";
+  margin-left: 5em;
+  margin-top: 0.5em;
+}
+
+.footer-column-right {
+  text-align: center;
+  font-family: "Noto Sans , sans-serif";
+  margin: 0.5em 0em 0em 0em;
+  margin-top: 0.5em;
+  display: none;
+}
+
+.copyright {
+  font-family: "Noto Sans";
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.mobile-five-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-five-columns .column {
+  width: 18%;
+}
+
+.mobile-four-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-four-columns .column {
+  width: 22%;
+}
+
+.mobile-three-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-three-columns .column {
+  width: 30%;
+}
+
+.mobile-two-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-two-columns .column {
+  width: 48%;
+}
+
+.mobile-one-column {
+  width: 100%;
+  display: block;
+}
+.mobile-one-column .column {
+  width: 100%;
+}
+
+.featured-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: space-between;
+  margin: 0.5em 0.5em 4.5em 0.5em;
+}
+
+.featured-level {
+  border-style: solid;
+  border-radius: 5%;
+  margin: 0.5em 0.5em 0em 0.5em;
+  overflow: hidden;
+  width: 45%;
+}
+
+.featured-level-title {
+  text-align: center;
+  font-family: "Noto Sans";
+}
+
+.product-level:hover {
+  border-color: hsl(212deg, 96%, 54%);
+  border-style: solid;
+}
+
+.featured-title h1 {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 1em 0em 1em 0em;
+}
+
+.level-description {
+  text-align: center;
+  margin-top: 2em;
+  display: flex;
+  width: 45%;
+}
+
+.level-column {
+  display: flex;
+}
+
+.slider img {
+  width: 100%;
+  margin: -0.1em 0em 0em 0em;
+}
+
+.slider-button button {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 12em;
+  left: 24em;
+  z-index: 1;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1.5em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+  display: none;
+}
+
+.slider-button button:hover {
+  background-color: hsl(212deg, 96%, 54%);
+  color: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+
+.slider-text {
+  font-family: "Noto Sans";
+  position: absolute;
+  top: 8em;
+  left: 27.5em;
+  z-index: 2;
+  padding: 0.5em;
+  background: hsla(0deg, 0%, 0%, 0.486);
+  font-size: 1em;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 10%;
+  display: none;
+}
+
+.buy-button button {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  margin-top: 1.5em;
+  width: 100%;
+}
+.buy-button button button:hover {
+  color: hsl(212deg, 96%, 54%);
+}
+
+.quantity-counter {
+  display: flex;
+}
+
+.quantity-title {
+  font-family: "Noto Sans";
+  margin-left: 1.5em;
+}
+
+.quantity-counter-input input {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  width: 2em;
+}
+
+.quantity-counter-button-less {
+  margin-left: 1em;
+}
+
+.add-button button {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  width: 100%;
+  margin-top: 1.5em;
+}
+.add-button button button:hover {
+  color: hsl(212deg, 96%, 54%);
+}
+
+.hamburger {
+  margin-top: -0.3em;
+  margin-left: 1.55em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  display: block;
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #101010;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: rotate(45deg) translate(8px, 3px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(-45deg) translate(8px, -3px);
+}
+
+/* hamburger */
+.list-item {
+  padding: 10px;
+  list-style: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-sub {
+  background-color: hsl(212deg, 96%, 54%);
+  position: absolute;
+  top: -30vh;
+  right: 0vh;
+  transition: all 0.5s;
+  width: 35%;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.nav-change {
+  right: 0vh;
+  top: 7vh;
+  transition: all 0.5s;
+}
+
+.navbar-left-title {
+  font-family: "Noto Sans";
+  margin: 2em 95em 0em 0em;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-right ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 2em 0em 0em 0em;
+}
+.navbar-right li a {
+  color: #000000;
+  font-size: 1.5em;
+  font-family: "Noto Sans";
+  margin: 1.2em;
+  text-decoration: none;
+  display: none;
+}
+.navbar-right li a:hover {
+  color: hsl(0deg, 0%, 100%);
+}
+.navbar-right .home-icon {
+  margin: 0em;
+  height: 2em;
+  width: 3em;
+}
+.navbar-right .youtube-icon {
+  margin: -0.5em 0.5em 0em 3em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .youtube-icon:hover {
+  color: hsl(0deg, 100%, 50%);
+}
+.navbar-right .instagram-icon {
+  margin: -0.5em 0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .instagram-icon:hover {
+  color: hsl(347deg, 64%, 33%);
+}
+.navbar-right .facebook-icon {
+  margin: -0.5em 0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .facebook-icon:hover {
+  color: hsl(240deg, 82%, 55%);
+}
+.navbar-right .twitter-icon {
+  margin: -0.5em -0.5em 0em 1em;
+  height: 3em;
+  width: 2.5em;
+}
+.navbar-right .twitter-icon:hover {
+  color: hsl(197deg, 98%, 44%);
+}

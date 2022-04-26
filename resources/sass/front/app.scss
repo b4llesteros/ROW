@@ -2,9 +2,9 @@
 
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "base/normalize";
-@import "base/contents";
-@import "base/typography";
+@import "base/desktop/normalize";
+@import "base/desktop/contents";
+@import "base/desktop/typography";
 @import "layout/desktop/master";
 @import "layout/desktop/header";
 @import "layout/desktop/footer";

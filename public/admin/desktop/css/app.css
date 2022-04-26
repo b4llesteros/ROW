@@ -647,6 +647,57 @@ li svg:hover {
   fill: #1982fa;
 }
 
+.container--tabs-local {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 0em;
+  padding-top: 0em;
+}
+.container--tabs-local .tab-local {
+  margin-top: 0.5em;
+  margin-left: 0.7em;
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: #8ab9ff;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  transition: background-color 0.25s;
+}
+.container--tabs-local .tab-local:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s;
+  color: white;
+}
+.container--tabs-local .tabs--active-local {
+  background-color: #1982fa;
+  color: black;
+  pointer-events: none;
+}
+
+.content-local {
+  display: none;
+}
+
+.content--active-local {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+}
+
 /*Start | On-Off Button Design*/
 .btn-onoff {
   margin-top: 0.5em;
@@ -805,6 +856,7 @@ li svg:hover {
   transition: all 0.2s;
   transition-delay: 0.1s;
   width: 0;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .edit-section > * {
@@ -891,6 +943,7 @@ li svg:hover {
   margin-top: 1.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .language-tabs {
@@ -1026,6 +1079,7 @@ li svg:hover {
   position: absolute;
   transition: width 0.8s;
   width: 90%;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .table.minimized {

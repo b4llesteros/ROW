@@ -10,9 +10,10 @@ export let renderSaveButton = () => {
          saveButtonMenu.classList.add("save-button-menu-active")        
       });  
 
-      
-           
+      cancelButton.addEventListener('click', () => {        
+        saveButtonMenu.classList.remove("save-button-menu-active")        
+     });  
+               
     }
     
-   
-    
+  

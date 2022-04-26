@@ -50,9 +50,12 @@
         <div class="column">
             <div class="navbar">
                 <ul class="nav-sub">  
-                    <li class="list-item">Home</li>  
-                    <li class="list-item">Blogs</li>  
-                    <li class="list-item">About me</li>  
+                    
+                    <li class="list-item mobile-only">Grammar</li>
+                    <li class="list-item mobile-only">Vocabulary</li>
+                    <li class="list-item mobile-only">Listening</li> 
+                    <li class="list-item mobile-only">Reading</li>  
+                    <li class="list-item mobile-only">Products</li> 
                 </ul>  
             </div>
         </div>

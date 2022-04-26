@@ -163,15 +163,17 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
          */
-
+        Jenssegers\Agent\AgentServiceProvider::class,
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\AgentServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -192,6 +194,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,        
     ])->toArray(),
 
 ];
+

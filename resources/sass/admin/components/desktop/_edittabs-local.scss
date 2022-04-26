@@ -1,6 +1,7 @@
 
-.container--tabs {
-	list-style: none;
+
+.container--tabs-local {
+    list-style: none;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -8,8 +9,10 @@
     margin-top: 0em;
     padding-top: 0em;
 
-	.tab {
-		min-height: 2em;
+	.tab-local {
+        margin-top: 0.5em;
+        margin-left: 0.7em;
+        min-height: 2em;
 		padding: 1em;
 		box-sizing: border-box;
 		width: 100%;
@@ -27,19 +30,19 @@
 		}
 	}
 
-	.tabs--active {
+	.tabs--active-local {
 		background-color: $primary-color;
 		color: black;
 		pointer-events: none;
 	}
 }
 
-.content {
+.content-local {
 	display: none;
 
 }
 
-.content--active {
+.content--active-local {
 	display: block;
 }
 
@@ -50,15 +53,4 @@ h1 {
 
 p {
 	font-weight: 300;
-}
-
-
-li svg{
-    height: 2em;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-}
-
-li svg:hover{
-    fill: $primary-color;
 }
