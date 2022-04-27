@@ -3,7 +3,7 @@
 @section('content')
     <div class="desktop-two-columns-aside mobile-one-column">
 
-<<<<<<< HEAD
+
         <div class="column-aside">
             <div class="desktop-one-colum mobile-one-column">
                 <div class="column-categories">
@@ -28,14 +28,14 @@
                 </div>
             </div>
         </div>
-=======
-        <!-- NORMALIZE CSS -->
+
+        {{-- <!-- NORMALIZE CSS -->
         <link href="style/normalize.css" rel="stylesheet">
         <!-- MAIN CSS -->
         <!-- <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet"> -->
-        
-    </head> --}}
->>>>>>> 584c8407c3b6543cf7840301a87ff91aa1bec307
+         --}}
+    </head> 
+
 
         <div class="column-main">
             <div class="desktop-one-column mobile-one-column">
@@ -60,7 +60,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/A1.png">                        
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">                        
                         </div>
                         <div class="product-title">
                             <h2>Starter</h2>
@@ -76,7 +76,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/A2.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt=""> 
                         </div>
                         <div class="product-title">
                             <h2>Elementary</h2>
@@ -92,7 +92,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/B1.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">  
                         </div>
                         <div class="product-title">
                             <h2>Intermediate</h2>
@@ -111,7 +111,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/B2.png">                        
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">                        
                         </div>
                         <div class="product-title">
                             <h2>Upper Intermediate</h2>
@@ -127,7 +127,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/C1.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt=""> 
                         </div>
                         <div class="product-title">
                             <h2>Expert</h2>
@@ -143,7 +143,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/C2.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">
                         </div>
                         <div class="product-title">
                             <h2>Mastery</h2>
@@ -163,7 +163,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/starterlistening.png">                        
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">                     
                         </div>
                         <div class="product-title">
                             <h2>Learn how to listen</h2>
@@ -179,7 +179,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/starterreading.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt=""> 
                         </div>
                         <div class="product-title">
                             <h2>Learn how to read</h2>
@@ -195,7 +195,7 @@
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/starterwriting.png">  
+                            <img src="{{Storage::url('starterreading.png')}}" alt="">
                         </div>
                         <div class="product-title">
                             <h2>Learn how to write</h2>

@@ -462,7 +462,6 @@ header {
   margin: -1em 0em 0em 0em;
   width: 100%;
   z-index: 10000;
-  position: fixed;
 }
 
 .footer-columns {
@@ -715,7 +714,7 @@ header {
 
 .nav-change {
   right: 0vh;
-  top: 7vh;
+  top: 6vh;
   transition: all 0.5s;
 }
 
@@ -746,7 +745,7 @@ header {
   color: hsl(0deg, 0%, 100%);
 }
 .navbar-right .home-icon {
-  margin: 0em;
+  margin-left: 2em;
   height: 2em;
   width: 3em;
 }

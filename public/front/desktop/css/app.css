@@ -540,8 +540,8 @@ header {
 
 .desktop-two-columns-aside {
   display: flex;
-  gap: 5%;
-  width: 100%;
+  justify-content: space-between;
+  width: 90%;
   margin-left: 5%;
   margin-top: 2%;
 }
@@ -556,7 +556,7 @@ header {
 }
 
 .desktop-two-columns-aside .column-main {
-  width: 65%;
+  width: 75%;
 }
 
 .desktop-two-columns-inline {
@@ -630,11 +630,10 @@ header {
 }
 
 .featured-level {
-  border-style: solid;
-  border-radius: 5%;
   margin: 0.5em 0.5em 0em 0.5em;
   overflow: hidden;
   width: 45%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .featured-level-title {
@@ -740,16 +739,16 @@ header {
 .nav-sub {
   background-color: hsl(212deg, 96%, 54%);
   position: absolute;
-  top: -15vh;
-  right: 0vh;
+  top: 0;
+  right: 0;
   transition: all 0.5s;
-  width: 10%;
-  border-radius: 0px 0px 0px 10px;
+  width: 35%;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .nav-change {
   right: 0vh;
-  top: 5vh;
+  top: 6vh;
   transition: all 0.5s;
 }
 
@@ -779,7 +778,7 @@ header {
   color: hsl(0deg, 0%, 100%);
 }
 .navbar-right .home-icon {
-  margin: -0.5em -2.5em 0em -1.5em;
+  margin: -0.5em -2.5em 0em -0.5em;
   height: 2em;
   width: 3em;
 }
@@ -1203,8 +1202,7 @@ header {
 }
 
 .product-card:hover {
-  border-color: hsl(212deg, 96%, 54%);
-  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .product-title h2 {
@@ -1214,19 +1212,46 @@ header {
   color: hsl(212deg, 96%, 54%);
 }
 
+.product-title {
+  margin-top: 0em;
+}
+
 .product-price h3 {
   text-align: center;
   font-family: "Noto Sans";
 }
 
 .product-button button {
+  background: #3D94F6;
+  background-image: -o-linear-gradient(top, #3D94F6, #1E62D0);
+  background-image: -webkit-gradient(to bottom, #3D94F6, #1E62D0);
+  border-radius: 20px;
+  color: #FFFFFF;
   font-family: "Noto Sans";
-  font-weight: 700;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  margin-left: 45%;
+  font-size: 1em;
+  font-weight: 100;
+  padding: 1em;
+  box-shadow: 1px 1px 20px 0 #000000;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid #337FED 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 6em;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
 }
 
 .product-button button:hover {
-  color: hsl(212deg, 96%, 54%);
+  border: solid #337FED 1px;
+  background: #1E62D0;
+  background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+  background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.product-price {
+  margin-left: 0em;
 }

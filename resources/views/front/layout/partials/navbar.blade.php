@@ -35,7 +35,7 @@
                         </svg>
                     </li>
                     <li>
-                        <div class="hamburger">  
+                        <div class="hamburger mobile-only">  
                             <span class="bar1"></span>  
                             <span class="bar2"></span>  
                             <span class="bar3"></span>  
@@ -48,8 +48,8 @@
 
     <div class="desktop-one-column">
         <div class="column">
-            <div class="navbar">
-                <ul class="nav-sub">  
+            <div class="navbar mobile-only">
+                <ul class="nav-sub mobile-only">  
                     
                     <li class="list-item mobile-only">Grammar</li>
                     <li class="list-item mobile-only">Vocabulary</li>

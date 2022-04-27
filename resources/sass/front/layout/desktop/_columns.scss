@@ -41,8 +41,9 @@
 
 .desktop-two-columns-aside{
     display: flex;
-    gap: 5%;
-    width: 100%;
+    justify-content: space-between;
+    
+    width: 90%;
     margin-left: 5%;
     margin-top: 2%;
 
@@ -59,7 +60,7 @@
 }
 
 .desktop-two-columns-aside .column-main{
-    width: 65%;
+    width: 75%;
 }
 
 .desktop-two-columns-inline{

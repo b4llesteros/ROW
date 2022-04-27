@@ -4,7 +4,7 @@
                     
     <div class="desktop-one-column mobile-one-column">
         <div class="slider">
-            <img src="{{Storage::url('slider1.png')}}" alt="">
+            <img src="{{Storage::url('slider4.png')}}" alt="">
         </div>
         <div class="slider-button">
             <button>Let's Go</button>
