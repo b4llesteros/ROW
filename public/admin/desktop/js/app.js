@@ -2286,6 +2286,30 @@ var renderEditTabs = function renderEditTabs() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/filter-button.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/desktop/filter-button.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderFilterButton": () => (/* binding */ renderFilterButton)
+/* harmony export */ });
+var renderFilterButton = function renderFilterButton() {
+  var filterButton = document.querySelector(".filter-icon");
+  var filterMenu = document.querySelector(".filter-section");
+  var container = document.querySelector(".container");
+  filterButton.addEventListener('click', function () {
+    filterButton.classList.toggle("change");
+    filterMenu.classList.toggle("active");
+    container.classList.toggle("container-movement");
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/menu-button.js":
 /*!***************************************************!*\
   !*** ./resources/js/admin/desktop/menu-button.js ***!
@@ -2300,9 +2324,14 @@ __webpack_require__.r(__webpack_exports__);
 var renderMenuButton = function renderMenuButton() {
   var hamburger = document.querySelector(".hamburger");
   var menu = document.querySelector(".menu");
+  var filterMenuClose = document.querySelector(".filter-section");
+  var container = document.querySelector(".container");
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     menu.classList.toggle("active");
+    filterMenuClose.classList.toggle("filter-section-disappear");
+    filterMenuClose.classList.remove("active");
+    container.classList.remove("container-movement");
   });
 };
 
@@ -19832,21 +19861,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
 /* harmony import */ var _savebutton_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./savebutton.js */ "./resources/js/admin/desktop/savebutton.js");
 /* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
 
 
- // import { renderCancelButton } from './cancelbutton.js';
 
 
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
-(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)(); // renderCancelButton ();
+(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)();
+(0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__.renderEditTabsLocal)();
 
-(0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__.renderEditTabsLocal)(); // import { renderFilterButton } from './filter-button.js';
-// renderFilterButton ();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_5__.renderFilterButton)();
 })();
 
 /******/ })()

@@ -457,6 +457,15 @@ main {
   width: 90%;
 }
 
+.container-movement {
+  transition: all 0.5s;
+  margin-top: 7em;
+}
+
+.container {
+  transition: all 0.5s;
+}
+
 header {
   background: linear-gradient(90deg, hsl(212deg, 96%, 54%) 0%, hsl(216deg, 100%, 77%) 50%, hsl(212deg, 96%, 54%) 100%);
   height: auto;
@@ -669,6 +678,7 @@ li svg:hover {
   color: rgb(0, 0, 0);
   font-weight: 700;
   transition: background-color 0.25s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .container--tabs-local .tab-local:hover {
   background-color: rgba(0, 0, 0, 0.25);
@@ -782,9 +792,10 @@ p {
   top: -90vh;
   left: 0vh;
   width: 100%;
-  height: 58vh;
+  height: 58.5vh;
   transition: all 0.5;
   opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .save-button-menu-active {
@@ -815,37 +826,98 @@ p {
 }
 
 .save-button-confirm {
-  margin-top: 40%;
+  margin-top: 45%;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
   font-size: 2em;
   text-align: center;
-  width: 30%;
-  height: 10%;
-  background: radial-gradient(circle, rgb(148, 187, 233) 7%, rgb(25, 130, 250) 60%);
-  padding-top: 0.3em;
-  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #3a86ff;
+  box-shadow: 0 5px #4433ff;
 }
 
 .save-button-confirm:hover {
-  cursor: pointer;
-  background-color: #6ba6ff;
-  color: hsl(0deg, 0%, 0%);
+  box-shadow: 0 3px #4433ff;
+  top: 1px;
+}
+
+.save-button-confirm:active {
+  box-shadow: 0 0 #4433ff;
+  top: 5px;
 }
 
 .cancel-button {
-  margin-top: 40%;
+  margin-top: 45%;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
   font-size: 2em;
   text-align: center;
-  width: 30%;
-  height: 10%;
-  background: radial-gradient(circle, rgb(148, 187, 233) 7%, rgb(25, 130, 250) 60%);
-  padding-top: 0.3em;
-  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #3a86ff;
+  box-shadow: 0 5px #4433ff;
 }
 
 .cancel-button:hover {
-  cursor: pointer;
-  background-color: #6ba6ff;
-  color: hsl(0deg, 0%, 0%);
+  box-shadow: 0 3px #4433ff;
+  top: 1px;
+}
+
+.cancel-button-confirm:active {
+  box-shadow: 0 0 #4433ff;
+  top: 5px;
+}
+
+.filter-section {
+  background-color: hsl(240deg, 2%, 89%);
+  position: absolute;
+  top: 5.5vh;
+  transition: all 0.5s;
+  width: 100%;
+  left: 0em;
+  height: 4vh;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.filter-section.active {
+  transition: all 0.5s;
+  height: 20vh;
+  width: 100%;
+}
+
+.filter-section-disappear {
+  transition: all 0.5s;
+  top: -20vh;
+}
+
+.filter-icon svg {
+  height: 1.5em;
+  fill: rgb(0, 0, 0);
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+.filter-section.change {
+  fill: rgb(233, 233, 233);
 }
 
 .edit-section {
@@ -856,7 +928,7 @@ p {
   transition: all 0.2s;
   transition-delay: 0.1s;
   width: 0;
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .edit-section > * {
@@ -1052,12 +1124,13 @@ p {
 
 .menu {
   background: linear-gradient(90deg, hsl(212deg, 96%, 54%) 0%, hsl(216deg, 100%, 77%) 50%, hsl(212deg, 96%, 54%) 100%);
-  position: absolute;
+  position: fixed;
   top: -1vh;
   transition: all 0.5s;
   width: 100%;
   left: 0em;
   height: auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .menu.active {
@@ -1079,7 +1152,7 @@ p {
   position: absolute;
   transition: width 0.8s;
   width: 90%;
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .table.minimized {
