@@ -1,15 +1,15 @@
 .edit-section{
     background-color: $primary-color-light;
-    opacity: 0;
-    
+    opacity: 0;    
     position: absolute;
     right: 5%;
     transition: all 0.2s;
     transition-delay: 0.1s;
-    width: 0;
-    
+    width: 0;    
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
+
 
 .edit-section > * {
     opacity: 0;

@@ -909,6 +909,17 @@ p {
   top: -20vh;
 }
 
+.filter {
+  top: -10vh;
+  transition: all 0.5s;
+  position: absolute;
+  margin-left: 30%;
+}
+
+.filter.active {
+  top: 5vh;
+}
+
 .filter-icon svg {
   height: 1.5em;
   fill: rgb(0, 0, 0);

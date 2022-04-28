@@ -69,7 +69,7 @@
                             <h3>50€</h3>
                         </div>
                         <div class="product-button">
-                            <a href="index.html"><button>Ficha</button></a>
+                            <a href="{{trans('productpage')}}"><button>Ficha</button></a>
                         </div>
                     </div>
                 </div>

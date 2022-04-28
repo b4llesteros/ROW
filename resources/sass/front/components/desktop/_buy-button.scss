@@ -2,11 +2,24 @@
     font-family: $font-stack;
     font-weight: 700;
     margin-top: 1.5em;
-    width: 100%;
+    width: 95%;
 
         button:hover{
             color: $primary-color; 
         }   
 }
+
+.add-button button{
+    font-family: $font-stack;
+    font-weight: 700;
+    margin-top: 1.5em;
+    width: 95%;
+    margin-right: 5%;
+
+        button:hover{
+            color: $primary-color; 
+        }   
+}
+
 
 

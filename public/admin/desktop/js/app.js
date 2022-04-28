@@ -2282,7 +2282,21 @@ var renderEditTabs = function renderEditTabs() {
   for (var i = 0; i < tabs.length; i++) {
     _loop(i);
   }
-};
+}; // export let renderEditTabs = () => {
+//   let editTabs = document.querySelectorAll(".tab");
+//   let editTabsActive = document.querySelector(".tabs--active");
+//   let contents = document.querySelector(".content");
+//   let contentsActive = document.querySelector(".content--active");
+//   editTabs.forEach(tab => {
+//     tab.addEventListener('click', () => {
+//         editTabs.classList.add("tabs--active"); 
+//         editTabsActive.classList.remove("tabs--active");
+//         contents.classList.add("content--active");
+//         contentsActive.classList.remove("content--active");
+//         contentsActive.classList.add("content");
+//     });
+// });
+// }
 
 /***/ }),
 
@@ -2301,10 +2315,14 @@ var renderFilterButton = function renderFilterButton() {
   var filterButton = document.querySelector(".filter-icon");
   var filterMenu = document.querySelector(".filter-section");
   var container = document.querySelector(".container");
+  var containerTabs = document.querySelector(".edit-section");
+  var filter = document.querySelector(".filter");
   filterButton.addEventListener('click', function () {
     filterButton.classList.toggle("change");
     filterMenu.classList.toggle("active");
     container.classList.toggle("container-movement");
+    containerTabs.classList.toggle("container-movement");
+    filter.classList.toggle("active");
   });
 };
 
@@ -2326,12 +2344,16 @@ var renderMenuButton = function renderMenuButton() {
   var menu = document.querySelector(".menu");
   var filterMenuClose = document.querySelector(".filter-section");
   var container = document.querySelector(".container");
+  var filter = document.querySelector(".filter");
+  var containerTabs = document.querySelector(".edit-section");
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     menu.classList.toggle("active");
     filterMenuClose.classList.toggle("filter-section-disappear");
     filterMenuClose.classList.remove("active");
     container.classList.remove("container-movement");
+    filter.classList.remove("active");
+    containerTabs.classList.remove("container-movement");
   });
 };
 

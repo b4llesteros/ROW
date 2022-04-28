@@ -1,3 +1,4 @@
+
 export let renderEditTabs = () => {
 
   const tabs = document.querySelectorAll(".tab");
@@ -21,4 +22,25 @@ export let renderEditTabs = () => {
   }
 }
 
+
+
+
+// export let renderEditTabs = () => {
+
+//   let editTabs = document.querySelectorAll(".tab");
+//   let editTabsActive = document.querySelector(".tabs--active");
+//   let contents = document.querySelector(".content");
+//   let contentsActive = document.querySelector(".content--active");
+
+//   editTabs.forEach(tab => {
+
+//     tab.addEventListener('click', () => {
+//         editTabs.classList.add("tabs--active"); 
+//         editTabsActive.classList.remove("tabs--active");
+//         contents.classList.add("content--active");
+//         contentsActive.classList.remove("content--active");
+//         contentsActive.classList.add("content");
+//     });
+// });
+// }
 

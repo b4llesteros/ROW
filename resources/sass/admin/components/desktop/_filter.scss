@@ -21,6 +21,18 @@
     transition: all 0.5s;
     top:-20vh ;    
 }
+
+.filter{
+    top:-10vh;
+    transition: all 0.5s;
+    position:absolute;
+    margin-left: 30%;
+}
+
+.filter.active{
+    top: 5vh;  
+    
+}
    
 
 
