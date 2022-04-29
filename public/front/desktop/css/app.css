@@ -604,6 +604,7 @@ header {
 }
 
 .quantity-counter {
+  margin-top: 2.5em;
   display: flex;
 }
 
@@ -617,8 +618,8 @@ header {
 #counter {
   font-family: "Noto Sans";
   font-weight: 700;
-  height: 1em;
-  width: 0.5em;
+  height: 2.8em;
+  width: 2em;
   margin-right: 0em;
 }
 
@@ -896,8 +897,18 @@ header {
   width: 40%;
 }
 
+.column-quantity-cart {
+  display: flex;
+}
+
 .quantity-column {
+  display: flex;
   width: 20%;
+}
+
+.quantity-container {
+  margin-top: 2.5em;
+  display: flex;
 }
 
 .unit-price-column {
@@ -914,16 +925,6 @@ header {
   margin-top: 3em;
   font-family: "Noto Sans";
   margin-bottom: 5em;
-}
-
-.product-row .quantity-counter .quantity-form-input input {
-  caret-color: transparent;
-  width: 20%;
-  margin-left: 0em;
-}
-
-.quantity-form-input {
-  width: 8em;
 }
 
 .pay-button button {
@@ -947,23 +948,6 @@ header {
   background-color: hsl(212deg, 96%, 54%);
   border-radius: 10px;
   color: hsl(0deg, 0%, 100%);
-}
-
-.buttons {
-  border: 1px solid black;
-  padding: 0px;
-  border-radius: 10px;
-}
-
-#plus, #minus, #counter {
-  padding: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  display: inline;
-}
-
-#plus, #minus {
-  cursor: pointer;
 }
 
 .desktop-four-columns-checkout {
@@ -1179,6 +1163,51 @@ header {
 .column-quantity {
   display: flex;
   margin-top: 3.5em;
+}
+
+.container-tabs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 0em;
+  padding-top: 0em;
+}
+
+.tab {
+  margin-top: 0.5em;
+  margin-left: 0.7em;
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: hsl(226deg, 71%, 63%);
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  transition: background-color 0.25s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.tab:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s;
+  color: white;
+}
+
+.tab--active {
+  background-color: hsl(212deg, 96%, 54%);
+  color: black;
+  pointer-events: none;
+}
+
+.content {
+  display: none;
+}
+
+.content--active {
+  display: block;
 }
 
 /* column aside gallery */

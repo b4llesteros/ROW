@@ -1,27 +1,33 @@
 
 export let renderEditTabs = () => {
 
-  const tabs = document.querySelectorAll(".tab");
-  const contents = document.querySelectorAll(".content");
-  
-  for (let i = 0; i < tabs.length; i++) {
+  let tabs = document.querySelectorAll('.tab');
+  let contents = document.querySelectorAll(".content");
 
-    tabs[i].addEventListener("click", () => {
 
-      for (let j = 0; j < contents.length; j++) {
-        contents[j].classList.remove("content--active");
-      }
 
-      for (let jj = 0; jj < tabs.length; jj++) {
-        tabs[jj].classList.remove("tabs--active");
-      }
+  tabs.forEach(tab => { 
 
-      contents[i].classList.add("content--active");
-      tabs[i].classList.add("tabs--active");
-    });
-  }
+      tab.addEventListener("click", () => {            
+                     
+          tabs.forEach(activeTabs => {
+              activeTabs.classList.remove("tab--active");
+          });  
+
+          tab.classList.add("tab--active");                
+
+          contents.forEach(content => {
+
+              content.classList.remove("content--active");
+
+              if (content.dataset.tab == tab.dataset.tab) { 
+                  content.classList.add("content--active");
+              }
+          });         
+      });
+  });
 }
-
+              
 
 
 

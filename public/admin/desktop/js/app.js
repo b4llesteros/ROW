@@ -2224,27 +2224,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderEditTabsLocal": () => (/* binding */ renderEditTabsLocal)
 /* harmony export */ });
 var renderEditTabsLocal = function renderEditTabsLocal() {
-  var tabs = document.querySelectorAll(".tab-local");
+  var tabs = document.querySelectorAll('.tab-local');
   var contents = document.querySelectorAll(".content-local");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (activeTabs) {
+        activeTabs.classList.remove("tab--active-local");
+      });
+      tab.classList.add("tab--active-local");
+      contents.forEach(function (content) {
+        content.classList.remove("content--active-local");
 
-  var _loop = function _loop(i) {
-    tabs[i].addEventListener("click", function () {
-      for (var j = 0; j < contents.length; j++) {
-        contents[j].classList.remove("content--active-local");
-      }
-
-      for (var jj = 0; jj < tabs.length; jj++) {
-        tabs[jj].classList.remove("tabs--active-local");
-      }
-
-      contents[i].classList.add("content--active-local");
-      tabs[i].classList.add("tabs--active-local");
+        if (content.dataset.tab == tab.dataset.tab) {
+          content.classList.add("content--active-local");
+        }
+      });
     });
-  };
-
-  for (var i = 0; i < tabs.length; i++) {
-    _loop(i);
-  }
+  });
 };
 
 /***/ }),
@@ -2261,27 +2257,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderEditTabs": () => (/* binding */ renderEditTabs)
 /* harmony export */ });
 var renderEditTabs = function renderEditTabs() {
-  var tabs = document.querySelectorAll(".tab");
+  var tabs = document.querySelectorAll('.tab');
   var contents = document.querySelectorAll(".content");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (activeTabs) {
+        activeTabs.classList.remove("tab--active");
+      });
+      tab.classList.add("tab--active");
+      contents.forEach(function (content) {
+        content.classList.remove("content--active");
 
-  var _loop = function _loop(i) {
-    tabs[i].addEventListener("click", function () {
-      for (var j = 0; j < contents.length; j++) {
-        contents[j].classList.remove("content--active");
-      }
-
-      for (var jj = 0; jj < tabs.length; jj++) {
-        tabs[jj].classList.remove("tabs--active");
-      }
-
-      contents[i].classList.add("content--active");
-      tabs[i].classList.add("tabs--active");
+        if (content.dataset.tab == tab.dataset.tab) {
+          content.classList.add("content--active");
+        }
+      });
     });
-  };
-
-  for (var i = 0; i < tabs.length; i++) {
-    _loop(i);
-  }
+  });
 }; // export let renderEditTabs = () => {
 //   let editTabs = document.querySelectorAll(".tab");
 //   let editTabsActive = document.querySelector(".tabs--active");

@@ -2166,12 +2166,15 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/front/menu-button.js");
 /* harmony import */ var _counter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./counter.js */ "./resources/js/front/counter.js");
+/* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/front/bootstrap.js");
+
 
 
 
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_0__.renderMenuButton)();
 (0,_counter_js__WEBPACK_IMPORTED_MODULE_1__.renderCounter)();
+(0,_tabs_js__WEBPACK_IMPORTED_MODULE_2__.renderTabs)();
 
 /***/ }),
 
@@ -2268,6 +2271,106 @@ var renderMenuButton = function renderMenuButton() {
     navsub.classList.toggle("nav-change");
   });
 };
+
+/***/ }),
+
+/***/ "./resources/js/front/tabs.js":
+/*!************************************!*\
+  !*** ./resources/js/front/tabs.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderTabs": () => (/* binding */ renderTabs)
+/* harmony export */ });
+var renderTabs = function renderTabs() {
+  var tabs = document.querySelectorAll('.tab');
+  var contents = document.querySelectorAll(".content");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (activeTabs) {
+        activeTabs.classList.remove("tab--active");
+      });
+      tab.classList.add("tab--active");
+      contents.forEach(function (content) {
+        content.classList.remove("content--active");
+
+        if (content.dataset.tab == tab.dataset.tab) {
+          content.classList.add("content--active");
+        }
+      });
+    });
+  });
+}; //     tabs.forEach((tab, i) => {
+//         tab.addEventListener("click", () => {
+//             tab.classList.add("tab--active"); 
+//             if (i == 0) {
+//                 tabs[0].classList.add("tab--active");
+//                 tabs[1].classList.remove("tab--active");
+//                 tabs[2].classList.remove("tab--active"); 
+//                 contents[0].classList.add("content--active");
+//                 contents[1].classList.remove("content--active"); 
+//                 contents[2].classList.remove("content--active");           
+//             } else if (i == 1) {
+//                 tabs[1].classList.add("tab--active");
+//                 tabs[0].classList.remove("tab--active");
+//                 tabs[2].classList.remove("tab--active");
+//                 contents[1].classList.add("content--active");
+//                 contents[2].classList.remove("content--active");
+//                 contents[0].classList.remove("content--active");  
+//             }else if (i == 2) {
+//                 tabs[2].classList.add("tab--active");
+//                 tabs[0].classList.remove("tab--active");
+//                 tabs[1].classList.remove("tab--active");
+//                 contents[2].classList.add("content--active"); 
+//                 contents[1].classList.remove("content--active");
+//                 contents[0].classList.remove("content--active");  
+//             }         
+//         });
+//     });
+// }
+//     tabs.forEach(tab => {
+//         tabs.forEach(tab => {
+//             tab.addEventListener('click', () => {
+//                 tabs.forEach(tab => {
+//                     tab.classList.remove('active');
+//                 });
+//             });
+//         });
+//     });
+// };
+//     tabs.forEach(tab => {
+//         tab.addEventListener("click", () => {
+//             tab.classList.toggle("tab--active"); 
+//             contents.forEach(content => {
+//                 content.classList.add("content--active");
+//                 if (tabs = 0) {
+//                     content.classList.remove("content--active");
+//                 }
+//             }
+//             });
+//             }                                       
+//         ); 
+//     });   
+// };
+//   export let renderTabs = () => {
+//     const tabs = document.querySelectorAll(".tab");
+//     const contents = document.querySelectorAll(".content");
+//     for (let i = 0; i < tabs.length; i++) {
+//       tabs[i].addEventListener("click", () => {
+//         for (let j = 0; j < contents.length; j++) {
+//           contents[j].classList.remove("content--active");
+//         }
+//         for (let jj = 0; jj < tabs.length; jj++) {
+//           tabs[jj].classList.remove("tabs--active");
+//         }
+//         contents[i].classList.add("content--active-local");
+//         tabs[i].classList.add("tabs--active");
+//       });
+//     }
+//   }
 
 /***/ }),
 
