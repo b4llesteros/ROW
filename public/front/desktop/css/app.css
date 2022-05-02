@@ -587,6 +587,7 @@ header {
   font-weight: 700;
   margin-top: 1.5em;
   width: 95%;
+  cursor: pointer;
 }
 .buy-button button button:hover {
   color: hsl(212deg, 96%, 54%);
@@ -598,6 +599,7 @@ header {
   margin-top: 1.5em;
   width: 95%;
   margin-right: 5%;
+  cursor: pointer;
 }
 .add-button button button:hover {
   color: hsl(212deg, 96%, 54%);
@@ -1187,6 +1189,7 @@ header {
   background-color: hsl(226deg, 71%, 63%);
   color: rgb(0, 0, 0);
   font-weight: 700;
+  cursor: pointer;
   transition: background-color 0.25s;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

@@ -26,15 +26,15 @@
                             <tr class="product-row">
                                 <th class="product-column">English for Dummies</th>
                                 <th class="quantity-column">
-                                    <div class="quantity-counter">
+                                    <div class="plus-minus-container">
                                         <div class="quantity-form-button">
-                                            <button id="minus"><span>-</span></button>
+                                            <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
                                         </div>
                                         <div class="quantity-input">
-                                            <input id="counter" type="text" value="1" data-min="0" disabled="disabled">
+                                            <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
                                         </div>
                                         <div class="quantity-form-button">
-                                            <button id="plus"><span>+</span></button>
+                                            <button class="plus-minus-button" data-type="plus">+</button>
                                         </div>  
                                     </div>
                                     
@@ -45,15 +45,15 @@
                             <tr class="product-row">
                                 <th class="product-column">English for Dummies</th>
                                 <th class="quantity-column">
-                                    <div class="quantity-counter">
+                                    <div class="plus-minus-container">
                                         <div class="quantity-form-button">
-                                            <button id="minus" class="minus"><span>-</span></button>
+                                            <button  class="plus-minus-button" data-type="minus">-</button>
                                         </div>
                                         <div class="quantity-input">
-                                            <input id="counter" class="counter" type="text" value="1" data-min="0" disabled="disabled">
+                                            <input  class="plus-minus-input" type="text" value="1" data-min="0" disabled="disabled">
                                         </div>
                                         <div class="quantity-form-button">
-                                            <button id="plus" class="plus"><span>+</span></button>
+                                            <button  class="plus-minus-button" data-type="plus"><span>+</span></button>
                                         </div>  
                                     </div>
                                     
