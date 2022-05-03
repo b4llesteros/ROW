@@ -2380,6 +2380,16 @@ var renderFilterButton = function renderFilterButton() {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/form.js":
+/*!********************************************!*\
+  !*** ./resources/js/admin/desktop/form.js ***!
+  \********************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\git-dual\\row\\resources\\js\\admin\\desktop\\form.js: Unexpected token (14:0)\n\n\u001b[0m \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m }\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at instantiate (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:3335:19)\n    at Parser.unexpected (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:3373:16)\n    at Parser.parseExprAtom (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:13015:22)\n    at Parser.parseExprSubscripts (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:12540:23)\n    at Parser.parseUpdate (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:12519:21)\n    at Parser.parseMaybeUnary (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:12490:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:12284:61)\n    at Parser.parseExprOps (C:\\git-dual\\row\\node_modules\\@babel\\parser\\lib\\index.js:12291:23)");
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/menu-button.js":
 /*!***************************************************!*\
   !*** ./resources/js/admin/desktop/menu-button.js ***!
@@ -19936,8 +19946,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _checkbox_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox.js */ "./resources/js/admin/desktop/checkbox.js");
 /* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
 /* harmony import */ var _notificationsavebutton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./notificationsavebutton */ "./resources/js/admin/desktop/notificationsavebutton.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
+
 
 
 
@@ -19953,8 +19965,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_checkbox_js__WEBPACK_IMPORTED_MODULE_4__.renderCheckBox)();
 (0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)();
 (0,_notificationsavebutton__WEBPACK_IMPORTED_MODULE_6__.renderNotificationSaveButton)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_7__.renderForm)();
 
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_7__.renderFilterButton)();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_8__.renderFilterButton)();
 })();
 
 /******/ })()
