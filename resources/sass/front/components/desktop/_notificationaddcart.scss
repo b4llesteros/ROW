@@ -1,0 +1,26 @@
+.add-button-notification{
+    position: absolute;
+    top: -20vh;
+    background-color: $primary-color;
+    padding: 2em;
+    border-radius: 1em;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    border: solid 0.2em hsl(0, 0%, 0%);
+
+}
+
+.add-button-notification-active{
+    top: 11vh;
+    right: 2vh;
+}
+
+.add-button-notification-svg svg{
+    width: 3em;
+    height: 3em;
+    fill: hsl(110, 100%, 50%);
+}
+
+.add-button-notification-title{
+    margin-top: 1em;
+}

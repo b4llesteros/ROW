@@ -2166,17 +2166,18 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/front/menu-button.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
-/* harmony import */ var _countercart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./countercart.js */ "./resources/js/front/countercart.js");
+/* harmony import */ var _counter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./counter.js */ "./resources/js/front/counter.js");
+/* harmony import */ var _notificationaddcart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./notificationaddcart.js */ "./resources/js/front/notificationaddcart.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/front/bootstrap.js");
 
- // import { renderCounter } from "./counter.js";
 
 
 
-(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_0__.renderMenuButton)(); // renderCounter();
 
+(0,_menu_button_js__WEBPACK_IMPORTED_MODULE_0__.renderMenuButton)();
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.renderTabs)();
-(0,_countercart_js__WEBPACK_IMPORTED_MODULE_2__.renderCounterCart)();
+(0,_counter_js__WEBPACK_IMPORTED_MODULE_2__.renderCounter)();
+(0,_notificationaddcart_js__WEBPACK_IMPORTED_MODULE_3__.renderNotification)();
 
 /***/ }),
 
@@ -2211,18 +2212,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/front/countercart.js":
-/*!*******************************************!*\
-  !*** ./resources/js/front/countercart.js ***!
-  \*******************************************/
+/***/ "./resources/js/front/counter.js":
+/*!***************************************!*\
+  !*** ./resources/js/front/counter.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderCounterCart": () => (/* binding */ renderCounterCart)
+/* harmony export */   "renderCounter": () => (/* binding */ renderCounter)
 /* harmony export */ });
-var renderCounterCart = function renderCounterCart() {
+var renderCounter = function renderCounter() {
   var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function () {
@@ -2230,16 +2231,28 @@ var renderCounterCart = function renderCounterCart() {
       var plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");
       var value = parseInt(plusMinusInput.value);
 
-      if (plusMinusButton.dataset.button == "plus") {
+      if (plusMinusButton.dataset.type == "plus") {
         value++;
-      } else if (plusMinusButton.dataset.button == "minus" && value > 1) {
+      } else if (plusMinusButton.dataset.type == "minus" && value > 1) {
         value--;
       }
 
       plusMinusInput.value = value;
     });
   });
-};
+}; // export let renderCounter = () => {
+//     let plus = document.getElementById("plus");
+//     let minus = document.getElementById("minus");
+//     let counter = document.getElementById("counter");
+//     plus.addEventListener("click", () => {
+//         counter.value = (parseInt(counter.value) + 1);
+//     });
+//     minus.addEventListener("click", () => {
+//         if (counter.value > 1) {
+//             counter.value = (parseInt(counter.value) - 1);
+//         }
+//     });
+// }
 
 /***/ }),
 
@@ -2260,6 +2273,30 @@ var renderMenuButton = function renderMenuButton() {
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     navsub.classList.toggle("nav-change");
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/notificationaddcart.js":
+/*!***************************************************!*\
+  !*** ./resources/js/front/notificationaddcart.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderNotification": () => (/* binding */ renderNotification)
+/* harmony export */ });
+var renderNotification = function renderNotification() {
+  var addButton = document.querySelector('.add-button');
+  var addButtonNotification = document.querySelector('.add-button-notification');
+  addButton.addEventListener('click', function (timeout) {
+    addButtonNotification.classList.add('add-button-notification-active');
+    setTimeout(function () {
+      addButtonNotification.classList.remove('add-button-notification-active');
+    }, 5000);
   });
 };
 

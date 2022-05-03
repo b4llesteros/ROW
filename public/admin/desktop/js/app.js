@@ -2187,6 +2187,66 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/checkbox.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/desktop/checkbox.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderCheckBox": () => (/* binding */ renderCheckBox)
+/* harmony export */ });
+var renderCheckBox = function renderCheckBox() {
+  var checkBox = document.getElementById("checkbox");
+  checkBox.addEventListener('click', function () {
+    checkBox.toggleAttribute("checked");
+  });
+}; // checkBox.addEventListener('click', () => {
+//     if(checkBox.checked){
+//         checkBox.checked = true;
+//         alert('checkbox esta seleccionado');
+//     }else{
+//         checkBox.checked = false;
+//     }
+// });
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/delete-button.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/desktop/delete-button.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderDeleteButton": () => (/* binding */ renderDeleteButton)
+/* harmony export */ });
+var renderDeleteButton = function renderDeleteButton() {
+  var deleteButtons = document.querySelectorAll('.delete-button');
+  var deleteLayer = document.querySelector('.delete-layer');
+  var deleteLayerCloseButton = document.querySelector('.delete-cancel');
+  deleteButtons.forEach(function (deleteButtons) {
+    deleteButtons.addEventListener('click', function () {
+      deleteLayer.classList.add('delete-layer-active');
+
+      if (deleteLayer.classList.contains('delete-layer-active')) {
+        deleteLayer.addEventListener('click', function () {
+          deleteLayer.classList.remove('delete-layer-active');
+        });
+      }
+    });
+  });
+  deleteLayerCloseButton.addEventListener('click', function () {
+    deleteLayerCloseButton.classList.remove('delete-layer-active');
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/edit-button.js":
 /*!***************************************************!*\
   !*** ./resources/js/admin/desktop/edit-button.js ***!
@@ -2351,26 +2411,25 @@ var renderMenuButton = function renderMenuButton() {
 
 /***/ }),
 
-/***/ "./resources/js/admin/desktop/savebutton.js":
-/*!**************************************************!*\
-  !*** ./resources/js/admin/desktop/savebutton.js ***!
-  \**************************************************/
+/***/ "./resources/js/admin/desktop/notificationsavebutton.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/admin/desktop/notificationsavebutton.js ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderSaveButton": () => (/* binding */ renderSaveButton)
+/* harmony export */   "renderNotificationSaveButton": () => (/* binding */ renderNotificationSaveButton)
 /* harmony export */ });
-var renderSaveButton = function renderSaveButton() {
-  var saveButton = document.querySelector(".save-button");
-  var saveButtonMenu = document.querySelector(".save-button-menu");
-  var cancelButton = document.querySelector(".cancel-button");
+var renderNotificationSaveButton = function renderNotificationSaveButton() {
+  var saveButton = document.querySelector('.save-button');
+  var saveButtonNotification = document.querySelector('.save-button-notification');
   saveButton.addEventListener('click', function () {
-    saveButtonMenu.classList.add("save-button-menu-active");
-  });
-  cancelButton.addEventListener('click', function () {
-    saveButtonMenu.classList.remove("save-button-menu-active");
+    saveButtonNotification.classList.add('save-button-notification-active');
+    setTimeout(function () {
+      saveButtonNotification.classList.remove('save-button-notification-active');
+    }, 3000);
   });
 };
 
@@ -19873,10 +19932,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit-button.js */ "./resources/js/admin/desktop/edit-button.js");
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/admin/desktop/menu-button.js");
 /* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
-/* harmony import */ var _savebutton_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./savebutton.js */ "./resources/js/admin/desktop/savebutton.js");
-/* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
+/* harmony import */ var _checkbox_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox.js */ "./resources/js/admin/desktop/checkbox.js");
+/* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
+/* harmony import */ var _notificationsavebutton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./notificationsavebutton */ "./resources/js/admin/desktop/notificationsavebutton.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
+
+
 
 
 
@@ -19886,10 +19949,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
-(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_3__.renderSaveButton)();
-(0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_4__.renderEditTabsLocal)();
+(0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__.renderEditTabsLocal)();
+(0,_checkbox_js__WEBPACK_IMPORTED_MODULE_4__.renderCheckBox)();
+(0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)();
+(0,_notificationsavebutton__WEBPACK_IMPORTED_MODULE_6__.renderNotificationSaveButton)();
 
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_5__.renderFilterButton)();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_7__.renderFilterButton)();
 })();
 
 /******/ })()

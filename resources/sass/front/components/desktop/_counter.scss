@@ -41,6 +41,27 @@
 	        position:relative;
 	    top:1px;
 }
+}
 
 
+.plus-minus-container{
+	display: flex;
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+}
+
+.quantity-column{
+	display: flex;
+	
+}
+
+.quantity-input{
+	margin-left: 0em;
+	margin-right:0em;
+	
+	
+}
+.quantity-input input{
+	width: 2em;
+	height: 3em;
 }

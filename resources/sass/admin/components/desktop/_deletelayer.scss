@@ -1,0 +1,32 @@
+.delete-layer{
+    background-color: rgba(0, 0, 0, 0.418);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: -100vh;
+    z-index: 2000;         
+}
+
+.delete-layer-active{    
+    top: 0;
+}
+
+.delete-confirmation button{
+    margin-top: 2em;
+    margin-left: 40em;
+}
+
+.delete-cancel button{
+    margin-top: 0.5em;
+   margin-left: 40.2em;
+}
+
+.delete-layer-title{
+    margin-top: 3em;
+    font-size: 3em;
+    margin-left: 10.5em;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Noto Sans', sans-serif;
+    
+}
