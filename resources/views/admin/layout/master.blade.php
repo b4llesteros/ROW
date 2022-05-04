@@ -14,7 +14,8 @@
     </head>
 
     <body>            
-        @include("admin.layout.partials.navbar")      
+        @include("admin.layout.partials.navbar")
+        @include("admin.components.notification")  
         
         <main>
             <div class="container">
