@@ -701,12 +701,12 @@ li svg:hover {
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  margin-top: -8em;
+  margin-top: 0em;
   margin-bottom: -2em;
   padding-top: 0em;
 }
 .container--tabs-local .tab-local {
-  margin-top: 10em;
+  margin-top: 0em;
   margin-left: 0.7em;
   min-height: 2em;
   padding: 1em;
@@ -868,13 +868,10 @@ p {
 .filter-section {
   background-color: hsl(240deg, 2%, 89%);
   position: absolute;
-  top: 6vh;
   transition: all 0.5s;
   width: 100%;
-  left: 0em;
   height: 4vh;
   text-align: center;
-  z-index: 10500;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -977,19 +974,19 @@ p {
   margin-top: 1em;
 }
 
-.name-title {
-  margin-top: 1em;
+.form-element-label {
+  margin-bottom: 2em;
 }
 
-.name-input input {
-  margin-top: 1em;
+.form-elemenet-input input {
+  margin-top: 3em;
   border-top: 0em;
   border-left: 0em;
   border-right: 0em;
   width: 28vh;
 }
 
-.name-input input:hover {
+.form-element-input input:hover {
   outline: none;
 }
 
@@ -1086,7 +1083,7 @@ p {
   fill: white;
 }
 
-.name-section {
+.form-element {
   margin-left: 1.5em;
 }
 
@@ -1225,4 +1222,36 @@ tr:hover .table-buttons svg {
 
 .table.minimized td:last-child {
   width: 20%;
+}
+
+.image-selector input[type=file] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  top: 6vh;
+  left: 1vh;
+}
+
+.image-selector {
+  width: 20%;
+  cursor: pointer;
+}
+
+.image-selector {
+  background-color: #fff;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+}
+
+.image-preview svg {
+  height: 3.5em;
+}
+
+#image-preview {
+  cursor: pointer;
+}
+
+#image-preview img {
+  width: 100%;
 }

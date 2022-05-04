@@ -71,19 +71,19 @@
     margin-top: 1em;
 }
 
-.name-title{
-    margin-top: 1em;
+.form-element-label{
+    margin-bottom: 2em;
 }
 
-.name-input input{
-    margin-top: 1em;
+.form-elemenet-input input{
+    margin-top: 3em;
     border-top: 0em;
     border-left: 0em;
     border-right: 0em; 
     width: 28vh;   
 }
 
-.name-input input:hover{
+.form-element-input input:hover{
     outline: none;
 }
 
@@ -190,6 +190,6 @@
     }
 }
 
-.name-section{
+.form-element{
     margin-left: 1.5em;
 }

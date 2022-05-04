@@ -8,6 +8,7 @@ import { renderCheckBox} from './checkbox.js';
 import { renderDeleteButton} from './delete-button.js';
 // import { renderNotification} from './notification';
 import { renderForm } from './form.js';
+import { renderImageUpload} from './imageupload.js';
 
 renderEditButton();
 renderMenuButton ();
@@ -17,6 +18,7 @@ renderCheckBox ();
 renderDeleteButton ();
 // renderNotification ();
 renderForm ();
+renderImageUpload ();
 
 import { renderFilterButton } from './filter-button.js';
 renderFilterButton ();

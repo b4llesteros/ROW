@@ -2396,8 +2396,42 @@ __webpack_require__.r(__webpack_exports__);
 var renderForm = function renderForm() {
   var saveButton = document.querySelector('.save-button');
   saveButton.addEventListener('click', function () {
-    (0,_notification_js__WEBPACK_IMPORTED_MODULE_0__.renderNotification)("Saved Succesfuly", "success");
+    (0,_notification_js__WEBPACK_IMPORTED_MODULE_0__.renderNotification)("Saved Successfuly", "success");
   });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/imageupload.js":
+/*!***************************************************!*\
+  !*** ./resources/js/admin/desktop/imageupload.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderImageUpload": () => (/* binding */ renderImageUpload)
+/* harmony export */ });
+var renderImageUpload = function renderImageUpload() {
+  var chooseFile = document.getElementById('choose-file');
+  var imgPreview = document.getElementById('image-preview');
+  chooseFile.addEventListener("change", function () {
+    getImgData();
+  });
+
+  function getImgData() {
+    var files = chooseFile.files[0];
+
+    if (files) {
+      var fileReader = new FileReader();
+      fileReader.readAsDataURL(files);
+      fileReader.addEventListener("load", function () {
+        imgPreview.style.display = "block";
+        imgPreview.innerHTML = '<img src="' + this.result + '" />';
+      });
+    }
+  }
 };
 
 /***/ }),
@@ -19958,7 +19992,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _checkbox_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox.js */ "./resources/js/admin/desktop/checkbox.js");
 /* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
 /* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _imageupload_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./imageupload.js */ "./resources/js/admin/desktop/imageupload.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
@@ -19969,6 +20004,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
  // import { renderNotification} from './notification';
 
 
+
 (0,_edit_button_js__WEBPACK_IMPORTED_MODULE_0__.renderEditButton)();
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
@@ -19977,8 +20013,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)(); // renderNotification ();
 
 (0,_form_js__WEBPACK_IMPORTED_MODULE_6__.renderForm)();
+(0,_imageupload_js__WEBPACK_IMPORTED_MODULE_7__.renderImageUpload)();
 
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_7__.renderFilterButton)();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_8__.renderFilterButton)();
 })();
 
 /******/ })()

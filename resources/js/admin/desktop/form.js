@@ -7,7 +7,7 @@ export let renderForm = () => {
 
     saveButton.addEventListener('click',() => {
 
-        renderNotification("Saved Succesfuly" , "success");
+        renderNotification("Saved Successfuly" , "success");
             
     });
 }

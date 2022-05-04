@@ -1,0 +1,32 @@
+.image-selector input[type='file'] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top:6vh;
+    left:1vh;
+}
+
+.image-selector {
+    width: 20%;
+    cursor: pointer;
+}
+
+.image-selector{
+    
+    background-color: #fff;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;    
+}
+
+.image-preview svg{
+    height: 3.5em;
+}
+
+#image-preview{
+    cursor: pointer; 
+}
+
+#image-preview img{
+    width: 100%;
+}
