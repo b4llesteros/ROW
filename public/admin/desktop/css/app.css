@@ -1239,6 +1239,7 @@ tr:hover .table-buttons svg {
 
 .image-selector {
   width: 100%;
+  height: auto;
   background-color: #fff;
   margin-left: 0.5em;
   margin-bottom: 0.5em;
@@ -1261,8 +1262,30 @@ tr:hover .table-buttons svg {
   height: 3.5em;
 }
 
+.image-preview-svg:hover {
+  fill: rgb(68, 111, 253);
+}
+
 .image-preview-svg.hidden {
   display: none;
+}
+
+.image-preview-delete {
+  height: 3em;
+  width: 1.5em;
+  fill: rgb(0, 0, 0);
+}
+
+.image-preview-delete svg:hover {
+  fill: rgb(68, 111, 253);
+}
+
+.image-preview-element {
+  display: none;
+}
+
+.image-preview-element.active {
+  display: block;
 }
 
 #image-preview {

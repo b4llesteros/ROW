@@ -1,14 +1,20 @@
-export let renderNotification = (message, state) => {
+export let renderNotification = () => {
+
+
+document.addEventListener("message", (event =>{
 
     let notificationLayer = document.querySelector('.notification');
     let notificationText = document.querySelector('.notification-text');
 
+    notificationText.innerHTML = event.detail.text;
+    notificationLayer.classList.add(event.detail.type);
     notificationLayer.classList.add('notification-active');
-    notificationLayer.classList.add(state);
-    notificationText.innerHTML = message;
+    
+    
 
     setTimeout(() => {
         notificationLayer.classList.remove('notification-active');
+        notificationLayer.classList.remove(event.detail.type);
     }, 5000);
-
+}));
 }

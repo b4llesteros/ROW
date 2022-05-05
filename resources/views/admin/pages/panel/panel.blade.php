@@ -204,7 +204,7 @@
                                     <li class="tab" data-tab="seo">SEO</li>
                                     <li class="tab" data-tab="images">Imágenes</li>
                                     <li>
-                                        <div class="save-button">
+                                        <div class="save-button" id="save-button">
                                             <svg viewBox="0 0 24 24">
                                                 <path  d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
                                             </svg>
@@ -249,7 +249,7 @@
                                                     <label for="name">Name</label>
                                                 </div>
                                                 <div class="form-element-input">                                                
-                                                    <input type="text" name="name" placeholder="Name" autocomplete="off">
+                                                    <input id="name-input" type="text" name="name" placeholder="Name" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -310,12 +310,11 @@
                                                     </svg>
                                                     <img class="image-preview-element" src="">
                                                     <div class="image-preview-delete">
-                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                        <svg   viewBox="0 0 24 24">
                                                             <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
-                                                        </svg>
-                                                    </div>  
-                                                </div>  
-                                                                                       
+                                                        </svg> 
+                                                    </div>                                                    
+                                                </div>                                                                                         
                                                 <input type="file" name="image-product" class="choose-file" accept="image/*" >
                                             </div>   
                                         </div> 
@@ -328,8 +327,8 @@
                                                     </svg>
                                                     <img class="image-preview-element" id="image-preview-element" src="">
                                                     <div class="image-preview-delete">
-                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                                            <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                                        <svg  viewBox="0 0 24 24">
+                                                            <path  d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
                                                         </svg>
                                                     </div>
                                                 </div>                                             

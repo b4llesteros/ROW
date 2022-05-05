@@ -2334,21 +2334,7 @@ var renderEditTabs = function renderEditTabs() {
       });
     });
   });
-}; // export let renderEditTabs = () => {
-//   let editTabs = document.querySelectorAll(".tab");
-//   let editTabsActive = document.querySelector(".tabs--active");
-//   let contents = document.querySelector(".content");
-//   let contentsActive = document.querySelector(".content--active");
-//   editTabs.forEach(tab => {
-//     tab.addEventListener('click', () => {
-//         editTabs.classList.add("tabs--active"); 
-//         editTabsActive.classList.remove("tabs--active");
-//         contents.classList.add("content--active");
-//         contentsActive.classList.remove("content--active");
-//         contentsActive.classList.add("content");
-//     });
-// });
-// }
+};
 
 /***/ }),
 
@@ -2391,13 +2377,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderForm": () => (/* binding */ renderForm)
 /* harmony export */ });
-/* harmony import */ var _notification_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./notification.js */ "./resources/js/admin/desktop/notification.js");
-
 var renderForm = function renderForm() {
-  var saveButton = document.querySelector('.save-button');
-  saveButton.addEventListener('click', function () {
-    (0,_notification_js__WEBPACK_IMPORTED_MODULE_0__.renderNotification)("Saved Successfuly", "success");
-  });
+  var saveButton = document.getElementById('save-button');
+  var nameInput = document.getElementById('name-input');
+
+  if (saveButton) {
+    saveButton.addEventListener('click', function () {
+      var name = nameInput.value;
+
+      if (name) {
+        document.dispatchEvent(new CustomEvent('message', {
+          detail: {
+            text: 'Formulario enviado correctamente',
+            type: 'success'
+          }
+        }));
+      } else {
+        document.dispatchEvent(new CustomEvent('message', {
+          detail: {
+            text: 'Por favor, rellene el formulario',
+            type: 'error'
+          }
+        }));
+      }
+    });
+  }
 };
 
 /***/ }),
@@ -2422,18 +2426,19 @@ var renderImageUpload = function renderImageUpload() {
       var fileReader = new FileReader();
       fileReader.readAsDataURL(files);
       fileReader.addEventListener("load", function () {
-        console.log(fileReader.result);
+        chooseFile.closest('.image-selector').querySelector('.image-preview-element').classList.add('active');
         chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = fileReader.result;
         chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.add('hidden');
         chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');
-        deleteFiles.forEach(function (deleteFile) {
-          deleteFile.addEventListener("click", function () {
-            chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = '';
-            chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
-            chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
-          });
-        });
       });
+    });
+  });
+  deleteFiles.forEach(function (deleteFile) {
+    deleteFile.addEventListener("click", function () {
+      deleteFile.closest('.image-selector').querySelector('.image-preview-element').classList.remove('active');
+      deleteFile.closest('.image-selector').querySelector('.image-preview-element').src = '';
+      deleteFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
+      deleteFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
     });
   });
 };
@@ -2482,15 +2487,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderNotification": () => (/* binding */ renderNotification)
 /* harmony export */ });
-var renderNotification = function renderNotification(message, state) {
-  var notificationLayer = document.querySelector('.notification');
-  var notificationText = document.querySelector('.notification-text');
-  notificationLayer.classList.add('notification-active');
-  notificationLayer.classList.add(state);
-  notificationText.innerHTML = message;
-  setTimeout(function () {
-    notificationLayer.classList.remove('notification-active');
-  }, 5000);
+var renderNotification = function renderNotification() {
+  document.addEventListener("message", function (event) {
+    var notificationLayer = document.querySelector('.notification');
+    var notificationText = document.querySelector('.notification-text');
+    notificationText.innerHTML = event.detail.text;
+    notificationLayer.classList.add(event.detail.type);
+    notificationLayer.classList.add('notification-active');
+    setTimeout(function () {
+      notificationLayer.classList.remove('notification-active');
+      notificationLayer.classList.remove(event.detail.type);
+    }, 5000);
+  });
 };
 
 /***/ }),
@@ -19995,9 +20003,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
 /* harmony import */ var _checkbox_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox.js */ "./resources/js/admin/desktop/checkbox.js");
 /* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
-/* harmony import */ var _imageupload_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./imageupload.js */ "./resources/js/admin/desktop/imageupload.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _notification__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./notification */ "./resources/js/admin/desktop/notification.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
+/* harmony import */ var _imageupload_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./imageupload.js */ "./resources/js/admin/desktop/imageupload.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
 
 
@@ -20005,7 +20014,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 
 
 
- // import { renderNotification} from './notification';
+
 
 
 
@@ -20014,12 +20023,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
 (0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__.renderEditTabsLocal)();
 (0,_checkbox_js__WEBPACK_IMPORTED_MODULE_4__.renderCheckBox)();
-(0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)(); // renderNotification ();
+(0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)();
+(0,_notification__WEBPACK_IMPORTED_MODULE_6__.renderNotification)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_7__.renderForm)();
+(0,_imageupload_js__WEBPACK_IMPORTED_MODULE_8__.renderImageUpload)();
 
-(0,_form_js__WEBPACK_IMPORTED_MODULE_6__.renderForm)();
-(0,_imageupload_js__WEBPACK_IMPORTED_MODULE_7__.renderImageUpload)();
-
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_8__.renderFilterButton)();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_9__.renderFilterButton)();
 })();
 
 /******/ })()

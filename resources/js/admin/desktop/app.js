@@ -6,7 +6,7 @@ import { renderEditTabs } from './edittabs.js';
 import { renderEditTabsLocal } from './edittabs-local.js';
 import { renderCheckBox} from './checkbox.js';
 import { renderDeleteButton} from './delete-button.js';
-// import { renderNotification} from './notification';
+import { renderNotification} from './notification';
 import { renderForm } from './form.js';
 import { renderImageUpload} from './imageupload.js';
 
@@ -16,7 +16,7 @@ renderEditTabs ();
 renderEditTabsLocal ();
 renderCheckBox ();
 renderDeleteButton ();
-// renderNotification ();
+renderNotification ();
 renderForm ();
 renderImageUpload ();
 
