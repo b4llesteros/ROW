@@ -12,15 +12,40 @@
 }
 
 .image-selector{
-    
+    width: 100%;
     background-color: #fff;
     margin-left: 0.5em;
     margin-bottom: 0.5em;
-    border-radius: 1em;    
+    border-radius: 1em;
+    overflow: hidden;    
+    margin-left: 2em;
+    
 }
+.image-preview-delete{
+    display: none;
+    position: absolute;
+    top: 8vh;
+    margin-left: 11em;
+
+    &.active{
+        display: block;
+    }
+
+}
+
 
 .image-preview svg{
     height: 3.5em;
+    
+}
+
+.image-preview-svg {
+
+    &.hidden {
+ 
+        display: none;
+    
+}
 }
 
 #image-preview{

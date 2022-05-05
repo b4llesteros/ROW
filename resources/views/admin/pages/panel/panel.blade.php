@@ -300,16 +300,40 @@
                                     <span>Posicionamiento SEO</span>
                                 </div>
                                 <div class="content" data-tab="images">
-                                     <div class="dektop-four-columns">
+                                    <div class="desktop-two-columns">
                                         <div class="column">
                                             <div class="image-selector">
                                                 <label class="file-input">
                                                 <div id="image-preview">
-                                                    <svg  viewBox="0 0 24 24">
+                                                    <svg class="image-preview-svg" viewBox="0 0 24 24">
                                                         <path  d="M20 18H4V8H20M20 6H12L10 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V8A2 2 0 0 0 20 6M16 17H14V13H11L15 9L19 13H16Z" />
                                                     </svg>
+                                                    <img class="image-preview-element" src="">
+                                                    <div class="image-preview-delete">
+                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                                        </svg>
+                                                    </div>  
+                                                </div>  
+                                                                                       
+                                                <input type="file" name="image-product" class="choose-file" accept="image/*" >
+                                            </div>   
+                                        </div> 
+                                        <div class="column">
+                                            <div class="image-selector">
+                                                <label class="file-input">
+                                                <div id="image-preview">
+                                                    <svg class="image-preview-svg" viewBox="0 0 24 24">
+                                                        <path  d="M20 18H4V8H20M20 6H12L10 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V8A2 2 0 0 0 20 6M16 17H14V13H11L15 9L19 13H16Z" />
+                                                    </svg>
+                                                    <img class="image-preview-element" id="image-preview-element" src="">
+                                                    <div class="image-preview-delete">
+                                                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+                                                        </svg>
+                                                    </div>
                                                 </div>                                             
-                                                <input type="file" name="choose-file" id="choose-file" accept="image/*" >
+                                                <input type="file" name="image-featured" class="choose-file" accept="image/*" >
                                             </div>   
                                         </div> 
                                     </div>

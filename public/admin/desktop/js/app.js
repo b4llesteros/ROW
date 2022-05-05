@@ -2414,24 +2414,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderImageUpload": () => (/* binding */ renderImageUpload)
 /* harmony export */ });
 var renderImageUpload = function renderImageUpload() {
-  var chooseFile = document.getElementById('choose-file');
-  var imgPreview = document.getElementById('image-preview');
-  chooseFile.addEventListener("change", function () {
-    getImgData();
-  });
-
-  function getImgData() {
-    var files = chooseFile.files[0];
-
-    if (files) {
+  var chooseFiles = document.querySelectorAll('.choose-file');
+  var deleteFiles = document.querySelectorAll('.image-preview-delete');
+  chooseFiles.forEach(function (chooseFile) {
+    chooseFile.addEventListener("change", function () {
+      var files = chooseFile.files[0];
       var fileReader = new FileReader();
       fileReader.readAsDataURL(files);
       fileReader.addEventListener("load", function () {
-        imgPreview.style.display = "block";
-        imgPreview.innerHTML = '<img src="' + this.result + '" />';
+        console.log(fileReader.result);
+        chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = fileReader.result;
+        chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.add('hidden');
+        chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');
+        deleteFiles.forEach(function (deleteFile) {
+          deleteFile.addEventListener("click", function () {
+            chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = '';
+            chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
+            chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
+          });
+        });
       });
-    }
-  }
+    });
+  });
 };
 
 /***/ }),

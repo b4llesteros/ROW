@@ -1,21 +1,36 @@
 export let renderImageUpload = () => {
 
-let chooseFile = document.getElementById('choose-file');
-let imgPreview = document.getElementById('image-preview');
+    let chooseFiles = document.querySelectorAll('.choose-file');
+    let deleteFiles = document.querySelectorAll('.image-preview-delete');     
 
-chooseFile.addEventListener("change", function() {
-    getImgData();
-});
+    chooseFiles.forEach(chooseFile => {
 
-function getImgData() {
-    const files = chooseFile.files[0];
-    if (files) {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(files);
-      fileReader.addEventListener("load", function () {
-        imgPreview.style.display = "block";
-        imgPreview.innerHTML = '<img src="' + this.result + '" />';
-      });    
-    }
-  }
+        chooseFile.addEventListener("change", function() {
+
+            let files = chooseFile.files[0]
+            let fileReader = new FileReader();
+
+            fileReader.readAsDataURL(files);
+            
+            fileReader.addEventListener("load", function () {
+                console.log(fileReader.result);
+                chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = fileReader.result;
+                chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.add('hidden');
+                chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');
+
+            
+    deleteFiles.forEach(deleteFile => {
+
+            deleteFile.addEventListener("click", function() {
+                
+                chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = '';
+                chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
+                chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
+                    
+                });
+            });
+            });
+        });
+    });
 }
+
