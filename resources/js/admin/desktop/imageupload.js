@@ -7,7 +7,7 @@ export let renderImageUpload = () => {
 
         chooseFile.addEventListener("change", () =>{
 
-            let files = chooseFile.files[0]
+            let files = chooseFile.files[0];
             let fileReader = new FileReader();
 
             fileReader.readAsDataURL(files);
@@ -16,8 +16,8 @@ export let renderImageUpload = () => {
                 chooseFile.closest('.image-selector').querySelector('.image-preview-element').classList.add('active');         
                 chooseFile.closest('.image-selector').querySelector('.image-preview-element').src = fileReader.result;
                 chooseFile.closest('.image-selector').querySelector('.image-preview-svg').classList.add('hidden');
-                chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');
-            });
+                chooseFile.closest('.image-selector').querySelector('.image-preview-delete').classList.add('active');                                         
+           });
         });
     });
 
@@ -29,7 +29,6 @@ export let renderImageUpload = () => {
             deleteFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
             deleteFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');                    
         });
-
     });
 }
 

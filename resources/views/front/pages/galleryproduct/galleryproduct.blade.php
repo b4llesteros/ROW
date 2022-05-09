@@ -2,8 +2,6 @@
 
 @section('content')
     <div class="desktop-two-columns-aside mobile-one-column">
-
-
         <div class="column-aside">
             <div class="desktop-one-colum mobile-one-column">
                 <div class="column-categories">
@@ -24,7 +22,7 @@
                     </div>
                     <div class="category">
                         <h4>Reading</h4>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>

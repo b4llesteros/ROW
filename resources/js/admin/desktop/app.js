@@ -9,6 +9,8 @@ import { renderDeleteButton} from './delete-button.js';
 import { renderNotification} from './notification';
 import { renderForm } from './form.js';
 import { renderImageUpload} from './imageupload.js';
+import { renderCkEditor} from './renderCkEditor.js';
+import { renderFilterButton } from './filter-button.js';
 
 renderEditButton();
 renderMenuButton ();
@@ -19,6 +21,5 @@ renderDeleteButton ();
 renderNotification ();
 renderForm ();
 renderImageUpload ();
-
-import { renderFilterButton } from './filter-button.js';
+renderCkEditor ();
 renderFilterButton ();

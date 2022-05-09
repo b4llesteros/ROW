@@ -1295,3 +1295,7 @@ tr:hover .table-buttons svg {
 #image-preview img {
   width: 100%;
 }
+
+.ck-editor__editable {
+  min-height: 15vh;
+}
