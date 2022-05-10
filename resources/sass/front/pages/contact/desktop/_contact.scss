@@ -51,7 +51,8 @@
 
 .contact-form-element textarea{
     height: 6em;
-    width: 25em;
+    width: 140%;
+    resize: none;
 }
 
 .contact-form-element-button{
@@ -67,3 +68,5 @@
     background-color: $primary-color;
     color: hsl(0, 0%, 100%);
 }
+
+

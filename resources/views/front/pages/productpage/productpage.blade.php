@@ -12,7 +12,7 @@
                             </div>
                         </div>    
                     </div>
-                    <div class="desktop-five-columns mobile-one-column">
+                    <div class="desktop-five-columns mobile-four-columns">
                         <div class="column">
                             <div class="product-image-little">
                                 <img src="{{Storage::url('C2.png')}}" alt="">

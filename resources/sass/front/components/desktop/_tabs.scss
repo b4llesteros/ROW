@@ -1,0 +1,48 @@
+.container-tabs {
+    list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+    margin-top: 0em;
+    padding-top: 0em;
+}
+
+.tab{
+    margin-top: 0.5em;
+        margin-left: 0.7em;
+        min-height: 2em;
+		padding: 1em;
+		box-sizing: border-box;
+		width: 100%;
+		text-align: center;
+		cursor: pointer;
+		background-color: $primary-color-light;
+		color: rgb(0, 0, 0);
+        font-weight: 700;
+        cursor: pointer;
+		transition: background-color 0.25s;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        &:hover {
+			background-color: rgba(0, 0, 0, 0.25);
+			transition: background-color 0.25s;
+			color: white;
+		
+            
+        }
+    }
+
+    .tab--active{
+                background-color: $primary-color;
+                color: black;
+                pointer-events: none;
+            }
+    .content {
+        display: none;
+    
+    }
+    
+    .content--active {
+        display: block;
+    }

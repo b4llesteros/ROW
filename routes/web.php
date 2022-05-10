@@ -30,7 +30,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/productpage', function () {
-    return view('front/pages//productpage/productpage');
+    return view('front/pages/productpage/productpage');
 });
 
 Route::get('/galleryproduct', function () {

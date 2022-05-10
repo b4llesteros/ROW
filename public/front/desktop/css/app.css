@@ -671,46 +671,50 @@ header {
   height: 3em;
 }
 
-.featured-levels {
+.container-tabs {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  justify-content: space-between;
-  margin: 0.5em 0.5em 4.5em 0.5em;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 0em;
+  padding-top: 0em;
 }
 
-.featured-level {
-  margin: 0.5em 0.5em 0em 0.5em;
-  overflow: hidden;
-  width: 45%;
+.tab {
+  margin-top: 0.5em;
+  margin-left: 0.7em;
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: hsl(226deg, 71%, 63%);
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-
-.featured-level-title {
-  text-align: center;
-  font-family: "Noto Sans";
+.tab:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s;
+  color: white;
 }
 
-.product-level:hover {
-  border-color: hsl(212deg, 96%, 54%);
-  border-style: solid;
+.tab--active {
+  background-color: hsl(212deg, 96%, 54%);
+  color: black;
+  pointer-events: none;
 }
 
-.featured-title h1 {
-  text-align: center;
-  font-family: "Noto Sans";
-  margin: 1em 0em 1em 0em;
+.content {
+  display: none;
 }
 
-.level-description {
-  text-align: center;
-  margin-top: 2em;
-  display: flex;
-  width: 45%;
-}
-
-.level-column {
-  display: flex;
+.content--active {
+  display: block;
 }
 
 .slider img {
@@ -998,6 +1002,53 @@ header {
   color: hsl(0deg, 0%, 100%);
 }
 
+.total-price-all-products {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5em;
+}
+
+.total-price-value {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.plus-minus-container {
+  margin-left: em;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .desktop-four-columns-checkout {
   margin-left: 0em;
 }
@@ -1157,7 +1208,8 @@ header {
 
 .contact-form-element textarea {
   height: 6em;
-  width: 25em;
+  width: 140%;
+  resize: none;
 }
 
 .contact-form-element-button {
@@ -1172,6 +1224,40 @@ header {
 .contact-store:hover {
   background-color: hsl(212deg, 96%, 54%);
   color: hsl(0deg, 0%, 100%);
+}
+
+.featured-element {
+  margin: 0.5em 0.5em 0em 0.5em;
+  overflow: hidden;
+  width: 45%;
+  box-shadow: hsla(0deg, 0%, 0%, 0.4) 0px 2px 4px, hsla(0deg, 0%, 0%, 0.3) 0px 7px 13px -3px, hsla(0deg, 0%, 0%, 0.2) 0px -3px 0px inset;
+}
+
+.featured-title {
+  text-align: center;
+  font-family: "Noto Sans";
+}
+
+.product-level:hover {
+  border-color: hsl(212deg, 96%, 54%);
+  border-style: solid;
+}
+
+.featured-title h1 {
+  text-align: center;
+  font-family: "Noto Sans";
+  margin: 1em 0em 1em 0em;
+}
+
+.featured-description {
+  text-align: center;
+  margin-top: 2em;
+  display: flex;
+  width: 45%;
+}
+
+.featured-column {
+  display: flex;
 }
 
 .mobile-one-main-column {
@@ -1211,52 +1297,6 @@ header {
 .column-quantity {
   display: flex;
   margin-top: 3.5em;
-}
-
-.container-tabs {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
-  margin-top: 0em;
-  padding-top: 0em;
-}
-
-.tab {
-  margin-top: 0.5em;
-  margin-left: 0.7em;
-  min-height: 2em;
-  padding: 1em;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  background-color: hsl(226deg, 71%, 63%);
-  color: rgb(0, 0, 0);
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.25s;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-.tab:hover {
-  background-color: rgba(0, 0, 0, 0.25);
-  transition: background-color 0.25s;
-  color: white;
-}
-
-.tab--active {
-  background-color: hsl(212deg, 96%, 54%);
-  color: black;
-  pointer-events: none;
-}
-
-.content {
-  display: none;
-}
-
-.content--active {
-  display: block;
 }
 
 /* column aside gallery */

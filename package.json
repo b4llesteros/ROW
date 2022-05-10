@@ -16,7 +16,8 @@
         "postcss": "^8.1.14",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.50.0",
-        "sass-loader": "^12.1.0"
+        "sass-loader": "^12.1.0",
+        "typescript": "^4.6.4"
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^34.0.0",

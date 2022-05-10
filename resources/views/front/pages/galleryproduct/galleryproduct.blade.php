@@ -25,16 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        {{-- <!-- NORMALIZE CSS -->
-        <link href="style/normalize.css" rel="stylesheet">
-        <!-- MAIN CSS -->
-        <!-- <link href="{{mix('front/desktop/css/app.css')}}" rel="stylesheet"> -->
-         --}}
-    </head> 
-
-
+        </div>  
         <div class="column-main">
             <div class="desktop-one-column mobile-one-column">
                 <div class="header-column-main">
@@ -53,7 +44,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="desktop-three-columns mobile-one-column">
                 <div class="column">
                     <div class="product-card">
@@ -154,9 +144,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
-            
-            
+            </div>            
             <div class="desktop-three-columns mobile-one-column">
                 <div class="column">
                     <div class="product-card">

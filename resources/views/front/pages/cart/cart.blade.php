@@ -1,28 +1,30 @@
-    @extends('front.layout.master')   
+@extends('front.layout.master')   
 
     @section('content')
 
         <div class="desktop-one-column mobile-one-colum">
             <div class="column">
                 <div class="cart-title">
-                    <h2>Cesta</h2>
+                    <h2>Cart</h2>
                 </div>
             </div>
         </div>
-
         <div class="desktop-one-column mobile-one-column">
             <div class="column">
                 <div class="table-cart">
-                    <table>
-                        <tr class="main-row">
-                            <th class="product-column"><h2>Producto/s</h2></th>
-                            <th class="quantity-column"><h2>Cantidad</h2></th>
-                            <th class="unit-price-column"><h2>Precio Unidad</h2></th>
-                            <th class="total-price-column"><h2>Precio total</h2></th>
+                    <table>                        
+                        <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Total Units Price</th>
                         </tr>
-                        <tr class="product-row">
-                            <th class="product-column">English for Dummies</th>
-                            <th class="quantity-column">
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Product">English for Dummies</td>
+                            <td data-label="Quantity">
                                 <div class="plus-minus-container">
                                     <div class="quantity-form-button">
                                         <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
@@ -34,32 +36,57 @@
                                         <button class="plus-minus-button" data-type="plus">+</button>
                                     </div>  
                                 </div>
-                                
-                            </th>
-                            <th class="unit-price-column">50€</th>
-                            <th class="total-price-column">50€</th>
-                        </tr> 
-                        <tr class="product-row">
-                            <th class="product-column">English for Dummies</th>
-                            <th class="quantity-column">
+                            </td>
+                            <td data-label="Unit Price">20€</td>
+                            <td data-label="Total Units Price">20€</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" data-label="Product">Starter Level</td>
+                            <td data-label="Quantity">
                                 <div class="plus-minus-container">
                                     <div class="quantity-form-button">
-                                        <button  class="plus-minus-button" data-type="minus">-</button>
+                                        <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
                                     </div>
                                     <div class="quantity-input">
-                                        <input  class="plus-minus-input" type="text" value="1" data-min="0" disabled="disabled">
+                                        <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
                                     </div>
                                     <div class="quantity-form-button">
-                                        <button  class="plus-minus-button" data-type="plus"><span>+</span></button>
+                                        <button class="plus-minus-button" data-type="plus">+</button>
                                     </div>  
                                 </div>
-                                
-                            </th>
-                            <th class="unit-price-column">50€</th>
-                            <th class="total-price-column">50€</th>
-                        </tr>                                                       
+                            </td>
+                            <td data-label="Unit Price">40€</td>
+                            <td data-label="Total Units Price">120€</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" data-label="Product">Advanced Level</td>
+                            <td data-label="Quantity">
+                                <div class="plus-minus-container">
+                                    <div class="quantity-form-button">
+                                        <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
+                                    </div>
+                                    <div class="quantity-input">
+                                        <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
+                                    </div>
+                                    <div class="quantity-form-button">
+                                        <button class="plus-minus-button" data-type="plus">+</button>
+                                    </div>  
+                                </div>
+                            </td>
+                            <td data-label="Unit Price">50€</td>
+                            <td data-label="Total Units Price">250€</td>
+                        </tr>                    
+                        </tbody>
                     </table>
-                </div>
+                    <div class="total-price-all-products">
+                        <div class="total-price-title">
+                            <h3>Total price</h3>
+                        </div>
+                        <div class="total-price-value">
+                            <p>250€</p>
+                        </div>
+                    </div>
+                </div>                
             </div>
         </div>
         <div class="desktop-two-columns mobile-one-column desktop-two-columns-buttons">
@@ -75,4 +102,4 @@
             </div>
         </div> 
 
-        @endsection
+    @endsection
