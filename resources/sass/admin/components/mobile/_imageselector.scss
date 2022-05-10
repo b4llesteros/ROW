@@ -1,0 +1,80 @@
+.image-selector input[type='file'] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top:6vh;
+    left:1vh;
+}
+
+.image-selector {
+    width: 20%;
+    cursor: pointer;
+}
+
+.image-selector{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+    overflow: hidden;    
+    margin-left: 2em;
+    
+}
+.image-preview-delete{
+    display: none;
+    position: absolute;
+    top: 8vh;
+    margin-left: 11em;
+
+    &.active{
+        display: block;
+    }
+
+}
+
+
+.image-preview svg{
+    height: 3.5em;
+    
+}
+
+.image-preview-svg:hover{
+    fill: rgb(68, 111, 253);
+}
+
+.image-preview-svg {
+
+    &.hidden {
+ 
+        display: none;
+    
+    }
+}
+
+.image-preview-delete {
+    height: 3em;
+    width: 1.5em;
+    fill: rgb(0, 0, 0);
+}
+
+.image-preview-delete svg:hover{
+    fill: rgb(68, 111, 253);
+}
+
+.image-preview-element{
+    display: none;
+}
+
+.image-preview-element.active{
+    display: block;
+}
+
+#image-preview{
+    cursor: pointer; 
+}
+
+#image-preview img{
+    width: 100%;
+}

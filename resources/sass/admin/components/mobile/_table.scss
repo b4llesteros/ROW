@@ -1,0 +1,80 @@
+.table {
+    width: 10%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+// .table.minimized {
+//     transition: width 0.5s;
+//     width: 45%;
+//     .adress {
+//         display: none;
+//     }
+// }
+.table table {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: 700;
+    color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 87%);
+    background: linear-gradient(0deg, hsl(212, 96%, 54%) 0%, hsl(0, 0%, 100%) 100%);
+    ;
+}
+
+td {
+    padding: 0.5em;
+    border: 1px solid hsl(0, 0%, 87%);
+}
+
+td:last-child {
+    width: 10%;
+}
+
+tr:nth-child(even) {
+    background-color: hsl(216, 100%, 71%);
+}
+
+tr:hover {
+    background-color: hsl(217, 100%, 40%);
+    color: hsl(0, 0%, 100%);
+}
+
+.table-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.tr {
+    display: flex;
+}
+
+.table-button svg {
+    width: 1.5em;
+    height: 2.5em;
+}
+
+tr:hover .table-buttons svg {
+    fill: hsl(0, 0%, 100%);
+}
+
+.table-button svg:hover {
+    cursor: pointer;
+    fill: hsl(217, 100%, 40%)
+}
+
+.table-change {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0em;
+}
+
+.table.minimized td:last-child {
+    width: 20%;
+}

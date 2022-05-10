@@ -1,18 +1,17 @@
-header{   
+header {
     background-color: hsl(212, 100%, 50%);
-    height:auto;             
-    width: 100%; 
+    height: auto;
+    width: 100%;
     z-index: 1000;
     position: relative;
     top: 0;
 }
 
-body{
+body {
     background-color: hsl(0, 0%, 100%);
 }
 
-
-main{
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,12 +19,11 @@ main{
     width: 90%;
 }
 
-
-.container-movement{
+.container-movement {
     transition: all 0.5s;
     margin-top: 0em;
 }
 
-.container{
+.container {
     transition: all 0.5s;
 }
