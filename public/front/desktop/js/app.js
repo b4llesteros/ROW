@@ -2167,17 +2167,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu-button.js */ "./resources/js/front/menu-button.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs.js */ "./resources/js/front/tabs.js");
 /* harmony import */ var _counter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./counter.js */ "./resources/js/front/counter.js");
-/* harmony import */ var _notificationaddcart_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./notificationaddcart.js */ "./resources/js/front/notificationaddcart.js");
+/* harmony import */ var _faqs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./faqs.js */ "./resources/js/front/faqs.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/front/bootstrap.js");
 
 
 
+ // import { renderNotification } from "./notificationaddcart.js";
 
 
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_0__.renderMenuButton)();
 (0,_tabs_js__WEBPACK_IMPORTED_MODULE_1__.renderTabs)();
-(0,_counter_js__WEBPACK_IMPORTED_MODULE_2__.renderCounter)();
-(0,_notificationaddcart_js__WEBPACK_IMPORTED_MODULE_3__.renderNotification)();
+(0,_counter_js__WEBPACK_IMPORTED_MODULE_2__.renderCounter)(); // renderNotification();
+
+(0,_faqs_js__WEBPACK_IMPORTED_MODULE_3__.renderFaqs)();
 
 /***/ }),
 
@@ -2256,6 +2258,35 @@ var renderCounter = function renderCounter() {
 
 /***/ }),
 
+/***/ "./resources/js/front/faqs.js":
+/*!************************************!*\
+  !*** ./resources/js/front/faqs.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderFaqs": () => (/* binding */ renderFaqs)
+/* harmony export */ });
+var renderFaqs = function renderFaqs() {
+  var faqs = document.querySelectorAll(".faq");
+  faqs.forEach(function (faq) {
+    faq.addEventListener("click", function () {
+      if (faq.classList.contains("active")) {
+        faq.classList.remove("active");
+      } else {
+        faqs.forEach(function (activeFaqs) {
+          activeFaqs.classList.remove("active");
+          faq.classList.add("active");
+        });
+      }
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/front/menu-button.js":
 /*!*******************************************!*\
   !*** ./resources/js/front/menu-button.js ***!
@@ -2273,30 +2304,6 @@ var renderMenuButton = function renderMenuButton() {
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     navsub.classList.toggle("nav-change");
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/front/notificationaddcart.js":
-/*!***************************************************!*\
-  !*** ./resources/js/front/notificationaddcart.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderNotification": () => (/* binding */ renderNotification)
-/* harmony export */ });
-var renderNotification = function renderNotification() {
-  var addButton = document.querySelector('.add-button');
-  var addButtonNotification = document.querySelector('.add-button-notification');
-  addButton.addEventListener('click', function (timeout) {
-    addButtonNotification.classList.add('add-button-notification-active');
-    setTimeout(function () {
-      addButtonNotification.classList.remove('add-button-notification-active');
-    }, 5000);
   });
 };
 

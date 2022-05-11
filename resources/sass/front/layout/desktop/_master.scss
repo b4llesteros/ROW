@@ -1,23 +1,19 @@
-body{
+body {
     background-color: hsl(0, 0%, 100%);
 }
 
-footer{
+footer {
     background-color: $primary-color;
-    height: auto;
-    width: 100%;                 
-    bottom: 0;   
+    width: 100%;
+    bottom: 0;
     padding-bottom: 0.5em;
-    margin-top: 2em; 
-    
+    margin-top: 2em;
 }
 
- .desktop-only{
+.desktop-only {
     display: block;
 }
 
-.mobile-only{
+.mobile-only {
     display: none;
 }
-
-

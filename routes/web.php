@@ -41,6 +41,10 @@ Route::get('/admin/users', function () {
     return view('admin/pages/panel/panel');
 });
 
+Route::get('/faqs', function () {
+    return view('front/pages/faqs/faqs');
+});
+
 
 
 
