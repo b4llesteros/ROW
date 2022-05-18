@@ -66,46 +66,9 @@
                         </div>
                     </div>
 
-                    <div class="desktop-one-column mobile-one-column">
-                        <div class="column">
-                            <div class="column-quantity">
-                                <div class="plus-minus-container">
-                                    <div class="quantity-form-button">
-                                        <button  class="plus-minus-button" data-type="minus">-</button>
-                                    </div>
-                                    <div class="quantity-input">
-                                        <input  class="plus-minus-input" type="text" value="1" data-min="0" disabled="disabled">
-                                    </div>
-                                    <div class="quantity-form-button">
-                                        <button  class="plus-minus-button" data-type="plus"><span>+</span></button>
-                                    </div>  
-                                </div>                         
-                            </div>    
-                        </div>
-                    </div>
+                    @include('front.components.desktop.plusminusbutton')
 
-                    <div class="desktop-one-column mobile-one-column">
-                        <div class="column">
-                            <div class="container">
-                                <ul class="container-tabs">
-                                    <li class="tab tab--active" data-tab="description" >Descripción</li>
-                                    <li class="tab" data-tab="specs">Característica</li>
-                                    <li class="tab" data-tab="opinions">Opiniones</li>
-                                </ul>
-                            </div>
-                            <div class="container-content">
-                                <div class="content content--active" data-tab="description">
-                                    <span>content1</span>
-                                </div>
-                                <div class="content" data-tab="specs">
-                                    <span>content2</span>
-                                </div>
-                                <div class="content" data-tab="opinions">
-                                    <span>content3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('front.components.desktop.tabs')
 
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">

@@ -1,37 +1,34 @@
-.mobile-one-main-column{
-    margin-bottom: 9.5em;
-}
-.product-image{
+.product-image {
     margin-top: 5em;
 }
 
-.product-image-little{
+.product-image-little {
     margin-top: 1.5em;
 }
 
-.product-image-little:hover{
+.product-image-little:hover {
     border-style: solid;
-    border-color:$primary-color ;
+    border-color: $primary-color;
 }
 
-.product-title h1{
+.product-title h1 {
     font-family: $font-stack;
-    margin-top:2.5em;
+    margin-top: 2.5em;
 }
 
-.product-price{
+.product-price {
     font-family: $font-stack;
-    margin-top: 1.5em;  
-    margin-left: 1.5em;          
+    margin-top: 1.5em;
+    margin-left: 1.5em;
 }
 
-.product-description{
+.product-description {
     font-family: $font-stack;
     margin-top: 4em;
     margin-left: 0em;
 }
 
-.column-quantity{
-    display:flex;
+.column-quantity {
+    display: flex;
     margin-top: 3.5em;
 }

@@ -18,31 +18,31 @@ Route::get('/', function () {
 });
 
 Route::get('/cart', function () {
-    return view('front/pages/cart/cart');
+    return view('front/pages/cart/index');
 });
 
 Route::get('/checkout', function () {
-    return view('front/pages/checkout/checkout');
+    return view('front/pages/checkout/index');
 });
 
 Route::get('/contact', function () {
-    return view('front/pages/contact/contact');
+    return view('front/pages/contact/index');
 });
 
 Route::get('/productpage', function () {
-    return view('front/pages/productpage/productpage');
+    return view('front/pages/productpage/index');
 });
 
 Route::get('/galleryproduct', function () {
-    return view('front/pages/galleryproduct/galleryproduct');
+    return view('front/pages/galleryproduct/index');
 });
 
 Route::get('/admin/users', function () {
-    return view('admin/pages/panel/panel');
+    return view('admin/pages/panel/index');
 });
 
 Route::get('/faqs', function () {
-    return view('front/pages/faqs/faqs');
+    return view('front/pages/faqs/index');
 });
 
 

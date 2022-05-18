@@ -545,6 +545,17 @@ header {
   width: 100%;
 }
 
+.column-categories {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.header-column-main {
+  display: flex;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 .slider img {
   width: 100%;
   margin: -0.1em 0em 0em 0em;
@@ -621,6 +632,20 @@ header {
 }
 .add-button button button:hover {
   color: hsl(212deg, 96%, 54%);
+}
+
+.column-quantity {
+  width: 50%;
+  margin-top: 1em;
+  margin-left: -18.5em;
+}
+
+.quantity-form-button button {
+  background-color: hsl(212deg, 96%, 54%);
+}
+
+.plus-minus-input input {
+  width: 6em;
 }
 
 .hamburger {
@@ -757,8 +782,19 @@ header {
   text-align: center;
 }
 
+.input-form input {
+  margin-bottom: 0.5em;
+  width: 80%;
+}
+
+.input-form-onecolumn input {
+  width: 80%;
+  margin-bottom: 0.5em;
+}
+
 .element-title-form {
   text-align: center;
+  margin-bottom: 0.3em;
 }
 
 .telephone-form {
@@ -794,6 +830,19 @@ header {
   margin-top: 1.5em;
   width: 80%;
   margin-left: 10%;
+}
+
+.product-column {
+  margin-right: 1.5em;
+}
+
+.quantity-column {
+  margin-right: 15em;
+}
+
+.counter-title {
+  margin-right: 1.5em;
+  margin-top: 1em;
 }
 
 .contact-column-icon svg {
@@ -914,7 +963,7 @@ header {
 }
 
 .plus-minus-container {
-  margin-left: 0em;
+  margin-right: 10em;
   text-align: center;
   margin-top: 1.5em;
   display: flex;
@@ -922,14 +971,6 @@ header {
 
 .quantity-input input {
   width: 1em;
-}
-
-.container-tabs {
-  display: none;
-}
-
-.container-content {
-  display: none;
 }
 
 .product-description {
@@ -947,18 +988,7 @@ header {
 }
 
 .quantity-column {
-  margin-left: -5em;
-}
-
-.column-categories {
-  text-align: center;
-  margin-top: 0.5em;
-}
-
-.header-column-main {
-  display: flex;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-left: -15em;
 }
 
 .categories-title {
@@ -966,7 +996,7 @@ header {
 }
 
 .total-products {
-  margin-left: 2em;
+  margin-left: 2.5em;
 }
 
 .filter-products {
@@ -986,6 +1016,16 @@ header {
 
 .product-button {
   text-align: center;
+}
+
+.category-select {
+  margin-left: 0.5em;
+  margin-top: 1em;
+  width: 50%;
+}
+
+.filter-select {
+  width: 100%;
 }
 
 .cart-title {
@@ -1025,7 +1065,7 @@ header {
   font-size: 2em;
 }
 
-table {
+.table-cart table {
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
@@ -1033,71 +1073,24 @@ table {
   width: 100%;
   table-layout: fixed;
 }
-
-table caption {
+.table-cart caption {
   font-size: 1.5em;
   margin: 0.5em 0 0.75em;
 }
-
-table tr {
+.table-cart tr {
   background-color: #f8f8f8;
   border: 0.1em solid #ddd;
   padding: 0.35em;
 }
-
-table th,
-table td {
+.table-cart th,
+.table-cart td {
   padding: 0.625em;
   text-align: center;
 }
-
-table th {
+.table-cart th {
   font-size: 0.85em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-table {
-  border: 0;
-}
-
-table caption {
-  font-size: 1.3em;
-}
-
-table thead {
-  border: none;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-table tr {
-  border-bottom: 3px solid #ddd;
-  display: block;
-  margin-bottom: 0.625em;
-}
-
-table td {
-  border-bottom: 1px solid #ddd;
-  display: block;
-  font-size: 0.8em;
-  text-align: right;
-}
-
-table td::before {
-  content: attr(data-label);
-  float: left;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-table td:last-child {
-  border-bottom: 0;
 }
 
 .faqs-container {
@@ -1178,4 +1171,46 @@ table td:last-child {
   fill: hsl(0deg, 0%, 0%);
   transition: all 0.5s ease;
   transform: rotate(180deg);
+}
+
+.container-tabs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 0em;
+  padding-top: 0em;
+}
+
+.tab {
+  margin-top: 0.5em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  min-height: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: hsl(226deg, 71%, 63%);
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.tab--active {
+  background-color: hsl(212deg, 96%, 54%);
+  color: black;
+  pointer-events: none;
+}
+
+.content {
+  display: none;
+}
+
+.content--active {
+  display: block;
 }

@@ -1,66 +1,69 @@
-.desktop-four-columns-checkout{
+.desktop-four-columns-checkout {
     margin-left: 0em;
 }
-.data-invoice-title{
+
+.data-invoice-title {
     text-align: left;
     margin-bottom: 3em;
 }
 
-.desktop-two-columns-checkout{
+.desktop-two-columns-checkout {
     margin-top: 3em;
 }
 
-.desktop-one-column-checkout{
+.desktop-one-column-checkout {
     margin-left: 5%;
     width: 90%;
 }
 
-.input-form input{
+.input-form input {
     width: 100%;
 }
 
-.input-form-onecolumn input{
+.input-form-onecolumn input {
     width: 100%;
 }
 
-.total-products{
+.total-products {
     margin-top: 0em;
     margin-bottom: 2em;
 }
-.quantity{
+
+.quantity {
     margin-top: 2em;
 }
 
-.payment-method{
+.payment-method {
     margin-top: 2em;
 }
 
-.payment-style{
+.payment-style {
     display: flex;
-}    
+}
 
-.input-form{
+.input-form {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.input-form-onecolumn{
+.input-form-onecolumn {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.pay-button-checkout button{
+.pay-button-checkout button {
     font-family: $font-stack;
-    width: 30em;
+    width: 80%;
     margin-top: 3.5em;
+    margin-left: 10%;
 }
 
-.payment-section{
+.payment-section {
     margin-top: 2em;
     margin-bottom: 2em;
 }
 
-.table-price{
+.table-price {
     width: 100%;
     text-align: left;
 }
@@ -70,7 +73,7 @@
     text-align: center;
 }
 
-.price-row{
+.price-row {
     height: 4em;
 }
 
@@ -80,25 +83,36 @@
     font-family: $font-stack;
 }
 
-.table-cart-checkout table{
-    margin-left:0;        
+.table-cart-checkout table {
+    margin-left: 0;
 }
 
-.table-cart-checkout .product-column{
+.table-cart-checkout .product-column {
     text-align: left;
 }
 
-.product-row .product-column{
-    font-family: $font-stack;
-}
-.product-row .quantity-column{
+.product-row .product-column {
     font-family: $font-stack;
 }
 
-.product-row .unit-price-column{
+.product-row .quantity-column {
     font-family: $font-stack;
 }
 
-.product-row .total-price-column{
+.product-row .unit-price-column {
     font-family: $font-stack;
+}
+
+.product-row .total-price-column {
+    font-family: $font-stack;
+}
+
+.counter-title {
+    margin-right: 1.5em;
+    margin-top: 1em;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 3.5em;
 }

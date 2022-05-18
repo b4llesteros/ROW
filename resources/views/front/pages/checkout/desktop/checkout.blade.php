@@ -3,14 +3,14 @@
     @section('content')
         
             <main>        
-                <div class="desktop-two-columns mobile-one-column desktop-two-columns-checkout">
+                <div class="desktop-two-columns desktop-two-columns-checkout">
                     <div class="column">
-                        <div class="desktop-one-column mobile-one-column">
+                        <div class="desktop-one-column">
                             <div class="data-invoice-title">
                                 <h2>Tus Datos</h2>
                             </div>
                         </div>   
-                        <div class="desktop-two-columns mobile-one-column">
+                        <div class="desktop-two-columns">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>Nombre</h4>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="desktop-two-columns mobile-one-column">
+                        <div class="desktop-two-columns">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>Email</h4>
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="desktop-one-column mobile-one-column desktop-one-column-checkout">
+                        <div class="desktop-one-column desktop-one-column-checkout">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>Dirección</h4>
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="desktop-one-column mobile-one-column desktop-one-column-checkout">
+                        <div class="desktop-one-column desktop-one-column-checkout">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>Información adicional sobre la dirección</h4>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="desktop-one-column mobile-one-column desktop-one-column-checkout">
+                        <div class="desktop-one-column desktop-one-column-checkout">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>Ciudad</h4>
@@ -75,7 +75,7 @@
                                     <input type="text">
                                 </div>
                             </div>
-                        </div> <div class="desktop-two-columns mobile-one-column">
+                        </div> <div class="desktop-two-columns">
                             <div class="column">
                                 <div class="element-title-form">
                                     <h4>País</h4>
@@ -95,20 +95,20 @@
                         </div>                     
                     </div>
                     <div class="column">
-                        <div class="desktop-one-column mobile-one-column">
+                        <div class="desktop-one-column">
                             <div class="total-products">
                                 <h2>Resumen de productos</h2>
                             </div>
                         </div>
-                        <div class="desktop-one-column mobile-one-column ">
+                        <div class="desktop-one-column ">
                             <div class="column">
                                 <div class="table-cart-checkout">
                                     <table>
                                         <tr class="main-row">
-                                            <th class="product-column"><h5>Producto/s</h5></th>
-                                            <th class="quantity-column"><h5>Cantidad</h5></th>
-                                            <th class="unit-price-column"><h5>Precio Unidad</h5></th>
-                                            <th class="total-price-column"><h5>Precio total</h5></th>
+                                            <th class="product-column"><h6>Producto/s</h6></th>
+                                            <th class="quantity-column"><h6>Cantidad</h6></th>
+                                            <th class="unit-price-column"><h6>Precio Unidad</h6></th>
+                                            <th class="total-price-column"><h6>Precio total</h6></th>
                                         </tr>
                                         <tr class="product-row">
                                             <th class="product-column">English for Dummies</th>
@@ -130,14 +130,14 @@
                             </div>
                         </div>                        
                     </div>
-                    <div class="desktop-one-column mobile-one-column">
+                    <div class="desktop-one-column">
                         <div class="column">                          
                             <div class="payment-section">
                                 <h2>Información de pago</h2>
                                 </div>                              
                         </div>                        
                     </div>
-                    <div class="desktop-one-column mobile-one-column">
+                    <div class="desktop-one-column">
                         <table class="table-price">
                             <tr class="main-row">
                                 <th>Precio sin iva</th>
@@ -153,14 +153,14 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="desktop-one-column mobile-one-column">
+                    <div class="desktop-one-column">
                         <div class="column">                          
                             <div class="payment-section">
                                 <h2>Método de pago</h2>
                                 </div>                              
                         </div>                        
                     </div>                    
-                    <div class="desktop-oene-column mobile-one-column">
+                    <div class="desktop-oene-column">
                         <table class="table-method-payment">
                             <tr class="main-row">
                                 <th><input type="radio">Efectivo</th>
@@ -169,7 +169,7 @@
                             </tr>                           
                         </table>                        
                     </div>                 
-                    <div class="desktop-one-column mobile-one-column">
+                    <div class="desktop-one-column">
                         <div class="column">
                             <div class="pay-button-checkout">
                                 <button>Pagar</button>

@@ -2,14 +2,14 @@
 
     @section('content')
 
-        <div class="desktop-one-column mobile-one-colum">
+        <div class="mobile-one-colum">
             <div class="column">
                 <div class="cart-title">
-                    <h2>Cart</h2>
+                    @include('front.components.desktop.title')
                 </div>
             </div>
         </div>
-        <div class="desktop-one-column mobile-one-column">
+        <div class="mobile-one-column">
             <div class="column">
                 <div class="table-cart">
                     <table>                        
@@ -26,15 +26,7 @@
                             <td data-label="Product">English for Dummies</td>
                             <td data-label="Quantity">
                                 <div class="plus-minus-container">
-                                    <div class="quantity-form-button">
-                                        <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
-                                    </div>
-                                    <div class="quantity-input">
-                                        <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
-                                    </div>
-                                    <div class="quantity-form-button">
-                                        <button class="plus-minus-button" data-type="plus">+</button>
-                                    </div>  
+                                    @include('front.components.desktop.plusminusbutton')
                                 </div>
                             </td>
                             <td data-label="Unit Price">20€</td>
@@ -43,17 +35,7 @@
                         <tr>
                             <td scope="row" data-label="Product">Starter Level</td>
                             <td data-label="Quantity">
-                                <div class="plus-minus-container">
-                                    <div class="quantity-form-button">
-                                        <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
-                                    </div>
-                                    <div class="quantity-input">
-                                        <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
-                                    </div>
-                                    <div class="quantity-form-button">
-                                        <button class="plus-minus-button" data-type="plus">+</button>
-                                    </div>  
-                                </div>
+                                @include('front.components.desktop.plusminusbutton')
                             </td>
                             <td data-label="Unit Price">40€</td>
                             <td data-label="Total Units Price">120€</td>
@@ -61,17 +43,7 @@
                         <tr>
                             <td scope="row" data-label="Product">Advanced Level</td>
                             <td data-label="Quantity">
-                                <div class="plus-minus-container">
-                                    <div class="quantity-form-button">
-                                        <button  data-type="minus"class="plus-minus-button"><span>-</span></button>
-                                    </div>
-                                    <div class="quantity-input">
-                                        <input class="plus-minus-input" type="number" value="1" data-min="0" disabled="disabled">
-                                    </div>
-                                    <div class="quantity-form-button">
-                                        <button class="plus-minus-button" data-type="plus">+</button>
-                                    </div>  
-                                </div>
+                                @include('front.components.desktop.plusminusbutton')
                             </td>
                             <td data-label="Unit Price">50€</td>
                             <td data-label="Total Units Price">250€</td>
@@ -89,7 +61,7 @@
                 </div>                
             </div>
         </div>
-        <div class="desktop-two-columns mobile-one-column desktop-two-columns-buttons">
+        <div class="mobile-one-column">
             <div class="column">
                 <div class="pay-button bold">
                     <button>Continuar con el pago</button>

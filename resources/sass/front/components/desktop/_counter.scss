@@ -1,16 +1,16 @@
-.quantity-counter{
-	margin-top: 2.5em;
-   display: flex;
+.quantity-counter {
+    margin-top: 2.5em;
+    display: flex;
 }
 
-.quantity-title{
+.quantity-title {
     font-family: $font-stack;
     margin-left: 1.5em;
     margin-right: 2em;
     margin-top: 1em;
 }
 
-#counter{
+#counter {
     font-family: $font-stack;
     font-weight: 700;
     height: 2.8em;
@@ -19,49 +19,49 @@
 }
 
 .quantity-form-button button {
-	box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-	background-color:#33bdef;
-	border-radius:6px;
-	border:1px solid #057fd0;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:'Noto Sans', sans-serif;
-	font-size:15px;
-	font-weight:bold;
-	padding:1em;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    background-color: #33bdef;
+    border-radius: 6px;
+    border: 1px solid #057fd0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 1em;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #5b6178;
 }
+
 .quantity-form-button button:hover {
-	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-	background-color:#019ad2;
-        button :active {
-	        position:relative;
-	    top:1px;
-}
-}
-
-
-.plus-minus-container{
-	display: flex;
-	margin-top: 2em;
-	margin-bottom: 1.5em;
+    background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+    background-color: #019ad2;
+    button :active {
+        position: relative;
+        top: 1em;
+    }
 }
 
-.quantity-column{
-	display: flex;
-	
+.plus-minus-container {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    margin-left: 0em;
 }
 
-.quantity-input{
-	margin-left: 0em;
-	margin-right:0em;
-	
-	
+.quantity-column {
+    display: flex;
 }
-.quantity-input input{
-	width: 2em;
-	height: 3em;
+
+.quantity-input {
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.quantity-input input {
+    text-align: center;
+    width: 1.5em;
+    height: 3em;
 }

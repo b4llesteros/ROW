@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="images/favicon.ico">
 
-		<title>Room Of Words</title>
-		<meta name="description" content="Aprende inglés fácilmente">
-        <meta name="keywords" 	 content="Inglés, aprende inglés, videos para aprender inglés, how to learn english, learn english,english school">
+		<title>@yield('title')</title>
+		<meta name="description" content=@yield('description')>
+        <meta name="keywords" 	 content=@yield('keywords')>
 
         @include("front.layout.partials.styles")      
     </head>

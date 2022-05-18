@@ -1,4 +1,4 @@
-.data-invoice-title{
+.data-invoice-title {
     text-align: center;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -8,44 +8,73 @@
     text-align: center;
 }
 
-.lastname-form{
+.lastname-form {
     text-align: center;
 }
- .input-form {
-     text-align: center;
+
+.input-form {
+    text-align: center;
+}
+
+.input-form input {
+    margin-bottom: 0.5em;
+    width: 80%;
+}
+
+.input-form-onecolumn input {
+    width: 80%;
+    margin-bottom: 0.5em;
 }
 
 .element-title-form {
     text-align: center;
+    margin-bottom: 0.3em;
 }
+
 .telephone-form {
     text-align: center;
 }
-.input-form-onecolumn{
+
+.input-form-onecolumn {
     text-align: center;
 }
 
-.adress-form{  
-    text-align: center;
-}
-.city-form{
+.adress-form {
     text-align: center;
 }
 
-.country-form{
-    text-align: center;
-}
-.zipcode-form{
+.city-form {
     text-align: center;
 }
 
-.total-products{
+.country-form {
+    text-align: center;
+}
+
+.zipcode-form {
+    text-align: center;
+}
+
+.total-products {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
 
-.pay-button-checkout button{
+.pay-button-checkout button {
     margin-top: 1.5em;
     width: 80%;
     margin-left: 10%;
+}
+
+.product-column {
+    margin-right: 1.5em;
+}
+
+.quantity-column {
+    margin-right: 15em;
+}
+
+.counter-title {
+    margin-right: 1.5em;
+    margin-top: 1em;
 }

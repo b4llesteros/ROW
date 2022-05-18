@@ -1,9 +1,9 @@
 @extends('front.layout.master')  
 
 @section('content')
-    <div class="desktop-two-columns-aside mobile-one-column">
-        <div class="column-aside">
-            <div class="desktop-one-colum mobile-one-column">
+    <div class="desktop-two-columns-aside">
+        <div class="column-aside desktop-only">
+            <div class="desktop-one-colum">
                 <div class="column-categories">
                     <div class="categories-title">
                         <h3>Categories</h3>
@@ -26,25 +26,37 @@
                 </div>
             </div>
         </div>  
+        <div class="column-aside mobile-only">
+            <div class="desktop-one-colum">
+                <div class="column-categories">
+                    <label>Select Category</label>
+                   <select class="category-select">
+                        <option>Vocabulary</option>
+                        <option>Grammar</option>
+                        <option>Writing</option>
+                        <option>Listening</option>
+                        <option>Reading</option>
+                   </select>
+                </div>
+            </div>
+        </div>  
         <div class="column-main">
-            <div class="desktop-one-column mobile-one-column">
+            <div class="desktop-one-column">
                 <div class="header-column-main">
                     <div class="total-products">
                         <h5>Mostrando 9 de 9</h5>
                     </div>
                     <div class="filter-products">
-                        <form>
-                            <select name="select">
-                                <option value="value1" selected>Destacados</option>
-                                <option value="value2" >Ofertas</option>
-                                <option value="value3">Precio más bajo</option>
-                                <option value="value3">Precio más alto</option>
-                                </select>
-                        </form>
+                        <select name="select" class="filter-select">
+                            <option value="value1" selected>Destacados</option>
+                            <option value="value2" >Ofertas</option>
+                            <option value="value3">Precio más bajo</option>
+                            <option value="value3">Precio más alto</option>
+                        </select>                      
                     </div>
                 </div>
             </div>
-            <div class="desktop-three-columns mobile-one-column">
+            <div class="desktop-three-columns">
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
@@ -95,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="desktop-three-columns mobile-one-column">
+            <div class="desktop-three-columns">
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">
@@ -145,7 +157,7 @@
                     </div>
                 </div>
             </div>            
-            <div class="desktop-three-columns mobile-one-column">
+            <div class="desktop-three-columns">
                 <div class="column">
                     <div class="product-card">
                         <div class="product-image">

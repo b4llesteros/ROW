@@ -5,12 +5,12 @@
 
 
         <main>          
-            <div class="desktop-one-column mobile-one-column">
+            <div class="desktop-one-column">
                 <div class="column column-title">
-                    <h1>Contacta con nosotros</h1>
+                    @include('front.components.desktop.title')
                 </div>
             </div>
-            <div class="desktop-two-columns mobile-one-column contact-columns">
+            <div class="desktop-two-columns contact-columns">
                 <div class="column">
                     <div class="column-information-title">
                         <h2>Datos de contacto</h2>

@@ -1,38 +1,36 @@
-.column-categories{
-    text-align: center;
-    margin-top:0.5em;
-}
-
-.header-column-main{
-    display: flex;
-    margin-top: 1.5em;
+.categories-title {
     margin-bottom: 1.5em;
 }
 
-.categories-title{
-    margin-bottom: 1.5em;
-}
-.total-products{
-    margin-left: 2em;
+.total-products {
+    margin-left: 2.5em;
 }
 
-
-.filter-products{
+.filter-products {
     margin-top: 1em;
     margin-left: 2em;
 }
 
-.product-title{
+.product-title {
     text-align: center;
 }
 
-.product-price{
+.product-price {
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-
 }
 
-.product-button{
+.product-button {
     text-align: center;
+}
+
+.category-select {
+    margin-left: 0.5em;
+    margin-top: 1em;
+    width: 50%;
+}
+
+.filter-select {
+    width: 100%;
 }
