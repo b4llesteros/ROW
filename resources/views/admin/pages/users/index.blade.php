@@ -2,8 +2,10 @@
 
 @section('table')
 
+
+
     <div class="table">
-        <table>                                           
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
@@ -44,7 +46,7 @@
                             <svg  viewBox="0 0 24 24">
                                 <path  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" />
                             </svg>
-                            
+
                         </div>
                         <div class="table-button edit-button">
                             <svg viewBox="0 0 24 24">
@@ -125,26 +127,26 @@
                 <td class="adress">Calle Random nº infinito</td>
                 <td>
                     <div class="table-buttons">
-                        @include('admin.components.deletebutton')    
+                        @include('admin.components.deletebutton')
                         @include('admin.components.editbutton')
                     </div>
                 </td>
-            </tr>     
-        </table>               
+            </tr>
+        </table>
     </div>
 
 @endsection
 
 @section('form')
 
-@include('admin.components.menu')    
+@include('admin.components.menu')
 
-    <div class="desktop-one-column">          
+    <div class="desktop-one-column">
         @include('admin.components.deletelayer')
-            <div class="column">                
-                <div class="edit-section"> 
+            <div class="column">
+                <div class="edit-section">
                     @include('admin.components.globaltabs')
-                </div>   
+                </div>
             </div>
     </div>
 @endsection

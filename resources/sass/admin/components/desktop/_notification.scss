@@ -4,36 +4,37 @@
     justify-content: space-between;
     position: fixed;
     opacity: 0;
-    background-color: $primary-color;    
+    background-color: $primary-color;
     border-radius: 1em;
     border: solid 0.05em hsl(0, 0%, 0%);
     font-weight: 700;
     color: hsl(208, 100%, 97%);
     right: 2rem;
     transition: opacity 0.3s ease-in-out;
+    z-index: 100;
 
     &.error{
-        background-color: hsl(0, 100%, 50%);    
-    }
-    
-    &.success{
-        background-color: hsl(120, 100%, 25%);    
+        background-color: hsl(0, 100%, 50%);
     }
 
-    &.info{
-        background-color: hsl(216, 99%, 29%);    
+    &.success{
+        background-color: hsl(120, 100%, 25%);
     }
+
+    // &.info{
+    //     background-color: hsl(216, 99%, 29%);
+    // }
 
     &.notification-active{
         opacity: 1;
     }
-    
+
     .notification-svg svg {
         height: 2.5em;
         margin-top: 0.5em;
         fill: rgb(7, 7, 7);
     }
-    
+
     .notification-text{
         font-family: 'Noto Sans';
         margin-top: 1.5em;

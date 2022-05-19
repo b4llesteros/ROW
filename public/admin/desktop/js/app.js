@@ -2243,12 +2243,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderCloseEdit": () => (/* binding */ renderCloseEdit)
 /* harmony export */ });
 var renderCloseEdit = function renderCloseEdit() {
-  var closeEditButton = document.querySelector('.closeedit');
+  var closeEditButton = document.querySelector('.close-edit');
   var table = document.querySelector(".table");
   var edit = document.querySelector(".edit-section");
+  var filterSection = document.querySelector(".filter-section");
+  var filter = document.querySelector(".filter");
   closeEditButton.addEventListener('click', function () {
     table.classList.remove("minimized");
     edit.classList.remove("active");
+    filterSection.classList.remove("active");
+    filter.classList.remove("active");
   });
 };
 

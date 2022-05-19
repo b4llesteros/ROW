@@ -840,15 +840,13 @@ p {
   color: hsl(208deg, 100%, 97%);
   right: 2rem;
   transition: opacity 0.3s ease-in-out;
+  z-index: 100;
 }
 .notification.error {
   background-color: hsl(0deg, 100%, 50%);
 }
 .notification.success {
   background-color: hsl(120deg, 100%, 25%);
-}
-.notification.info {
-  background-color: hsl(216deg, 99%, 29%);
 }
 .notification.notification-active {
   opacity: 1;
@@ -877,8 +875,10 @@ p {
 
 .filter-section.active {
   transition: all 0.5s;
+  position: absolute;
   height: 20vh;
-  width: 100%;
+  width: 50%;
+  margin-left: 2%;
 }
 
 .filter-section-disappear {
@@ -916,7 +916,6 @@ p {
   transition: all 0.2s;
   transition-delay: 0.1s;
   width: 0;
-  z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -972,17 +971,21 @@ p {
 
 .category-title {
   margin-top: 1em;
+  font-weight: 700;
+}
+
+.form-element {
+  display: block;
 }
 
 .form-element-label {
-  margin-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  font-weight: 700;
 }
 
-.form-elemenet-input input {
-  margin-top: 3em;
-  border-top: 0em;
-  border-left: 0em;
-  border-right: 0em;
+.form-element-input input {
+  margin-top: 1em;
   width: 28vh;
 }
 
@@ -1022,7 +1025,9 @@ p {
 
 .edit-title {
   margin-left: 1.5em;
-  margin-top: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  font-weight: 700;
 }
 
 .title-input input {
@@ -1040,7 +1045,9 @@ p {
 
 .content-title {
   margin-left: 1.5em;
-  margin-top: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  font-weight: 700;
 }
 
 .content-input textarea {
@@ -1300,7 +1307,18 @@ tr:hover .table-buttons svg {
   min-height: 15vh;
 }
 
-.closeedit svg {
+.ck-toolbar__items {
+  margin-left: 10em;
+}
+
+.title-input, .content-input {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.close-edit svg {
   margin-left: 0.5em;
   margin-top: 0.5em;
+  cursor: pointer;
 }
