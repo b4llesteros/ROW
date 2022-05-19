@@ -1445,3 +1445,7 @@ tr:hover .table-buttons svg {
 .inline li {
   display: inline;
 }
+
+.closeedit svg {
+  margin-left: -10em;
+}

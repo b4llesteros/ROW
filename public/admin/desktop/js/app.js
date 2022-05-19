@@ -2225,9 +2225,32 @@ var renderCheckBox = function renderCheckBox() {
 //         checkBox.checked = true;
 //         alert('checkbox esta seleccionado');
 //     }else{
-//         checkBox.checked = false;
+//         checkBox.checked = false;        
 //     }
 // });
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/closeedit.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/desktop/closeedit.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderCloseEdit": () => (/* binding */ renderCloseEdit)
+/* harmony export */ });
+var renderCloseEdit = function renderCloseEdit() {
+  var closeEditButton = document.querySelector('.closeedit');
+  var table = document.querySelector(".table");
+  var edit = document.querySelector(".edit-section");
+  closeEditButton.addEventListener('click', function () {
+    table.classList.remove("minimized");
+    edit.classList.remove("active");
+  });
+};
 
 /***/ }),
 
@@ -2281,8 +2304,8 @@ var renderEditButton = function renderEditButton() {
   var edit = document.querySelector(".edit-section");
   editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', function () {
-      table.classList.toggle("minimized");
-      edit.classList.toggle("active");
+      table.classList.add("minimized");
+      edit.classList.add("active");
     });
   });
 };
@@ -20058,13 +20081,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edittabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edittabs.js */ "./resources/js/admin/desktop/edittabs.js");
 /* harmony import */ var _edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edittabs-local.js */ "./resources/js/admin/desktop/edittabs-local.js");
 /* harmony import */ var _checkbox_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox.js */ "./resources/js/admin/desktop/checkbox.js");
-/* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
-/* harmony import */ var _notification__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./notification */ "./resources/js/admin/desktop/notification.js");
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
-/* harmony import */ var _imageupload_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./imageupload.js */ "./resources/js/admin/desktop/imageupload.js");
-/* harmony import */ var _renderCkEditor_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./renderCkEditor.js */ "./resources/js/admin/desktop/renderCkEditor.js");
-/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _notification__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./notification */ "./resources/js/admin/desktop/notification.js");
+/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./form.js */ "./resources/js/admin/desktop/form.js");
+/* harmony import */ var _imageupload_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./imageupload.js */ "./resources/js/admin/desktop/imageupload.js");
+/* harmony import */ var _renderCkEditor_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./renderCkEditor.js */ "./resources/js/admin/desktop/renderCkEditor.js");
+/* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
+/* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
+/* harmony import */ var _closeedit_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./closeedit.js */ "./resources/js/admin/desktop/closeedit.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
+
 
 
 
@@ -20082,12 +20107,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_edittabs_js__WEBPACK_IMPORTED_MODULE_2__.renderEditTabs)();
 (0,_edittabs_local_js__WEBPACK_IMPORTED_MODULE_3__.renderEditTabsLocal)();
 (0,_checkbox_js__WEBPACK_IMPORTED_MODULE_4__.renderCheckBox)();
-(0,_delete_button_js__WEBPACK_IMPORTED_MODULE_5__.renderDeleteButton)();
-(0,_notification__WEBPACK_IMPORTED_MODULE_6__.renderNotification)();
-(0,_form_js__WEBPACK_IMPORTED_MODULE_7__.renderForm)();
-(0,_imageupload_js__WEBPACK_IMPORTED_MODULE_8__.renderImageUpload)();
-(0,_renderCkEditor_js__WEBPACK_IMPORTED_MODULE_9__.renderCkEditor)();
-(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_10__.renderFilterButton)();
+(0,_notification__WEBPACK_IMPORTED_MODULE_5__.renderNotification)();
+(0,_form_js__WEBPACK_IMPORTED_MODULE_6__.renderForm)();
+(0,_imageupload_js__WEBPACK_IMPORTED_MODULE_7__.renderImageUpload)();
+(0,_renderCkEditor_js__WEBPACK_IMPORTED_MODULE_8__.renderCkEditor)();
+(0,_filter_button_js__WEBPACK_IMPORTED_MODULE_9__.renderFilterButton)();
+(0,_delete_button_js__WEBPACK_IMPORTED_MODULE_10__.renderDeleteButton)();
+(0,_closeedit_js__WEBPACK_IMPORTED_MODULE_11__.renderCloseEdit)();
 })();
 
 /******/ })()

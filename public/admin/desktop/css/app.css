@@ -752,8 +752,8 @@ p {
 /*Start | On-Off Button Design*/
 .btn-onoff {
   margin-top: 0.5em;
-  margin-right: 0.5em;
-  margin-left: 2em;
+  margin-right: 0em;
+  margin-left: 0.5em;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -1298,4 +1298,9 @@ tr:hover .table-buttons svg {
 
 .ck-editor__editable {
   min-height: 15vh;
+}
+
+.closeedit svg {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
 }

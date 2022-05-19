@@ -2,7 +2,7 @@ export let renderCheckBox = () => {
 
 
     let checkBox = document.getElementById("checkbox");
-   
+
     checkBox.addEventListener('click', () => {
         checkBox.toggleAttribute("checked");
     });
@@ -11,14 +11,12 @@ export let renderCheckBox = () => {
 
 
 
- 
+
 // checkBox.addEventListener('click', () => {
 //     if(checkBox.checked){
 //         checkBox.checked = true;
 //         alert('checkbox esta seleccionado');
 //     }else{
-//         checkBox.checked = false;
-        
+//         checkBox.checked = false;        
 //     }
-
 // });
