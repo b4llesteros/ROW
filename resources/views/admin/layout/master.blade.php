@@ -4,9 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="-">
 
-		<title></title>
-		<meta name="description" content="-">
-        <meta name="keywords" 	 content="-">
+	
 
     
         @include("admin.layout.partials.styles")   

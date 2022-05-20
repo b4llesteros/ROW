@@ -37,12 +37,19 @@ Route::get('/galleryproduct', function () {
     return view('front/pages/galleryproduct/index');
 });
 
+Route::get('/faqs', function () {
+    return view('front/pages/faqs/index');
+});
+
+// ADMIN 
+
+
 Route::get('/admin/users', function () {
     return view('admin/pages/users/index');
 });
 
-Route::get('/faqs', function () {
-    return view('front/pages/faqs/index');
+Route::get('/admin/faqs', function () {
+    return view('admin/pages/faqs/faqs');
 });
 
 
