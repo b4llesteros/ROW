@@ -6,7 +6,7 @@
         @yield('table')
     </div>
 
-    <div class="form">
+    <div class="form-container">
         @yield('form')
     </div>
 

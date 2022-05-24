@@ -1,4 +1,4 @@
-<form>
+<form class="admin-form">
     <div class="desktop-one-column mobile-one-column">
         <div class="column">                    
             <div class="container--tabs">

@@ -7,7 +7,7 @@
                 </div>
                 <div class="column">
                     <div class="panel-section-title">
-                        <h1>Users</h1>
+                        <h1>Faqs</h1>
                     </div>  
                 </div>
                 <div class="column">
