@@ -1,5 +1,9 @@
 export let renderCheckBox = () => {
 
+    //Es un evento personalizado que se dispara cuando se renderiza el formulario
+    document.addEventListener("renderFormModules", (event => {
+        renderCkeckBox();
+    }));
 
     let checkBox = document.getElementById("checkbox");
 

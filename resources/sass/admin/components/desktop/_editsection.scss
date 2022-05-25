@@ -6,7 +6,6 @@
     transition: all 0.2s;
     transition-delay: 0.1s;
     width: 0;
-
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -65,9 +64,11 @@
     margin-top: 1em;
     font-weight: 700;
 }
-.form-element{
+
+.form-element {
     display: block;
 }
+
 .form-element-label {
     margin-top: 1em;
     margin-bottom: 0em;
@@ -76,7 +77,6 @@
 
 .form-element-input input {
     margin-top: 1em;
-
     width: 28vh;
 }
 
@@ -162,9 +162,9 @@
     padding: 0.5em;
     margin-left: 3em;
     background-color: $secondary-color;
-    ;
     svg {
         height: 2em;
+        cursor: pointer;
         &:hover {
             fill: #ffff;
         }
@@ -188,5 +188,6 @@
     margin-left: 1.5em;
 }
 
-
-
+.title-input input {
+    margin-left: 0em;
+}

@@ -12,6 +12,9 @@ import { renderCkEditor } from './renderCkEditor.js';
 import { renderFilterButton } from './filter-button.js';
 import { renderDeleteButton } from './delete-button.js';
 import { renderCloseEdit } from './closeedit.js';
+import { renderSaveButton } from './savebutton.js';
+import { renderTable } from './table.js';
+import { renderAddButton } from './add-button.js';
 
 renderEditButton();
 renderMenuButton();
@@ -25,3 +28,6 @@ renderCkEditor();
 renderFilterButton();
 renderDeleteButton();
 renderCloseEdit();
+renderSaveButton();
+renderTable();
+renderAddButton();

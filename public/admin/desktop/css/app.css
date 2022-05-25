@@ -757,6 +757,7 @@ p {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .btn-onoff input {
@@ -1073,6 +1074,7 @@ p {
 }
 .tab-saveicon svg {
   height: 2em;
+  cursor: pointer;
 }
 .tab-saveicon svg:hover {
   fill: white;
@@ -1092,6 +1094,10 @@ p {
 
 .form-element {
   margin-left: 1.5em;
+}
+
+.title-input input {
+  margin-left: 0em;
 }
 
 .hamburger {
@@ -1229,6 +1235,14 @@ tr:hover .table-buttons svg {
 
 .table.minimized td:last-child {
   width: 20%;
+}
+
+.save-button svg {
+  cursor: pointer;
+}
+
+.create-button svg {
+  cursor: pointer;
 }
 
 .image-selector input[type=file] {

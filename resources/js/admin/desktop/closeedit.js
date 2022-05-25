@@ -1,5 +1,9 @@
 export let renderCloseEdit = () => {
 
+    //Es un evento personalizado que se dispara cuando se renderiza el formulario
+    document.addEventListener("renderFormModules", (event => {
+        renderCloseEdit();
+    }));
 
     let closeEditButton = document.querySelector('.close-edit');
     let table = document.querySelector(".table");

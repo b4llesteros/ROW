@@ -5,6 +5,10 @@ export let renderDeleteButton = () => {
     let deleteLayer = document.querySelector('.delete-layer');
     let deleteLayerCloseButton = document.querySelector('.delete-cancel');
 
+    document.addEventListener("renderFormModules", (event => {
+        renderDeleteButton();
+    }));
+
 
     deleteButtons.forEach(deleteButtons => {
         deleteButtons.addEventListener('click', () => {

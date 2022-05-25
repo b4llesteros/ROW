@@ -12,6 +12,9 @@ export let renderForm = () => {
     //Es la etiqueta del formulario
     let forms = document.querySelectorAll('.admin-form');
 
+    //Es un evento personalizado que se dispara cuando se renderiza el formulario
+    //Se puede hacer para uno mismo 
+
     document.addEventListener("renderFormModules", (event => {
         renderForm();
     }), { once: true });
@@ -61,6 +64,7 @@ export let renderForm = () => {
                     .then(json => {
 
                         formContainer.innerHTML = json.form;
+                        document.querySelector('.edit-section').classList.add('active');
 
                         /*
                             Cuando hacemos un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
@@ -68,6 +72,7 @@ export let renderForm = () => {
                             personalizado, que será el evento que cargará todo el javascript que tenga el formulario. 
                             En la siguiente línea estamos declarando un evento personalizado que se llamará 'renderFormModules' que 
                             podrá ser escuchado por el resto de archivos. 
+
                         */
                         document.dispatchEvent(new CustomEvent('renderFormModules'));
                     })
@@ -91,18 +96,21 @@ export let renderForm = () => {
             forms.forEach(form => {
 
                 /*
-                    En las siguientes líneas se obtiene el valor del formulario a través de un objeto FormData
+                    En las siguientes líneas se obtiene el valor del formulario(todo lo del formulario) a través de un objeto FormData
                     y se captura la url que usaremos para enviar los datos al servidor.
                 */
-
+                //Captura los datos del formulario
                 let data = new FormData(form);
+                //Captura la url del formulario
                 let url = form.action;
+
 
                 /*	
                     En el siguiente valor estamos capturando los datos del ckeditor y se los añadimos a los datos
                     del formData. 
                 */
 
+                //Para coger los datos del CkEditor no se puede hacer con el FormData, se coge de la siguiente forma
                 if (ckeditors != 'null') {
 
                     Object.entries(ckeditors).forEach(([key, value]) => {
@@ -110,22 +118,36 @@ export let renderForm = () => {
                     });
                 }
 
+                // for (var pair of data.entries()) {
+                //     console.log(pair[0] + ', ' + pair[1]);
+                // }
+
+
                 /*
                     A continuación vamos a hacer una llamada de tipo POST mediante fetch, esta vez vamos a 
                     añadir en los headers el token que nos ha dado Laravel el cual va a prevenir que se puedan 
                     hacer ataques de tipos cross-site scripting.
                 */
 
+
                 let sendPostRequest = async() => {
 
                     // document.dispatchEvent(new CustomEvent('startWait'));
 
                     let response = await fetch(url, {
+
+                            //headers sirve para poner opciones a las llamadas
                             headers: {
+                                //se manda la información en forma de JSON, se pide al servidor que acepte los datos en formato JSON
                                 'Accept': 'application/json',
+                                //El csrf-token es el identificador de sesión, en la siguiente línea
+                                //se está capturando el token que nos ha dado Laravel
                                 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
                             },
+                            //Cuando se hace una llamada de tipo POST o DELETE, hay que garantizar que el mismo
+                            //usuario que abre la web es el mismo que manda la petición.
                             method: 'POST',
+                            //Este data son los datos del formulario del FormData
                             body: data
                         })
                         .then(response => {
@@ -137,6 +159,8 @@ export let renderForm = () => {
                         .then(json => {
 
                             formContainer.innerHTML = json.form;
+                            document.querySelector('.edit-section').classList.add('active');
+
 
                             document.dispatchEvent(new CustomEvent('loadTable', {
                                 detail: {
@@ -150,7 +174,7 @@ export let renderForm = () => {
                         .catch(error => {
 
                             // document.dispatchEvent(new CustomEvent('stopWait'));
-
+                            // Si hay un error y es igual al 422, es un error de validador
                             if (error.status == '422') {
 
                                 error.json().then(jsonError => {

@@ -97,7 +97,8 @@ class FaqController extends Controller
         */
 
         $view = View::make('admin.pages.faqs.index') 
-                ->with('faq', $this->faq) //Método with() para pasarle una variable a la vista
+                //Método with() para pasarle una variable a la vista
+                ->with('faq', $this->faq) 
                 ->with('faqs', $this->faq->where('active', 1)->get());
                 
                 
@@ -141,23 +142,35 @@ class FaqController extends Controller
             'form' => $view['form']
         ]);
     }
-
+    // Para utilizar el validador en esta línea se inyecta la dependencia del validador(del servidor) de formularios que corresponde.
+    //Si el validador detecta algo que no es correcto, ningún código se validará y devolverá un error 422 con los mensajes de error.
+    //Ejemplo de otro panel de administración: public function store(UserRequest $request)
     public function store(FaqRequest $request)
     {            
         
-
-        $user = $this->user->updateOrCreate([
+            //este $this->faq es el modelo (el modelo es el que hace cosas con la base de datos)
+            //updateOrCreate = actualiza o crea
+        $faq = $this->faq->updateOrCreate([
+                //request = a que es obligatorio que tiene que estar en blanco
+                //si el usuario lo deja en blanco, el formulario no se guardaría
+                //Esta id pertenece al input que está hidden dentro del formulario, por tanto la siguiente línea comprueba 
+                //si el campo id está vacío o no, si está vacío, crea un nuevo registro, si no está vacío, actualiza el registro
                 'id' => request('id')],[
+                    //request es que cogerá los datos del formulario( del atributo name=" ") y los guardará
                 'name' => request('name'),
                 'title' => request('title'),
                 'description' => request('description'),
                 'visible' => 1,
                 'active' => 1,
         ]);
-            
-        $view = View::make('admin.faqs.index')
+        //crea la vista de la tabla  
+        $view = View::make('admin.pages.faqs.index')
+        // pasa las dos variables a la vista que está preparando
+        //la variable $faqs tiene todos los registros de la tabla faqs
         ->with('faqs', $this->faq->where('active', 1)->get())
+        //la variable $faq significa los campos de la base de datos sin nada
         ->with('faq', $faq)
+        //renderiza secciones, en este caso la tabla y el formulario
         ->renderSections();        
 
         return response()->json([

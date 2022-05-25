@@ -2184,6 +2184,34 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/admin/desktop/add-button.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/desktop/add-button.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderAddButton": () => (/* binding */ renderAddButton)
+/* harmony export */ });
+var renderAddButton = function renderAddButton() {
+  var addButtons = document.querySelectorAll(".add-button");
+  var table = document.querySelector(".table");
+  var edit = document.querySelector(".edit-section");
+  document.addEventListener("renderFormModules", function (event) {
+    renderAddButton();
+  });
+  addButtons.forEach(function (addButton) {
+    addButton.addEventListener('click', function () {
+      table.classList.add("minimized");
+      edit.classList.add("active");
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/desktop/bootstrap.js":
 /*!*************************************************!*\
   !*** ./resources/js/admin/desktop/bootstrap.js ***!
@@ -2227,6 +2255,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderCheckBox": () => (/* binding */ renderCheckBox)
 /* harmony export */ });
 var renderCheckBox = function renderCheckBox() {
+  //Es un evento personalizado que se dispara cuando se renderiza el formulario
+  document.addEventListener("renderFormModules", function (event) {
+    renderCkeckBox();
+  });
   var checkBox = document.getElementById("checkbox");
   checkBox.addEventListener('click', function () {
     checkBox.toggleAttribute("checked");
@@ -2254,6 +2286,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderCloseEdit": () => (/* binding */ renderCloseEdit)
 /* harmony export */ });
 var renderCloseEdit = function renderCloseEdit() {
+  //Es un evento personalizado que se dispara cuando se renderiza el formulario
+  document.addEventListener("renderFormModules", function (event) {
+    renderCloseEdit();
+  });
   var closeEditButton = document.querySelector('.close-edit');
   var table = document.querySelector(".table");
   var edit = document.querySelector(".edit-section");
@@ -2284,6 +2320,9 @@ var renderDeleteButton = function renderDeleteButton() {
   var deleteButtons = document.querySelectorAll('.delete-button');
   var deleteLayer = document.querySelector('.delete-layer');
   var deleteLayerCloseButton = document.querySelector('.delete-cancel');
+  document.addEventListener("renderFormModules", function (event) {
+    renderDeleteButton();
+  });
   deleteButtons.forEach(function (deleteButtons) {
     deleteButtons.addEventListener('click', function () {
       deleteLayer.classList.add('delete-layer-active');
@@ -2317,6 +2356,9 @@ var renderEditButton = function renderEditButton() {
   var editButtons = document.querySelectorAll(".edit-button");
   var table = document.querySelector(".table");
   var edit = document.querySelector(".edit-section");
+  document.addEventListener("renderFormModules", function (event) {
+    renderEditButton();
+  });
   editButtons.forEach(function (editButton) {
     editButton.addEventListener('click', function () {
       table.classList.add("minimized");
@@ -2372,6 +2414,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderEditTabs": () => (/* binding */ renderEditTabs)
 /* harmony export */ });
 var renderEditTabs = function renderEditTabs() {
+  3; //Es un evento personalizado que se dispara cuando se renderiza el formulario
+
+  document.addEventListener("renderFormModules", function (event) {
+    renderEditTabs();
+  });
   var tabs = document.querySelectorAll('.tab');
   var contents = document.querySelectorAll(".content");
   tabs.forEach(function (tab) {
@@ -2463,7 +2510,9 @@ var renderForm = function renderForm() {
 
   var createButton = document.querySelector('.create-button'); //Es la etiqueta del formulario
 
-  var forms = document.querySelectorAll('.admin-form');
+  var forms = document.querySelectorAll('.admin-form'); //Es un evento personalizado que se dispara cuando se renderiza el formulario
+  //Se puede hacer para uno mismo 
+
   document.addEventListener("renderFormModules", function (event) {
     renderForm();
   }, {
@@ -2501,13 +2550,14 @@ var renderForm = function renderForm() {
                     // tenemos que pasarle el objeto JSON y el nombre del dato que queremos acceder ejem: json.form.
                   }).then(function (json) {
                     formContainer.innerHTML = json.form;
+                    document.querySelector('.edit-section').classList.add('active');
                     /*
                         Cuando hacemos un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
                         volver a asignar los eventos a los elementos que hemos creado. Para ello vamos a hacer un evento 
                         personalizado, que será el evento que cargará todo el javascript que tenga el formulario. 
                         En la siguiente línea estamos declarando un evento personalizado que se llamará 'renderFormModules' que 
                         podrá ser escuchado por el resto de archivos. 
-                    */
+                      */
 
                     /*
                         Cuando hacemos un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
@@ -2515,7 +2565,7 @@ var renderForm = function renderForm() {
                         personalizado, que será el evento que cargará todo el javascript que tenga el formulario. 
                         En la siguiente línea estamos declarando un evento personalizado que se llamará 'renderFormModules' que 
                         podrá ser escuchado por el resto de archivos. 
-                    */
+                      */
                     document.dispatchEvent(new CustomEvent('renderFormModules'));
                   })["catch"](function (error) {
                     //Se va al catch si el servidor no responde o no se puede conectar
@@ -2550,15 +2600,18 @@ var renderForm = function renderForm() {
     storeButton.addEventListener("click", function (event) {
       forms.forEach(function (form) {
         /*
-            En las siguientes líneas se obtiene el valor del formulario a través de un objeto FormData
+            En las siguientes líneas se obtiene el valor del formulario(todo lo del formulario) a través de un objeto FormData
             y se captura la url que usaremos para enviar los datos al servidor.
         */
-        var data = new FormData(form);
+        //Captura los datos del formulario
+        var data = new FormData(form); //Captura la url del formulario
+
         var url = form.action;
         /*	
             En el siguiente valor estamos capturando los datos del ckeditor y se los añadimos a los datos
             del formData. 
         */
+        //Para coger los datos del CkEditor no se puede hacer con el FormData, se coge de la siguiente forma
 
         if (ckeditors != 'null') {
           Object.entries(ckeditors).forEach(function (_ref2) {
@@ -2568,7 +2621,10 @@ var renderForm = function renderForm() {
 
             data.append(key, value.getData());
           });
-        }
+        } // for (var pair of data.entries()) {
+        //     console.log(pair[0] + ', ' + pair[1]);
+        // }
+
         /*
             A continuación vamos a hacer una llamada de tipo POST mediante fetch, esta vez vamos a 
             añadir en los headers el token que nos ha dado Laravel el cual va a prevenir que se puedan 
@@ -2585,17 +2641,25 @@ var renderForm = function renderForm() {
                   case 0:
                     _context2.next = 2;
                     return fetch(url, {
+                      //headers sirve para poner opciones a las llamadas
                       headers: {
+                        //se manda la información en forma de JSON, se pide al servidor que acepte los datos en formato JSON
                         'Accept': 'application/json',
+                        //El csrf-token es el identificador de sesión, en la siguiente línea
+                        //se está capturando el token que nos ha dado Laravel
                         'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
                       },
+                      //Cuando se hace una llamada de tipo POST o DELETE, hay que garantizar que el mismo
+                      //usuario que abre la web es el mismo que manda la petición.
                       method: 'POST',
+                      //Este data son los datos del formulario del FormData
                       body: data
                     }).then(function (response) {
                       if (!response.ok) throw response;
                       return response.json();
                     }).then(function (json) {
                       formContainer.innerHTML = json.form;
+                      document.querySelector('.edit-section').classList.add('active');
                       document.dispatchEvent(new CustomEvent('loadTable', {
                         detail: {
                           table: json.table
@@ -2605,6 +2669,7 @@ var renderForm = function renderForm() {
                       document.dispatchEvent(new CustomEvent('renderTableModules'));
                     })["catch"](function (error) {
                       // document.dispatchEvent(new CustomEvent('stopWait'));
+                      // Si hay un error y es igual al 422, es un error de validador
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
                           var errors = jsonError.errors;
@@ -2764,14 +2829,174 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
 
 var renderCkEditor = function renderCkEditor() {
-  var editors = document.querySelectorAll('.ckeditor');
-  editors.forEach(function (editor) {
-    _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default().create(editor).then(function (editor) {
-      window.editor = editor;
+  //Es un evento personalizado que se dispara cuando se renderiza el formulario
+  document.addEventListener("renderFormModules", function (event) {
+    renderCkEditor();
+  });
+  window.ckeditors = [];
+  document.querySelectorAll('.ckeditor').forEach(function (ckeditor) {
+    _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default().create(ckeditor, {
+      toolbar: {
+        items: ['bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', '|', 'blockQuote', 'undo', 'redo']
+      }
+    }).then(function (classicEditor) {
+      ckeditors[ckeditor.name] = classicEditor;
     })["catch"](function (error) {
-      console.error('There was a problem initializing the editor.', error);
+      console.error(error);
     });
   });
+}; // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// export let renderCkEditor = () => {
+//     let editors = document.querySelectorAll('.ckeditor');
+//     editors.forEach(editor => {
+//         ClassicEditor.create(editor)
+//         .then(editor => {
+//                 window.editor = editor;
+//             })
+//             .catch(error => {
+//                 console.error('There was a problem initializing the editor.', error);
+//             });
+//     });
+// }
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/savebutton.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/desktop/savebutton.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderSaveButton": () => (/* binding */ renderSaveButton)
+/* harmony export */ });
+var renderSaveButton = function renderSaveButton() {
+  var saveButton = document.getElementById('save-button');
+  var nameInput = document.getElementById('name-input');
+
+  if (saveButton) {
+    saveButton.addEventListener('click', function () {
+      var name = nameInput.value;
+
+      if (name) {
+        document.dispatchEvent(new CustomEvent('message', {
+          detail: {
+            text: 'Formulario enviado correctamente',
+            type: 'success'
+          }
+        }));
+      } else {
+        document.dispatchEvent(new CustomEvent('message', {
+          detail: {
+            text: 'Por favor, rellene el formulario',
+            type: 'error'
+          }
+        }));
+      }
+    });
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/desktop/table.js":
+/*!*********************************************!*\
+  !*** ./resources/js/admin/desktop/table.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderTable": () => (/* binding */ renderTable)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var renderTable = function renderTable() {
+  //Esta es la caja que envuelve toda la tabla
+  var tableContainer = document.querySelector(".table");
+  var editButtons = document.querySelectorAll(".edit-button");
+  var deleteButtons = document.querySelectorAll(".delete-button");
+  document.addEventListener("loadTable", function (event) {
+    tableContainer.innerHTML = event.detail.table;
+  });
+  document.addEventListener("renderTableModules", function (event) {
+    renderTable();
+  }, {
+    once: true
+  });
+
+  if (editButtons) {
+    editButtons.forEach(function (editButton) {
+      editButton.addEventListener("click", function () {
+        var url = editButton.dataset.url;
+
+        var sendEditRequest = /*#__PURE__*/function () {
+          var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+            var response;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    document.dispatchEvent(new CustomEvent('startWait'));
+                    _context.next = 3;
+                    return fetch(url, {
+                      headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                      },
+                      method: 'GET'
+                    }).then(function (response) {
+                      if (!response.ok) throw response;
+                      return response.json();
+                    }).then(function (json) {
+                      document.dispatchEvent(new CustomEvent('loadForm', {
+                        detail: {
+                          form: json.form
+                        }
+                      }));
+                      document.dispatchEvent(new CustomEvent('renderFormModules'));
+                    })["catch"](function (error) {
+                      if (error.status == '500') {
+                        console.log(error);
+                      }
+
+                      ;
+                    });
+
+                  case 3:
+                    response = _context.sent;
+
+                  case 4:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          return function sendEditRequest() {
+            return _ref.apply(this, arguments);
+          };
+        }();
+
+        sendEditRequest();
+      });
+    });
+  }
+
+  if (deleteButtons) {
+    deleteButtons.forEach(function (deleteButton) {
+      deleteButton.addEventListener("click", function () {});
+    });
+  }
 };
 
 /***/ }),
@@ -21058,7 +21283,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _filter_button_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./filter-button.js */ "./resources/js/admin/desktop/filter-button.js");
 /* harmony import */ var _delete_button_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./delete-button.js */ "./resources/js/admin/desktop/delete-button.js");
 /* harmony import */ var _closeedit_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./closeedit.js */ "./resources/js/admin/desktop/closeedit.js");
+/* harmony import */ var _savebutton_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./savebutton.js */ "./resources/js/admin/desktop/savebutton.js");
+/* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./table.js */ "./resources/js/admin/desktop/table.js");
+/* harmony import */ var _add_button_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./add-button.js */ "./resources/js/admin/desktop/add-button.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.js");
+
+
+
 
 
 
@@ -21084,6 +21315,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/admin/desktop/bootstrap.j
 (0,_filter_button_js__WEBPACK_IMPORTED_MODULE_9__.renderFilterButton)();
 (0,_delete_button_js__WEBPACK_IMPORTED_MODULE_10__.renderDeleteButton)();
 (0,_closeedit_js__WEBPACK_IMPORTED_MODULE_11__.renderCloseEdit)();
+(0,_savebutton_js__WEBPACK_IMPORTED_MODULE_12__.renderSaveButton)();
+(0,_table_js__WEBPACK_IMPORTED_MODULE_13__.renderTable)();
+(0,_add_button_js__WEBPACK_IMPORTED_MODULE_14__.renderAddButton)();
 })();
 
 /******/ })()

@@ -1,16 +1,16 @@
-export let renderEditButton = () => {
+export let renderAddButton = () => {
 
-    let editButtons = document.querySelectorAll(".edit-button");
+    let addButtons = document.querySelectorAll(".add-button");
     let table = document.querySelector(".table");
     let edit = document.querySelector(".edit-section");
 
     document.addEventListener("renderFormModules", (event => {
-        renderEditButton();
+        renderAddButton();
     }));
 
-    editButtons.forEach(editButton => {
+    addButtons.forEach(addButton => {
 
-        editButton.addEventListener('click', () => {
+        addButton.addEventListener('click', () => {
             table.classList.add("minimized");
             edit.classList.add("active");
         });
