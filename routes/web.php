@@ -15,22 +15,22 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'admin'], function () {
 
     /*
-    Dentro de resource( 'faqs') "faqs" significa lo que tendremos que escribir en la url para entrar en la página, 
+    Dentro de resource( 'faqs') "faqs" significa lo que tendremos que escribir en la url para entrar en la página,
     en este caso tendremos que escribir www.dev-asociacion-mascotas.com/admin/faqs
     Tendremos que decir también que controlador queremos cargar, en este caso el controlador que estamos cargando se llama
     "FaqController" y se encuentra dentro de la carpeta /app/http/controllers/admin
-    
-    En Internet una web es enviada desde el servidor al usuario a través de un protocolo llamado 
+
+    En Internet una web es enviada desde el servidor al usuario a través de un protocolo llamado
     HTTP/S. La información enviada a través de este protocolo llega a los puertos 80 (no-seguro) o al 443 (seguro). Cuando instalamos
     en el servidor un programa para convertirlo en un servidor web (por ejemplo, Nginx o Apache) estos se van a responsabilizar de
-    gestionar esos puertos para detectar si hay llamadas o hay que hacer envios de datos. 
+    gestionar esos puertos para detectar si hay llamadas o hay que hacer envios de datos.
     Las llamadas que hacemos por HTTP tiene principalmente 4 métodos (verbos) que son:
-    - GET: Esto significa que hacemos una llamada que va a pedir datos al servidor. 
+    - GET: Esto significa que hacemos una llamada que va a pedir datos al servidor.
     - POST: Esto significa que hacemos una llamada que va a enviar datos al servidor.
     - PUT: Esto signifca que hacemos una llamada que va a actualizar datos en el servidor.
-    - DELETE: Esto significa que hacemos una llamada que va a eliminar datos en el servidor. 
+    - DELETE: Esto significa que hacemos una llamada que va a eliminar datos en el servidor.
     Estos métodos HTTP se corresponden con los métodos que vamos a tener en el controlador:
-    
+
     - index, create, edit show  serán llamadas de tipo GET
         -- En index pediremos todos los datos de una tabla de la base de datos
         -- En create pediremos que nos limpie el formulario.
@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     - store será una llamada de tipo POST
         -- En store guardaremos los datos que hayamos añadido en el formulario, nos servirá tanto para guardar datos nuevos como actualizarlos
     - destroy será una llamada de tipo DELETE
-        -- En destroy lo que haremos es borrar un dato de la base de datos 
+        -- En destroy lo que haremos es borrar un dato de la base de datos
     */
                     //Laravel le quita la s a faqs
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin'], function () {
         ],
         'names' => [
             'index' => 'faqs', // poner el enlace -> {{route('faqs')}} //Se señala este alias, y este alias apunta a este método
-            'create' => 'faqs_create', //Método GET // Escoba 
+            'create' => 'faqs_create', //Método GET // Escoba
             'edit' => 'faqs_edit', //Método GET // Lápiz
             'store' => 'faqs_store', //Método POST //Disquete
             'destroy' => 'faqs_destroy', //Método DELETE //Borrar
@@ -55,7 +55,23 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('providers', 'App\Http\Controllers\Admin\ProviderController', [
+        'parameters' => [
+            'providers' => 'provider', // faq es la palabra que saldrá como parámentro en las rutas en route:link
+        ],
+        'names' => [
+            'index' => 'providers', // poner el enlace -> {{route('faqs')}} //Se señala este alias, y este alias apunta a este método
+            'create' => 'providers_create', //Método GET // Escoba
+            'edit' => 'providers_edit', //Método GET // Lápiz
+            'store' => 'providers_store', //Método POST //Disquete
+            'destroy' => 'providers_destroy', //Método DELETE //Borrar
+            'show' => 'providers_show', //Método GET //Lápiz
+        ]
+    ]);
+
 });
+
+
 
 
 Route::get('/', function () {
@@ -86,7 +102,7 @@ Route::get('/faqs', function () {
     return view('front/pages/faqs/index');
 });
 
-// ADMIN 
+// ADMIN
 
 
 

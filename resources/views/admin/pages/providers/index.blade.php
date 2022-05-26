@@ -9,26 +9,25 @@
                 <th>Creado</th>
                 <th> @include('admin.components.addbutton') </th>
             </tr>
-            @if(isset($faqs))
-                @foreach($faqs as $faq_element)
+            @if(isset($providers))
+                @foreach($providers as $provider_element)
                     <tr>
-                        <td>{{$faq_element->id}}</td>
-                        <td>{{$faq_element->name}}</td>
-                        <td>{{$faq_element->created_at}}</td>
+                        <td>{{$provider_element->id}}</td>
+                        <td>{{$provider_element->name}}</td>
+                        <td>{{$provider_element->created_at}}</td>
                         <td>
                             <div class="table-buttons">
-                                <div class="table-button delete-button" data-url="{{route('faqs_destroy', ['faq' => $faq_element->id])}}">
+                                <div class="table-button delete-button" data-url="{{route('providers_destroy', ['provider' => $provider_element->id])}}">
                                     <svg  viewBox="0 0 24 24">
                                         <path  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z" />
                                     </svg>
                                 </div>
 
-                                <div class="table-button edit-button" data-url="{{route('faqs_edit', ['faq' => $faq_element->id])}}">
+                                <div class="table-button edit-button" data-url="{{route('providers_edit', ['provider' => $provider_element->id])}}">
                                     <svg  viewBox="0 0 24 24">
                                         <path  d="M9.75 20.85C11.53 20.15 11.14 18.22 10.24 17C9.35 15.75 8.12 14.89 6.88 14.06C6 13.5 5.19 12.8 4.54 12C4.26 11.67 3.69 11.06 4.27 10.94C4.86 10.82 5.88 11.4 6.4 11.62C7.31 12 8.21 12.44 9.05 12.96L10.06 11.26C8.5 10.23 6.5 9.32 4.64 9.05C3.58 8.89 2.46 9.11 2.1 10.26C1.78 11.25 2.29 12.25 2.87 13.03C4.24 14.86 6.37 15.74 7.96 17.32C8.3 17.65 8.71 18.04 8.91 18.5C9.12 18.94 9.07 18.97 8.6 18.97C7.36 18.97 5.81 18 4.8 17.36L3.79 19.06C5.32 20 7.88 21.47 9.75 20.85M18.96 7.33L13.29 13H11V10.71L16.67 5.03L18.96 7.33M22.36 6.55C22.35 6.85 22.04 7.16 21.72 7.47L19.2 10L18.33 9.13L20.93 6.54L20.34 5.95L19.67 6.62L17.38 4.33L19.53 2.18C19.77 1.94 20.16 1.94 20.39 2.18L21.82 3.61C22.06 3.83 22.06 4.23 21.82 4.47C21.61 4.68 21.41 4.88 21.41 5.08C21.39 5.28 21.59 5.5 21.79 5.67C22.08 5.97 22.37 6.25 22.36 6.55Z" />
                                     </svg>
                                 </div>
-
                             </div>
                         </td>
                     </tr>
@@ -40,7 +39,7 @@
 
 @section('form')
 
-    @if(isset($faq))
+    @if(isset($provider))
 
         @include('admin.components.menu')
 
@@ -63,7 +62,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="create-button" data-url="{{route('faqs_create')}}">
+                            <div class="create-button" data-url="{{route('providers_create')}}">
                                 <svg  viewBox="0 0 24 24">
                                     <path  d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
                                 </svg>
@@ -90,7 +89,7 @@
                 <div class="content content--active" data-tab="content">
                     <div class="desktop-one-column mobile-one-column">
 
-                        <form class="admin-form" action="{{route("faqs_store")}}">
+                        <form class="admin-form" action="{{route("providers_store")}}">
                             {{-- Este input es obligatorio en todo formualrio, como es de
                             tipo hidden, es un dato que está escondido, y sirve para enviar un dato
                             al servidor sin que el usuario lo sepa, si crear un usuario nuevo este
@@ -105,7 +104,7 @@
                                         </div>
                                         <div class="form-input">
                                             {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <input name="name" value="{{isset($faq->name) ? $faq->name:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
+                                            <input name="name" value="{{isset($provider->name) ? $provider->name:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
                                         </div>
                                     </div>
 
@@ -115,7 +114,7 @@
                                         </div>
                                         <div class="form-input">
                                             {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <input name="title" value="{{isset($faq->title) ? $faq->title:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
+                                            <input name="title" value="{{isset($provider->title) ? $provider->title:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
                                         </div>
                                     </div>
 
@@ -125,7 +124,7 @@
                                         </div>
                                         <div class="form-input">
                                             {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <textarea class="ckeditor" value="{{isset($faq->description) ? $faq->description:''}}" id="name-input" name="description" placeholder="Escribe la respuesta"></textarea>
+                                            <textarea class="ckeditor" value="{{isset($provider->description) ? $provider->description:''}}" id="name-input" name="description" placeholder="Escribe la respuesta"></textarea>
                                         </div>
                                     </div>
                                 </div>
