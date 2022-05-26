@@ -2287,14 +2287,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var renderCloseEdit = function renderCloseEdit() {
   //Es un evento personalizado que se dispara cuando se renderiza el formulario
-  document.addEventListener("renderFormModules", function (event) {
-    renderCloseEdit();
-  });
   var closeEditButton = document.querySelector('.close-edit');
   var table = document.querySelector(".table");
   var edit = document.querySelector(".edit-section");
   var filterSection = document.querySelector(".filter-section");
-  var filter = document.querySelector(".filter");
+  var filter = document.querySelector(".filter"); //Es un evento personalizado que se dispara cuando se renderiza el formulario
+
+  document.addEventListener("renderFormModules", function (event) {
+    renderCloseEdit();
+  }, {
+    once: true
+  });
   closeEditButton.addEventListener('click', function () {
     table.classList.remove("minimized");
     edit.classList.remove("active");
@@ -2316,26 +2319,89 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "renderDeleteButton": () => (/* binding */ renderDeleteButton)
 /* harmony export */ });
-var renderDeleteButton = function renderDeleteButton() {
-  var deleteButtons = document.querySelectorAll('.delete-button');
-  var deleteLayer = document.querySelector('.delete-layer');
-  var deleteLayerCloseButton = document.querySelector('.delete-cancel');
-  document.addEventListener("renderFormModules", function (event) {
-    renderDeleteButton();
-  });
-  deleteButtons.forEach(function (deleteButtons) {
-    deleteButtons.addEventListener('click', function () {
-      deleteLayer.classList.add('delete-layer-active');
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 
-      if (deleteLayer.classList.contains('delete-layer-active')) {
-        deleteLayer.addEventListener('click', function () {
-          deleteLayer.classList.remove('delete-layer-active');
-        });
-      }
-    });
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var renderDeleteButton = function renderDeleteButton() {
+  var modalDelete = document.querySelector('.delete-layer');
+  var deleteConfirm = document.querySelector('.delete-confirm-button');
+  var deleteCancel = document.querySelector('.delete-cancel-button');
+  document.addEventListener("openModalDelete", function (event) {
+    deleteConfirm.dataset.url = event.detail.url;
+    modalDelete.classList.add('active');
+  }, {
+    once: true
   });
-  deleteLayerCloseButton.addEventListener('click', function () {
-    deleteLayerCloseButton.classList.remove('delete-layer-active');
+  deleteCancel.addEventListener("click", function () {
+    modalDelete.classList.remove('active');
+  });
+  deleteConfirm.addEventListener("click", function () {
+    var url = deleteConfirm.dataset.url;
+
+    var sendDeleteRequest = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+                  },
+                  method: 'DELETE'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  if (json.table) {
+                    document.dispatchEvent(new CustomEvent('loadTable', {
+                      detail: {
+                        table: json.table
+                      }
+                    }));
+                  }
+
+                  document.dispatchEvent(new CustomEvent('loadForm', {
+                    detail: {
+                      form: json.form
+                    }
+                  }));
+                  modalDelete.classList.remove('active');
+                  document.dispatchEvent(new CustomEvent('renderFormModules'));
+                  document.dispatchEvent(new CustomEvent('renderTableModules'));
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+
+                  ;
+                });
+
+              case 2:
+                response = _context.sent;
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function sendDeleteRequest() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    sendDeleteRequest();
   });
 };
 
@@ -2513,6 +2579,11 @@ var renderForm = function renderForm() {
   var forms = document.querySelectorAll('.admin-form'); //Es un evento personalizado que se dispara cuando se renderiza el formulario
   //Se puede hacer para uno mismo 
 
+  document.addEventListener("loadForm", function (event) {
+    formContainer.innerHTML = event.detail.form;
+  }, {
+    once: true
+  });
   document.addEventListener("renderFormModules", function (event) {
     renderForm();
   }, {
@@ -2603,10 +2674,11 @@ var renderForm = function renderForm() {
             En las siguientes líneas se obtiene el valor del formulario(todo lo del formulario) a través de un objeto FormData
             y se captura la url que usaremos para enviar los datos al servidor.
         */
-        //Captura los datos del formulario
+        //Se crea el objeto FormDAta  y captura los datos del formulario
         var data = new FormData(form); //Captura la url del formulario
 
-        var url = form.action;
+        var url = form.action; //action es una propiedad del formulario donde pone el enlace
+
         /*	
             En el siguiente valor estamos capturando los datos del ckeditor y se los añadimos a los datos
             del formData. 
@@ -2647,6 +2719,8 @@ var renderForm = function renderForm() {
                         'Accept': 'application/json',
                         //El csrf-token es el identificador de sesión, en la siguiente línea
                         //se está capturando el token que nos ha dado Laravel
+                        //el Token tiene que estar en Delete y Post
+                        //coge el valor del metaname que está puesto en el HEAD
                         'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
                       },
                       //Cuando se hace una llamada de tipo POST o DELETE, hay que garantizar que el mismo
@@ -2655,16 +2729,27 @@ var renderForm = function renderForm() {
                       //Este data son los datos del formulario del FormData
                       body: data
                     }).then(function (response) {
-                      if (!response.ok) throw response;
+                      //El servidor responde, pero no es OK, por lo que se va al catch y lanza el error que nos devuelve
+                      if (!response.ok) throw response; //Si es OK, se devuelve la respuesta en formato JSON y lo pasa al siguiente then
+
+                      //Si es OK, se devuelve la respuesta en formato JSON y lo pasa al siguiente then
                       return response.json();
-                    }).then(function (json) {
+                    }) //la palabra JSON es simplificado del response.json anterior
+                    .then(function (json) {
+                      //Se enchufa al contenedor el form mediante innerHTML
+                      //!!!!Cuando se hace un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
+                      //recargar JavaScript para que los eventos sean asignados nuevamente.
                       formContainer.innerHTML = json.form;
-                      document.querySelector('.edit-section').classList.add('active');
+                      document.querySelector('.edit-section').classList.add('active'); //Se manda el evento loadTable para que se ejecute el javascript del formulario
+
+                      //Se manda el evento loadTable para que se ejecute el javascript del formulario
                       document.dispatchEvent(new CustomEvent('loadTable', {
                         detail: {
                           table: json.table
                         }
-                      }));
+                      })); //Se manda el evento renderFormModules para que se reactive el JavaScript
+
+                      //Se manda el evento renderFormModules para que se reactive el JavaScript
                       document.dispatchEvent(new CustomEvent('renderFormModules'));
                       document.dispatchEvent(new CustomEvent('renderTableModules'));
                     })["catch"](function (error) {
@@ -2832,6 +2917,8 @@ var renderCkEditor = function renderCkEditor() {
   //Es un evento personalizado que se dispara cuando se renderiza el formulario
   document.addEventListener("renderFormModules", function (event) {
     renderCkEditor();
+  }, {
+    once: true
   });
   window.ckeditors = [];
   document.querySelectorAll('.ckeditor').forEach(function (ckeditor) {
@@ -2927,9 +3014,11 @@ var renderTable = function renderTable() {
   var deleteButtons = document.querySelectorAll(".delete-button");
   document.addEventListener("loadTable", function (event) {
     tableContainer.innerHTML = event.detail.table;
+  }, {
+    once: true
   });
   document.addEventListener("renderTableModules", function (event) {
-    renderTable();
+    renderTable(); //Se pone para que no se quede bloqueado el equipo a base de hacer llamadas y eventos
   }, {
     once: true
   });
@@ -2962,6 +3051,7 @@ var renderTable = function renderTable() {
                           form: json.form
                         }
                       }));
+                      document.querySelector('.edit-section').classList.add('active');
                       document.dispatchEvent(new CustomEvent('renderFormModules'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
@@ -2994,7 +3084,13 @@ var renderTable = function renderTable() {
 
   if (deleteButtons) {
     deleteButtons.forEach(function (deleteButton) {
-      deleteButton.addEventListener("click", function () {});
+      deleteButton.addEventListener('click', function () {
+        document.dispatchEvent(new CustomEvent('openModalDelete', {
+          detail: {
+            url: deleteButton.dataset.url
+          }
+        }));
+      });
     });
   }
 };

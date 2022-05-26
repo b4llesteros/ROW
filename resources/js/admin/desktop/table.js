@@ -6,10 +6,11 @@ export let renderTable = () => {
 
     document.addEventListener("loadTable", (event => {
         tableContainer.innerHTML = event.detail.table;
-    }));
+    }), { once: true });
 
     document.addEventListener("renderTableModules", (event => {
         renderTable();
+        //Se pone para que no se quede bloqueado el equipo a base de hacer llamadas y eventos
     }), { once: true });
 
     if (editButtons) {
@@ -17,6 +18,7 @@ export let renderTable = () => {
         editButtons.forEach(editButton => {
 
             editButton.addEventListener("click", () => {
+
 
                 let url = editButton.dataset.url;
 
@@ -42,8 +44,9 @@ export let renderTable = () => {
                                 detail: {
                                     form: json.form,
                                 }
-                            }));
 
+                            }));
+                            document.querySelector('.edit-section').classList.add('active');
                             document.dispatchEvent(new CustomEvent('renderFormModules'));
                         })
                         .catch(error => {
@@ -61,11 +64,16 @@ export let renderTable = () => {
 
     if (deleteButtons) {
 
+
+
         deleteButtons.forEach(deleteButton => {
 
-            deleteButton.addEventListener("click", () => {
-
-
+            deleteButton.addEventListener('click', () => {
+                document.dispatchEvent(new CustomEvent('openModalDelete', {
+                    detail: {
+                        url: deleteButton.dataset.url,
+                    }
+                }));
             });
         });
     }

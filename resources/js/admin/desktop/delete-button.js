@@ -1,29 +1,68 @@
 export let renderDeleteButton = () => {
 
+    let modalDelete = document.querySelector('.delete-layer');
+    let deleteConfirm = document.querySelector('.delete-confirm-button');
+    let deleteCancel = document.querySelector('.delete-cancel-button');
 
-    let deleteButtons = document.querySelectorAll('.delete-button');
-    let deleteLayer = document.querySelector('.delete-layer');
-    let deleteLayerCloseButton = document.querySelector('.delete-cancel');
+    document.addEventListener("openModalDelete", (event => {
 
-    document.addEventListener("renderFormModules", (event => {
-        renderDeleteButton();
-    }));
+        deleteConfirm.dataset.url = event.detail.url;
+        modalDelete.classList.add('active');
+    }), { once: true });
 
+    deleteCancel.addEventListener("click", () => {
+        modalDelete.classList.remove('active');
+    });
 
-    deleteButtons.forEach(deleteButtons => {
-        deleteButtons.addEventListener('click', () => {
-            deleteLayer.classList.add('delete-layer-active');
-            if (deleteLayer.classList.contains('delete-layer-active')) {
-                deleteLayer.addEventListener('click', () => {
-                    deleteLayer.classList.remove('delete-layer-active');
+    deleteConfirm.addEventListener("click", () => {
+
+        let url = deleteConfirm.dataset.url;
+
+        let sendDeleteRequest = async() => {
+
+            let response = await fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+                    },
+                    method: 'DELETE',
+                })
+                .then(response => {
+
+                    if (!response.ok) throw response;
+
+                    return response.json();
+                })
+                .then(json => {
+
+                    if (json.table) {
+                        document.dispatchEvent(new CustomEvent('loadTable', {
+                            detail: {
+                                table: json.table,
+                            }
+                        }));
+                    }
+
+                    document.dispatchEvent(new CustomEvent('loadForm', {
+                        detail: {
+                            form: json.form,
+                        }
+                    }));
+
+                    modalDelete.classList.remove('active');
+
+                    document.dispatchEvent(new CustomEvent('renderFormModules'));
+                    document.dispatchEvent(new CustomEvent('renderTableModules'));
+                })
+                .catch(error => {
+
+                    if (error.status == '500') {
+                        console.log(error);
+                    };
                 });
-            }
-        });
-    });
+        };
 
-    deleteLayerCloseButton.addEventListener('click', () => {
-        deleteLayerCloseButton.classList.remove('delete-layer-active');
+        sendDeleteRequest();
     });
-
 
 };

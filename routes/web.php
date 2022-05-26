@@ -40,20 +40,21 @@ Route::group(['prefix' => 'admin'], function () {
     - destroy será una llamada de tipo DELETE
         -- En destroy lo que haremos es borrar un dato de la base de datos 
     */
-
+                    //Laravel le quita la s a faqs
     Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
         'parameters' => [
-            'faqs' => 'faq', 
+            'faqs' => 'faq', // faq es la palabra que saldrá como parámentro en las rutas en route:link
         ],
         'names' => [
-            'index' => 'faqs',
-            'create' => 'faqs_create',
-            'edit' => 'faqs_edit',
-            'store' => 'faqs_store',
-            'destroy' => 'faqs_destroy',
-            'show' => 'faqs_show',
+            'index' => 'faqs', // poner el enlace -> {{route('faqs')}} //Se señala este alias, y este alias apunta a este método
+            'create' => 'faqs_create', //Método GET // Escoba 
+            'edit' => 'faqs_edit', //Método GET // Lápiz
+            'store' => 'faqs_store', //Método POST //Disquete
+            'destroy' => 'faqs_destroy', //Método DELETE //Borrar
+            'show' => 'faqs_show', //Método GET //Lápiz
         ]
     ]);
+
 });
 
 

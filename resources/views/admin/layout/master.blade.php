@@ -8,9 +8,6 @@
              {{-- En las restAPI se utiliza un API Token se usa un OAuth 2.0 --}}
         <meta name="csrf-token" content="{{ csrf_token()}}">
 
-	
-
-    
         @include("admin.layout.partials.styles")   
 
     </head>
@@ -18,7 +15,8 @@
     <body>            
         @include("admin.layout.partials.navbar")
         @include("admin.components.notification")  
-        
+        @include('admin.components.modal_delete')
+
         <main>
             <div class="container">
                 @yield("content")
@@ -28,7 +26,5 @@
         @include("admin.layout.partials.scripts")
         
     </body>
-
-        
 
 </html>

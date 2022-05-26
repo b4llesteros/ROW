@@ -15,6 +15,10 @@ export let renderForm = () => {
     //Es un evento personalizado que se dispara cuando se renderiza el formulario
     //Se puede hacer para uno mismo 
 
+    document.addEventListener("loadForm", (event => {
+        formContainer.innerHTML = event.detail.form;
+    }), { once: true });
+
     document.addEventListener("renderFormModules", (event => {
         renderForm();
     }), { once: true });
@@ -99,10 +103,10 @@ export let renderForm = () => {
                     En las siguientes líneas se obtiene el valor del formulario(todo lo del formulario) a través de un objeto FormData
                     y se captura la url que usaremos para enviar los datos al servidor.
                 */
-                //Captura los datos del formulario
+                //Se crea el objeto FormDAta  y captura los datos del formulario
                 let data = new FormData(form);
                 //Captura la url del formulario
-                let url = form.action;
+                let url = form.action; //action es una propiedad del formulario donde pone el enlace
 
 
                 /*	
@@ -142,6 +146,8 @@ export let renderForm = () => {
                                 'Accept': 'application/json',
                                 //El csrf-token es el identificador de sesión, en la siguiente línea
                                 //se está capturando el token que nos ha dado Laravel
+                                //el Token tiene que estar en Delete y Post
+                                //coge el valor del metaname que está puesto en el HEAD
                                 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
                             },
                             //Cuando se hace una llamada de tipo POST o DELETE, hay que garantizar que el mismo
@@ -151,23 +157,26 @@ export let renderForm = () => {
                             body: data
                         })
                         .then(response => {
-
+                            //El servidor responde, pero no es OK, por lo que se va al catch y lanza el error que nos devuelve
                             if (!response.ok) throw response;
-
+                            //Si es OK, se devuelve la respuesta en formato JSON y lo pasa al siguiente then
                             return response.json();
-                        })
+                        }) //la palabra JSON es simplificado del response.json anterior
                         .then(json => {
-
+                            //Se enchufa al contenedor el form mediante innerHTML
+                            //!!!!Cuando se hace un innerHTML se pierden todos los eventos de javascript, por lo que tenemos que
+                            //recargar JavaScript para que los eventos sean asignados nuevamente.
                             formContainer.innerHTML = json.form;
                             document.querySelector('.edit-section').classList.add('active');
 
-
+                            //Se manda el evento loadTable para que se ejecute el javascript del formulario
                             document.dispatchEvent(new CustomEvent('loadTable', {
                                 detail: {
                                     table: json.table,
                                 }
                             }));
 
+                            //Se manda el evento renderFormModules para que se reactive el JavaScript
                             document.dispatchEvent(new CustomEvent('renderFormModules'));
                             document.dispatchEvent(new CustomEvent('renderTableModules'));
                         })

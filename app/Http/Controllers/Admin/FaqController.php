@@ -8,7 +8,7 @@ namespace App\Http\Controllers\Admin;
 // otros archivos que contienen código a este archivo
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
+use App\Models\Faq; //El nombre del modelo es en singular
 use App\Http\Requests\Admin\FaqRequest;
 use Debugbar;
 
@@ -80,14 +80,14 @@ class FaqController extends Controller
     public function __construct(Faq $faq)
     {
        
-        $this->faq = $faq;
+        $this->faq = $faq; //Para tenerlo disponible en todos los métodos del controlador
        
         
         
         
     }
     
-    public function index()
+    public function index() //Método de Index, que tiene el alias Index en las rutas
     {
 
         /* 
@@ -96,27 +96,27 @@ class FaqController extends Controller
             tiene como valor todos los registros de la tabla faqs. Para pedir todos los datos hemos escrito: $this->faq->get();
         */
 
-        $view = View::make('admin.pages.faqs.index') 
+        $view = View::make('admin.pages.faqs.index') //Aquí carga la página de index
                 //Método with() para pasarle una variable a la vista
-                ->with('faq', $this->faq) 
-                ->with('faqs', $this->faq->where('active', 1)->get());
+                ->with('faq', $this->faq) // Pasa el index con los campos de la tabla vacios 
+                ->with('faqs', $this->faq->where('active', 1)->get());// Pasa el index con todos los campos de la tabla que tenga el campo active = 1
                 
                 
 
-        if(request()->ajax()) {
+        if(request()->ajax()) { //Carga media AJAX y así no carga toda la página de nuevo
             
-            $sections = $view->renderSections(); 
+            $sections = $view->renderSections(); //Método para renderizar las secciones de la vista y las carga con las nuevas variables 
     
-            return response()->json([
-                'table' => $sections['table'],
-                'form' => $sections['form'],
+            return response()->json([ //Lo devuelve mediante un JSON
+                'table' => $sections['table'], //Devuelve la  seccion table
+                'form' => $sections['form'], //Devuelve la seccion form
             ]); 
         }
 
-        return $view;
+        return $view; //Devuelve la vista con los datos cargados en la variable $view
     }
 
-    public function create()
+    public function create() //Sirve para recargar el formulario y que aparezca en blanco 
     {
         /*
             En la siguientes líneas estamos creando una variable que se llama view, y que tiene como valor el objeto View.
@@ -128,9 +128,9 @@ class FaqController extends Controller
         */
 
        $view = View::make('admin.pages.faqs.index')
-        ->with('faq', $this->faq)
-        ->renderSections();
-        Debugbar::info($view['form']);
+        ->with('faq', $this->faq) //  Devuleve los campos de la tabla vacíos 
+        ->renderSections(); //Renderiza secciones
+        Debugbar::info($view['form']); //Devuelve solo el formulario 
 
         /*
             En la siguiente línea estamos devolviendo una respuesta a la petición AJAX, una petición AJAX hará que una parte de la página
@@ -145,7 +145,9 @@ class FaqController extends Controller
     // Para utilizar el validador en esta línea se inyecta la dependencia del validador(del servidor) de formularios que corresponde.
     //Si el validador detecta algo que no es correcto, ningún código se validará y devolverá un error 422 con los mensajes de error.
     //Ejemplo de otro panel de administración: public function store(UserRequest $request)
-    public function store(FaqRequest $request)
+    public function store(FaqRequest $request) //se llama al validador, como se usa cuando se envía datos, y no siempre, no se 
+                                                //llama al validador en el constructor, por eso el validador se hace mediante la inyección 
+                                                //de dependencias
     {            
         
             //este $this->faq es el modelo (el modelo es el que hace cosas con la base de datos)
@@ -157,6 +159,8 @@ class FaqController extends Controller
                 //si el campo id está vacío o no, si está vacío, crea un nuevo registro, si no está vacío, actualiza el registro
                 'id' => request('id')],[
                     //request es que cogerá los datos del formulario( del atributo name=" ") y los guardará
+                    //la palabra que está entre paréntesis es el nombre del atributo name de cada input
+                    //no puede haber dos inputs con el mismo atributo name  
                 'name' => request('name'),
                 'title' => request('title'),
                 'description' => request('description'),
@@ -166,9 +170,10 @@ class FaqController extends Controller
         //crea la vista de la tabla  
         $view = View::make('admin.pages.faqs.index')
         // pasa las dos variables a la vista que está preparando
-        //la variable $faqs tiene todos los registros de la tabla faqs
+        //la variable $faqs tiene todos los registros de la tabla faqs, que cumple esa condición
         ->with('faqs', $this->faq->where('active', 1)->get())
-        //la variable $faq significa los campos de la base de datos sin nada
+        //la variable $faq significa los campos de la base de datos sin nada, es decir
+        //cuando le pasas los datos se guarda y devuelve el formulario en blanco
         ->with('faq', $faq)
         //renderiza secciones, en este caso la tabla y el formulario
         ->renderSections();        
@@ -179,9 +184,11 @@ class FaqController extends Controller
             'id' => $faq->id,
         ]);
     }
-
-    public function edit(Faq $faq)
+//la palabra que pones con el $ tiene que concidir con la que le has asignado 
+ // en el parámetro de la ruta
+    public function edit(Faq $faq)                           
     {
+        debugbar::info($faq);
         $view = View::make('admin.pages.faqs.index')
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->get());   
@@ -204,6 +211,7 @@ class FaqController extends Controller
 
     public function destroy(Faq $faq)
     {
+
         $faq->active = 0;
         $faq->save();
 
