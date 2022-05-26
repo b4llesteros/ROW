@@ -4,6 +4,11 @@ export let renderDeleteButton = () => {
     let deleteConfirm = document.querySelector('.delete-confirm-button');
     let deleteCancel = document.querySelector('.delete-cancel-button');
 
+    document.addEventListener("renderTableModules", (event => {
+        renderDeleteButton();
+        //Se pone para que no se quede bloqueado el equipo a base de hacer llamadas y eventos
+    }), { once: true });
+
     document.addEventListener("openModalDelete", (event => {
 
         deleteConfirm.dataset.url = event.detail.url;
@@ -50,7 +55,8 @@ export let renderDeleteButton = () => {
                     }));
 
                     modalDelete.classList.remove('active');
-
+                    document.querySelector('.edit-section').classList.add('active');
+                    document.querySelector('.table').classList.add('minimized');
                     document.dispatchEvent(new CustomEvent('renderFormModules'));
                     document.dispatchEvent(new CustomEvent('renderTableModules'));
                 })

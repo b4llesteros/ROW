@@ -2257,7 +2257,7 @@ __webpack_require__.r(__webpack_exports__);
 var renderCheckBox = function renderCheckBox() {
   //Es un evento personalizado que se dispara cuando se renderiza el formulario
   document.addEventListener("renderFormModules", function (event) {
-    renderCkeckBox();
+    renderCheckBox();
   });
   var checkBox = document.getElementById("checkbox");
   checkBox.addEventListener('click', function () {
@@ -2268,7 +2268,7 @@ var renderCheckBox = function renderCheckBox() {
 //         checkBox.checked = true;
 //         alert('checkbox esta seleccionado');
 //     }else{
-//         checkBox.checked = false;        
+//         checkBox.checked = false;
 //     }
 // });
 
@@ -2331,6 +2331,11 @@ var renderDeleteButton = function renderDeleteButton() {
   var modalDelete = document.querySelector('.delete-layer');
   var deleteConfirm = document.querySelector('.delete-confirm-button');
   var deleteCancel = document.querySelector('.delete-cancel-button');
+  document.addEventListener("renderTableModules", function (event) {
+    renderDeleteButton(); //Se pone para que no se quede bloqueado el equipo a base de hacer llamadas y eventos
+  }, {
+    once: true
+  });
   document.addEventListener("openModalDelete", function (event) {
     deleteConfirm.dataset.url = event.detail.url;
     modalDelete.classList.add('active');
@@ -2375,6 +2380,8 @@ var renderDeleteButton = function renderDeleteButton() {
                     }
                   }));
                   modalDelete.classList.remove('active');
+                  document.querySelector('.edit-section').classList.add('active');
+                  document.querySelector('.table').classList.add('minimized');
                   document.dispatchEvent(new CustomEvent('renderFormModules'));
                   document.dispatchEvent(new CustomEvent('renderTableModules'));
                 })["catch"](function (error) {

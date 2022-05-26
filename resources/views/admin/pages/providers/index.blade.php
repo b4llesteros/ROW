@@ -104,29 +104,18 @@
                                         </div>
                                         <div class="form-input">
                                             {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <input name="name" value="{{isset($provider->name) ? $provider->name:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
+                                            <input name="name" value="{{isset($provider->name) ? $provider->name:''}}" class="input-question" placeholder="Escribe la pregunta">
                                         </div>
+                                   </div>
+                                   <div class="form-group">
+                                    <div class="form-label">
+                                        <span>Nombre</span>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="form-label">
-                                            <span>Título</span>
-                                        </div>
-                                        <div class="form-input">
-                                            {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <input name="title" value="{{isset($provider->title) ? $provider->title:''}}" id="name-input" class="input-question" placeholder="Escribe la pregunta">
-                                        </div>
+                                    <div class="form-input">
+                                        {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
+                                        <input name="email" value="{{isset($provider->email) ? $provider->email:''}}"  class="input-question" placeholder="Escribe la pregunta">
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="form-label">
-                                            <span>Descripción</span>
-                                        </div>
-                                        <div class="form-input">
-                                            {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <textarea class="ckeditor" value="{{isset($provider->description) ? $provider->description:''}}" id="name-input" name="description" placeholder="Escribe la respuesta"></textarea>
-                                        </div>
-                                    </div>
+                               </div>
                                 </div>
                             </div>
                         </form>

@@ -96,7 +96,7 @@ class ProviderController extends Controller
         $view = View::make('admin.pages.providers.index') //Aquí carga la página de index
                 //Método with() para pasarle una variable a la vista
                 ->with('provider', $this->provider) // Pasa el index con los campos de la tabla vacios
-                ->with('providers', $this->provider);// Pasa el index con todos los campos de la tabla que tenga el campo active = 1
+                ->with('providers', $this->provider->where('active', 1)->get());  // Pasa el index con todos los campos de la tabla que tenga el campo active = 1
 
 
 
