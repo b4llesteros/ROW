@@ -49,8 +49,8 @@
                     </div>      
                 </div>
                 <div class="column">                    
-                    <div class="contact-form">                    
-                        <form>                         
+                    <div class="contact-form form-container">                    
+                        <form class="admin-form" action="{{route("contact_store")}}" >                         
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
                                     <label for="name">Nombre</label>
