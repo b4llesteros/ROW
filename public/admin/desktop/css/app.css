@@ -577,6 +577,19 @@ header {
   display: inline;
 }
 
+.form-input input {
+  width: 100%;
+}
+
+.form-label {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.add-button {
+  cursor: pointer;
+}
+
 .editbuttons {
   display: none;
   margin-top: 2.5em;

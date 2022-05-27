@@ -69,6 +69,35 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('products/categories', 'App\Http\Controllers\Admin\CategoryController', [
+        'parameters' => [
+            'categories' => 'category', 
+        ],
+        'names' => [
+            'index' => 'products_categories', 
+            'create' => 'products_categories_create',
+            'edit' => 'products_categories_edit', 
+            'store' => 'products_categories_store', 
+            'destroy' => 'products_categories_destroy',
+            'show' => 'products_categories_show', 
+        ]
+    ]);
+
+    Route::resource('products', 'App\Http\Controllers\Admin\ProductController', [
+        'parameters' => [
+            'products' => 'product',
+        ],
+        'names' => [
+            'index' => 'products', 
+            'create' => 'products_create', 
+            'edit' => 'products_edit', 
+            'store' => 'products_store', 
+            'destroy' => 'products_destroy', 
+            'show' => 'products_show', 
+        ]
+    ]);
+
+
 });
 
 

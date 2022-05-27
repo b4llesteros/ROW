@@ -31,8 +31,8 @@
                             </div>
                         </td>
                     </tr>
-                    @endforeach
-                @endif
+                @endforeach
+            @endif
         </table>
     </div>
 @endsection

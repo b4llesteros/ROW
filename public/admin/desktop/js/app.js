@@ -2530,6 +2530,9 @@ var renderFilterButton = function renderFilterButton() {
   var container = document.querySelector(".container");
   var containerTabs = document.querySelector(".edit-section");
   var filter = document.querySelector(".filter");
+  document.addEventListener("renderFormModules", function (event) {
+    renderFilterButton();
+  });
   filterButton.addEventListener('click', function () {
     filterButton.classList.toggle("change");
     filterMenu.classList.toggle("active");
@@ -2866,6 +2869,9 @@ var renderMenuButton = function renderMenuButton() {
   var container = document.querySelector(".container");
   var filter = document.querySelector(".filter");
   var containerTabs = document.querySelector(".edit-section");
+  document.addEventListener("renderFormModules", function (event) {
+    renderMenuButton();
+  });
   hamburger.addEventListener('click', function () {
     hamburger.classList.toggle("change");
     menu.classList.toggle("active");
@@ -2969,6 +2975,9 @@ __webpack_require__.r(__webpack_exports__);
 var renderSaveButton = function renderSaveButton() {
   var saveButton = document.getElementById('save-button');
   var nameInput = document.getElementById('name-input');
+  document.addEventListener("renderFormModules", function (event) {
+    renderSaveButton();
+  });
 
   if (saveButton) {
     saveButton.addEventListener('click', function () {

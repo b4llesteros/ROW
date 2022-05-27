@@ -3,6 +3,11 @@ export let renderSaveButton = () => {
     let saveButton = document.getElementById('save-button');
     let nameInput = document.getElementById('name-input');
 
+    document.addEventListener("renderFormModules", (event => {
+        renderSaveButton();
+    }));
+
+
     if (saveButton) {
         saveButton.addEventListener('click', function() {
 
