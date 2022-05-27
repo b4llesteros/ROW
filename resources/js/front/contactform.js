@@ -25,9 +25,6 @@ export let renderContactForm = () => {
 
         storeButton.addEventListener("click", (event) => {
 
-            alert("Se ha enviado el formulario");
-
-
             forms.forEach(form => {
 
                 let data = new FormData(form);
@@ -37,7 +34,6 @@ export let renderContactForm = () => {
                 let sendPostRequest = async() => {
 
                     let response = await fetch(url, {
-
 
                             headers: {
 
