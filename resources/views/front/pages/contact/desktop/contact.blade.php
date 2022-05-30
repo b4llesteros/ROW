@@ -50,7 +50,7 @@
                 </div>
                 <div class="column">                    
                     <div class="contact-form form-container">                    
-                        <form class="admin-form" action="{{route("contact_store")}}" >                         
+                        <form class="admin-form"  >                         
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
                                     <label for="name">Nombre</label>

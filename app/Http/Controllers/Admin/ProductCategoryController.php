@@ -12,7 +12,7 @@ use App\Http\Requests\Admin\CategoryRequest;
 
 
 
-class CategoryController extends Controller
+class ProductCategoryController extends Controller
 {
    
     protected $category;   
