@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email');
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('address');
             $table->string('additional_information');
             $table->string('city');
             $table->string('state');
-            $table->string('zip_code');   
+            $table->integer('zip_code');   
             $table->boolean('active')->default(true);        
             $table->boolean('visible');            
             $table->timestamps();
