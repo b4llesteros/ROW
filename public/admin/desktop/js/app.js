@@ -2846,6 +2846,7 @@ var renderImageUpload = function renderImageUpload() {
       deleteFile.closest('.image-selector').querySelector('.image-preview-svg').classList.remove('hidden');
       deleteFile.closest('.image-selector').querySelector('.image-preview-delete').classList.remove('active');
     });
+    return;
   });
 };
 

@@ -57,15 +57,15 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('providers', 'App\Http\Controllers\Admin\ProviderController', [
         'parameters' => [
-            'providers' => 'provider', // faq es la palabra que saldrá como parámentro en las rutas en route:link
+            'providers' => 'provider', 
         ],
         'names' => [
-            'index' => 'providers', // poner el enlace -> {{route('faqs')}} //Se señala este alias, y este alias apunta a este método
-            'create' => 'providers_create', //Método GET // Escoba
-            'edit' => 'providers_edit', //Método GET // Lápiz
-            'store' => 'providers_store', //Método POST //Disquete
-            'destroy' => 'providers_destroy', //Método DELETE //Borrar
-            'show' => 'providers_show', //Método GET //Lápiz
+            'index' => 'providers', 
+            'create' => 'providers_create', 
+            'edit' => 'providers_edit', 
+            'store' => 'providers_store', 
+            'destroy' => 'providers_destroy',
+            'show' => 'providers_show', 
         ]
     ]);
 
@@ -125,6 +125,19 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('clients', 'App\Http\Controllers\Admin\ClientController', [
+        'parameters' => [
+            'clients' => 'client',
+        ],
+        'names' => [
+            'index' => 'clients', 
+            'create' => 'clients_create', 
+            'edit' => 'clients_edit', 
+            'store' => 'clients_store', 
+            'destroy' => 'clients_destroy', 
+            'show' => 'clients_show', 
+        ]
+    ]);
 
 });
 

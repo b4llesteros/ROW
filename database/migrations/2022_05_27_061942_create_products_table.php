@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('description');  
             $table->string('spec');          
             $table->boolean('active')->default(true); 
-            $table->boolean('visible');        
+            $table->boolean('visible'); 
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

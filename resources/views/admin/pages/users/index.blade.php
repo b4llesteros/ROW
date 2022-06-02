@@ -117,6 +117,33 @@
                                             <input name="email" value="{{isset($user->email) ? $user->email:''}}"  class="input-question" placeholder="Escribe la pregunta">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="form-label">
+                                            <span>Email Confirmation</span>
+                                        </div>
+                                        <div class="form-input">
+                                            {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
+                                            <input name="email_verified_at" value="{{isset($user->email) ? $user->email:''}}"  class="input-question" placeholder="Escribe la pregunta">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-label">
+                                            <span>Password</span>
+                                        </div>
+                                        <div class="form-input">
+                                            {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
+                                            <input name="password" value="{{isset($user->password) ? $user->password:''}}"  class="input-question" placeholder="Escribe la pregunta">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-label">
+                                            <span>Password Confirmation</span>
+                                        </div>
+                                        <div class="form-input">
+                                            {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
+                                            <input name="password_confirmation" value="{{isset($user->password) ? $user->password:''}}"  class="input-question" placeholder="Escribe la pregunta">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>

@@ -2271,7 +2271,6 @@ var renderContactForm = function renderContactForm() {
 
   if (storeButton) {
     storeButton.addEventListener("click", function (event) {
-      alert("Se ha enviado el formulario");
       forms.forEach(function (form) {
         var data = new FormData(form);
         var url = form.action; //action es una propiedad del formulario donde pone el enlace

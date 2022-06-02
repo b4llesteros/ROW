@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
-use App\Models\Category; 
+use App\Models\CategoryProduct; 
 use App\Http\Requests\Admin\CategoryRequest;
 
 
@@ -19,7 +19,7 @@ class ProductCategoryController extends Controller
 
     public function __construct(Category $category)
     {       
-        $this->category = $category; //Para tenerlo disponible en todos los métodos del controlador
+        $this->category = $category; 
                      
     }
     
