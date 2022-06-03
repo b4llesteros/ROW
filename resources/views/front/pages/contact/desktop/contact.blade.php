@@ -2,9 +2,7 @@
 @extends('front.layout.master')  
 
     @section('content')
-
-
-        <main>          
+                
             <div class="desktop-one-column">
                 <div class="column column-title">
                     @include('front.components.desktop.title')
@@ -50,49 +48,49 @@
                 </div>
                 <div class="column">                    
                     <div class="contact-form form-container">                    
-                        <form class="admin-form"  >                         
+                        <form action="{{route("contacts_store")}}" id="form" class="front-form">                         
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
-                                    <label for="name">Nombre</label>
+                                    <label for="">Nombre</label>
                                 </div>        
                                 <div class="contact-form-input">        
-                                    <input type="text" name="name">
+                                    <input name="name" value="{{isset($contact->name) ? $contact->name:''}}"  class="input-form" placeholder="Escribe tus apellidos">
                                 </div>
                             </div>                            
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
-                                    <label for="name">Apellidos</label>
+                                    <label for="">Apellidos</label>
                                 </div>        
                                 <div class="contact-form-input">        
-                                    <input type="text" name="lastname">
+                                    <input name="surname" value="{{isset($contact->surname) ? $contact->surname:''}}"  class="input-form" placeholder="Escribe tus apellidos">
                                 </div>
                             </div>
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
-                                    <label for="name">Email</label>
+                                    <label for="">Email</label>
                                 </div>    
                                 <div class="contact-form-input">    
-                                    <input type="email" name="email">
+                                    <input name="email" value="{{isset($contact->email) ? $contact->email:''}}"  class="input-form" placeholder="Escribe tu email">
                                 </div>
                             </div>
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
-                                    <label for="name">Teléfono</label>
+                                    <label for="">Teléfono</label>
                                 </div>    
                                 <div class="contact-form-input">    
-                                    <input type="tel" name="telephone">
+                                    <input name="phone" value="{{isset($contact->phone) ? $contact->phone:''}}"  class="input-form" placeholder="Escribe tu teléfono">
                                 </div>
                             </div>
                             <div class="contact-form-element ">
                                 <div class="contact-form-label">
-                                    <label for="name">Escribe aquí el mensaje que deseas enviar</label>
+                                    <label for="">Escribe aquí el mensaje que deseas enviar</label>
                                 </div>    
                                 <div class="contact-form-input ">    
-                                    <textarea></textarea> 
+                                    <textarea name="message" value="{{isset($contact->message) ? $contact->message:''}}"></textarea> 
                                 </div>   
                             </div>  
                             <div class="contact-form-element contact-form-element-button">    
-                                <button class="send-button">Enviar</button>
+                                <button class="save-button">Enviar</button>
                             </div>                              
                         </form>                 
                     </div>

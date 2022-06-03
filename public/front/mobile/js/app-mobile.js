@@ -2230,10 +2230,13 @@ __webpack_require__.r(__webpack_exports__);
 var renderMenuButton = function renderMenuButton() {
   var hamburger = document.querySelector(".hamburger");
   var navsub = document.querySelector(".nav-sub");
-  hamburger.addEventListener('click', function () {
-    hamburger.classList.toggle("change");
-    navsub.classList.toggle("nav-change");
-  });
+
+  if (hamburger) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle("change");
+      navsub.classList.toggle("nav-change");
+    });
+  }
 };
 
 /***/ }),
@@ -19740,6 +19743,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/front/bootstrap.js");
 
 (0,_faqs_js__WEBPACK_IMPORTED_MODULE_0__.renderFaqs)();
 (0,_menu_button_js__WEBPACK_IMPORTED_MODULE_1__.renderMenuButton)();
+console.log("hola");
 })();
 
 /******/ })()

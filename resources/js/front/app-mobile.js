@@ -5,3 +5,5 @@ import { renderMenuButton } from "./menu-button.js";
 
 renderFaqs();
 renderMenuButton();
+
+console.log("hola");

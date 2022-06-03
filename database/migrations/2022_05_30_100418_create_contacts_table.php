@@ -20,9 +20,7 @@ return new class extends Migration
             $table->string('surname');
             $table->string('email');
             $table->string('phone');
-            $table->string('message');
-            $table->boolean('active')->default(true);        
-            $table->boolean('visible');
+            $table->string('message');             
         });
     }
 

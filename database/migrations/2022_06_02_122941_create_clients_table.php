@@ -23,9 +23,8 @@ return new class extends Migration
             $table->string('additional_information');
             $table->string('city');
             $table->string('state');
-            $table->integer('zip_code');   
-            $table->boolean('active')->default(true);        
-            $table->boolean('visible');            
+            $table->string('zip_code');   
+            $table->boolean('active')->default(true);   
             $table->timestamps();
         });
     }

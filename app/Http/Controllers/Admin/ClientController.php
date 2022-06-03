@@ -45,7 +45,7 @@ class ClientController extends Controller
        $view = View::make('admin.pages.clients.index') 
         ->with('client', $this->client)
         ->renderSections();
-        Debugbar::info($view['form']);       
+           
 
         return response()->json([
             'form' => $view['form']
@@ -65,8 +65,7 @@ class ClientController extends Controller
                 'additional_information' => request('additional_information'),
                 'city' => request('city'),
                 'state' => request('state'),
-                'zip_code' => request('zip_code'),
-                'visible' => 1,
+                'zip_code' => request('zip_code'),                
                 'active' => 1,
         ]);
   

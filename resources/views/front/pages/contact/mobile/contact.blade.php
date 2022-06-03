@@ -2,8 +2,6 @@
 @extends('front.layout.master')  
 
     @section('content')
-
-
         <main>          
             <div class="mobile-one-column">
                 <div class="column column-title">
@@ -50,7 +48,7 @@
                 </div>
                 <div class="column">                    
                     <div class="contact-form">                    
-                        <form>                         
+                        <form action="{{route("contacts_store")}}" id="form" class="front-form">                          
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
                                     <label for="name">Nombre</label>

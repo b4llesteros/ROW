@@ -19,13 +19,3 @@ mix.js('resources/js/front/app.js', 'public/front/desktop/js').version()
     .sass('resources/sass/admin/app-mobile.scss', 'public/admin/mobile/css').version()
     .sass('resources/sass/front/app.scss', 'public/front/desktop/css').version()
     .sass('resources/sass/front/app-mobile.scss', 'public/front/mobile/css').version();
-
-const path = require('path');
-
-module.exports = {
-    entry: './index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-};

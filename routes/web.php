@@ -111,20 +111,7 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    Route::resource('contacts', 'App\Http\Controllers\Admin\ContactController', [
-        'parameters' => [
-            'contacts' => 'contact',
-        ],
-        'names' => [
-            'index' => 'contacts', 
-            'create' => 'contacts_create', 
-            'edit' => 'contacts_edit', 
-            'store' => 'contacts_store', 
-            'destroy' => 'contacts_destroy', 
-            'show' => 'contacts_show', 
-        ]
-    ]);
-
+    
     Route::resource('clients', 'App\Http\Controllers\Admin\ClientController', [
         'parameters' => [
             'clients' => 'client',
@@ -141,9 +128,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-
-
-
 Route::get('/', function () {
     return view('front/pages/home/index');
 });
@@ -154,10 +138,6 @@ Route::get('/cart', function () {
 
 Route::get('/checkout', function () {
     return view('front/pages/checkout/index');
-});
-
-Route::get('/contact', function () {
-    return view('front/pages/contact/index');
 });
 
 Route::get('/productpage', function () {
@@ -172,9 +152,8 @@ Route::get('/faqs', function () {
     return view('front/pages/faqs/index');
 });
 
-// ADMIN
 
-
-
+Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
+Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
 
 
