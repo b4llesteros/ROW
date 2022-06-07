@@ -1,5 +1,5 @@
 export let renderForm = () => {
-
+    //Es la etiqueta main, porque es quien contiene el 'Content'
     let mainContent = document.getElementById("main");
     let storeButton = document.querySelector('.save-button');
     let forms = document.querySelectorAll('.front-form');
@@ -7,7 +7,8 @@ export let renderForm = () => {
     if (storeButton) {
 
         storeButton.addEventListener("click", (event) => {
-
+            //se pone para los botones que hay dentro de un formulario porque envía
+            //donde no queremos
             event.preventDefault();
 
             forms.forEach(form => {
@@ -16,6 +17,9 @@ export let renderForm = () => {
                 let url = form.action;
                 let sendPostRequest = async() => {
 
+
+                    //Para llamada POST y DELETE hace falta X-CSRF-TOKEN
+                    //Fetch es para realizar llamadas al servidor en Js
                     let response = await fetch(url, {
                             headers: {
                                 'Accept': 'application/json',

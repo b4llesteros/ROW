@@ -9,11 +9,11 @@
 @section('content')
 
 @if ($agent->isDesktop())
-    @include('front.pages.productpage.desktop.productpage')
+    @include('front.pages.product.desktop.product')
 @endif
 
 @if ($agent->isMobile())
-    @include('front.pages.productpage.mobile.productpage')
+    @include('front.pages.product.mobile.product')
 @endif  
     
 @endsection

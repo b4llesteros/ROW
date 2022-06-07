@@ -1,6 +1,6 @@
 @extends('front.layout.master')  
 
-@section('title') Gallery Products @endsection
+@section('title') Products @endsection
 
 @section('description') Description Page @endsection
 
@@ -9,11 +9,11 @@
 @section('content')
 
     @if ($agent->isDesktop())
-        @include('front.pages.galleryproduct.desktop.galleryproduct')
+        @include('front.pages.products.desktop.products', ['product' => $product])
     @endif
 
     @if ($agent->isMobile())
-         @include('front.pages.galleryproduct.mobile.galleryproduct')
+         @include('front.pages.products.mobile.products')
     @endif  
        
 @endsection  

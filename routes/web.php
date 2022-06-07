@@ -55,19 +55,19 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    Route::resource('providers', 'App\Http\Controllers\Admin\ProviderController', [
-        'parameters' => [
-            'providers' => 'provider', 
-        ],
-        'names' => [
-            'index' => 'providers', 
-            'create' => 'providers_create', 
-            'edit' => 'providers_edit', 
-            'store' => 'providers_store', 
-            'destroy' => 'providers_destroy',
-            'show' => 'providers_show', 
-        ]
-    ]);
+    // Route::resource('providers', 'App\Http\Controllers\Admin\ProviderController', [
+    //     'parameters' => [
+    //         'providers' => 'provider', 
+    //     ],
+    //     'names' => [
+    //         'index' => 'providers', 
+    //         'create' => 'providers_create', 
+    //         'edit' => 'providers_edit', 
+    //         'store' => 'providers_store', 
+    //         'destroy' => 'providers_destroy',
+    //         'show' => 'providers_show', 
+    //     ]
+    // ]);
 
     Route::resource('products/categories', 'App\Http\Controllers\Admin\ProductCategoryController', [
         'parameters' => [
@@ -128,32 +128,31 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::get('/', function () {
-    return view('front/pages/home/index');
-});
 
-Route::get('/cart', function () {
-    return view('front/pages/cart/index');
-});
-
-Route::get('/checkout', function () {
-    return view('front/pages/checkout/index');
-});
 
 Route::get('/productpage', function () {
     return view('front/pages/productpage/index');
 });
 
-Route::get('/galleryproduct', function () {
-    return view('front/pages/galleryproduct/index');
-});
 
-Route::get('/faqs', function () {
-    return view('front/pages/faqs/index');
-});
+
+Route::get('/', 'App\Http\Controllers\Front\HomeController@index');
+
+Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
+
+Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
+
+Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
+
+Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');
+//La variable $product es la que viene del controlador
+Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
+
 
 
 Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
+
+
 
 

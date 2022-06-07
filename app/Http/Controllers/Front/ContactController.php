@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Requests\Front\ContactRequest;
-use Debugbar;
+
 
 
 class ContactController extends Controller

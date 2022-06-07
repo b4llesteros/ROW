@@ -1,5 +1,10 @@
 export let renderCounter = () => {
 
+    document.addEventListener("renderCounterModules", (event => {
+        renderCounter();
+    }), { once: true });
+
+
 
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
 

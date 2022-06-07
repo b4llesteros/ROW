@@ -8,34 +8,34 @@
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">
                             <div class="product-image">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>
                         </div>    
                     </div>
                     <div class="desktop-five-columns mobile-four-columns">
                         <div class="column">
                             <div class="product-image-little">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>                            
                         </div> 
                         <div class="column">
                             <div class="product-image-little">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>                            
                         </div> 
                         <div class="column">
                             <div class="product-image-little">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>                            
                         </div> 
                         <div class="column">
                             <div class="product-image-little">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>                            
                         </div> 
                         <div class="column">
                             <div class="product-image-little">
-                                <img src="{{Storage::url('C2.png')}}" alt="">
+                                <img src="" alt="">
                             </div>                            
                         </div> 
                     </div>                
@@ -45,7 +45,7 @@
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">
                             <div class="product-title">
-                                <h1>Starter Level</h1>
+                                <h1>{{$product->title}}</h1>
                             </div>                            
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">
                             <div class="product-price">
-                                <h2>50€</h2>
+                                <h2>{{$product->price}}</h2>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">
                             <div class="product-description">
-                                <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</h3>
+                                <h3>{{$product->description}}</h3>
                             </div>
                         </div>
                     </div>

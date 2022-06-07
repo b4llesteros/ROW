@@ -79,7 +79,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)                           
     {
-        debugbar::info($product);
+        
         $view = View::make('admin.pages.products.index')
         ->with('product', $product)
         ->with('products', $this->product->where('active', 1)->get());   
@@ -96,7 +96,7 @@ class ProductController extends Controller
     }
 
     public function show(Product $product){
-
+        debugbar::info($product);
     }
 
     public function destroy(Product $product)

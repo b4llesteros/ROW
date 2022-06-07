@@ -1,4 +1,4 @@
-<div class="desktop-one-column">
+{{-- <div class="desktop-one-column">
     <div class="faqs-container">
         <div class="faq">
             <div class="faq-title">
@@ -77,4 +77,4 @@
             </div>       
         </div>
     </div>
-</div>
+</div> --}}

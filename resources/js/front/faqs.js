@@ -2,6 +2,11 @@ export let renderFaqs = () => {
 
     let faqs = document.querySelectorAll(".faq");
 
+    document.addEventListener("renderFaqsModules", (event => {
+        renderFaqs();
+    }), { once: true });
+
+
 
     faqs.forEach(faq => {
 

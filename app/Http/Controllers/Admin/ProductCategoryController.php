@@ -17,7 +17,7 @@ class ProductCategoryController extends Controller
    
     protected $category;   
 
-    public function __construct(Category $category)
+    public function __construct(CategoryProduct $category)
     {       
         $this->category = $category; 
                      

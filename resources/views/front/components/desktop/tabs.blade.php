@@ -9,13 +9,13 @@
         </div>
         <div class="container-content">
             <div class="content content--active" data-tab="description">
-                <span>content1</span>
+                <span>{{$product->description}}</span>
             </div>
             <div class="content" data-tab="specs">
-                <span>content2</span>
+                <span>{{$product->spec}}</span>
             </div>
             <div class="content" data-tab="opinions">
-                <span>content3</span>
+                <span>{{$product->opinions}}</span>
             </div>
         </div>
     </div>

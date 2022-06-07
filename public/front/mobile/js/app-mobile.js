@@ -2200,6 +2200,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var renderFaqs = function renderFaqs() {
   var faqs = document.querySelectorAll(".faq");
+  document.addEventListener("renderFaqsModules", function (event) {
+    renderFaqs();
+  }, {
+    once: true
+  });
   faqs.forEach(function (faq) {
     faq.addEventListener("click", function () {
       if (faq.classList.contains("active")) {

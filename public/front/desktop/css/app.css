@@ -842,6 +842,14 @@ header {
   margin: 2em 95em 0em 0em;
 }
 
+.menu-option {
+  color: #000000;
+  font-size: 1.5em;
+  font-family: "Noto Sans";
+  margin-left: 3em;
+  text-decoration: none;
+}
+
 .navbar-right {
   display: flex;
   justify-content: space-between;
@@ -863,12 +871,12 @@ header {
   color: hsl(0deg, 0%, 100%);
 }
 .navbar-right .home-icon {
-  margin: -0.5em -2.5em 0em -0.5em;
+  margin: -0.5em -2.5em 0em 5em;
   height: 2em;
   width: 3em;
 }
 .navbar-right .youtube-icon {
-  margin: -0.5em 0.5em 0em 1em;
+  margin: -0.5em 0.5em 0em 5em;
   height: 3em;
   width: 2.5em;
 }
@@ -876,7 +884,7 @@ header {
   color: hsl(0deg, 100%, 50%);
 }
 .navbar-right .instagram-icon {
-  margin: -0.5em 0.5em 0em 1em;
+  margin: -0.5em 0.5em 0em 5em;
   height: 3em;
   width: 2.5em;
 }
@@ -884,7 +892,7 @@ header {
   color: hsl(347deg, 64%, 33%);
 }
 .navbar-right .facebook-icon {
-  margin: -0.5em 0.5em 0em 1em;
+  margin: -0.5em 0.5em 0em 5em;
   height: 3em;
   width: 2.5em;
 }
@@ -892,7 +900,7 @@ header {
   color: hsl(240deg, 82%, 55%);
 }
 .navbar-right .twitter-icon {
-  margin: -0.5em -0.5em 0em 1em;
+  margin: -0.5em -0.5em 0em 5em;
   height: 3em;
   width: 2.5em;
 }
@@ -1387,11 +1395,6 @@ header {
   margin-bottom: 0.5em;
 }
 
-.product-card {
-  margin-top: 2.5em;
-  align-items: center;
-}
-
 .product-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -1445,6 +1448,19 @@ header {
 
 .product-price {
   margin-left: 0em;
+}
+
+.products-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  width: 100%;
+}
+.products-gallery .product-card {
+  margin-top: 2.5em;
+  margin-left: 1.5em;
+  align-items: center;
+  width: 30%;
 }
 
 .faqs-container {

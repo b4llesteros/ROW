@@ -3,30 +3,34 @@ export let renderTabs = () => {
     let tabs = document.querySelectorAll('.tab');
     let contents = document.querySelectorAll(".content");
 
+    document.addEventListener("renderTabsModules", (event => {
+        renderTabs();
+    }), { once: true });
 
 
-    tabs.forEach(tab => { 
 
-        tab.addEventListener("click", () => {            
-                       
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
             tabs.forEach(activeTabs => {
                 activeTabs.classList.remove("tab--active");
-            });  
+            });
 
-            tab.classList.add("tab--active");                
+            tab.classList.add("tab--active");
 
             contents.forEach(content => {
 
                 content.classList.remove("content--active");
 
-                if (content.dataset.tab == tab.dataset.tab) { 
+                if (content.dataset.tab == tab.dataset.tab) {
                     content.classList.add("content--active");
                 }
-            });         
+            });
         });
     });
 }
-                
+
 
 
 
@@ -61,14 +65,14 @@ export let renderTabs = () => {
 //     });
 // }
 
-     
-    
+
+
 //     tabs.forEach(tab => {
 
 //         tabs.forEach(tab => {
 
 //             tab.addEventListener('click', () => {
-    
+
 //                 tabs.forEach(tab => {
 //                     tab.classList.remove('active');
 //                 });
@@ -77,9 +81,9 @@ export let renderTabs = () => {
 //     });
 // };
 
-    
+
 //     tabs.forEach(tab => {
-    
+
 //         tab.addEventListener("click", () => {
 //             tab.classList.toggle("tab--active"); 
 //             contents.forEach(content => {
@@ -90,7 +94,7 @@ export let renderTabs = () => {
 //                 }
 
 //             }
-                
+
 //             });
 //             }                                       
 //         ); 
@@ -98,27 +102,27 @@ export let renderTabs = () => {
 // };
 
 
-    
-  
-  
-  
+
+
+
+
 //   export let renderTabs = () => {
 
 //     const tabs = document.querySelectorAll(".tab");
 //     const contents = document.querySelectorAll(".content");
-    
+
 //     for (let i = 0; i < tabs.length; i++) {
-  
+
 //       tabs[i].addEventListener("click", () => {
-  
+
 //         for (let j = 0; j < contents.length; j++) {
 //           contents[j].classList.remove("content--active");
 //         }
-  
+
 //         for (let jj = 0; jj < tabs.length; jj++) {
 //           tabs[jj].classList.remove("tabs--active");
 //         }
-  
+
 //         contents[i].classList.add("content--active-local");
 //         tabs[i].classList.add("tabs--active");
 //       });

@@ -9,7 +9,10 @@
 @section('content')
 
     @if ($agent->isDesktop())
-        @include('front.pages.faqs.desktop.faqs',['title' => "Faqs" ])
+
+        {{-- la variable del FaqController  se le pasa a la vista, para tenerla disponible en el front, 
+            haciendo un for each--}}
+        @include('front.pages.faqs.desktop.faqs',['title' => "Faqs" ], ['faqs' => $faqs])
     @endif
 
     @if ($agent->isMobile())
