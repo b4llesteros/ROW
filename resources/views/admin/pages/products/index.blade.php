@@ -93,6 +93,16 @@
                                         <div class="container-content">
                                             <div class="content-question-answer">
                                                 <div class="form-group">
+                                                    <label for="categories">Elige una categoría</label>
+                                                    <select name="category_id">
+                                                    @if(isset($product_categories))  
+                                                        @foreach($product_categories as $category)
+                                                            <option value="{{isset($category->id) ? $category->id:''}}">{{$category->name}}</option>
+                                                        @endforeach
+                                                    @endif                                                      
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
                                                     <div class="form-label">
                                                         <span>Nombre</span>
                                                     </div>

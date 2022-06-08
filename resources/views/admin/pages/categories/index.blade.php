@@ -92,6 +92,7 @@
                                         <input type="hidden" name="id">
                                         <div class="container-content">
                                             <div class="content-question-answer">
+                                                
                                                 <div class="form-group">
                                                     <div class="form-label">
                                                         <span>Nombre</span>

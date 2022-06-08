@@ -169,6 +169,13 @@ return [
          * Package Service Providers...
          */
         Jenssegers\Agent\AgentServiceProvider::class,
+
+
+        //Custom View Composers
+
+        App\Providers\ViewComposerServiceProvider::class,
+
+
         /*
          * Application Service Providers...
          */

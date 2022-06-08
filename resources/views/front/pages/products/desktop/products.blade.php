@@ -8,25 +8,17 @@
                     <div class="categories-title">
                         <h3>Categories</h3>
                     </div>
-                    <div class="category">
-                        <h4>Vocabulary</h4>
-                    </div>
-                    <div class="category">
-                        <h4>Grammar</h4>
-                    </div>
-                    <div class="category">
-                        <h4>Writing</h4>
-                    </div>
-                    <div class="category">
-                        <h4>Listening</h4>
-                    </div>
-                    <div class="category">
-                        <h4>Reading</h4>
-                    </div>
+                    @if(isset($product_categories))
+                        @foreach($product_categories as $category)
+                            <div class="category" value={{$category->id}}>
+                                <h4>{{$category->title}}</h4>
+                            </div>
+                        @endforeach    
+                    @endif
                 </div>
             </div>
         </div>  
-        <div class="column-aside mobile-only">
+        {{-- <div class="column-aside mobile-only">
             <div class="desktop-one-colum">
                 <div class="column-categories">
                     <label>Select Category</label>
@@ -39,7 +31,7 @@
                    </select>
                 </div>
             </div>
-        </div>  
+        </div>   --}}
         <div class="column-main">
             <div class="desktop-one-column">
                 <div class="header-column-main">
