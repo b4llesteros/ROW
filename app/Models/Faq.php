@@ -1,5 +1,6 @@
 <?php
-
+//Srive para decirle a PHP donde se encuentra el archivo 
+//Sin namespace no pude haber USE
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

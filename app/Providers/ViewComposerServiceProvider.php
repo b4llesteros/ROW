@@ -30,7 +30,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         //consulta a la base de datos
 
         //Para que esté disponible en todas las vistar se pone 'admin.*' en lugar de la ruta de la vista 
-       view()->composer([
+        view()->composer([
         'admin.pages.products.index'],
         'App\Http\ViewComposers\Admin\CategoriesProduct'
         );
@@ -39,5 +39,5 @@ class ViewComposerServiceProvider extends ServiceProvider
             'front.pages.products.index'],
             'App\Http\ViewComposers\Admin\CategoriesProduct'
         );
-        }
+    }
 }

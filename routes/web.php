@@ -148,7 +148,7 @@ Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->n
 //La variable $product es la que viene del controlador
 Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
 
-Route::get('/categories', 'App\Http\Controllers\Front\CategoryController@show')->name('front_categories');
+Route::get('/products/categories/{category}', 'App\Http\Controllers\Front\CategoryController@show')->name('front_category');
 
 Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');

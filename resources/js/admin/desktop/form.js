@@ -53,15 +53,17 @@ export let renderForm = () => {
                     Si es exitosa, podemos obtener la respuesta con el método then. Si la respuesta ha ido bien y todo es ok 
                 */
                 let response = await fetch(url, { //Fetch es una promesa, una llamada al servidor
-                        headers: { //Es un objeto porque se encuentra entre las llaves y tiene esa propiedad del tipo de llamada
-                            'X-Requested-With': 'XMLHttpRequest',
-                        },
-                        method: 'GET',
-                    })
-                    .then(response => {
+                    headers: { //Es un objeto porque se encuentra entre las llaves y tiene esa propiedad del tipo de llamada
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    method: 'GET',
+                })
+
+                //Solo cuando responda el servidor, podemos obtener la respuesta(then)
+                .then(response => {
 
                         if (!response.ok) throw response;
-
+                        //Convierte la respuesta en un.json
                         return response.json(); //Json es un objeto que estructura datos en JavaScript, para acceder a un dato de JSON
                         // tenemos que pasarle el objeto JSON y el nombre del dato que queremos acceder ejem: json.form.
                     })
@@ -87,7 +89,7 @@ export let renderForm = () => {
                         };
                     });
             };
-
+            //Se ejecuta la función sendCreateRequest
             sendCreateRequest();
         });
     }

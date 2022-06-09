@@ -193,6 +193,7 @@ class FaqController extends Controller
         ->with('faq', $faq)
         ->with('faqs', $this->faq->where('active', 1)->get());   
         
+        //Si la llamada ha venido de JavaScript, solo si se le ha llamado 
         if(request()->ajax()) {
 
             $sections = $view->renderSections(); 

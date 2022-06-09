@@ -6,58 +6,44 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\CategoryProduct;
-use App\Http\Requests\Front\CategoryProductRequest;
+use App\Models\Product;
 use Debugbar;
 
+    
 
 class CategoryController extends Controller
 {
       protected $category;
 
-      public function __construct(CategoryProduct $category)
+      public function __construct(CategoryProduct $category, Product $product)
       {
           $this->category = $category;
-      }    
+          $this->product = $product;
+      }
+      
 
-    // public function index()
-    // {
-        
-    //     $view = View::make('front.pages.products.index')
+    public function show()
+    {
+      
+      $products = CategoryProduct::find(1)->products();
 
-    //     ->with('product', $this->product->where('active', 1)->where('visible', 1)->get());
+      $view = View::make('front.pages.products.index')
+        ->with('product', $products)
+        // ->with('product', $products->where('active', 1)->where('visible', 1)->where('category.id','=','category_id') get());        
 
-    //     if(request()->ajax()) {     
+          if(request()->ajax()) {     
 
-    //         $sections = $view->renderSections();
+              $sections = $view->renderSections();
 
-    //         return response()->json([
-    //             'content' => $sections['content'],
-    //         ]);
+              return response()->json([
+                  'content' => $sections['content'],
+              ]);
 
-    //     }
-        
-    //     return $view;
-    }
-    
-    // public function show(CategoryProduct $category)
-    // {
-    //     $view = View::make('front.pages.product.index')
-    //     ->with('category', $this->$category)->get();
-   
-
-    //     if(request()->ajax()) {     
-
-    //         $sections = $view->renderSections();
-
-    //         return response()->json([
-    //             'content' => $sections['content'],
-    //         ]);
-
-    //     }
-        
-    //     return $view;
-    // }
-    
+        }
+        return $view;
+    }   
 
 
 
+
+}

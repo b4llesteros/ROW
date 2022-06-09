@@ -37,7 +37,8 @@ class ProductController extends Controller
         }
         
         return $view;
-    }
+    } 
+
     
     public function show(Product $product)
     {

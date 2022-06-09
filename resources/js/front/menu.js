@@ -34,8 +34,7 @@ export let renderMenu = () => {
                             document.dispatchEvent(new CustomEvent('renderCounterModules'));
                             document.dispatchEvent(new CustomEvent('renderFaqsModules'));
                             document.dispatchEvent(new CustomEvent('renderProductModules'));
-
-
+                            document.dispatchEvent(new CustomEvent('renderCategoryModules'));
 
                         })
                         .catch(error => {

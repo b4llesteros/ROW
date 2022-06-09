@@ -3,6 +3,10 @@ export let renderCategoryFilter = () => {
     let mainContent = document.getElementById("main");
     let categoryOptions = document.querySelectorAll('.category');
 
+    document.addEventListener("renderCategoryModules", (event => {
+        renderCategoryFilter();
+    }), { once: true });
+
 
     if (categoryOptions) {
 
@@ -10,7 +14,7 @@ export let renderCategoryFilter = () => {
 
             categoryOption.addEventListener("click", () => {
 
-                let url = categoryOption.dataset.id;
+                let url = categoryOption.dataset.url;
 
 
                 let sendShowRequest = async() => {
@@ -30,7 +34,6 @@ export let renderCategoryFilter = () => {
                         .then(json => {
 
                             mainContent.innerHTML = json.content;
-
 
                         })
                         .catch(error => {

@@ -8,6 +8,7 @@ export let renderProduct = () => {
     }), { once: true });
 
 
+
     if (productButtons) {
 
         productButtons.forEach(productButton => {
@@ -37,6 +38,7 @@ export let renderProduct = () => {
                             mainContent.innerHTML = json.content;
                             document.dispatchEvent(new CustomEvent('renderTabsModules'));
                             document.dispatchEvent(new CustomEvent('renderCounterModules'));
+
 
                         })
                         .catch(error => {

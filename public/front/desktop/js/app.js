@@ -72,11 +72,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var renderCategoryFilter = function renderCategoryFilter() {
   var mainContent = document.getElementById("main");
   var categoryOptions = document.querySelectorAll('.category');
+  document.addEventListener("renderCategoryModules", function (event) {
+    renderCategoryFilter();
+  }, {
+    once: true
+  });
 
   if (categoryOptions) {
     categoryOptions.forEach(function (categoryOption) {
       categoryOption.addEventListener("click", function () {
-        var url = categoryOption.dataset.id;
+        var url = categoryOption.dataset.url;
 
         var sendShowRequest = /*#__PURE__*/function () {
           var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -375,6 +380,7 @@ var renderMenu = function renderMenu() {
                       document.dispatchEvent(new CustomEvent('renderCounterModules'));
                       document.dispatchEvent(new CustomEvent('renderFaqsModules'));
                       document.dispatchEvent(new CustomEvent('renderProductModules'));
+                      document.dispatchEvent(new CustomEvent('renderCategoryModules'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);

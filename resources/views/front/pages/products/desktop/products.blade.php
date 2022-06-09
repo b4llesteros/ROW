@@ -10,7 +10,7 @@
                     </div>
                     @if(isset($product_categories))
                         @foreach($product_categories as $category)
-                            <div class="category" value={{$category->id}}>
+                            <div class="category" data-url="{{route('front_category', ['category' => $category->id])}}">
                                 <h4>{{$category->title}}</h4>
                             </div>
                         @endforeach    
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="products-gallery">
+            <div class="products-gallery" id="">
                 @if(isset($product))
                     @foreach($product as $product)                        
                         <div class="product-card">

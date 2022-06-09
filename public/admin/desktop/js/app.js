@@ -2625,8 +2625,11 @@ var renderForm = function renderForm() {
                       'X-Requested-With': 'XMLHttpRequest'
                     },
                     method: 'GET'
-                  }).then(function (response) {
-                    if (!response.ok) throw response;
+                  }) //Solo cuando responda el servidor, podemos obtener la respuesta(then)
+                  .then(function (response) {
+                    if (!response.ok) throw response; //Convierte la respuesta en un.json
+
+                    //Convierte la respuesta en un.json
                     return response.json(); //Json es un objeto que estructura datos en JavaScript, para acceder a un dato de JSON
                     // tenemos que pasarle el objeto JSON y el nombre del dato que queremos acceder ejem: json.form.
                   }).then(function (json) {
@@ -2671,7 +2674,8 @@ var renderForm = function renderForm() {
         return function sendCreateRequest() {
           return _ref.apply(this, arguments);
         };
-      }();
+      }(); //Se ejecuta la función sendCreateRequest
+
 
       sendCreateRequest();
     });
