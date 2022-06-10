@@ -6,14 +6,17 @@
      margin-bottom: 1em;
  }
  
- .category {
+ .category-button {
      font-family: $font-stack;
      margin-left: 1.5em;
      margin-top: 0.5em;
- }
- 
- .category:hover {
-     color: white;
+     &:hover,
+     &.active {
+         h4 {
+             color: #3D94F6;
+             cursor: pointer;
+         }
+     }
  }
  
  .column-categories {

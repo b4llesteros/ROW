@@ -2,48 +2,37 @@
 
 namespace App\Http\Controllers\Front;
 
-
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\CategoryProduct;
-use App\Models\Product;
-use Debugbar;
-
-    
 
 class CategoryController extends Controller
 {
       protected $category;
 
-      public function __construct(CategoryProduct $category, Product $product)
+      public function __construct(CategoryProduct $category_product)
       {
-          $this->category = $category;
-          $this->product = $product;
+          $this->category_product = $category_product;          
       }
       
+      //La variable $category tiene que ser la misma que se ha puesto en la ruta
+    public function show(CategoryProduct $category)
+    {     
+     
+      	$view = View::make('front.pages.products.index')        
+        ->with('category', $category)
+        //$category->products es la relación que hemos creado en el modelo CategoryProduct
+        ->with('products', $category->products->where('visible', 1));
 
-    public function show()
-    {
-      
-      $products = CategoryProduct::find(1)->products();
+		if(request()->ajax()) {     
 
-      $view = View::make('front.pages.products.index')
-        ->with('product', $products)
-        // ->with('product', $products->where('active', 1)->where('visible', 1)->where('category.id','=','category_id') get());        
+			$sections = $view->renderSections();
 
-          if(request()->ajax()) {     
-
-              $sections = $view->renderSections();
-
-              return response()->json([
-                  'content' => $sections['content'],
-              ]);
-
+			return response()->json([
+				'content' => $sections['content'],
+			]);
         }
+
         return $view;
     }   
-
-
-
-
 }

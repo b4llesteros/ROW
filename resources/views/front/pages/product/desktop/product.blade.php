@@ -52,6 +52,14 @@
 
                     <div class="desktop-one-column mobile-one-column">
                         <div class="column">
+                            <div class="product-category">
+                                <h3>{{$product->category->title}}</h3>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="desktop-one-column mobile-one-column">
+                        <div class="column">
                             <div class="product-price">
                                 <h2>{{$product->price}}</h2>
                             </div>

@@ -23,8 +23,7 @@ class ProductController extends Controller
     {
         
         $view = View::make('front.pages.products.index')
-
-        ->with('product', $this->product->where('active', 1)->where('visible', 1)->get());
+        ->with('products', $this->product->where('active', 1)->where('visible', 1)->get());
 
         if(request()->ajax()) {     
 

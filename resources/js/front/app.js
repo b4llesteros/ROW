@@ -6,7 +6,6 @@ import { renderNotification } from "./notificationaddcart.js";
 import { renderFaqs } from "./faqs.js";
 import { renderProduct } from "./product.js";
 import { renderMenu } from "./menu.js";
-import { renderCategoryFilter } from "./category-filter.js";
 
 renderForm();
 renderMenuButton();
@@ -16,4 +15,3 @@ renderNotification();
 renderFaqs();
 renderProduct();
 renderMenu();
-renderCategoryFilter();

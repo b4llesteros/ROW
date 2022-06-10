@@ -9,29 +9,15 @@
                         <h3>Categories</h3>
                     </div>
                     @if(isset($product_categories))
-                        @foreach($product_categories as $category)
-                            <div class="category" data-url="{{route('front_category', ['category' => $category->id])}}">
-                                <h4>{{$category->title}}</h4>
+                        @foreach($product_categories as $category_element)
+                            <div class="category-button {{isset($category) && $category->id == $category_element->id ? 'active' : ''}}" data-url="{{route('front_category', ['category' => $category_element->id])}}">
+                                <h4>{{$category_element->title}}</h4>
                             </div>
                         @endforeach    
                     @endif
                 </div>
             </div>
         </div>  
-        {{-- <div class="column-aside mobile-only">
-            <div class="desktop-one-colum">
-                <div class="column-categories">
-                    <label>Select Category</label>
-                   <select class="category-select">
-                        <option>Vocabulary</option>
-                        <option>Grammar</option>
-                        <option>Writing</option>
-                        <option>Listening</option>
-                        <option>Reading</option>
-                   </select>
-                </div>
-            </div>
-        </div>   --}}
         <div class="column-main">
             <div class="desktop-one-column">
                 <div class="header-column-main">
@@ -49,8 +35,8 @@
                 </div>
             </div>
             <div class="products-gallery" id="">
-                @if(isset($product))
-                    @foreach($product as $product)                        
+                @if(isset($products))
+                    @foreach($products as $product)                        
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="" alt="">                        
