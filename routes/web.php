@@ -144,11 +144,15 @@ Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 
-Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');
-//La variable $product es la que viene del controlador
-Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
+Route::get('/products/filter', 'App\Http\Controllers\Front\ProductController@filter')->name('front_products_filter');
+
 //La variable $category es la que viene del controlador //Filtro de categorías
 Route::get('/products/categories/{category}', 'App\Http\Controllers\Front\CategoryController@show')->name('front_category');
+
+//La variable $product es la que viene del controlador
+Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
+
+Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');
 
 Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');

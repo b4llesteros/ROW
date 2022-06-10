@@ -1374,6 +1374,20 @@ header {
   margin-top: 0.5em;
 }
 
+.column-filter {
+  margin-top: 3em;
+}
+
+.filter-button {
+  font-family: "Noto Sans";
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+}
+.filter-button:hover h4, .filter-button.active h4 {
+  color: #3D94F6;
+  cursor: pointer;
+}
+
 /* column main gallery  */
 .header-column-main {
   font-family: "Noto Sans";

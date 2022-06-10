@@ -22,6 +22,7 @@ return new class extends Migration
             $table->float('price')->default(0);
             $table->string('description');  
             $table->string('spec');          
+            $table->integer('order')->default(0);
             $table->boolean('active')->default(true); 
             $table->boolean('visible'); 
             $table->integer('category_id');

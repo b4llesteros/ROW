@@ -21,10 +21,9 @@ class ProductController extends Controller
 
     public function index()
     {
-        
-        $view = View::make('front.pages.products.index')
-        ->with('products', $this->product->where('active', 1)->where('visible', 1)->get());
-
+    
+        $view = View::make('front.pages.products.index')        
+        ->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('title','asc')->get());
         if(request()->ajax()) {     
 
             $sections = $view->renderSections();
@@ -57,7 +56,28 @@ class ProductController extends Controller
         
         return $view;
     }
+
+    public function filter($filter)
+    {
+
+
+
+        debugbar::info($filter);
+    //     $view = View::make('front.pages.product.index')
+    //     ->with('product', $product);
+   
+
+    //     if(request()->ajax()) {     
+
+    //         $sections = $view->renderSections();
+
+    //         return response()->json([
+    //             'content' => $sections['content'],
+    //         ]);
+
+    //     }
+        
+    //     return $view; 
+     }
     
 }
-
-

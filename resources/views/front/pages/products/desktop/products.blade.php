@@ -16,6 +16,21 @@
                         @endforeach    
                     @endif
                 </div>
+                <div class="column-filter">
+                    <div class="filter-title">
+                        <h3>Filters</h3>
+                    </div>
+                    <div class="filter-button">
+                        <h4>Ascendente</h4>
+                    </div>
+                </div>
+                {{-- <div class="column-categories">
+                    <div class="categories-title">
+                        <h3>Filtro</h3>
+                    </div>
+                    <div class="filter-button" data-url="">
+                        <h4>Ascedente</h4>
+                </div> --}}
             </div>
         </div>  
         <div class="column-main">
