@@ -3,7 +3,6 @@ export let renderProduct = () => {
     let mainContent = document.getElementById("main");
     let productButtons = document.querySelectorAll('.product-link-button');
     let categoryOptions = document.querySelectorAll('.category-button');
-    let filterOptions = document.querySelectorAll('.filter-button');
 
     document.addEventListener("renderProductModules", (event => {
         renderProduct();
@@ -51,7 +50,6 @@ export let renderProduct = () => {
         });
     }
 
-
     if (categoryOptions) {
 
         categoryOptions.forEach(categoryOption => {
@@ -93,44 +91,5 @@ export let renderProduct = () => {
         });
     }
 
-    if (filterOptions) {
 
-        filterOptions.forEach(filterOption => {
-
-            filterOption.addEventListener("click", () => {
-
-                let url = filterOption.dataset.url;
-
-                let sendShowRequest = async() => {
-
-                    let response = await fetch(url, {
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest',
-                            },
-                            method: 'GET',
-                        })
-                        .then(response => {
-
-                            if (!response.ok) throw response;
-
-                            return response.json();
-                        })
-                        .then(json => {
-
-                            mainContent.innerHTML = json.content;
-
-                            document.dispatchEvent(new CustomEvent('renderProductModules'));
-                        })
-                        .catch(error => {
-
-                            if (error.status == '500') {
-                                console.log(error);
-                            };
-                        });
-                };
-
-                sendShowRequest();
-            });
-        });
-    }
-};
+}

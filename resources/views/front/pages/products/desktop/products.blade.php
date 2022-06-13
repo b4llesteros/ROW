@@ -15,22 +15,7 @@
                             </div>
                         @endforeach    
                     @endif
-                </div>
-                <div class="column-filter">
-                    <div class="filter-title">
-                        <h3>Filters</h3>
-                    </div>
-                    <div class="filter-button">
-                        <h4>Ascendente</h4>
-                    </div>
-                </div>
-                {{-- <div class="column-categories">
-                    <div class="categories-title">
-                        <h3>Filtro</h3>
-                    </div>
-                    <div class="filter-button" data-url="">
-                        <h4>Ascedente</h4>
-                </div> --}}
+                </div>                               
             </div>
         </div>  
         <div class="column-main">
@@ -40,13 +25,12 @@
                         <h5>Mostrando 9 de 9</h5>
                     </div>
                     <div class="filter-products">
-                        <select name="select" class="filter-select">
-                            <option value="value1" selected>Destacados</option>
-                            <option value="value2" >Ofertas</option>
-                            <option value="value3">Precio más bajo</option>
-                            <option value="value3">Precio más alto</option>
+                        <select id="filter" class="select-filter" value="{{isset($value) ? 'active' : ''}}">
+                            <option> All Products</option>
+                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_asc'])}}">Low price first</option>
+                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_desc'])}}">Hight price first</option>                          
                         </select>                      
-                    </div>
+                    </div>                
                 </div>
             </div>
             <div class="products-gallery" id="">
