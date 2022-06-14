@@ -149,7 +149,7 @@ Route::get('/products/filter', 'App\Http\Controllers\Front\ProductController@fil
 //La variable $category es la que viene del controlador //Filtro de categorías
 Route::get('/products/categories/{category}', 'App\Http\Controllers\Front\CategoryController@show')->name('front_category');
 
-
+Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
 Route::get('/products/{sort}', 'App\Http\Controllers\Front\ProductController@sort')->name('front_product_sort');
 
 Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');

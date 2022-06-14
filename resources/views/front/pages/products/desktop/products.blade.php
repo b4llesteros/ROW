@@ -25,7 +25,7 @@
                         <h5>Mostrando 9 de 9</h5>
                     </div>
                     <div class="filter-products">
-                        <select id="filter" class="select-filter" value="{{isset($value) ? 'active' : ''}}">
+                        <select id="filter" class="select-filter" >
                             <option> All Products</option>
                             <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_asc'])}}">Low price first</option>
                             <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_desc'])}}">Hight price first</option>                          

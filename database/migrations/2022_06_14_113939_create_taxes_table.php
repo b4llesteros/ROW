@@ -1,5 +1,3 @@
-
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -15,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('taxes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('title');            
-            $table->string('description');  
-            $table->string('spec');      
-            $table->boolean('active')->default(true); 
-            $table->boolean('visible'); 
-            $table->integer('category_id');
+            $table->string('type');            
+            $table->float('multiplicator');
+            $table->string('valid');
+            $table->boolean('active');
             $table->timestamps();
         });
     }
@@ -35,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('taxes');
     }
 };

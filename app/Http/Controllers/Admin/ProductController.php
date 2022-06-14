@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Product; 
+use App\Models\Price; 
 use App\Http\Requests\Admin\ProductRequest;
 use Debugbar;
 
@@ -50,7 +51,7 @@ class ProductController extends Controller
         ]);
     }
    
-    public function store(ProductRequest $request) 
+    public function store(ProductRequest $request, Pricerequest $price_request) 
     {         
         $product = $this->product->updateOrCreate([               
                 'id' => request('id')],[                    
@@ -63,6 +64,15 @@ class ProductController extends Controller
                 'visible' => 1,
                 'active' => 1,
         ]);
+
+        $price = $this->price->updateOrCreate([
+                'id' => request('id'),
+                'product_id' => $product->id,],[
+                'base_price' => request('base_price'),
+                'tax_id' => request('tax_id'),
+                'valid' => request('valid'),
+                ]);
+
   
         $view = View::make('admin.pages.products.index')      
         ->with('products', $this->product->where('active', 1)->get())    

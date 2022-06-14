@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('title');
-            $table->timestamps();
+            $table->string('title');            
             $table->boolean('active')->default(true); 
             $table->boolean('visible');    
+            $table->timestamps();
         });
     }
 

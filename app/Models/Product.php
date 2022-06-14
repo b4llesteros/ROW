@@ -23,5 +23,17 @@ class Product extends Model
         return $this->belongsTo(CategoryProduct::class);
     }
 
+    public function price()
+    {       
+        return $this->belongsTo(Price::class);
+    }
+
+    public function tax()
+    {       
+        return $this->belongsTo(Tax::class);
+    }
+
+   
+   
 
 }

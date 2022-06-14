@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Price;
 use Request;
 use App\Http\Requests\Front\ProductRequest;
 use Debugbar;
@@ -15,9 +16,10 @@ class ProductController extends Controller
 {
       protected $product;
 
-      public function __construct(Product $product)
+      public function __construct(Product $product, Price $price)
       {
-          $this->product = $product;
+            $this->product = $product;
+            $this->price = $price;
       }    
 
     public function index()
