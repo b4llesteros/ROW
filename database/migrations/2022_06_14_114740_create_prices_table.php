@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->decimal('base_price');
             $table->integer('tax_id');
-            $table->string('valid');
-            $table->integer('products_id');
+            $table->boolean('valid');
+            $table->boolean('active');
+            $table->integer('product_id');
             $table->timestamps();
         });
     }

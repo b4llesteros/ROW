@@ -89,7 +89,7 @@
                                 <div class="desktop-one-column mobile-one-column">
 
                                     <form class="admin-form" action="{{route("products_categories_store")}}">                                       
-                                        <input type="hidden" name="id">
+                                        <input type="hidden" name="id" value="{{isset($category->id) ? $category->id:''}}">
                                         <div class="container-content">
                                             <div class="content-question-answer">
                                                 

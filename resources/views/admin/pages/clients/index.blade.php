@@ -89,7 +89,7 @@
                                 <div class="desktop-one-column mobile-one-column">
 
                                     <form class="admin-form" action="{{route("clients_store")}}">                                       
-                                        <input type="hidden" name="id">
+                                        <input type="hidden" name="id" value="{{isset($client->name) ? $client->name:''}}">
                                         <div class="container-content">
                                             <div class="content-question-answer">                                               
 

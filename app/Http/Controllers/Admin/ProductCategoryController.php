@@ -80,9 +80,9 @@ class ProductCategoryController extends Controller
         ]);
     }
 
-    public function edit(Category $category)                           
+    public function edit(CategoryProduct $category)                           
     {
-        debugbar::info($category);
+        
         $view = View::make('admin.pages.categories.index')
         ->with('category', $category)
         ->with('categories', $this->category->where('active', 1)->get());   

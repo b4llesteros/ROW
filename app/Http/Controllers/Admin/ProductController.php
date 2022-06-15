@@ -16,9 +16,11 @@ class ProductController extends Controller
 {
     protected $product;   
 
-    public function __construct(Product $product)
+    public function __construct(Product $product, Price $price)
     {
-        $this->product = $product;           
+        $this->product = $product; 
+        $this->price = $price;
+
     }
     
     public function index() 
@@ -51,13 +53,13 @@ class ProductController extends Controller
         ]);
     }
    
-    public function store(ProductRequest $request, Pricerequest $price_request) 
+    public function store(ProductRequest $request) 
     {         
+
         $product = $this->product->updateOrCreate([               
                 'id' => request('id')],[                    
                 'name' => request('name'),
                 'title' => request('title'),
-                'price' => request('price'),
                 'spec' => request('spec'),
                 'description' => request('description'),
                 'category_id' => request('category_id'),
@@ -65,13 +67,19 @@ class ProductController extends Controller
                 'active' => 1,
         ]);
 
-        $price = $this->price->updateOrCreate([
-                'id' => request('id'),
-                'product_id' => $product->id,],[
-                'base_price' => request('base_price'),
-                'tax_id' => request('tax_id'),
-                'valid' => request('valid'),
-                ]);
+        $this->price->where('product_id', $product->id)->update([
+            'valid' => 0,
+        ]);
+
+
+
+        $price = $this->price->create([      
+            'product_id' => $product->id,
+            'base_price' => request('price'),
+            'tax_id' => request('tax_id'),
+            'valid' => 1,
+            'active' => 1,
+        ]);
 
   
         $view = View::make('admin.pages.products.index')      
@@ -106,7 +114,7 @@ class ProductController extends Controller
     }
 
     public function show(Product $product){
-        debugbar::info($product);
+        
     }
 
     public function destroy(Product $product)

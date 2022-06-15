@@ -9,11 +9,11 @@ export let renderDeleteButton = () => {
         //Se pone para que no se quede bloqueado el equipo a base de hacer llamadas y eventos
     }), { once: true });
 
-    document.addEventListener("openModalDelete", (event => {
+    document.addEventListener("openModalDelete", (event) => {
 
         deleteConfirm.dataset.url = event.detail.url;
         modalDelete.classList.add('active');
-    }), { once: true });
+    });
 
     deleteCancel.addEventListener("click", () => {
         modalDelete.classList.remove('active');
@@ -57,7 +57,7 @@ export let renderDeleteButton = () => {
                     modalDelete.classList.remove('active');
                     document.querySelector('.edit-section').classList.add('active');
                     document.querySelector('.table').classList.add('minimized');
-                    document.dispatchEvent(new CustomEvent('renderFormModules'));
+                    // document.dispatchEvent(new CustomEvent('renderFormModules'));
                     document.dispatchEvent(new CustomEvent('renderTableModules'));
                 })
                 .catch(error => {

@@ -8,14 +8,14 @@ class Client extends Model
 {   
     protected $guarded = [];    
 
-    public function fingerprint()
+    public function fingerprints()
     {       
-        return $this->hasOne(Fingerprint::class, 'fingerprint_id');
-    }
+        return $this->hasMany(Fingerprint::class, 'customer_id');
+    }  
 
-    public function payment_method()
+    public function sales()
     {       
-        return $this->belongsTo(Payment_method::class);   
+        return $this->hasMany(Sale::class, 'customer_id')->where('active',1);
     }
 
 }

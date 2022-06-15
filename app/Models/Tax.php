@@ -6,11 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tax extends Model
 {   
-    protected $guarded = [];  
-
-    public function product()
-    {   
-       return $this->hasMany(Product::class, 'tax_id');
-    }
-
+    protected $guarded = []; 
+    protected $table = 'taxes'; 
 }

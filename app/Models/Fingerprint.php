@@ -11,11 +11,5 @@ class Fingerprint extends Model
     public function client()
     {       
         return $this->belongsTo(Client::class);        
-    }
-
-    public function cart()
-    {       
-        return $this->belongsTo(Cart::class);        
-    }
-
+    }   
 }

@@ -9,18 +9,13 @@ class Price extends Model
     protected $guarded = [];
 
     public function product()
-    {       
-        return $this->belongsTo(Product::class);
+    {   //Un precio pertenece a un producto y solo hay que poner el modelo al que conecta
+       return $this->belongsTo(Product::class)->where('active', 1);
     }
 
-    public function cart()
-    {       
-        return $this->belongsTo(Cart::class);
-    }
-
-    public function product()
-    {   
-       return $this->hasMany(Price::class, 'product_id');
+    public function tax()
+    {     //Un precio pertence a un tipo de IVA  y solo hay que poner el modelo al que conecta
+        return $this->belongsTo(Tax::class)->where('active', 1)->where('valid', 1);
     }
 
 

@@ -8,13 +8,20 @@ class Sale extends Model
 {   
     protected $guarded = [];
 
-    public function cart()
+    public function carts()
     {        
-        return $this->belongsTo(Cart::class);
+        return $this->hasMany(Cart::class)->where('active', 1);
     }
 
-    public function payment_method()
-    {       
-        return $this->hasOne(Payment_method::class, 'payment_method_id');        
+    public function payment()
+    {        
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id')->where('active', 1);
     }
+
+    public function client()
+    {        
+        return $this->belongsTo(Client::class)->where('active', 1);
+    }
+
+   
 }

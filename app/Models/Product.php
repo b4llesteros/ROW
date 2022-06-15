@@ -20,20 +20,11 @@ class Product extends Model
     {
         //Un producto pertenece a una categoría y solo hay que poner el modelo
         //al que conecta en este caso CategoryProduct
-        return $this->belongsTo(CategoryProduct::class);
+        return $this->belongsTo(CategoryProduct::class)->where('active', 1);
     }
 
     public function price()
-    {       
-        return $this->belongsTo(Price::class);
+    {       //Solo devuelve los que son valid = 1
+        return $this->hasMany(Price::class, 'product_id')->where('valid', '1')->where('valid', '1');
     }
-
-    public function tax()
-    {       
-        return $this->belongsTo(Tax::class);
-    }
-
-   
-   
-
 }

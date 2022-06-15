@@ -95,7 +95,7 @@
                             al servidor sin que el usuario lo sepa, si crear un usuario nuevo este
                             input no tendrá valor, pero si le das al botón editar, y el usuario existe
                             el input tendrá la ID corespondiente --}}
-                            <input type="hidden" name="id">
+                            <input type="hidden" name="id" value="{{isset($faq->id) ? $faq->id:''}}">
                             <div class="container-content">
                                 <div class="content-question-answer">
                                     <div class="form-group">
@@ -124,7 +124,9 @@
                                         </div>
                                         <div class="form-input">
                                             {{-- el atributo name tiene que ser lo mismo que el campo de la base de datos --}}
-                                            <textarea class="ckeditor" value="{{isset($faq->description) ? $faq->description:''}}" id="name-input" name="description" placeholder="Escribe la respuesta"></textarea>
+                                            <textarea class="ckeditor" value="{{isset($faq->description) ? $faq->description:''}}" id="name-input" name="description" placeholder="Escribe la respuesta">
+                                                {{isset($faq->description) ? $faq->description:''}}
+                                            </textarea>
                                         </div>
                                     </div>
                                 </div>

@@ -2339,8 +2339,6 @@ var renderDeleteButton = function renderDeleteButton() {
   document.addEventListener("openModalDelete", function (event) {
     deleteConfirm.dataset.url = event.detail.url;
     modalDelete.classList.add('active');
-  }, {
-    once: true
   });
   deleteCancel.addEventListener("click", function () {
     modalDelete.classList.remove('active');
@@ -2381,8 +2379,9 @@ var renderDeleteButton = function renderDeleteButton() {
                   }));
                   modalDelete.classList.remove('active');
                   document.querySelector('.edit-section').classList.add('active');
-                  document.querySelector('.table').classList.add('minimized');
-                  document.dispatchEvent(new CustomEvent('renderFormModules'));
+                  document.querySelector('.table').classList.add('minimized'); // document.dispatchEvent(new CustomEvent('renderFormModules'));
+
+                  // document.dispatchEvent(new CustomEvent('renderFormModules'));
                   document.dispatchEvent(new CustomEvent('renderTableModules'));
                 })["catch"](function (error) {
                   if (error.status == '500') {
@@ -2557,6 +2556,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2707,16 +2708,27 @@ var renderForm = function renderForm() {
 
             data.append(key, value.getData());
           });
-        } // for (var pair of data.entries()) {
-        //     console.log(pair[0] + ', ' + pair[1]);
-        // }
+        }
 
-        /*
-            A continuación vamos a hacer una llamada de tipo POST mediante fetch, esta vez vamos a 
-            añadir en los headers el token que nos ha dado Laravel el cual va a prevenir que se puedan 
-            hacer ataques de tipos cross-site scripting.
-        */
+        var _iterator = _createForOfIteratorHelper(data.entries()),
+            _step;
 
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var pair = _step.value;
+            console.log(pair[0] + ', ' + pair[1]);
+          }
+          /*
+              A continuación vamos a hacer una llamada de tipo POST mediante fetch, esta vez vamos a 
+              añadir en los headers el token que nos ha dado Laravel el cual va a prevenir que se puedan 
+              hacer ataques de tipos cross-site scripting.
+          */
+
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
 
         var sendPostRequest = /*#__PURE__*/function () {
           var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {

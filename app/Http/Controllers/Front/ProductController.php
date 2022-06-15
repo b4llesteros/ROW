@@ -66,7 +66,7 @@ class ProductController extends Controller
     { 
  
         $view = View::make('front.pages.products.index') 
-        ->with('product', $sort); 
+        ->with( $sort); 
  
             if ($sort == 'price_asc') { 
                 $view->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('price', 'asc')->get()); 

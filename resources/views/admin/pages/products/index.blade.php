@@ -89,7 +89,7 @@
                                 <div class="desktop-one-column mobile-one-column">
 
                                     <form class="admin-form" action="{{route("products_store")}}">                                       
-                                        <input type="hidden" name="id">
+                                        <input type="hidden" name="id" value="{{isset($product->id) ? $product->id : '' }}">
                                         <div class="container-content">
                                             <div class="content-question-answer">
                                                 <div class="form-group">
@@ -120,12 +120,30 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <div class="form-label">
-                                                        <span>Precio</span>
+                                                <div class="column">
+                                                    <div class="panel-label">
+                                                        <label>Precio</label>
                                                     </div>
-                                                    <div class="form-input">                                                        
-                                                        <input name="price" value="{{isset($product->price) ? $product->price:''}}"  class="input-form" placeholder="Escribe la pregunta">
+                                                    <div class="panel-input">
+                                                        <input type="number" name="price" value="{{isset($product->price->first()->base_price) ? $product->price->first()->base_price : ''}}">
+                                                    </div>
+                                                </div>
+                        
+                                                <div class="column">
+                                                    <div class="panel-label">
+                                                        <label>IVA</label>
+                                                    </div>
+                                                    <div class="panel-input">
+                                                        <select name="tax_id">
+                                                            <option value="" disabled selected>--Selecciona un IVA--</option>
+                        
+                                                            @if(isset($taxes))
+                                                                @foreach($taxes as $tax)
+                                                                    <option value="{{$tax->id}}" {{ isset($product->price->first()->tax->id)  && $product->price->first()->tax->id == $tax->id ? 'selected' : ''}}>{{$tax->type}}</option>
+                                                                @endforeach
+                                                            @endif
+                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -133,7 +151,7 @@
                                                         <span>Descripción</span>
                                                     </div>
                                                     <div class="form-input">                                            
-                                                        <textarea class="ckeditor" name="description" value="{{isset($product->description) ? $product->description:''}}"   placeholder="Escribe la respuesta"></textarea>
+                                                        <textarea class="ckeditor" name="description"  placeholder="Escribe la respuesta">{{isset($product->description) ? $product->description:''}}</textarea>
                                                     </div>
                                                 </div>                                  
 
@@ -142,7 +160,7 @@
                                                         <span>Características</span>
                                                     </div>
                                                     <div class="form-input">                                             
-                                                        <textarea class="ckeditor" name="spec" value="{{isset($product->spec) ? $product->spec:''}}"   placeholder="Escribe la respuesta"></textarea>
+                                                        <textarea class="ckeditor" name="spec"  placeholder="Escribe la respuesta">{{isset($product->spec) ? $product->spec:''}}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
