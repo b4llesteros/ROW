@@ -128,14 +128,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-
-
-Route::get('/productpage', function () {
-    return view('front/pages/productpage/index');
-});
-
-
-
 Route::get('/', 'App\Http\Controllers\Front\HomeController@index');
 
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
@@ -151,9 +143,11 @@ Route::get('/products/categories/{category}', 'App\Http\Controllers\Front\Catego
 
 Route::get('/products', 'App\Http\Controllers\Front\ProductController@index')->name('front_products');
 
-Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
-Route::get('/products/{sort}', 'App\Http\Controllers\Front\ProductController@sort')->name('front_product_sort');
 
+Route::post('/products', 'App\Http\Controllers\Front\CartController@store')->name('front_cart_store');
+
+
+Route::get('/products/sort/{sort}', 'App\Http\Controllers\Front\ProductController@sort')->name('front_product_sort');
 
 //La variable $product es la que viene del controlador
 Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');

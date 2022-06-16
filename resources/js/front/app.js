@@ -6,8 +6,8 @@ import { renderNotification } from "./notificationaddcart.js";
 import { renderFaqs } from "./faqs.js";
 import { renderProduct } from "./product.js";
 import { renderMenu } from "./menu.js";
-
-// import { renderSelectFilter } from "./selectfilter.js";
+import { renderSelectFilter } from "./selectfilter.js";
+import { renderCart } from "./cart.js";
 
 renderForm();
 renderMenuButton();
@@ -17,5 +17,5 @@ renderNotification();
 renderFaqs();
 renderProduct();
 renderMenu();
-
-// renderSelectFilter();
+renderSelectFilter();
+renderCart();

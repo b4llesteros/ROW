@@ -48,7 +48,8 @@
                 </div>
                 <div class="column">                    
                     <div class="contact-form form-container">                    
-                        <form action="{{route("contacts_store")}}" id="form" class="front-form">                         
+                        <form action="{{route("contacts_store")}}" id="form" class="front-form"> 
+                            <input type="hidden" name="id" value="{{isset($cart->id) ? $cart->id:''}}">                        
                             <div class="contact-form-element">
                                 <div class="contact-form-label">
                                     <label for="">Nombre</label>

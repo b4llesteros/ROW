@@ -23,7 +23,7 @@ class Product extends Model
         return $this->belongsTo(CategoryProduct::class)->where('active', 1);
     }
 
-    public function price()
+    public function prices()
     {       //Solo devuelve los que son valid = 1
         return $this->hasMany(Price::class, 'product_id')->where('valid', '1')->where('valid', '1');
     }

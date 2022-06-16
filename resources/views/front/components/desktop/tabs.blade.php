@@ -9,7 +9,7 @@
         </div>
         <div class="container-content">
             <div class="content content--active" data-tab="description">
-                <span>{{$product->description}}</span>
+                <span>{!!$product->description!!}</span>
             </div>
             <div class="content" data-tab="specs">
                 <span>{{$product->spec}}</span>

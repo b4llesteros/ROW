@@ -29,20 +29,23 @@ class ViewComposerServiceProvider extends ServiceProvider
         //En la segunda línea digo que archivo va a ser el que haga la 
         //consulta a la base de datos
 
-        //Para que esté disponible en todas las vistar se pone 'admin.*' en lugar de la ruta de la vista 
+        //Para que esté disponible en todas las vistar se pone 'admin.*' en lugar de la ruta de la vista
+        
         view()->composer([
-        'admin.pages.products.index'],
-        'App\Http\ViewComposers\Admin\CategoriesProduct'
-        );
-           
-        view()->composer([
-            'front.pages.products.index'],
-            'App\Http\ViewComposers\Front\CategoriesProduct'
-        );
+            'admin.pages.products.index'],
+            'App\Http\ViewComposers\Admin\CategoriesProduct'
+        );        
+    
 
         view()->composer([
             'admin.pages.products.index'],
             'App\Http\ViewComposers\Admin\Taxes'
+        );
+
+
+        view()->composer([
+            'front.pages.products.index'],
+            'App\Http\ViewComposers\Front\CategoriesProduct'
         );
 
 

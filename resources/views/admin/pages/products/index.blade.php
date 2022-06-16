@@ -125,7 +125,7 @@
                                                         <label>Precio</label>
                                                     </div>
                                                     <div class="panel-input">
-                                                        <input type="number" name="price" value="{{isset($product->price->first()->base_price) ? $product->price->first()->base_price : ''}}">
+                                                        <input type="number" name="price" value="{{isset($product->prices->first()->base_price) ? $product->price->first()->base_price : ''}}">
                                                     </div>
                                                 </div>
                         
@@ -139,7 +139,7 @@
                         
                                                             @if(isset($taxes))
                                                                 @foreach($taxes as $tax)
-                                                                    <option value="{{$tax->id}}" {{ isset($product->price->first()->tax->id)  && $product->price->first()->tax->id == $tax->id ? 'selected' : ''}}>{{$tax->type}}</option>
+                                                                    <option value="{{$tax->id}}" {{ isset($product->prices->first()->tax->id)  && $product->price->first()->tax->id == $tax->id ? 'selected' : ''}}>{{$tax->type}}</option>
                                                                 @endforeach
                                                             @endif
                                                             

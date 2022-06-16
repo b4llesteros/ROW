@@ -1,3 +1,5 @@
+import { Input } from "postcss";
+
 export let renderCounter = () => {
 
     document.addEventListener("renderProductModules", (event => {
@@ -8,7 +10,9 @@ export let renderCounter = () => {
 
     plusMinusButtons.forEach(plusMinusButton => {
 
-        plusMinusButton.addEventListener("click", () => {
+        plusMinusButton.addEventListener("click", (event) => {
+
+            event.preventDefault();
 
             let plusMinusContainer = plusMinusButton.closest(".plus-minus-container");
             let plusMinusInput = plusMinusContainer.querySelector(".plus-minus-input");

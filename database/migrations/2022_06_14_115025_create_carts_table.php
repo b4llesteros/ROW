@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->integer('price_id');
-            $table->integer('client_id');
-            $table->integer('fingerprint_id');
-            $table->integer('sale_id');
-            $table->boolean('active');
+            $table->integer('client_id')->nullable();
+            $table->integer('fingerprint_id')->nullable();
+            $table->integer('sale_id')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

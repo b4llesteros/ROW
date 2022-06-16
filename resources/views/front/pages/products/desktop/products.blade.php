@@ -44,7 +44,7 @@
                                 <h2>{{$product->title}}</h2>
                             </div>
                             <div class="product-price">
-                                <h3>{{$product->price}}</h3>
+                                <h3>{{$product->prices->first()->base_price}}€</h3>
                             </div>
                             <div class="product-button" >
                                 <button class="product-link-button" data-url="{{route('front_product', ['product' => $product->id])}}">Ficha</button>

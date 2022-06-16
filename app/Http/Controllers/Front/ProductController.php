@@ -63,15 +63,14 @@ class ProductController extends Controller
     } 
     
     public function sort($sort) 
-    { 
- 
+    {  
         $view = View::make('front.pages.products.index') 
         ->with( $sort); 
  
             if ($sort == 'price_asc') { 
-                $view->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('price', 'asc')->get()); 
+                $view->with('products', $this->product->prices->where('active', 1)->where('visible', 1)->orderBy('price', 'asc')->get()); 
             } elseif ($sort == 'price_desc') { 
-                $view->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('price', 'desc')->get()); 
+                $view->with('products', $this->product->prices->where('active', 1)->where('visible', 1)->orderBy('price', 'desc')->get()); 
             } else { 
                 $view->with('products', $this->product->where('active', 1)->where('visible', 1)->get()); 
             } 
@@ -87,5 +86,7 @@ class ProductController extends Controller
  
         return $view; 
     } 
+
+    
 }
 
