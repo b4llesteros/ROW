@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
+use Debugbar;
+use Request;
 
 class CartController extends Controller
 {
@@ -18,8 +21,8 @@ class CartController extends Controller
     public function index()
     {
         
-        $view = View::make('front.pages.cart.index');
-
+        $view = View::make('front.pages.cart.index'); 
+        
         if(request()->ajax()) {     
 
             $sections = $view->renderSections();
@@ -34,23 +37,40 @@ class CartController extends Controller
     }    
 
 
-    public function store(Cart $cart)
+    public function store(Request $request)
     {            
-        $amount = $_GET['amount'];
+        $amount = request('amount');      
 
-        for ( $i = 0; $i < $amount ; $i++ ) {
+        for ($i = 0; $i < $amount; $i++ ) {
 
             $cart = $this->cart->create([
                 'id' => request('id'),
-                'price_id' => request('price_id'),
+                'price_id' => request('price_id'),                
                 'client_id' => null,
-                'fingerprint_id' => null,
+                'fingerprint' => 1,
                 'sale_id' => null,                
             ]);
 
         }
+       
+        //Se puede hacer una consulta MySql puro
+        $carts = $this->cart->select(DB::raw('count(price_id) as quantity'),'price_id')
+            ->where('fingerprint',1)    
+            ->groupByRaw('price_id')->get();
 
-        $sections = View::make('front.pages.cart.index')->renderSections();
+        $total_base = $this->cart->select(DB::raw('sum(base_price) as total_base'))
+            ->where('fingerprint',1)->get();
+       
+        // foreach($carts as $cart) {
+        //     Debugbar::info($cart->price_id);
+        //     Debugbar::info($cart->price->base_price);
+        //     Debugbar::info($cart->price->product->title);
+        // }
+
+        $sections = View::make('front.pages.cart.index')
+            ->with('carts', $carts)
+            ->with('total_base', $total_base)            
+            ->renderSections();
 
         return response()->json([
             'content' => $sections['content'],

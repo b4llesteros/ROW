@@ -12,52 +12,48 @@
         <div class="desktop-one-column">
             <div class="column">
                 <div class="table-cart">
-                    <table>                        
-                        <thead>
-                        <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Unit Price</th>
-                            <th scope="col">Total Units Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td data-label="Product">English for Dummies</td>
-                            <td data-label="Quantity">
-                                <div class="plus-minus-container">
-                                    @include('front.components.desktop.plusminusbutton')
-                                </div>
-                            </td>
-                            <td data-label="Unit Price">20€</td>
-                            <td data-label="Total Units Price">20€</td>
-                        </tr>
-                        <tr>
-                            <td scope="row" data-label="Product">Starter Level</td>
-                            <td data-label="Quantity">
-                                @include('front.components.desktop.plusminusbutton')
-                            </td>
-                            <td data-label="Unit Price">40€</td>
-                            <td data-label="Total Units Price">120€</td>
-                        </tr>
-                        <tr>
-                            <td scope="row" data-label="Product">Advanced Level</td>
-                            <td data-label="Quantity">
-                                @include('front.components.desktop.plusminusbutton')
-                            </td>
-                            <td data-label="Unit Price">50€</td>
-                            <td data-label="Total Units Price">250€</td>
-                        </tr>                    
-                        </tbody>
-                    </table>
-                    <div class="total-price-all-products">
-                        <div class="total-price-title">
-                            <h3>Total price</h3>
+                    @if(isset($carts))
+                        <table>                        
+                            <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Total Units Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>                        
+                                @foreach($carts as $cart)
+                                    <tr>
+                                        <td data-label="Product">{{$cart->price->product->title}}</td>
+                                        <td data-label="Quantity">
+                                            <div class="plus-minus-container">
+                                                @include('front.components.desktop.plusminusbutton')
+                                            </div>
+                                        </td>
+                                        <td data-label="Unit Price">{{$cart->price->base_price}}€</td>
+                                        {{-- <td data-label="Total Units Price">{{($cart->quantity)*($cart->price->base_price)}}€</td>                           --}}
+                                        <td>
+                                            <input value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
+                                        </td>                                  
+                                @endforeach                                
+                            </tbody>
+                        </table>
+                        <div class="total-price-all-products">
+                            <div class="total-tax-title">
+                                <h3>Total tax</h3>
+                            </div>
+                            <div class="total-tax-value">
+                                <p></p>
+                            </div>
+                            <div class="total-price-title">
+                                <h3>Total base price</h3>
+                            </div>
+                            <div class="total-price-value">
+                                <p></p>
+                            </div>
                         </div>
-                        <div class="total-price-value">
-                            <p>250€</p>
-                        </div>
-                    </div>
+                    @endif 
                 </div>                
             </div>
         </div>

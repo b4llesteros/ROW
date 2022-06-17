@@ -636,54 +636,57 @@ var renderSelectFilter = function renderSelectFilter() {
   }, {
     once: true
   });
-  selectFilter.addEventListener("change", function () {
-    var url = selectFilter.value;
 
-    var sendShowRequest = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch(url, {
-                  headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                  },
-                  method: 'GET'
-                }).then(function (response) {
-                  if (!response.ok) throw response;
-                  return response.json();
-                }).then(function (json) {
-                  mainContent.innerHTML = json.content;
-                  document.dispatchEvent(new CustomEvent('renderProductModules'));
-                })["catch"](function (error) {
-                  if (error.status == '500') {
-                    console.log(error);
-                  }
+  if (selectFilter) {
+    selectFilter.addEventListener("change", function () {
+      var url = selectFilter.value;
 
-                  ;
-                });
+      var sendShowRequest = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductModules'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
 
-              case 2:
-                response = _context.sent;
+                    ;
+                  });
 
-              case 3:
-              case "end":
-                return _context.stop();
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee);
-      }));
+          }, _callee);
+        }));
 
-      return function sendShowRequest() {
-        return _ref.apply(this, arguments);
-      };
-    }();
+        return function sendShowRequest() {
+          return _ref.apply(this, arguments);
+        };
+      }();
 
-    sendShowRequest();
-  });
+      sendShowRequest();
+    });
+  }
 };
 
 /***/ }),

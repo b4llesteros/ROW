@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-container">
-                    <form method="get" action="{{route("front_cart_store")}}" id="form" class="cart-form">
+                    <form action="{{route("front_cart_store")}}" id="form" class="cart-form">
                         <input type="hidden" name="price_id" value="{{isset($product->prices->first()->id) ? $product->prices->first()->id:''}}">   
                         <div class="column right-column">
                             <div class="desktop-one-column mobile-one-column">
@@ -85,7 +85,7 @@
                                                 <button  class="plus-minus-button" data-type="minus">-</button>
                                             </div>
                                             <div class="quantity-input">
-                                                <input  name="amount" class="plus-minus-input" type="text" value="1" data-min="0" disabled="disabled">
+                                                <input name="amount" id="amount" class="plus-minus-input" type="number" value="1" data-min="0">
                                             </div>
                                             <div class="quantity-form-button">
                                                 <button  class="plus-minus-button" data-type="plus"><span>+</span></button>

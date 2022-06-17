@@ -8,39 +8,41 @@ export let renderSelectFilter = () => {
         renderSelectFilter();
     }), { once: true });
 
-    selectFilter.addEventListener("change", () => {
+    if (selectFilter) {
+        selectFilter.addEventListener("change", () => {
 
-        let url = selectFilter.value;
+            let url = selectFilter.value;
 
-        let sendShowRequest = async() => {
+            let sendShowRequest = async() => {
 
-            let response = await fetch(url, {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                    method: 'GET',
-                })
-                .then(response => {
+                let response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        method: 'GET',
+                    })
+                    .then(response => {
 
-                    if (!response.ok) throw response;
+                        if (!response.ok) throw response;
 
-                    return response.json();
-                })
-                .then(json => {
+                        return response.json();
+                    })
+                    .then(json => {
 
-                    mainContent.innerHTML = json.content;
+                        mainContent.innerHTML = json.content;
 
-                    document.dispatchEvent(new CustomEvent('renderProductModules'));
-                })
-                .catch(error => {
+                        document.dispatchEvent(new CustomEvent('renderProductModules'));
+                    })
+                    .catch(error => {
 
-                    if (error.status == '500') {
-                        console.log(error);
-                    };
-                });
-        };
+                        if (error.status == '500') {
+                            console.log(error);
+                        };
+                    });
+            };
 
-        sendShowRequest();
-    });
+            sendShowRequest();
+        });
+    }
 
 }

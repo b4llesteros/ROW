@@ -19,8 +19,8 @@ export let renderCart = () => {
 
                 let data = new FormData(form);
                 let url = form.action;
-                let sendPostRequest = async() => {
 
+                let sendPostRequest = async() => {
 
                     //Para llamada POST y DELETE hace falta X-CSRF-TOKEN
                     //Fetch es para realizar llamadas al servidor en Js
