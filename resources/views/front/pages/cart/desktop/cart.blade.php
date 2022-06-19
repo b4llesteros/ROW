@@ -41,16 +41,23 @@
                         </table>
                         <div class="total-price-all-products">
                             <div class="total-tax-title">
-                                <h3>Total tax</h3>
+                                <h3>Type of tax</h3>
                             </div>
                             <div class="total-tax-value">
-                                <p></p>
+                                <p>{{$cart->price->tax->type}}%</p>
+                            </div>
+                            <div class="total-tax-title">
+                                <h3>Total of tax</h3>
+                            </div>
+                            <div class="total-tax-value">
+                                <p>{{(($cart->quantity)*($cart->price->base_price))*($cart->price->tax->multiplicator)}}</p>
                             </div>
                             <div class="total-price-title">
                                 <h3>Total base price</h3>
                             </div>
-                            <div class="total-price-value">
-                                <p></p>
+                            <div class="totalPriceValue">
+                                <input  readonly/>
+                                
                             </div>
                         </div>
                     @endif 

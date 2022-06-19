@@ -56,10 +56,12 @@ class CartController extends Controller
         //Se puede hacer una consulta MySql puro
         $carts = $this->cart->select(DB::raw('count(price_id) as quantity'),'price_id')
             ->where('fingerprint',1)    
-            ->groupByRaw('price_id')->get();
+            ->groupByRaw('price_id')->get();        
 
-        $total_base = $this->cart->select(DB::raw('sum(base_price) as total_base'))
-            ->where('fingerprint',1)->get();
+        Debugbar::info();
+            
+
+            
        
         // foreach($carts as $cart) {
         //     Debugbar::info($cart->price_id);
@@ -68,8 +70,7 @@ class CartController extends Controller
         // }
 
         $sections = View::make('front.pages.cart.index')
-            ->with('carts', $carts)
-            ->with('total_base', $total_base)            
+            ->with('carts', $carts)                    
             ->renderSections();
 
         return response()->json([

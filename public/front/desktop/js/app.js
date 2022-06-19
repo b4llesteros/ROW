@@ -30,6 +30,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
 /* harmony import */ var _selectfilter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selectfilter.js */ "./resources/js/front/selectfilter.js");
 /* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
+/* harmony import */ var _sumcart_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sumcart.js */ "./resources/js/front/sumcart.js");
+
 
 
 
@@ -50,6 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.renderMenu)();
 (0,_selectfilter_js__WEBPACK_IMPORTED_MODULE_8__.renderSelectFilter)();
 (0,_cart_js__WEBPACK_IMPORTED_MODULE_9__.renderCart)();
+(0,_sumcart_js__WEBPACK_IMPORTED_MODULE_10__.renderSumCart)();
 
 /***/ }),
 
@@ -686,6 +689,53 @@ var renderSelectFilter = function renderSelectFilter() {
 
       sendShowRequest();
     });
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/front/sumcart.js":
+/*!***************************************!*\
+  !*** ./resources/js/front/sumcart.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renderSumCart": () => (/* binding */ renderSumCart)
+/* harmony export */ });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var renderSumCart = function renderSumCart() {
+  document.addEventListener("renderProductModules", function (event) {
+    renderSumCart();
+  }, {
+    once: true
+  });
+
+  function sumar() {
+    var total = document.getElementById('totalPriceValue');
+    var subtotal = 0;
+
+    _toConsumableArray(document.getElementsByClassName("totalBasePrice")).forEach(function (element) {
+      if (element.value !== '') {
+        subtotal += parseFloat(element.value);
+      }
+    });
+
+    total.value = subtotal;
+    sumar();
   }
 };
 
