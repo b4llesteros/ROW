@@ -10,6 +10,7 @@ import { renderSelectFilter } from "./selectfilter.js";
 import { renderCart } from "./cart.js";
 import { renderSumCart } from "./sumcart.js";
 
+
 renderForm();
 renderMenuButton();
 renderTabs();

@@ -1,5 +1,3 @@
-import { Input } from "postcss";
-
 export let renderCounter = () => {
 
     document.addEventListener("renderProductModules", (event => {

@@ -27,14 +27,30 @@
                                     <tr>
                                         <td data-label="Product">{{$cart->price->product->title}}</td>
                                         <td data-label="Quantity">
-                                            <div class="plus-minus-container">
-                                                @include('front.components.desktop.plusminusbutton')
-                                            </div>
+                                            <div class="desktop-one-column mobile-one-column">
+                                                <div class="column">
+                                                    <div class="column-quantity">
+                                                        <div class="plus-minus-container">
+                                                            <form action ="" class="cart-form">
+                                                                <div class="quantity-form-button">
+                                                                    <button type="button" class="plus-minus-button-cart" data-type="minus" data-url="{{route('front_minus_cart', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}">-</button>
+                                                                </div>
+                                                                <div class="quantity-input">
+                                                                    <input  class="plus-minus-input" type="text" value="{{$cart->quantity}}" data-min="0" disabled="disabled">
+                                                                </div>
+                                                                <div class="quantity-form-button">
+                                                                    <button type="button" class="plus-minus-button-cart" data-type="plus" data-url="{{route('front_plus_cart', ['fingerprint' => $fingerprint,'price_id' => $cart->price_id ])}}"><span>+</span></button>
+                                                                </div> 
+                                                            </form>    
+                                                        </div>                         
+                                                    </div>                               
+                                                </div>    
+                                            </div>                                           
                                         </td>
                                         <td data-label="Unit Price">{{$cart->price->base_price}}€</td>
                                         {{-- <td data-label="Total Units Price">{{($cart->quantity)*($cart->price->base_price)}}€</td>                           --}}
                                         <td>
-                                            <input value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
+                                            <input class="total-quantity" value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
                                         </td>                                  
                                 @endforeach                                
                             </tbody>
@@ -56,8 +72,7 @@
                                 <h3>Total base price</h3>
                             </div>
                             <div class="totalPriceValue">
-                                <input  readonly/>
-                                
+                                <p>{{}}</p>  
                             </div>
                         </div>
                     @endif 

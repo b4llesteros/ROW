@@ -4,6 +4,7 @@ export let renderCart = () => {
     let addToCart = document.querySelector('.add-to-cart');
     let forms = document.querySelectorAll('.cart-form');
 
+
     document.addEventListener("renderProductModules", (event => {
         renderCart();
     }), { once: true });
@@ -11,8 +12,7 @@ export let renderCart = () => {
     if (addToCart) {
 
         addToCart.addEventListener("click", (event) => {
-            //se pone para los botones que hay dentro de un formulario porque envía
-            //donde no queremos
+
             event.preventDefault();
 
             forms.forEach(form => {
@@ -41,6 +41,8 @@ export let renderCart = () => {
                         .then(json => {
 
                             mainContent.innerHTML = json.content;
+
+                            document.dispatchEvent(new CustomEvent('renderProductModules'));
                         })
                         .catch(error => {
 
@@ -75,5 +77,54 @@ export let renderCart = () => {
             });
         });
     }
+
+    let plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
+
+    plusMinusButtons.forEach(plusMinusButton => {
+
+            plusMinusButton.addEventListener("click", (event) => {
+
+                event.preventDefault();
+
+                let url = plusMinusButton.dataset.url;
+
+                let sendCreateRequest = async() => {
+                    let response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        method: 'GET',
+                    })
+
+                    .then(response => {
+
+                            if (!response.ok) throw response;
+
+                            return response.json();
+
+                        })
+                        .then(json => {
+
+                            mainContent.innerHTML = json.content;
+
+                            document.dispatchEvent(new CustomEvent('renderProductModules'));
+
+                        })
+                        .catch(error => {
+
+                            if (error.status == '500') {
+                                console.log(error);
+                            };
+                        });
+                };
+
+                sendCreateRequest();
+
+            });
+
+        }
+
+    );
+
 
 }

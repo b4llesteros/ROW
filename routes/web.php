@@ -136,6 +136,12 @@ Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 
+Router::get('/cart', 'App\Http\Controllers\Front\CheckoutController@store')->name('front_checkout');
+
+Route::get('cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_plus_cart');
+Route::get('cart/minus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_minus_cart');
+
+
 Route::get('/products/filter', 'App\Http\Controllers\Front\ProductController@filter')->name('front_products_filter');
 
 //La variable $category es la que viene del controlador //Filtro de categorías
@@ -154,6 +160,8 @@ Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@
 
 Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
+
+
 
 
 

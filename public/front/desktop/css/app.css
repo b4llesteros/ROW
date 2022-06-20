@@ -1096,6 +1096,15 @@ header {
   text-transform: uppercase;
 }
 
+.plus-minus-contianer {
+  margin-left: 5em;
+}
+
+.cart-form {
+  display: flex;
+  justify-content: space-between;
+}
+
 .desktop-four-columns-checkout {
   margin-left: 0em;
 }
