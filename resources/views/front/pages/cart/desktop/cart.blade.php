@@ -66,13 +66,13 @@
                                 <h3>Total of tax</h3>
                             </div>
                             <div class="total-tax-value">
-                                <p>{{(($cart->quantity)*($cart->price->base_price))*($cart->price->tax->multiplicator)}}</p>
+                                <p>{{((($cart->quantity)*($cart->price->base_price))/($cart->price->tax->multiplicator))-($cart->price->base_price)}}</p>
                             </div>
                             <div class="total-price-title">
                                 <h3>Total base price</h3>
                             </div>
                             <div class="totalPriceValue">
-                                <p>{{}}</p>  
+                                <p>{{(($cart->quantity)*($cart->price->base_price))}}</p>  
                             </div>
                         </div>
                     @endif 
