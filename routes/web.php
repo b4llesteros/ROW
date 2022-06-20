@@ -136,7 +136,6 @@ Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 
-Router::get('/cart', 'App\Http\Controllers\Front\CheckoutController@store')->name('front_checkout');
 
 Route::get('cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_plus_cart');
 Route::get('cart/minus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_minus_cart');

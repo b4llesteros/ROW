@@ -13,22 +13,9 @@ class CheckoutController extends Controller
     public function index()
     {
         
-        $carts = $this->cart->select(DB::raw('count(price_id) as quantity'),'price_id')
-        ->where('active',1)
-        ->where('fingerprint',1)    
-        ->groupByRaw('price_id')->get();      
+        $view = View::make('front.pages.checkout.index');
 
-              
-    $sections = View::make('front.pages.cart.index')
-        ->with('carts', $carts)
-        ->with('fingerprint', $cart->fingerprint)
-        ->renderSections();
-
-    return response()->json([
-        'content' => $sections['content'],
-    ]);
+        return $view;
     }
-    
-
     
 }
