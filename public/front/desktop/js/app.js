@@ -30,8 +30,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu.js */ "./resources/js/front/menu.js");
 /* harmony import */ var _selectfilter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selectfilter.js */ "./resources/js/front/selectfilter.js");
 /* harmony import */ var _cart_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./cart.js */ "./resources/js/front/cart.js");
-/* harmony import */ var _sumcart_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sumcart.js */ "./resources/js/front/sumcart.js");
-
 
 
 
@@ -52,7 +50,6 @@ __webpack_require__.r(__webpack_exports__);
 (0,_menu_js__WEBPACK_IMPORTED_MODULE_7__.renderMenu)();
 (0,_selectfilter_js__WEBPACK_IMPORTED_MODULE_8__.renderSelectFilter)();
 (0,_cart_js__WEBPACK_IMPORTED_MODULE_9__.renderCart)();
-(0,_sumcart_js__WEBPACK_IMPORTED_MODULE_10__.renderSumCart)();
 
 /***/ }),
 
@@ -79,6 +76,7 @@ var renderCart = function renderCart() {
   var mainContent = document.getElementById("main");
   var addToCart = document.querySelector('.add-to-cart');
   var forms = document.querySelectorAll('.cart-form');
+  var toCheckout = document.querySelector('.to-checkout');
   document.addEventListener("renderProductModules", function (event) {
     renderCart();
   }, {
@@ -209,6 +207,54 @@ var renderCart = function renderCart() {
 
       sendCreateRequest();
     });
+  });
+  toCheckout.addEventListener("click", function () {
+    var url = toCheckout.dataset.url;
+
+    var sendShowRequest = /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                  },
+                  method: 'GET'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  mainContent.innerHTML = json.content;
+                  document.dispatchEvent(new CustomEvent('renderProductModules'));
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+
+                  ;
+                });
+
+              case 2:
+                response = _context3.sent;
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function sendShowRequest() {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+
+    sendShowRequest();
   });
 };
 
@@ -555,7 +601,6 @@ var renderProduct = function renderProduct() {
     productButtons.forEach(function (productButton) {
       productButton.addEventListener("click", function () {
         var url = productButton.dataset.url;
-        console.log(productButton);
 
         var sendShowRequest = /*#__PURE__*/function () {
           var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -740,31 +785,6 @@ var renderSelectFilter = function renderSelectFilter() {
       sendShowRequest();
     });
   }
-};
-
-/***/ }),
-
-/***/ "./resources/js/front/sumcart.js":
-/*!***************************************!*\
-  !*** ./resources/js/front/sumcart.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderSumCart": () => (/* binding */ renderSumCart)
-/* harmony export */ });
-var renderSumCart = function renderSumCart() {
-  document.addEventListener("renderProductModules", function (event) {
-    renderSumCart();
-  }, {
-    once: true
-  });
-  var totalQuantity = document.querySelector('.total-quantity').value;
-  totalQuantity.addEventListener("click", function (event) {
-    alert(totalQuantity.value);
-  });
 };
 
 /***/ }),

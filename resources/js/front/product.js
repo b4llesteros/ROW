@@ -16,8 +16,6 @@ export let renderProduct = () => {
 
                 let url = productButton.dataset.url;
 
-                console.log(productButton);
-
                 let sendShowRequest = async() => {
 
                     let response = await fetch(url, {

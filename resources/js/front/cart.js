@@ -4,6 +4,8 @@ export let renderCart = () => {
     let addToCart = document.querySelector('.add-to-cart');
     let forms = document.querySelectorAll('.cart-form');
 
+    let toCheckout = document.querySelector('.to-checkout');
+
 
     document.addEventListener("renderProductModules", (event => {
         renderCart();
@@ -78,6 +80,8 @@ export let renderCart = () => {
         });
     }
 
+
+
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
 
     plusMinusButtons.forEach(plusMinusButton => {
@@ -117,14 +121,45 @@ export let renderCart = () => {
                             };
                         });
                 };
-
                 sendCreateRequest();
-
             });
-
         }
 
     );
+
+    toCheckout.addEventListener("click", () => {
+
+        let url = toCheckout.dataset.url;
+
+        let sendShowRequest = async() => {
+
+            let response = await fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    method: 'GET',
+                })
+                .then(response => {
+
+                    if (!response.ok) throw response;
+
+                    return response.json();
+                })
+                .then(json => {
+
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('renderProductModules'));
+                })
+                .catch(error => {
+
+                    if (error.status == '500') {
+                        console.log(error);
+                    };
+                });
+        };
+
+        sendShowRequest();
+    });
 
 
 }

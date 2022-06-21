@@ -120,17 +120,15 @@
 
                             <div class="desktop-one-column mobile-one-column">
                                 <div class="column">
-                                    <div class="desktop-two-columns mobile-one-column mobile-one-column-buttons">
+                                    <div class="desktop-one-column mobile-one-column mobile-one-column-buttons">
                                         <div class="column">
                                             <div class="add-button">
                                                 <button class="add-to-cart">Añadir a la cesta</button>
                                             </div>
-                                        </div>  
-                                        <div class="column">  
                                             <div class="buy-button">
                                                 <button>Comprar</button>
                                             </div>
-                                        </div> 
+                                        </div>                                         
                                     </div>
                                 </div>                    
                             </div>

@@ -132,9 +132,11 @@ Route::get('/', 'App\Http\Controllers\Front\HomeController@index');
 
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
 
-Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
+Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
+
+// Route::get('/cart/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
 
 Route::get('cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_plus_cart');

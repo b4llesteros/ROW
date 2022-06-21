@@ -51,47 +51,48 @@
                                         {{-- <td data-label="Total Units Price">{{($cart->quantity)*($cart->price->base_price)}}€</td>                           --}}
                                         <td>
                                             <input class="total-quantity" value="{{($cart->quantity)*($cart->price->base_price)}}€" disabled>
-                                        </td>
-
+                                        </td>                                                            
+                                        <input type="hidden" value="{{$total_base += ($cart->quantity)*($cart->price->base_price)}}">
+                                        <input type="hidden" value="{{$total_tax += ($cart->price->tax->multiplicator )}}">
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="total-price-all-products">
-                            <div class="total-tax-title">
-                                <h3>Type of tax</h3>
+                        <div class="total-price-all-products">                            
+                            <div class="total-title-element">
+                                <h3>Base Imponible</h3>
                             </div>
-                            <div class="total-tax-value">
-                                <p>{{$cart->price->tax->type}}%</p>
+                            <div class="total-result">
+                                <span>{{$total_base}}€</span>
                             </div>
-                            <div class="total-tax-title">
-                                <h3>Total without tax</h3>
+                            <div class="total-title-element">
+                                <h3>IVA</h3>
                             </div>
-                            <div class="total-tax-value">
-                                <p>{{((($cart->quantity)*($cart->price->base_price))/($cart->price->tax->multiplicator))}}</p>
+                            <div class="total-result">
+                                <span>{{($total_base * $total_tax)-($total_base)}}€</span>
                             </div>
-                            <div class="total-price-title">
-                                <h3>Total price with tax</h3>
+                            <div class="total-title-element">
+                                <h3>Total</h3>
                             </div>
-                            <div class="totalPriceValue">
-                                <p></p>
-                                <p>{{(($cart->quantity)*($cart->price->base_price))}}</p>
+                            <div class="total-result">
+                                <span>{{$total_base * $cart->price->tax->multiplicator}}€</span>
                             </div>
-                        </div>
+                        </div>                        
                     @endif
                 </div>
             </div>
         </div>
-        <div class="desktop-two-columns desktop-two-columns-buttons">
-            <div class="column">
-                <div class="pay-button bold">
-                    <button>Continuar con el pago</button>
+        
+            <div class="desktop-two-columns desktop-two-columns-buttons">
+                <div class="column">
+                    <div class="pay-button bold">
+                        <button class="to-checkout" data-url="{{route('front_checkout')}}">Continuar con el pago</button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="back-shop bold">
+                        <button>Volver a la tienda</button>
+                    </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="back-shop bold">
-                    <button>Volver a la tienda</button>
-                </div>
-            </div>
-        </div>
-
+        
     @endsection
