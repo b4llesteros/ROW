@@ -57,29 +57,29 @@ Route::group(['prefix' => 'admin'], function () {
 
     // Route::resource('providers', 'App\Http\Controllers\Admin\ProviderController', [
     //     'parameters' => [
-    //         'providers' => 'provider', 
+    //         'providers' => 'provider',
     //     ],
     //     'names' => [
-    //         'index' => 'providers', 
-    //         'create' => 'providers_create', 
-    //         'edit' => 'providers_edit', 
-    //         'store' => 'providers_store', 
+    //         'index' => 'providers',
+    //         'create' => 'providers_create',
+    //         'edit' => 'providers_edit',
+    //         'store' => 'providers_store',
     //         'destroy' => 'providers_destroy',
-    //         'show' => 'providers_show', 
+    //         'show' => 'providers_show',
     //     ]
     // ]);
 
     Route::resource('products/categories', 'App\Http\Controllers\Admin\ProductCategoryController', [
         'parameters' => [
-            'categories' => 'category', 
+            'categories' => 'category',
         ],
         'names' => [
-            'index' => 'products_categories', 
+            'index' => 'products_categories',
             'create' => 'products_categories_create',
-            'edit' => 'products_categories_edit', 
-            'store' => 'products_categories_store', 
+            'edit' => 'products_categories_edit',
+            'store' => 'products_categories_store',
             'destroy' => 'products_categories_destroy',
-            'show' => 'products_categories_show', 
+            'show' => 'products_categories_show',
         ]
     ]);
 
@@ -88,12 +88,12 @@ Route::group(['prefix' => 'admin'], function () {
             'products' => 'product',
         ],
         'names' => [
-            'index' => 'products', 
-            'create' => 'products_create', 
-            'edit' => 'products_edit', 
-            'store' => 'products_store', 
-            'destroy' => 'products_destroy', 
-            'show' => 'products_show', 
+            'index' => 'products',
+            'create' => 'products_create',
+            'edit' => 'products_edit',
+            'store' => 'products_store',
+            'destroy' => 'products_destroy',
+            'show' => 'products_show',
         ]
     ]);
 
@@ -102,27 +102,41 @@ Route::group(['prefix' => 'admin'], function () {
             'users' => 'user',
         ],
         'names' => [
-            'index' => 'users', 
-            'create' => 'users_create', 
-            'edit' => 'users_edit', 
-            'store' => 'users_store', 
-            'destroy' => 'users_destroy', 
-            'show' => 'users_show', 
+            'index' => 'users',
+            'create' => 'users_create',
+            'edit' => 'users_edit',
+            'store' => 'users_store',
+            'destroy' => 'users_destroy',
+            'show' => 'users_show',
         ]
     ]);
 
-    
+
     Route::resource('clients', 'App\Http\Controllers\Admin\ClientController', [
         'parameters' => [
             'clients' => 'client',
         ],
         'names' => [
-            'index' => 'clients', 
-            'create' => 'clients_create', 
-            'edit' => 'clients_edit', 
-            'store' => 'clients_store', 
-            'destroy' => 'clients_destroy', 
-            'show' => 'clients_show', 
+            'index' => 'clients',
+            'create' => 'clients_create',
+            'edit' => 'clients_edit',
+            'store' => 'clients_store',
+            'destroy' => 'clients_destroy',
+            'show' => 'clients_show',
+        ]
+    ]);
+
+    Route::resource('sales', 'App\Http\Controllers\Admin\SaleController', [
+        'parameters' => [
+            'sales' => 'sale',
+        ],
+        'names' => [
+            'index' => 'sales',
+            'create' => 'sales_create',
+            'edit' => 'sales_edit',
+            'store' => 'sales_store',
+            'destroy' => 'sales_destroy',
+            'show' => 'sales_show',
         ]
     ]);
 
@@ -132,7 +146,11 @@ Route::get('/', 'App\Http\Controllers\Front\HomeController@index');
 
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
 
+
+Route::post('/checkout', 'App\Http\Controllers\Front\CheckoutController@store')->name('checkout_store');
+
 Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
+
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');
 

@@ -7,7 +7,8 @@ import { renderFaqs } from "./faqs.js";
 import { renderProduct } from "./product.js";
 import { renderMenu } from "./menu.js";
 import { renderSelectFilter } from "./selectfilter.js";
-import { renderCart } from "./cart.js";
+// import { renderCart } from "./cart.js";
+import { renderCheckout } from "./checkout.js";
 
 
 
@@ -20,4 +21,5 @@ renderFaqs();
 renderProduct();
 renderMenu();
 renderSelectFilter();
-renderCart();
+// renderCart();
+renderCheckout;
