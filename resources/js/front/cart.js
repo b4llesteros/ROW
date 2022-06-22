@@ -127,39 +127,42 @@ export let renderCart = () => {
 
     );
 
-    toCheckout.addEventListener("click", () => {
+    if (toCheckout) {
 
-        let url = toCheckout.dataset.url;
+        toCheckout.addEventListener("click", () => {
 
-        let sendShowRequest = async() => {
+            let url = toCheckout.dataset.url;
 
-            let response = await fetch(url, {
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                    },
-                    method: 'GET',
-                })
-                .then(response => {
+            let sendShowRequest = async() => {
 
-                    if (!response.ok) throw response;
+                let response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        method: 'GET',
+                    })
+                    .then(response => {
 
-                    return response.json();
-                })
-                .then(json => {
+                        if (!response.ok) throw response;
 
-                    mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductModules'));
-                })
-                .catch(error => {
+                        return response.json();
+                    })
+                    .then(json => {
 
-                    if (error.status == '500') {
-                        console.log(error);
-                    };
-                });
-        };
+                        mainContent.innerHTML = json.content;
+                        document.dispatchEvent(new CustomEvent('renderProductModules'));
+                    })
+                    .catch(error => {
 
-        sendShowRequest();
-    });
+                        if (error.status == '500') {
+                            console.log(error);
+                        };
+                    });
+            };
 
+            sendShowRequest();
+        });
+
+    }
 
 }

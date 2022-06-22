@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('total_base_price');
             $table->decimal('total_tax_price');
             $table->decimal('total_price');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

@@ -2,17 +2,13 @@
 
 
 namespace App\Http\Controllers\Admin;
-
-
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Sale;
 use App\Http\Requests\Admin\SaleRequest;
-use Debugbar;
 
 
-
-class SaleController extends Controller
+class CheckoutController extends Controller
 {
     protected $sale;
 

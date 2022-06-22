@@ -126,7 +126,7 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
-    Route::resource('sales', 'App\Http\Controllers\Admin\SaleController', [
+    Route::resource('sales', 'App\Http\Controllers\Admin\CheckoutController', [
         'parameters' => [
             'sales' => 'sale',
         ],
@@ -149,7 +149,7 @@ Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('fro
 
 Route::post('/checkout', 'App\Http\Controllers\Front\CheckoutController@store')->name('checkout_store');
 
-Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
+Route::get('/checkout/{fingerprint}', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
 
 Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('front_cart');

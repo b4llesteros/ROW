@@ -5,7 +5,8 @@
         <table>
             <tr>
                 <th>ID</th>
-                <th>ID</th>
+                <th>Nº Ticket</th>
+                <th>Total</th>
                 <th>Creado</th>
                 <th> @include('admin.components.addbutton') </th>
             </tr>
@@ -13,7 +14,8 @@
                 @foreach($sales as $sale_element)
                     <tr>
                         <td>{{$sale_element->id}}</td>
-                        <td>{{$sale_element->id}}</td>
+                        <td>{{$sale_element->ticket_number}}</td>
+                        <td>{{$sale_element->total_price}}€</td>
                         <td>{{$sale_element->created_at}}</td>
                         <td>
                             <div class="table-buttons">
@@ -95,29 +97,12 @@
 
                                                 <div class="form-group">
                                                     <div class="form-label">
-                                                        <span>Total base price</span>
+                                                        <span>Nº Ticket</span>
                                                     </div>
                                                     <div class="form-input">
-                                                        <input name="total_base_price" value="{{isset($sale->total_base_price) ? $sale->total_base_price:''}}"  class="input-form" placeholder="Escribe la pregunta">
+                                                        <input name="ticket_number" value="{{isset($sale->ticket_number) ? $sale->ticket_number:''}}"  class="input-form" placeholder="Escribe el número de ticket">
                                                     </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="form-label">
-                                                        <span>Total tax price</span>
-                                                    </div>
-                                                    <div class="form-input">
-                                                        <input name="total_tax_price" value="{{isset($sale->total_tax_price) ? $sale->total_tax_price:''}}"  class="input-form" placeholder="Escribe la pregunta">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="form-label">
-                                                        <span>Total Price</span>
-                                                    </div>
-                                                    <div class="form-input">
-                                                        <input name="total_price" value="{{isset($sale->total_price) ? $sale->total_price:''}}"  class="input-form" placeholder="Escribe la pregunta">
-                                                    </div>
-                                                </div>
+                                                </div>                                                
                                             </div>
                                         </div>
                                     </form>
