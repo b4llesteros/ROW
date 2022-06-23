@@ -6,12 +6,12 @@
             <div class="slider">
                 <img src="{{Storage::url('slider4.png')}}" alt="">
             </div>
-            <div class="slider-button">
+            {{-- <div class="slider-button">
                 <button>Let's Go</button>
             </div>
             <div class="slider-text">
                 <h3>Learn English Without Limits</h3>
-            </div>                 
+            </div>                  --}}
         </div>     
         <div class="desktop-one-column">
             <div class="column">

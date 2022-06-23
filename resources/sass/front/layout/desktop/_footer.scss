@@ -1,34 +1,77 @@
-.footer-columns{
+.footer-columns {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0em 0em 0em 0em;
     font-size: 1em;
     bottom: 0;
-    
 }
 
-.footer-column-left{
+.footer-column {
     text-align: center;
-    font-family: 'Noto Sans, sans-serif';
-    margin: 0.5em 0em 0em 0em;
+    font-family: $font-stack;
 }
 
-.footer-column-middle{
-    text-align: center;
-    font-family: 'Noto Sans , sans-serif';
-    margin: 0.5em -4em 0em 0em;
-    
-}
-
-.footer-column-right{
-    text-align: center;
-    font-family: 'Noto Sans , sans-serif';
-    margin: 0.5em 0em 0em 0em;        
-}
-
-.copyright{
+.copyright {
     font-family: 'Noto Sans';
     text-align: center;
-    font-size: 0.8em;
+    span {
+        font-size: 1em;
+    }
+}
+
+.footer-list {
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+    li {
+        display: flex;
+        justify-content: center;
+        h3 {
+            font-size: 1.5em;
+            font-family: $font-stack;
+            margin-top: 0.5em;
+            margin-left: 0.5em;
+            cursor: pointer;
+            &:hover {
+                color: hsl(0, 0%, 100%);
+            }
+        }
+    }
+    li a:hover {
+        color: hsl(0, 0%, 100%);
+    }
+    .youtube-icon {
+        height: 3em;
+        width: 2.5em;
+    }
+    .youtube-icon:hover {
+        color: hsl(0, 100%, 50%);
+        cursor: pointer;
+    }
+    .instagram-icon {
+        height: 3em;
+        width: 2.5em;
+    }
+    .instagram-icon:hover {
+        color: hsl(347, 64%, 33%);
+        cursor: pointer;
+    }
+    .facebook-icon {
+        height: 3em;
+        width: 2.5em;
+    }
+    .facebook-icon:hover {
+        color: hsl(240, 82%, 55%);
+        cursor: pointer;
+    }
+    .twitter-icon {
+        height: 3em;
+        width: 2.5em;
+    }
+    .twitter-icon:hover {
+        color: hsl(197, 98%, 44%);
+        cursor: pointer;
+    }
 }

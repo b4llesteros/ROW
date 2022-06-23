@@ -1,0 +1,32 @@
+.navbar-left-title {
+    font-family: $font-stack;
+    margin: 2em 95em 0em 0em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 9%;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 1em 0em 0em 4em;
+    }
+    li {
+        margin-left: 5em;
+    }
+    li h2:hover {
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
+    }
+    .home-icon {
+        margin: -0.5em -2.5em 0em 5em;
+        height: 3em;
+        width: 3em;
+        &:hover {
+            cursor: pointer;
+            color: hsl(0, 0%, 100%);
+        }
+    }
+}

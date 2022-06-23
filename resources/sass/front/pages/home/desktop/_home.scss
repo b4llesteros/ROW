@@ -1,34 +1,28 @@
-.featured-element{
-    margin: 0.5em 0.5em 0em 0.5em;  
+.featured-element {
+    margin: 0.5em 0.5em 0em 0.5em;
     overflow: hidden;
     width: 45%;
+    border-radius: 0.5em;
     box-shadow: hsla(0, 0%, 0%, 0.4) 0px 2px 4px, hsla(0, 0%, 0%, 0.3) 0px 7px 13px -3px, hsla(0, 0%, 0%, 0.2) 0px -3px 0px inset;
+    &:hover {
+        cursor: pointer;
+        box-shadow: hsla(221, 93%, 59%, 0.781) 0px 2px 4px, hsla(221, 93%, 59%, 0.781) 0px 7px 13px -3px, hsla(0, 0%, 0%, 0.2) 0px -3px 0px inset;
+    }
 }
 
-
-.featured-title{
+.featured-title {
     text-align: center;
     font-family: $font-stack;
+    margin-bottom: 0.5em;
 }
 
-.product-level:hover{
-    border-color: $primary-color ;
-    border-style:solid
-}
-
-.featured-title h1{
+.featured-description {
     text-align: center;
-    font-family:$font-stack;
-    margin: 1em 0em 1em 0em;
-}
-
-.featured-description{
-    text-align: center;
-    margin-top: 2em;
+    margin-top: 2.5em;
     display: flex;
     width: 45%;
 }
 
-.featured-column{
+.featured-column {
     display: flex;
 }

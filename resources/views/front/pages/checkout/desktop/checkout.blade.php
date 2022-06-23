@@ -111,7 +111,7 @@
                         <div class="desktop-oene-column">
                             <table class="table-method-payment">
                                 <tr class="main-row">
-                                    <th><input name="payment_method_id" type="radio" value="1" >Efectivo</th>
+                                    <th><input name="payment_method_id" type="radio" value="1">Efectivo</th>
                                     <th><input name="payment_method_id" type="radio" value="2">Transferencia</th>
                                     <th><input name="payment_method_id" type="radio" value="3">Tarjeta de crédito</th>
                                 </tr>

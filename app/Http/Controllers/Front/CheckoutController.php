@@ -82,8 +82,11 @@ class CheckoutController extends Controller
             'payment_method_id' => request('payment_method_id'),
         ]);
 
-        $cart = $this->cart->where('fingerprint', request('fingerprint'))->update([
-            'sale_id' => $sale->id,
+        $cart = $this->cart
+            ->where('fingerprint', request('fingerprint'))
+            ->update([
+                'sale_id' => $sale->id,
+                'client_id' => $client->id,
         ]);
 
         $sections = View::make('front.pages.salesdone.index')->renderSections();
@@ -93,8 +96,7 @@ class CheckoutController extends Controller
         ]);
     }
 
-
-    }
+}
    
     
 

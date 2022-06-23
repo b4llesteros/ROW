@@ -75,19 +75,17 @@
                     @endif
                 </div>
             </div>
-        </div>
-        
-            <div class="desktop-two-columns desktop-two-columns-buttons">
-                <div class="column">
-                    <div class="pay-button bold">
-                        <button class="to-checkout" data-url="{{route('front_checkout', ['fingerprint' =>  $fingerprint])}}">Continuar con el pago</button>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="back-shop bold">
-                        <button>Volver a la tienda</button>
-                    </div>
+        </div>        
+        <div class="desktop-two-columns desktop-two-columns-buttons">
+            <div class="column">
+                <div class="pay-button bold">
+                    <button class="to-checkout" data-url="{{route('front_checkout', ['fingerprint' =>  $fingerprint])}}">Continuar con el pago</button>
                 </div>
             </div>
-        
+            <div class="column">
+                <div class="back-shop bold">
+                    <button>Volver a la tienda</button>
+                </div>
+            </div>
+        </div>        
     @endsection

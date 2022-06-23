@@ -161,7 +161,6 @@ class CartController extends Controller
         ->with('total', $totals->total)
         ->renderSections();
 
-
         return response()->json([
             'content' => $sections['content'],
         ]);

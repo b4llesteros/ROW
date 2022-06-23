@@ -142,7 +142,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::get('/', 'App\Http\Controllers\Front\HomeController@index');
+Route::get('/', 'App\Http\Controllers\Front\HomeController@index')->name('front_home');
 
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
 
@@ -177,7 +177,7 @@ Route::get('/products/sort/{sort}', 'App\Http\Controllers\Front\ProductControlle
 //La variable $product es la que viene del controlador
 Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@show')->name('front_product');
 
-Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index');
+Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index')->name('front_contact');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
 
 

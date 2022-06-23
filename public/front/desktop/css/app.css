@@ -458,8 +458,7 @@ footer {
 
 header {
   background-color: hsl(212deg, 96%, 54%);
-  height: 5em;
-  margin: -1em 0em 0em 0em;
+  height: auto;
   width: 100%;
 }
 
@@ -467,33 +466,76 @@ header {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0em 0em 0em 0em;
   font-size: 1em;
   bottom: 0;
 }
 
-.footer-column-left {
+.footer-column {
   text-align: center;
-  font-family: "Noto Sans, sans-serif";
-  margin: 0.5em 0em 0em 0em;
-}
-
-.footer-column-middle {
-  text-align: center;
-  font-family: "Noto Sans , sans-serif";
-  margin: 0.5em -4em 0em 0em;
-}
-
-.footer-column-right {
-  text-align: center;
-  font-family: "Noto Sans , sans-serif";
-  margin: 0.5em 0em 0em 0em;
+  font-family: "Noto Sans";
 }
 
 .copyright {
   font-family: "Noto Sans";
   text-align: center;
-  font-size: 0.8em;
+}
+.copyright span {
+  font-size: 1em;
+}
+
+.footer-list ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.footer-list li {
+  display: flex;
+  justify-content: center;
+}
+.footer-list li h3 {
+  font-size: 1.5em;
+  font-family: "Noto Sans";
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+.footer-list li h3:hover {
+  color: hsl(0deg, 0%, 100%);
+}
+.footer-list li a:hover {
+  color: hsl(0deg, 0%, 100%);
+}
+.footer-list .youtube-icon {
+  height: 3em;
+  width: 2.5em;
+}
+.footer-list .youtube-icon:hover {
+  color: hsl(0deg, 100%, 50%);
+  cursor: pointer;
+}
+.footer-list .instagram-icon {
+  height: 3em;
+  width: 2.5em;
+}
+.footer-list .instagram-icon:hover {
+  color: hsl(347deg, 64%, 33%);
+  cursor: pointer;
+}
+.footer-list .facebook-icon {
+  height: 3em;
+  width: 2.5em;
+}
+.footer-list .facebook-icon:hover {
+  color: hsl(240deg, 82%, 55%);
+  cursor: pointer;
+}
+.footer-list .twitter-icon {
+  height: 3em;
+  width: 2.5em;
+}
+.footer-list .twitter-icon:hover {
+  color: hsl(197deg, 98%, 44%);
+  cursor: pointer;
 }
 
 .desktop-five-columns {
@@ -848,70 +890,32 @@ header {
   margin: 2em 95em 0em 0em;
 }
 
-.menu-option {
-  color: #000000;
-  font-size: 1.5em;
-  font-family: "Noto Sans";
-  margin-left: 3em;
-  text-decoration: none;
-}
-
-.navbar-right {
+.navbar {
   display: flex;
   justify-content: space-between;
+  margin-left: 9%;
 }
-.navbar-right ul {
+.navbar ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  margin: 2em 0em 0em 0em;
+  margin: 1em 0em 0em 4em;
 }
-.navbar-right li a {
-  color: #000000;
-  font-size: 1.5em;
-  font-family: "Noto Sans";
-  margin: 1.2em;
-  text-decoration: none;
+.navbar li {
+  margin-left: 5em;
 }
-.navbar-right li a:hover {
+.navbar li h2:hover {
   color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
 }
-.navbar-right .home-icon {
+.navbar .home-icon {
   margin: -0.5em -2.5em 0em 5em;
-  height: 2em;
+  height: 3em;
   width: 3em;
 }
-.navbar-right .youtube-icon {
-  margin: -0.5em 0.5em 0em 5em;
-  height: 3em;
-  width: 2.5em;
-}
-.navbar-right .youtube-icon:hover {
-  color: hsl(0deg, 100%, 50%);
-}
-.navbar-right .instagram-icon {
-  margin: -0.5em 0.5em 0em 5em;
-  height: 3em;
-  width: 2.5em;
-}
-.navbar-right .instagram-icon:hover {
-  color: hsl(347deg, 64%, 33%);
-}
-.navbar-right .facebook-icon {
-  margin: -0.5em 0.5em 0em 5em;
-  height: 3em;
-  width: 2.5em;
-}
-.navbar-right .facebook-icon:hover {
-  color: hsl(240deg, 82%, 55%);
-}
-.navbar-right .twitter-icon {
-  margin: -0.5em -0.5em 0em 5em;
-  height: 3em;
-  width: 2.5em;
-}
-.navbar-right .twitter-icon:hover {
-  color: hsl(197deg, 98%, 44%);
+.navbar .home-icon:hover {
+  cursor: pointer;
+  color: hsl(0deg, 0%, 100%);
 }
 
 .slider img {
@@ -1144,15 +1148,6 @@ pay-button .back-shop button:hover {
   width: 100%;
 }
 
-.total-products {
-  margin-top: 0em;
-  margin-bottom: 2em;
-}
-
-.quantity {
-  margin-top: 2em;
-}
-
 .payment-method {
   margin-top: 2em;
 }
@@ -1183,20 +1178,6 @@ pay-button .back-shop button:hover {
   margin-bottom: 2em;
 }
 
-.table-price {
-  width: 100%;
-  text-align: left;
-}
-
-.table-price tr {
-  font-family: "Noto Sans";
-  text-align: center;
-}
-
-.price-row {
-  height: 4em;
-}
-
 .table-method-payment {
   width: 100%;
   text-align: left;
@@ -1209,32 +1190,6 @@ pay-button .back-shop button:hover {
 
 .table-cart-checkout .product-column {
   text-align: left;
-}
-
-.product-row .product-column {
-  font-family: "Noto Sans";
-}
-
-.product-row .quantity-column {
-  font-family: "Noto Sans";
-}
-
-.product-row .unit-price-column {
-  font-family: "Noto Sans";
-}
-
-.product-row .total-price-column {
-  font-family: "Noto Sans";
-}
-
-.counter-title {
-  margin-right: 1.5em;
-  margin-top: 1em;
-}
-
-.buttons {
-  display: flex;
-  margin-top: 3.5em;
 }
 
 .sale-done {
@@ -1317,28 +1272,23 @@ pay-button .back-shop button:hover {
   margin: 0.5em 0.5em 0em 0.5em;
   overflow: hidden;
   width: 45%;
+  border-radius: 0.5em;
   box-shadow: hsla(0deg, 0%, 0%, 0.4) 0px 2px 4px, hsla(0deg, 0%, 0%, 0.3) 0px 7px 13px -3px, hsla(0deg, 0%, 0%, 0.2) 0px -3px 0px inset;
+}
+.featured-element:hover {
+  cursor: pointer;
+  box-shadow: hsla(221deg, 93%, 59%, 0.781) 0px 2px 4px, hsla(221deg, 93%, 59%, 0.781) 0px 7px 13px -3px, hsla(0deg, 0%, 0%, 0.2) 0px -3px 0px inset;
 }
 
 .featured-title {
   text-align: center;
   font-family: "Noto Sans";
-}
-
-.product-level:hover {
-  border-color: hsl(212deg, 96%, 54%);
-  border-style: solid;
-}
-
-.featured-title h1 {
-  text-align: center;
-  font-family: "Noto Sans";
-  margin: 1em 0em 1em 0em;
+  margin-bottom: 0.5em;
 }
 
 .featured-description {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 2.5em;
   display: flex;
   width: 45%;
 }
@@ -1512,6 +1462,7 @@ pay-button .back-shop button:hover {
   margin: 0 auto;
   max-width: 50%;
   padding: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .faqs-title {
