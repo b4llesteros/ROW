@@ -39,6 +39,8 @@ export let renderCheckout = () => {
                         .then(json => {
 
                             mainContent.innerHTML = json.content;
+
+                            document.dispatchEvent(new CustomEvent('renderProductModules'));
                         })
                         .catch(error => {
 

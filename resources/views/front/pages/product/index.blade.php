@@ -9,7 +9,7 @@
 @section('content')
 
 @if ($agent->isDesktop())
-    @include('front.pages.product.desktop.product')
+    @include('front.pages.product.desktop.product' )
 @endif
 
 @if ($agent->isMobile())

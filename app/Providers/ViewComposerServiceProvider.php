@@ -48,6 +48,11 @@ class ViewComposerServiceProvider extends ServiceProvider
             'App\Http\ViewComposers\Front\CategoriesProduct'
         );
 
+        view()->composer([
+            'front.pages.chekout.index'],
+            'App\Http\ViewComposers\Front\PaymentMethods'
+        );
+
 
     }
 }

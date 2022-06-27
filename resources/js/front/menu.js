@@ -4,6 +4,7 @@ export let renderMenu = () => {
     let menuOptions = document.querySelectorAll('.menu-option');
 
 
+
     if (menuOptions) {
 
         menuOptions.forEach(menuOption => {
@@ -31,10 +32,10 @@ export let renderMenu = () => {
 
                             mainContent.innerHTML = json.content;
 
-                            document.dispatchEvent(new CustomEvent('renderCounterModules'));
-                            document.dispatchEvent(new CustomEvent('renderFaqsModules'));
+                            // document.dispatchEvent(new CustomEvent('renderCounterModules'));
+                            // document.dispatchEvent(new CustomEvent('renderFaqsModules'));
                             document.dispatchEvent(new CustomEvent('renderProductModules'));
-                            document.dispatchEvent(new CustomEvent('renderCategoryModules'));
+                            // document.dispatchEvent(new CustomEvent('renderCategoryModules'));
 
                         })
                         .catch(error => {

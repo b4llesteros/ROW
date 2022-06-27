@@ -27,8 +27,8 @@
                     <div class="filter-products">
                         <select id="filter" class="select-filter" >
                             <option> All Products</option>
-                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_asc'])}}">Low price first</option>
-                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'price_desc'])}}">Hight price first</option>                          
+                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'asc'])}}">Low price first</option>
+                            <option class="filter-option" value="{{route('front_product_sort', ['sort' => 'desc'])}}">Hight price first</option>                          
                         </select>                      
                     </div>                
                 </div>
@@ -44,7 +44,7 @@
                                 <h2>{{$product->title}}</h2>
                             </div>
                             <div class="product-price">
-                                <h3>{{$product->prices->first()->base_price}}€</h3>
+                                <h3>{{$product->base_price}}€</h3>
                             </div>
                             <div class="product-button" >
                                 <button class="product-link-button" data-url="{{route('front_product', ['product' => $product->id])}}">Ficha</button>

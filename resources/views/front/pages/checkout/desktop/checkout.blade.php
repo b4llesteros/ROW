@@ -115,6 +115,14 @@
                                     <th><input name="payment_method_id" type="radio" value="2">Transferencia</th>
                                     <th><input name="payment_method_id" type="radio" value="3">Tarjeta de crédito</th>
                                 </tr>
+
+                                {{-- @if(isset($payment_methods))
+                                    @foreach($payment_methods as $payment_method)
+                                        <div>
+                                            <h4>{{$payment_method->name}}</h4>
+                                        </div>
+                                @endif --}}
+                                
                             </table>
                         </div>
                         <div class="desktop-one-column">

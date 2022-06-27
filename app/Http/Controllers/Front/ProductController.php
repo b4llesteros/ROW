@@ -6,7 +6,8 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\Price;
+
+use Illuminate\Support\Facades\DB;
 use Request;
 use App\Http\Requests\Front\ProductRequest;
 use Debugbar;
@@ -16,18 +17,26 @@ class ProductController extends Controller
 {
       protected $product;
 
-      public function __construct(Product $product, Price $price)
+      public function __construct(Product $product)
       {
             $this->product = $product;
-            $this->price = $price;
+            
       }    
 
     public function index()
     {
+        $products = $this->product         
+        ->join('prices', 'prices.product_id', '=', 'products.id')
+        ->where('products.active', 1)
+        ->where('products.visible', 1)
+        ->where('prices.active', 1)
+        ->where('prices.valid', 1)       
+        ->get();   
+              
+        Debugbar::info($products);
     
         $view = View::make('front.pages.products.index')        
-        ->with('products', $this->product->where('active', 1)->where('visible', 1)->orderBy('title','asc')->get());
-              
+        ->with('products', $products);
         
         if(request()->ajax()) {     
 
@@ -64,16 +73,22 @@ class ProductController extends Controller
     
     public function sort($sort) 
     {  
+
+        $products = $this->product 
+        ->join('prices', 'prices.product_id', '=', 'products.id')
+        ->where('products.active', 1)
+        ->where('products.visible', 1)
+        ->where('prices.active', 1)
+        ->where('prices.valid', 1)
+        ->orderBy('prices.base_price', $sort)
+        ->get();      
+
+        Debugbar::info($products);
+
         $view = View::make('front.pages.products.index') 
-        ->with( $sort); 
- 
-            if ($sort == 'price_asc') { 
-                $view->with('products', $this->product->prices->where('active', 1)->where('visible', 1)->orderBy('price', 'asc')->get()); 
-            } elseif ($sort == 'price_desc') { 
-                $view->with('products', $this->product->prices->where('active', 1)->where('visible', 1)->orderBy('price', 'desc')->get()); 
-            } else { 
-                $view->with('products', $this->product->where('active', 1)->where('visible', 1)->get()); 
-            } 
+            ->with('products', $products);
+
+     
          
         if(request()->ajax()) { 
  

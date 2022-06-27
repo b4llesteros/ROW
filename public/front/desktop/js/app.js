@@ -325,6 +325,7 @@ var renderCheckout = function renderCheckout() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent('renderProductModules'));
                     })["catch"](function (error) {
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
@@ -469,6 +470,11 @@ var renderForm = function renderForm() {
   var mainContent = document.getElementById("main");
   var storeButton = document.querySelector('.save-button');
   var forms = document.querySelectorAll('.front-form');
+  document.addEventListener("renderProductModules", function (event) {
+    renderForm();
+  }, {
+    once: true
+  });
 
   if (storeButton) {
     storeButton.addEventListener("click", function (event) {
@@ -499,6 +505,7 @@ var renderForm = function renderForm() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent('renderProductModules'));
                     })["catch"](function (error) {
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
@@ -617,11 +624,12 @@ var renderMenu = function renderMenu() {
                       if (!response.ok) throw response;
                       return response.json();
                     }).then(function (json) {
-                      mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderCounterModules'));
-                      document.dispatchEvent(new CustomEvent('renderFaqsModules'));
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
-                      document.dispatchEvent(new CustomEvent('renderCategoryModules'));
+                      mainContent.innerHTML = json.content; // document.dispatchEvent(new CustomEvent('renderCounterModules'));
+                      // document.dispatchEvent(new CustomEvent('renderFaqsModules'));
+
+                      // document.dispatchEvent(new CustomEvent('renderCounterModules'));
+                      // document.dispatchEvent(new CustomEvent('renderFaqsModules'));
+                      document.dispatchEvent(new CustomEvent('renderProductModules')); // document.dispatchEvent(new CustomEvent('renderCategoryModules'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
