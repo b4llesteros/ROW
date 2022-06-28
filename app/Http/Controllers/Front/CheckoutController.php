@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 use App\Models\Sale; 
 use App\Models\Client;
-use Request;
 use Debugbar;
+use Request;
 
 
 class CheckoutController extends Controller
@@ -28,7 +28,15 @@ class CheckoutController extends Controller
 
     public function index($fingerprint)
     {
+        $ticket_number = $this->sale-> ticket_number;
+        $date_emission = $this->sale-> date_emission;
+        $time_emission = $this->sale-> time_emission;
+
+     
         
+        
+      
+
         $view = View::make('front.pages.checkout.index');
         
         $totals = $this->cart
@@ -44,7 +52,8 @@ class CheckoutController extends Controller
         ->with('fingerprint', $fingerprint)
         ->with('base_total', $totals->base_total)
         ->with('tax_total', ($totals->total - $totals->base_total))
-        ->with('total', $totals->total);   
+        ->with('total', $totals->total)
+        ->with('ticket_number', $ticket_number);
         
         if(request()->ajax()) {
 
@@ -58,8 +67,18 @@ class CheckoutController extends Controller
     }
 
     public function store(Request $request)       
-    {         
+    {                
         
+        $ticket_number = $this->sale->latest()->first()->ticket_number;
+
+       
+        if (str_contains($ticket_number, date('Ymd'))) {
+            $ticket_number += 1;            
+        } else {
+            $ticket_number = date('Ymd') . '0000' ;
+        }     
+
+      
         $client = $this->client->create([
             'name' => request('name'),
             'surname' => request('surname'),
@@ -70,6 +89,7 @@ class CheckoutController extends Controller
             'city' => request('city'),
             'state' => request('state'),
             'zip_code' => request('zip_code'),
+            
         ]);
 
         $sale = $this->sale->create([
@@ -80,6 +100,11 @@ class CheckoutController extends Controller
             'total_tax_price' => request('tax_total'),
             'total_price' => request('total'),            
             'payment_method_id' => request('payment_method_id'),
+            'ticket_number' => $ticket_number,
+            'date_emission' =>  date('Y-m-d'),
+            'time_emission' => date('H:i:s'),
+
+            
         ]);
 
         $cart = $this->cart

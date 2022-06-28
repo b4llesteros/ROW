@@ -22,6 +22,5 @@ class Sale extends Model
     {        
         return $this->belongsTo(Client::class)->where('active', 1);
     }
-
    
 }

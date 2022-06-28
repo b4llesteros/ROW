@@ -553,6 +553,7 @@ header {
 }
 
 .desktop-one-column .column {
+  display: flex;
   width: 100%;
   display: flex;
 }
@@ -588,6 +589,15 @@ header {
 
 .add-button {
   cursor: pointer;
+}
+
+.sale-title {
+  margin-top: 0.5em;
+}
+
+.ticket-data {
+  margin-top: 0.5em;
+  margin-left: 1em;
 }
 
 .editbuttons {

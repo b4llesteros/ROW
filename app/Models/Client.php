@@ -10,12 +10,12 @@ class Client extends Model
 
     public function fingerprints()
     {       
-        return $this->hasMany(Fingerprint::class, 'customer_id');
+        return $this->hasMany(Fingerprint::class, 'client_id');
     }  
 
     public function sales()
     {       
-        return $this->hasMany(Sale::class, 'customer_id')->where('active',1);
+        return $this->hasMany(Sale::class, 'client_id')->where('active',1);
     }
 
 }

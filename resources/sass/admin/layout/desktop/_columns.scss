@@ -3,85 +3,82 @@
     display: flex;
 }
 
-.desktop-five-columns .column{
+.desktop-five-columns .column {
     width: 15%;
 }
 
-.desktop-four-columns{
+.desktop-four-columns {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.desktop-four-columns .column{
+.desktop-four-columns .column {
     width: 22%;
 }
 
-.desktop-three-columns{
+.desktop-three-columns {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.desktop-three-columns .column{
+.desktop-three-columns .column {
     width: 30%;
 }
 
-.desktop-two-columns{
+.desktop-two-columns {
     display: flex;
     justify-content: space-between;
-    width: 90%;        
+    width: 90%;
 }
 
-.desktop-two-columns .column{
+.desktop-two-columns .column {
     width: 48%;
 }
 
-.desktop-two-columns-aside{
+.desktop-two-columns-aside {
     display: flex;
     gap: 5%;
     width: 100%;
     margin-left: 5%;
     margin-top: 2%;
-
 }
 
-.desktop-two-columns-aside .column-aside{
+.desktop-two-columns-aside .column-aside {
     width: 15%;
     border-width: 0.05em;
     border-left: 0em;
     border-top: 0em;
     border-bottom: 0em;
     border-style: solid;
-    
-    
 }
 
-.desktop-two-columns-aside .column-main{
+.desktop-two-columns-aside .column-main {
     width: 65%;
 }
 
-.desktop-two-columns-inline{
+.desktop-two-columns-inline {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.desktop-two-columns-inline .column{
+.desktop-two-columns-inline .column {
     width: 48%;
 }
 
-.desktop-two-columns-inline .column div{
+.desktop-two-columns-inline .column div {
     display: flex;
     margin-right: 1em;
 }
 
-.desktop-one-column{
+.desktop-one-column {
     width: 100%;
 }
 
-.desktop-one-column .column{
-    width: 100%; 
-    display: flex;  
+.desktop-one-column .column {
+    display: flex;
+    width: 100%;
+    display: flex;
 }
-

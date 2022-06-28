@@ -147,6 +147,8 @@ Route::get('/', 'App\Http\Controllers\Front\HomeController@index')->name('front_
 Route::get('/faqs', 'App\Http\Controllers\Front\FaqController@index')->name('front_faqs');
 
 
+Route::get('/checkout', 'App\Http\Controllers\Front\CheckoutController@index');
+
 Route::post('/checkout', 'App\Http\Controllers\Front\CheckoutController@store')->name('checkout_store');
 
 Route::get('/checkout/{fingerprint}', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');

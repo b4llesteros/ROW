@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Sale;
 use App\Http\Requests\Admin\SaleRequest;
+use Debugbar;
 
 
 class CheckoutController extends Controller
@@ -79,11 +80,11 @@ class CheckoutController extends Controller
     }
 
     public function edit(Sale $sale)
-    {
-
+    {               
         $view = View::make('admin.pages.sales.index')
-        ->with('sale', $sale)
-        ->with('sales', $this->sale->where('active', 1)->get());
+            ->with('sale', $this->sale ->with('client' , 'payment' , 'carts'))
+            ->with('sale', $sale)
+            ->with('sales', $this->sale->where('active', 1)->get());    
 
         if(request()->ajax()) {
 
@@ -102,7 +103,6 @@ class CheckoutController extends Controller
 
     public function destroy(Sale $sale)
     {
-
         $sale->active = 0;
         $sale->save();
 

@@ -7,7 +7,8 @@
                 <input type="hidden" name="base_total" value="{{$base_total}}">                            
                 <input type="hidden" name="tax_total" value="{{$tax_total}}">                           
                 <input type="hidden" name="total" value="{{$total}}">  
-                <input type="hidden" name="fingerprint" value="{{$fingerprint}}">        
+                <input type="hidden" name="fingerprint" value="{{$fingerprint}}">  
+       
                 <div class="desktop-two-columns desktop-two-columns-checkout">
                     <div class="column">
                         <div class="desktop-one-column">

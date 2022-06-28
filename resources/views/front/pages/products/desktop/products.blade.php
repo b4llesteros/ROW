@@ -47,7 +47,7 @@
                                 <h3>{{$product->base_price}}€</h3>
                             </div>
                             <div class="product-button" >
-                                <button class="product-link-button" data-url="{{route('front_product', ['product' => $product->id])}}">Ficha</button>
+                                <button class="product-link-button" data-url="{{route('front_product', ['product' => $product->product_id])}}">Ficha</button>
                             </div>
                         </div>                                                
                     @endforeach
