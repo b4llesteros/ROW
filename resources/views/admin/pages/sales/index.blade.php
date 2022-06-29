@@ -89,7 +89,6 @@
                         <div class="container-content">
                             <div class="content content--active" data-tab="content">
                                 <div class="desktop-one-column mobile-one-column">
-
                                     <form class="admin-form" action="{{route("sales_store")}}">
                                         <input type="hidden" name="id" value="{{isset($sale->name) ? $sale->name:''}}">
                                         <div class="container-content">
@@ -145,8 +144,7 @@
                                                                     </div>
                                                                     <div class="ticket-data">
                                                                         {{$sale->client->surname}}
-                                                                    </div>      
-                                                                                                                    
+                                                                    </div>                                                                                                                          
                                                                 </div>
                                                                 <div class="column">
                                                                     <div class="sale-title">
@@ -155,8 +153,7 @@
                                                                     <div class="ticket-data">
                                                                         {{$sale->client->phone}}
                                                                     </div>                                                            
-                                                                </div>
-                                                                
+                                                                </div>                                                                
                                                                 <div class="column">
                                                                     <div class="sale-title">
                                                                         <h4>Address:</h4>
@@ -171,14 +168,24 @@
                                                                     </div>                                                                                                                      
                                                                 </div> 
                                                             @endif                                                      
-                                                            
-                                                        <div class="column">
-                                                                                                                      
-
-                                                              
-                                                                                                                      
-                                                        </div>                                                       
-                                                    </div>                                                 
+                                                        @if(isset($carts))
+                                                            @foreach($carts as $cart)
+                                                                <div class="column">
+                                                                    <div class="product-cart">
+                                                                        <div class="product-name">
+                                                                            <span>Producto:{{$cart->price->product->name}}</span>                                                                        
+                                                                        </div>
+                                                                        <div class="product-quantity">
+                                                                            <span>Cantidad:{{$cart->quantity}}</span>
+                                                                        </div>
+                                                                        <div class="product-price">
+                                                                            <span>Precio:{{$cart->price->base_price}}</span>
+                                                                        </div>
+                                                                    </div>    
+                                                                </div> 
+                                                            @endforeach
+                                                        @endif                                           
+                                                    </div>                                                
                                                 </div>                                                
                                             </div>
                                         </div>

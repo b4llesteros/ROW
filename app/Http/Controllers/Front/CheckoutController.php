@@ -9,7 +9,7 @@ use App\Models\Cart;
 use App\Models\Sale; 
 use App\Models\Client;
 use Debugbar;
-use Request;
+use Illuminate\Http\Request;
 
 
 class CheckoutController extends Controller
@@ -26,21 +26,17 @@ class CheckoutController extends Controller
     }  
 
 
-    public function index($fingerprint)
+    public function index(Request $request)
     {
         $ticket_number = $this->sale-> ticket_number;
         $date_emission = $this->sale-> date_emission;
-        $time_emission = $this->sale-> time_emission;
-
-     
-        
-        
+        $time_emission = $this->sale-> time_emission;  
+              
       
-
         $view = View::make('front.pages.checkout.index');
         
         $totals = $this->cart
-        ->where('carts.fingerprint', $fingerprint)
+        ->where('carts.fingerprint', $request->cookie('fp'))
         ->where('carts.active', 1)
         ->where('carts.sale_id', null)
         ->join('prices', 'prices.id', '=', 'carts.price_id')
@@ -49,7 +45,7 @@ class CheckoutController extends Controller
         ->first();
        
         $view = View::make('front.pages.checkout.index')
-        ->with('fingerprint', $fingerprint)
+        ->with('fingerprint', $request->cookie('fp'))
         ->with('base_total', $totals->base_total)
         ->with('tax_total', ($totals->total - $totals->base_total))
         ->with('total', $totals->total)

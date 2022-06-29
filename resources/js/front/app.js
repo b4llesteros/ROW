@@ -9,6 +9,7 @@ import { renderMenu } from "./menu.js";
 import { renderSelectFilter } from "./selectfilter.js";
 import { renderCart } from "./cart.js";
 import { renderCheckout } from "./checkout.js";
+import { renderFingerprint } from "./fingerprint.js";
 
 
 
@@ -23,3 +24,4 @@ renderMenu();
 renderSelectFilter();
 renderCart();
 renderCheckout();
+renderFingerprint();

@@ -182,6 +182,9 @@ Route::get('/products/{product}', 'App\Http\Controllers\Front\ProductController@
 Route::get('/contact', 'App\Http\Controllers\Front\ContactController@index')->name('front_contact');
 Route::post('/contact', 'App\Http\Controllers\Front\ContactController@store')->name('contacts_store');
 
+Route::post('/fingerprint', 'App\Http\Controllers\Front\FingerprintController@store');
+
+
 
 
 
