@@ -2,15 +2,16 @@ export let renderFaqs = () => {
 
     let faqs = document.querySelectorAll(".faq");
 
-    document.addEventListener("renderFaqsModules", (event => {
-        renderFaqs();
+    document.addEventListener("products", (event => {
+
+        renderTabs();
+
     }), { once: true });
-
-
 
     faqs.forEach(faq => {
 
         faq.addEventListener("click", () => {
+
 
             if (faq.classList.contains("active")) {
                 faq.classList.remove("active");

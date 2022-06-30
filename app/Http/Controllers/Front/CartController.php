@@ -53,13 +53,13 @@ class CartController extends Controller
         $carts = $this->cart->select(DB::raw('count(price_id) as quantity'),'price_id')
         ->groupByRaw('price_id')
         ->where('active', 1)
-        ->where('fingerprint',$request->cookie('fp'))
+        ->where('fingerprint', $request->cookie('fp'))
         ->where('sale_id', null)
         ->orderBy('price_id', 'desc')
         ->get();
 
         $totals = $this->cart
-        ->where('carts.fingerprint', $cart->$request->cookie('fp'))
+        ->where('carts.fingerprint', $request->cookie('fp'))
         ->where('carts.active', 1)
         ->where('carts.sale_id', null)
         ->join('prices', 'prices.id', '=', 'carts.price_id')
@@ -69,7 +69,7 @@ class CartController extends Controller
 
         $sections = View::make('front.pages.cart.index')
         ->with('carts', $carts)
-        ->with('fingerprint', $cart->$request->cookie('fp'))
+        ->with('fingerprint', $request->cookie('fp'))
         ->with('base_total', $totals->base_total)
         ->with('tax_total', ($totals->total - $totals->base_total))
         ->with('total', $totals->total)
@@ -81,7 +81,7 @@ class CartController extends Controller
     } 
 
 
-    public function pluscart (Request $request, $price_id)
+    public function pluscart ($price_id, Request $request)
     {
         
 
@@ -124,11 +124,11 @@ class CartController extends Controller
     }
 
 
-    public function minuscart (Request $request, $price_id)
+    public function minuscart ($price_id, Request $request)
     {
 
         $product = $this->cart
-            ->where('active',1)
+            ->where('active', 1)
             ->where('fingerprint', $request->cookie('fp'))
             ->where('price_id', $price_id)
             ->first();

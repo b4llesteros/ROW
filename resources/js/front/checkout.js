@@ -5,8 +5,10 @@ export let renderCheckout = () => {
     let checkoutButton = document.querySelector('.pay-button-checkout');
     let forms = document.querySelectorAll('.checkout-form');
 
-    document.addEventListener("renderProductModules", (event => {
+    document.addEventListener("checkout", (event => {
+
         renderCheckout();
+
     }), { once: true });
 
     if (checkoutButton) {
@@ -40,7 +42,6 @@ export let renderCheckout = () => {
 
                             mainContent.innerHTML = json.content;
 
-                            document.dispatchEvent(new CustomEvent('renderProductModules'));
                         })
                         .catch(error => {
 

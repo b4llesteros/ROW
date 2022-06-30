@@ -4,11 +4,14 @@ export let renderSelectFilter = () => {
     let selectFilter = document.querySelector('.select-filter');
     let filterOption = document.querySelectorAll('.filter-option');
 
-    document.addEventListener("renderProductModules", (event => {
+    document.addEventListener("products", (event => {
+
         renderSelectFilter();
+
     }), { once: true });
 
     if (selectFilter) {
+
         selectFilter.addEventListener("change", () => {
 
             let url = selectFilter.value;
@@ -31,7 +34,7 @@ export let renderSelectFilter = () => {
 
                         mainContent.innerHTML = json.content;
 
-                        document.dispatchEvent(new CustomEvent('renderProductModules'));
+                        document.dispatchEvent(new CustomEvent('products'));
                     })
                     .catch(error => {
 

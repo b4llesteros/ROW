@@ -4,8 +4,16 @@ export let renderForm = () => {
     let storeButton = document.querySelector('.save-button');
     let forms = document.querySelectorAll('.front-form');
 
-    document.addEventListener("renderProductModules", (event => {
+    document.addEventListener("contact", (event => {
+
         renderForm();
+
+    }), { once: true });
+
+    document.addEventListener("checkout", (event => {
+
+        renderForm();
+
     }), { once: true });
 
 
@@ -43,7 +51,11 @@ export let renderForm = () => {
 
                             mainContent.innerHTML = json.content;
 
-                            document.dispatchEvent(new CustomEvent('renderProductModules'));
+                            document.dispatchEvent(new CustomEvent('loadSection', {
+                                detail: {
+                                    section: 'contact'
+                                }
+                            }));
                         })
                         .catch(error => {
 

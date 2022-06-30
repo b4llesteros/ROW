@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('os')->nullable();
             $table->string('os_version')->nullable();
             $table->string('resolution')->nullable();
-            $table->integer('customer_id')->nullable();
+            $table->integer('client_id')->nullable();
             $table->timestamps();
         });
     }

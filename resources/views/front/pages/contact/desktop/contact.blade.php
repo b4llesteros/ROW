@@ -2,7 +2,7 @@
 @extends('front.layout.master')
 
     @section('content')
-
+        <div class="page-section" id="contact">
             <div class="desktop-one-column">
                 <div class="column column-title">
                     @include('front.components.desktop.title')
@@ -97,4 +97,5 @@
                     </div>
                 </div>
             </div>
+        </div>
     @endsection

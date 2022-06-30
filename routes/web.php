@@ -159,8 +159,8 @@ Route::get('/cart', 'App\Http\Controllers\Front\CartController@index')->name('fr
 // Route::get('/cart/checkout', 'App\Http\Controllers\Front\CheckoutController@index')->name('front_checkout');
 
 
-Route::get('cart/plus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_plus_cart');
-Route::get('cart/minus/{fingerprint}/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_minus_cart');
+Route::get('cart/plus/{price_id}', 'App\Http\Controllers\Front\CartController@pluscart')->name('front_plus_cart');
+Route::get('cart/minus/{price_id}', 'App\Http\Controllers\Front\CartController@minuscart')->name('front_minus_cart');
 
 
 Route::get('/products/filter', 'App\Http\Controllers\Front\ProductController@filter')->name('front_products_filter');

@@ -80,95 +80,70 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var renderCart = function renderCart() {
   var mainContent = document.getElementById("main");
-  var addToCart = document.querySelector('.add-to-cart');
-  var forms = document.querySelectorAll('.cart-form');
   var toCheckout = document.querySelector('.to-checkout');
-  document.addEventListener("renderProductModules", function (event) {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
+  document.addEventListener("cart", function (event) {
     renderCart();
   }, {
     once: true
   });
-
-  if (addToCart) {
-    addToCart.addEventListener("click", function (event) {
-      event.preventDefault();
-      forms.forEach(function (form) {
-        var data = new FormData(form);
-        var url = form.action;
-
-        var sendPostRequest = /*#__PURE__*/function () {
-          var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-            var response;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-              while (1) {
-                switch (_context.prev = _context.next) {
-                  case 0:
-                    _context.next = 2;
-                    return fetch(url, {
-                      headers: {
-                        'Accept': 'application/json',
-                        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
-                      },
-                      method: 'POST',
-                      body: data
-                    }).then(function (response) {
-                      if (!response.ok) throw response;
-                      return response.json();
-                    }).then(function (json) {
-                      mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
-                    })["catch"](function (error) {
-                      if (error.status == '422') {
-                        error.json().then(function (jsonError) {
-                          var errors = jsonError.errors;
-                          var errorMessage = '';
-                          Object.keys(errors).forEach(function (key) {
-                            errorMessage += '<li>' + errors[key] + '</li>';
-                          });
-                          document.dispatchEvent(new CustomEvent('message', {
-                            detail: {
-                              message: errorMessage,
-                              type: 'error'
-                            }
-                          }));
-                        });
-                      }
-
-                      if (error.status == '500') {
-                        console.log(error);
-                      }
-
-                      ;
-                    });
-
-                  case 2:
-                    response = _context.sent;
-
-                  case 3:
-                  case "end":
-                    return _context.stop();
-                }
-              }
-            }, _callee);
-          }));
-
-          return function sendPostRequest() {
-            return _ref.apply(this, arguments);
-          };
-        }();
-
-        sendPostRequest();
-      });
-    });
-  }
-
-  var plusMinusButtons = document.querySelectorAll(".plus-minus-button-cart");
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function (event) {
       event.preventDefault();
       var url = plusMinusButton.dataset.url;
 
       var sendCreateRequest = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+          var response;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch(url, {
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    method: 'GET'
+                  }).then(function (response) {
+                    if (!response.ok) throw response;
+                    return response.json();
+                  }).then(function (json) {
+                    mainContent.innerHTML = json.content;
+                    document.dispatchEvent(new CustomEvent('cart'));
+                  })["catch"](function (error) {
+                    if (error.status == '500') {
+                      console.log(error);
+                    }
+
+                    ;
+                  });
+
+                case 2:
+                  response = _context.sent;
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function sendCreateRequest() {
+          return _ref.apply(this, arguments);
+        };
+      }();
+
+      sendCreateRequest();
+    });
+  });
+
+  if (toCheckout) {
+    toCheckout.addEventListener("click", function () {
+      var url = toCheckout.dataset.url;
+
+      var sendShowRequest = /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
           var response;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -186,7 +161,11 @@ var renderCart = function renderCart() {
                     return response.json();
                   }).then(function (json) {
                     mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductModules'));
+                    document.dispatchEvent(new CustomEvent('loadSection', {
+                      detail: {
+                        section: 'checkout'
+                      }
+                    }));
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -206,59 +185,8 @@ var renderCart = function renderCart() {
           }, _callee2);
         }));
 
-        return function sendCreateRequest() {
-          return _ref2.apply(this, arguments);
-        };
-      }();
-
-      sendCreateRequest();
-    });
-  });
-
-  if (toCheckout) {
-    toCheckout.addEventListener("click", function () {
-      var url = toCheckout.dataset.url;
-
-      var sendShowRequest = /*#__PURE__*/function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-          var response;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-            while (1) {
-              switch (_context3.prev = _context3.next) {
-                case 0:
-                  _context3.next = 2;
-                  return fetch(url, {
-                    headers: {
-                      'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    method: 'GET'
-                  }).then(function (response) {
-                    if (!response.ok) throw response;
-                    return response.json();
-                  }).then(function (json) {
-                    mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductModules'));
-                  })["catch"](function (error) {
-                    if (error.status == '500') {
-                      console.log(error);
-                    }
-
-                    ;
-                  });
-
-                case 2:
-                  response = _context3.sent;
-
-                case 3:
-                case "end":
-                  return _context3.stop();
-              }
-            }
-          }, _callee3);
-        }));
-
         return function sendShowRequest() {
-          return _ref3.apply(this, arguments);
+          return _ref2.apply(this, arguments);
         };
       }();
 
@@ -293,7 +221,7 @@ var renderCheckout = function renderCheckout() {
   var mainContent = document.getElementById("main");
   var checkoutButton = document.querySelector('.pay-button-checkout');
   var forms = document.querySelectorAll('.checkout-form');
-  document.addEventListener("renderProductModules", function (event) {
+  document.addEventListener("checkout", function (event) {
     renderCheckout();
   }, {
     once: true
@@ -328,7 +256,6 @@ var renderCheckout = function renderCheckout() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
                     })["catch"](function (error) {
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
@@ -389,12 +316,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderCounter": () => (/* binding */ renderCounter)
 /* harmony export */ });
 var renderCounter = function renderCounter() {
-  document.addEventListener("renderProductModules", function (event) {
+  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+  document.addEventListener("products", function (event) {
     renderCounter();
   }, {
     once: true
   });
-  var plusMinusButtons = document.querySelectorAll(".plus-minus-button");
   plusMinusButtons.forEach(function (plusMinusButton) {
     plusMinusButton.addEventListener("click", function (event) {
       event.preventDefault();
@@ -428,8 +355,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var renderFaqs = function renderFaqs() {
   var faqs = document.querySelectorAll(".faq");
-  document.addEventListener("renderFaqsModules", function (event) {
-    renderFaqs();
+  document.addEventListener("products", function (event) {
+    renderTabs();
   }, {
     once: true
   });
@@ -564,7 +491,12 @@ var renderForm = function renderForm() {
   var mainContent = document.getElementById("main");
   var storeButton = document.querySelector('.save-button');
   var forms = document.querySelectorAll('.front-form');
-  document.addEventListener("renderProductModules", function (event) {
+  document.addEventListener("contact", function (event) {
+    renderForm();
+  }, {
+    once: true
+  });
+  document.addEventListener("checkout", function (event) {
     renderForm();
   }, {
     once: true
@@ -599,7 +531,11 @@ var renderForm = function renderForm() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
+                      document.dispatchEvent(new CustomEvent('loadSection', {
+                        detail: {
+                          section: 'contact'
+                        }
+                      }));
                     })["catch"](function (error) {
                       if (error.status == '422') {
                         error.json().then(function (jsonError) {
@@ -700,6 +636,9 @@ var renderMenu = function renderMenu() {
     menuOptions.forEach(function (menuOption) {
       menuOption.addEventListener("click", function () {
         var url = menuOption.dataset.url;
+        var section = menuOption.dataset.section;
+        var currentSection = document.querySelector('.page-section').id;
+        sessionStorage.setItem('lastSection', currentSection);
 
         var sendShowRequest = /*#__PURE__*/function () {
           var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -718,12 +657,9 @@ var renderMenu = function renderMenu() {
                       if (!response.ok) throw response;
                       return response.json();
                     }).then(function (json) {
-                      mainContent.innerHTML = json.content; // document.dispatchEvent(new CustomEvent('renderCounterModules'));
-                      // document.dispatchEvent(new CustomEvent('renderFaqsModules'));
-
-                      // document.dispatchEvent(new CustomEvent('renderCounterModules'));
-                      // document.dispatchEvent(new CustomEvent('renderFaqsModules'));
-                      document.dispatchEvent(new CustomEvent('renderProductModules')); // document.dispatchEvent(new CustomEvent('renderCategoryModules'));
+                      window.history.pushState('', '', url);
+                      mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent(section));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
@@ -752,6 +688,59 @@ var renderMenu = function renderMenu() {
       });
     });
   }
+
+  window.addEventListener('popstate', function (event) {
+    var url = window.location.href;
+
+    var sendIndexRequest = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return fetch(url, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                  },
+                  method: 'GET'
+                }).then(function (response) {
+                  if (!response.ok) throw response;
+                  return response.json();
+                }).then(function (json) {
+                  mainContent.innerHTML = json.content;
+                  document.dispatchEvent(new CustomEvent('loadSection', {
+                    detail: {
+                      section: sessionStorage.getItem('lastSection')
+                    }
+                  }));
+                  var currentSection = document.querySelector('.page-section').id;
+                  sessionStorage.setItem('lastSection', currentSection);
+                })["catch"](function (error) {
+                  if (error.status == '500') {
+                    console.log(error);
+                  }
+                });
+
+              case 2:
+                response = _context2.sent;
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function sendIndexRequest() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+
+    sendIndexRequest();
+  });
 };
 
 /***/ }),
@@ -806,18 +795,22 @@ var renderProduct = function renderProduct() {
   var mainContent = document.getElementById("main");
   var productButtons = document.querySelectorAll('.product-link-button');
   var categoryOptions = document.querySelectorAll('.category-button');
-  document.addEventListener("renderProductModules", function (event) {
+  var addToCart = document.querySelector('.add-to-cart');
+  var forms = document.querySelectorAll('.cart-form');
+  document.addEventListener("products", function (event) {
     renderProduct();
   }, {
     once: true
   });
 
-  if (productButtons) {
-    productButtons.forEach(function (productButton) {
-      productButton.addEventListener("click", function () {
-        var url = productButton.dataset.url;
+  if (addToCart) {
+    addToCart.addEventListener("click", function (event) {
+      event.preventDefault();
+      forms.forEach(function (form) {
+        var data = new FormData(form);
+        var url = form.action;
 
-        var sendShowRequest = /*#__PURE__*/function () {
+        var sendPostRequest = /*#__PURE__*/function () {
           var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
             var response;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
@@ -827,16 +820,34 @@ var renderProduct = function renderProduct() {
                     _context.next = 2;
                     return fetch(url, {
                       headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
                       },
-                      method: 'GET'
+                      method: 'POST',
+                      body: data
                     }).then(function (response) {
                       if (!response.ok) throw response;
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
+                      document.dispatchEvent(new CustomEvent('cart'));
                     })["catch"](function (error) {
+                      if (error.status == '422') {
+                        error.json().then(function (jsonError) {
+                          var errors = jsonError.errors;
+                          var errorMessage = '';
+                          Object.keys(errors).forEach(function (key) {
+                            errorMessage += '<li>' + errors[key] + '</li>';
+                          });
+                          document.dispatchEvent(new CustomEvent('message', {
+                            detail: {
+                              message: errorMessage,
+                              type: 'error'
+                            }
+                          }));
+                        });
+                      }
+
                       if (error.status == '500') {
                         console.log(error);
                       }
@@ -855,20 +866,20 @@ var renderProduct = function renderProduct() {
             }, _callee);
           }));
 
-          return function sendShowRequest() {
+          return function sendPostRequest() {
             return _ref.apply(this, arguments);
           };
         }();
 
-        sendShowRequest();
+        sendPostRequest();
       });
     });
   }
 
-  if (categoryOptions) {
-    categoryOptions.forEach(function (categoryOption) {
-      categoryOption.addEventListener("click", function () {
-        var url = categoryOption.dataset.url;
+  if (productButtons) {
+    productButtons.forEach(function (productButton) {
+      productButton.addEventListener("click", function () {
+        var url = productButton.dataset.url;
 
         var sendShowRequest = /*#__PURE__*/function () {
           var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
@@ -888,7 +899,7 @@ var renderProduct = function renderProduct() {
                       return response.json();
                     }).then(function (json) {
                       mainContent.innerHTML = json.content;
-                      document.dispatchEvent(new CustomEvent('renderProductModules'));
+                      document.dispatchEvent(new CustomEvent('products'));
                     })["catch"](function (error) {
                       if (error.status == '500') {
                         console.log(error);
@@ -910,6 +921,59 @@ var renderProduct = function renderProduct() {
 
           return function sendShowRequest() {
             return _ref2.apply(this, arguments);
+          };
+        }();
+
+        sendShowRequest();
+      });
+    });
+  }
+
+  if (categoryOptions) {
+    categoryOptions.forEach(function (categoryOption) {
+      categoryOption.addEventListener("click", function () {
+        var url = categoryOption.dataset.url;
+
+        var sendShowRequest = /*#__PURE__*/function () {
+          var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+            var response;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    _context3.next = 2;
+                    return fetch(url, {
+                      headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                      },
+                      method: 'GET'
+                    }).then(function (response) {
+                      if (!response.ok) throw response;
+                      return response.json();
+                    }).then(function (json) {
+                      mainContent.innerHTML = json.content;
+                      document.dispatchEvent(new CustomEvent('products'));
+                    })["catch"](function (error) {
+                      if (error.status == '500') {
+                        console.log(error);
+                      }
+
+                      ;
+                    });
+
+                  case 2:
+                    response = _context3.sent;
+
+                  case 3:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
+
+          return function sendShowRequest() {
+            return _ref3.apply(this, arguments);
           };
         }();
 
@@ -944,7 +1008,7 @@ var renderSelectFilter = function renderSelectFilter() {
   var mainContent = document.getElementById("main");
   var selectFilter = document.querySelector('.select-filter');
   var filterOption = document.querySelectorAll('.filter-option');
-  document.addEventListener("renderProductModules", function (event) {
+  document.addEventListener("products", function (event) {
     renderSelectFilter();
   }, {
     once: true
@@ -972,7 +1036,7 @@ var renderSelectFilter = function renderSelectFilter() {
                     return response.json();
                   }).then(function (json) {
                     mainContent.innerHTML = json.content;
-                    document.dispatchEvent(new CustomEvent('renderProductModules'));
+                    document.dispatchEvent(new CustomEvent('products'));
                   })["catch"](function (error) {
                     if (error.status == '500') {
                       console.log(error);
@@ -1018,7 +1082,7 @@ __webpack_require__.r(__webpack_exports__);
 var renderTabs = function renderTabs() {
   var tabs = document.querySelectorAll('.tab');
   var contents = document.querySelectorAll(".content");
-  document.addEventListener("renderProductModules", function (event) {
+  document.addEventListener("products", function (event) {
     renderTabs();
   }, {
     once: true
@@ -1038,74 +1102,7 @@ var renderTabs = function renderTabs() {
       });
     });
   });
-}; //     tabs.forEach((tab, i) => {
-//         tab.addEventListener("click", () => {
-//             tab.classList.add("tab--active"); 
-//             if (i == 0) {
-//                 tabs[0].classList.add("tab--active");
-//                 tabs[1].classList.remove("tab--active");
-//                 tabs[2].classList.remove("tab--active"); 
-//                 contents[0].classList.add("content--active");
-//                 contents[1].classList.remove("content--active"); 
-//                 contents[2].classList.remove("content--active");           
-//             } else if (i == 1) {
-//                 tabs[1].classList.add("tab--active");
-//                 tabs[0].classList.remove("tab--active");
-//                 tabs[2].classList.remove("tab--active");
-//                 contents[1].classList.add("content--active");
-//                 contents[2].classList.remove("content--active");
-//                 contents[0].classList.remove("content--active");  
-//             }else if (i == 2) {
-//                 tabs[2].classList.add("tab--active");
-//                 tabs[0].classList.remove("tab--active");
-//                 tabs[1].classList.remove("tab--active");
-//                 contents[2].classList.add("content--active"); 
-//                 contents[1].classList.remove("content--active");
-//                 contents[0].classList.remove("content--active");  
-//             }         
-//         });
-//     });
-// }
-//     tabs.forEach(tab => {
-//         tabs.forEach(tab => {
-//             tab.addEventListener('click', () => {
-//                 tabs.forEach(tab => {
-//                     tab.classList.remove('active');
-//                 });
-//             });
-//         });
-//     });
-// };
-//     tabs.forEach(tab => {
-//         tab.addEventListener("click", () => {
-//             tab.classList.toggle("tab--active"); 
-//             contents.forEach(content => {
-//                 content.classList.add("content--active");
-//                 if (tabs = 0) {
-//                     content.classList.remove("content--active");
-//                 }
-//             }
-//             });
-//             }                                       
-//         ); 
-//     });   
-// };
-//   export let renderTabs = () => {
-//     const tabs = document.querySelectorAll(".tab");
-//     const contents = document.querySelectorAll(".content");
-//     for (let i = 0; i < tabs.length; i++) {
-//       tabs[i].addEventListener("click", () => {
-//         for (let j = 0; j < contents.length; j++) {
-//           contents[j].classList.remove("content--active");
-//         }
-//         for (let jj = 0; jj < tabs.length; jj++) {
-//           tabs[jj].classList.remove("tabs--active");
-//         }
-//         contents[i].classList.add("content--active-local");
-//         tabs[i].classList.add("tabs--active");
-//       });
-//     }
-//   }
+};
 
 /***/ }),
 

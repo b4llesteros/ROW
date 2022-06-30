@@ -1,10 +1,12 @@
 export let renderCounter = () => {
 
-    document.addEventListener("renderProductModules", (event => {
-        renderCounter();
-    }), { once: true });
-
     let plusMinusButtons = document.querySelectorAll(".plus-minus-button");
+
+    document.addEventListener("products", (event => {
+
+        renderCounter();
+
+    }), { once: true });
 
     plusMinusButtons.forEach(plusMinusButton => {
 

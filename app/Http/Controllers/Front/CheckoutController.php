@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 use App\Models\Sale; 
 use App\Models\Client;
-use Debugbar;
+use App\Models\Fingerprint;
 use Illuminate\Http\Request;
 
 
@@ -17,12 +17,14 @@ class CheckoutController extends Controller
     protected $sale;
     protected $cart;
     protected $client;
+    protected $fingerprint;
 
-    public function __construct(Cart $cart, Sale $sale, Client $client)
+    public function __construct(Cart $cart, Sale $sale, Client $client, Fingerprint $fingerprint)
     {
         $this->sale = $sale;
         $this->cart = $cart;
         $this->client = $client;
+        $this->fingerprint = $fingerprint;
     }  
 
 
@@ -58,8 +60,7 @@ class CheckoutController extends Controller
             return response()->json([
                 'content' => $sections['content'],
             ]);
-        }
-      
+        }      
     }
 
     public function store(Request $request)       
@@ -73,7 +74,6 @@ class CheckoutController extends Controller
         } else {
             $ticket_number = date('Ymd') . '0000' ;
         }     
-
       
         $client = $this->client->create([
             'name' => request('name'),
@@ -85,7 +85,10 @@ class CheckoutController extends Controller
             'city' => request('city'),
             'state' => request('state'),
             'zip_code' => request('zip_code'),
-            
+        ]);
+
+        $fingerprint = $this->fingerprint->where('fingerprint', $request->cookie('fp'))->update([
+            'client_id' => $client->id,
         ]);
 
         $sale = $this->sale->create([
@@ -99,8 +102,6 @@ class CheckoutController extends Controller
             'ticket_number' => $ticket_number,
             'date_emission' =>  date('Y-m-d'),
             'time_emission' => date('H:i:s'),
-
-            
         ]);
 
         $cart = $this->cart
